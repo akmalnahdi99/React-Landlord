@@ -27,10 +27,124 @@
     <!-- stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     <title>Vintage Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.9.0/css/lightgallery.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+      integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/conflict-detection.min.js"
+      integrity="sha512-gBkIg9cXQqh9xQvsqYd9zUPMuhMI+eKS/KDogjece72OS0AbiGCC4o78MXrAJIVvOYHvPbAxOyO0qZNs8uEngw=="
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body>
+
+  <body id="minibar" class="mini-navbar">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="wrapper">
+      <div id="root"></div>
+    </div>
+    <div
+      class="modal inmodal fade"
+      id="additionalinfo"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span
+              ><span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title text-completedtask text-left ml-3">
+              Select Property
+            </h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-12 p-0 align-self-center">
+                      <div class="media">
+                        <img
+                          alt="image"
+                          src="img/a4.jpg"
+                          class="img-fluid rounded-border align-self-center mr-3"
+                          width="50px"
+                        />
+
+                        <div class="media-body align-self-center">
+                          <span class="m-0 text-completedtask">
+                            Puteri Palma Condo
+                          </span>
+                          <span>
+                            <i class="fas fa-arrow-right fa-xs float-right"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <hr />
+                    </div>
+                    <div class="col-12 p-0 align-self-center mb-4">
+                      <div class="media">
+                        <img
+                          alt="image"
+                          src="img/a8.jpg"
+                          class="img-fluid rounded-border align-self-center mr-3"
+                          width="50px"
+                        />
+
+                        <div class="media-body align-self-center">
+                          <span class="m-0 text-completedtask">
+                            No.63 Port Dickson
+                          </span>
+                          <span>
+                            <i class="fas fa-arrow-right fa-xs float-right"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -41,5 +155,196 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+      integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/conflict-detection.min.js"
+      integrity="sha512-gBkIg9cXQqh9xQvsqYd9zUPMuhMI+eKS/KDogjece72OS0AbiGCC4o78MXrAJIVvOYHvPbAxOyO0qZNs8uEngw=="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/mainscript.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.9.0/js/lightgallery-all.min.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script>
+      $(".multiple-items").slick({
+        infinite: false,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        arrows: false,
+        centerMode: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              centerMode: false,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              centerMode: false,
+            },
+          },
+        ],
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#sparkline1").sparkline([34, 43, 43, 35, 44, 32, 44, 48], {
+          type: "line",
+          width: "100%",
+          height: "50",
+          lineColor: "#1ab394",
+          fillColor: "transparent",
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#lightVersion").click(function (event) {
+          event.preventDefault();
+          $("#ibox-content").removeClass("ibox-content");
+          $("#vertical-timeline").removeClass("dark-timeline");
+          $("#vertical-timeline").addClass("light-timeline");
+        });
+
+        $("#darkVersion").click(function (event) {
+          event.preventDefault();
+          $("#ibox-content").addClass("ibox-content");
+          $("#vertical-timeline").removeClass("light-timeline");
+          $("#vertical-timeline").addClass("dark-timeline");
+        });
+
+        $("#leftVersion").click(function (event) {
+          event.preventDefault();
+          $("#vertical-timeline").toggleClass("center-orientation");
+        });
+      });
+    </script>
+    <script>
+      if ($(window).width() < 767) {
+        $("#minibar").removeClass("mini-navbar");
+      } else {
+        $("#minibar").addClass("mini-navbar");
+      }
+    </script>
+    <script>
+      filterSelection("all");
+
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      var btnContainer = document.getElementById("FilterContainer");
+      var btns = btnContainer.getElementsByClassName("btnfilter");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("current");
+          current[0].className = current[0].className.replace("current", "");
+          this.className += " current";
+        });
+      }
+    </script>
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#lightgallery").lightGallery();
+      });
+    </script>
+    <script>
+      $("#filteroption").change(function () {
+        var selectItem = $(this).val();
+        filter(selectItem);
+      });
+
+      function filter(e) {
+        // var regex = new RegExp("\\b\\w*" + e + "\\w*\\b");
+        // $(".filterDiv")
+        //   .hide()
+        //   .filter(function () {
+        //     return regex.test($(this).data("name"));
+        //   })
+        //   .show();
+        // if ($("#vertical-timeline").children(":visible").length == 0) {
+        //   $(".empty").show();
+        // } else {
+        //   $(".empty").hide();
+        // }
+      }
+    </script>
   </body>
 </html>

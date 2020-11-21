@@ -3,23 +3,39 @@ import React from "react";
 // react router dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // pages
-import About from "./pages/About";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Error from "./pages/Error";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Products from "./pages/Products";
-import ProductDetails from "./pages/ProductDetails";
+// import About from "./pages/About";
+// import Cart from "./pages/Cart";
+// import Checkout from "./pages/Checkout";
+// import Error from "./pages/Error";
+// import Home from "./pages/Home";
+// import Login from "./pages/Login";
+// import Products from "./pages/Products";
+// import ProductDetails from "./pages/ProductDetails";
+import { NavLink } from "react-router-dom";
 // components
-import Header from "./components/Header";
-import Alert from "./components/Alert";
-import PrivateRoute from "./components/PrivateRoute";
-import ScrollButton from "./components/ScrollButton";
+// import Header from "./components/Header";
+// import Alert from "./components/Alert";
+// import PrivateRoute from "./components/PrivateRoute";
+// import ScrollButton from "./components/ScrollButton";
+import LeftMenu from "./components/navigation/LeftMenu";
+//pages 
+import DashBoard from "./pages/Landlord/dashboard.js";
+
+
 export default function App() {
   return (
-    <Router>
-      <Header />
+    <Router >
+      <Switch>
+        <Route exact path="/">
+          <NavLink to="/dashboard">Dashboard</NavLink>
+        </Route>
+        <Route path="/dashboard">
+          <LeftMenu />
+          <DashBoard />
+        </Route>
+      </Switch>
+
+      {/* <Header />
       <Alert />
       <ScrollButton />
       <Switch>
@@ -49,7 +65,7 @@ export default function App() {
         <Route path="*">
           <Error />
         </Route>
-      </Switch>
+      </Switch> */}
     </Router>
   );
 }
