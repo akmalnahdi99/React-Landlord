@@ -18,24 +18,30 @@ import { NavLink } from "react-router-dom";
 // import PrivateRoute from "./components/PrivateRoute";
 // import ScrollButton from "./components/ScrollButton";
 import LeftMenu from "./components/navigation/LeftMenu";
+import { AppProvider } from "./context/settings";
 //pages 
 import DashBoard from "./pages/Landlord/dashboard.js";
 
 
 export default function App() {
   return (
-    <Router >
-      <Switch>
-        <Route exact path="/">
-          <NavLink to="/dashboard">Dashboard</NavLink>
-        </Route>
-        <Route path="/dashboard">
-          <LeftMenu />
-          <DashBoard />
-        </Route>
-      </Switch>
-
-      {/* <Header />
+    <AppProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </Route>
+          <Route path="/dashboard">
+            <LeftMenu />
+            <DashBoard />
+          </Route>
+        </Switch>
+      </Router>
+    </AppProvider>
+  );
+}
+ 
+  /* <Header />
       <Alert />
       <ScrollButton />
       <Switch>
@@ -65,7 +71,5 @@ export default function App() {
         <Route path="*">
           <Error />
         </Route>
-      </Switch> */}
-    </Router>
-  );
-}
+      </Switch> */
+ 

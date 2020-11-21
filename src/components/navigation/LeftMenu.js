@@ -11,7 +11,7 @@ export default function LeftMenu() {
         <ul className="nav metismenu" id="side-menu">
           <li className="nav-header">
             <div className="profile-element">
-              <Link className="navbar-minimalize float-right" href="#">
+              <Link className="navbar-minimalize float-right" to="X1">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
                   aria-hidden="true"
@@ -31,7 +31,7 @@ export default function LeftMenu() {
               </Link>
             </div>
             <div className="logo-element">
-              <Link className="navbar-minimalize menuburger2" id="show" href="#">
+              <Link className="navbar-minimalize menuburger2" id="show" to="X2">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
                   aria-hidden="true"
@@ -52,7 +52,7 @@ export default function LeftMenu() {
             </div>
           </li>
           <li className="active">
-            <Link href="index.html">
+            <Link to="X3">
               <svg
                 className="svg-inline--fa fa-user-clock fa-w-20"
                 aria-hidden="true"
@@ -73,7 +73,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="dashboard.html">
+            <Link to="X42">
               <svg
                 className="svg-inline--fa fa-grip-horizontal fa-w-14"
                 aria-hidden="true"
@@ -94,7 +94,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="maintenance.html">
+            <Link to="X5">
               <svg
                 className="svg-inline--fa fa-toolbox fa-w-16"
                 aria-hidden="true"
@@ -115,7 +115,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="financials.html">
+            <Link to="X6">
               <svg
                 className="svg-inline--fa fa-file-invoice-dollar fa-w-12"
                 aria-hidden="true"
@@ -136,7 +136,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="payables.html">
+            <Link to="X7">
               <svg
                 className="svg-inline--fa fa-hand-holding-usd fa-w-18"
                 aria-hidden="true"
@@ -157,7 +157,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="propertyview.html">
+            <Link to="X8">
               <svg
                 className="svg-inline--fa fa-street-view fa-w-16"
                 aria-hidden="true"
@@ -178,7 +178,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="rentaloffers.html">
+            <Link to="X9">
               <svg
                 className="svg-inline--fa fa-hands-helping fa-w-20"
                 aria-hidden="true"
@@ -199,7 +199,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link href="propertyinfo.html">
+            <Link to="X11">
               <svg
                 className="svg-inline--fa fa-info-circle fa-w-16"
                 aria-hidden="true"

@@ -7,9 +7,9 @@ const PostCard = (props) => {
 
   var imageGallery = null;
   if (images != null) {
-    imageGallery = images.map((image) => {
+    imageGallery = images.map((image,index) => {
       return (
-        <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2">
+        <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
           <a href={image.urlThumb}>
             <img className="img-responsive" src={image.urlHref} alt="post som" />
           </a>
@@ -32,8 +32,8 @@ const PostCard = (props) => {
 
         <h3 className="font-normal my-1">{postTitle}</h3>
         <p className="mt-0">{postBody}</p>
-        <div class="demo-gallery">
-          <ul id="lightgallery" class="list-unstyled row">
+        <div className="demo-gallery">
+          <ul id="lightgallery" className="list-unstyled row">
             {imageGallery}
           </ul>
         </div>
