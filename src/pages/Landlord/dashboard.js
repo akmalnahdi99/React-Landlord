@@ -92,8 +92,9 @@ export default function DashBoard() {
       <div className="wrapper wrapper-content animated pt-0 fadeInRight gray-bg">
         <div className="container-fluid">
           <div className="row mt-1 justify-content-center">
-            <div className="col-lg-8"></div>
-            <UserPosts />
+            <div className="col-lg-8">
+              <UserPosts />
+            </div>
           </div>
         </div>
       </div>

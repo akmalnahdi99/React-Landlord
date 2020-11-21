@@ -12,12 +12,10 @@ function AppProvider({ children }) {
   const [settings, setSettings] = React.useState(getsettingsFromLocalStorage());
 
   const setPostsFilter = (filter) => {
-    console.log("[settingsProvider setFilteredBy]", filter);
     const newSettings = { ...settings, postsFilter: filter };
     setSettings(newSettings);
     localStorage.setItem("settings", JSON.stringify(newSettings));
   };
-
   return <AppContext.Provider value={{ settings, setPostsFilter }}>{children}</AppContext.Provider>;
 }
 
