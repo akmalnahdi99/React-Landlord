@@ -13,7 +13,7 @@ export default function DashBoard() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
-    <div id="page-wrapper" className="bg-white" style={{ border: "1px solid red" }}>
+    <div id="page-wrapper" className="bg-white" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
         <div className="container-fluid">
           <Header />

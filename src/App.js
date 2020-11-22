@@ -26,6 +26,7 @@ import { AppProvider } from "./context/settings";
 //pages 
 import Activity from "./pages/Landlord/Activity.js";
 import Notifications from "./pages/Landlord/Notifications.js";
+import Profile from "./pages/Landlord/Profile";
 
 
 export default function App() {
@@ -43,7 +44,11 @@ export default function App() {
           </Route>
           <Route path="/landlord/notifications">
             <LeftMenu />
-             <Notifications/>
+            <Notifications />
+          </Route>
+          <Route path="/landlord/profile">
+            <LeftMenu />
+            <Profile />
           </Route>
         </Switch>
       </Router>

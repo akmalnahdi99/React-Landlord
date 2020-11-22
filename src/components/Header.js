@@ -11,7 +11,7 @@ export default function Header() {
   //const  appContext  = React.useContext(AppContext); // for reading login status
 
   return (
-    <header className="header border-green">
+    <header className="header ">
       <nav className="navbar navbar-static-top" role="navigation" style={{ marginbottom: 0 }}>
         <div className="navbar-header">
           <Link className="navbar-minimalize minimalize-styl-2 hideburger" id="hide" to="a1">
@@ -35,7 +35,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link className="count-info" to="a1">
+            <Link className="count-info" to="/landlord/profile">
               <img alt="small " className="rounded-circle" src={profileSmall} width="30px" />
             </Link>
           </li>

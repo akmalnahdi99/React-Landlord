@@ -11,7 +11,8 @@ export default function LeftMenu() {
         <ul className="nav metismenu" id="side-menu">
           <li className="nav-header">
             <div className="profile-element">
-              <Link className="navbar-minimalize float-right" to="X1">
+              a
+              <Link className="navbar-minimalize float-right" to="">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
                   aria-hidden="true"
@@ -31,7 +32,7 @@ export default function LeftMenu() {
               </Link>
             </div>
             <div className="logo-element">
-              <Link className="navbar-minimalize menuburger2" id="show" to="X2">
+              <Link className="navbar-minimalize menuburger2" id="show" to="/landlord/activity">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
                   aria-hidden="true"
@@ -52,7 +53,7 @@ export default function LeftMenu() {
             </div>
           </li>
           <li className="active">
-            <Link to="X3">
+            <Link to="/landlord/dashboard">
               <svg
                 className="svg-inline--fa fa-user-clock fa-w-20"
                 aria-hidden="true"
