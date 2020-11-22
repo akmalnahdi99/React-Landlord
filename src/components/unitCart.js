@@ -5,7 +5,7 @@ export default function UnitInfoCard() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   const Unit  = {
-    urlThumbnail: "img/a4.jpg",
+    urlThumbnail: process.env.PUBLIC_URL+"/imgs/a4.jpg",
     CondoName: "Widuri Impian Condo",
     UnitName: "B-10-2",
   };

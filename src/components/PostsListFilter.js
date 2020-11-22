@@ -2,11 +2,11 @@ import React from "react";
 // import { FaWindowClose } from "react-icons/fa";
 // import iconBars from "../../assets/Icons/i1.svg";
 // import useEffect from 'react';
-import { AppContext } from "../../context/settings";
+import { AppContext } from "../context/settings";
 
 // import { UserContext } from "../context/user";
 
-export default function UserPostsFilter() {
+export default function PostsListFilter() {
   // const { alert, hideAlert } = React.useContext(UserContext);
   const appContext =   React.useContext(AppContext);
   const selectedFilter = appContext.settings.postsFilter;

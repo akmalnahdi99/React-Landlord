@@ -1,10 +1,10 @@
 import React from "react";
 import PostCard from "./PostCard";
-import { AppContext } from "./../context/settings";
+import { AppContext } from "../context/settings";
 
 //import postIcon from "img/money-bag.svg";
 
-const UserPosts = (props, filterBy) => {
+const PostsList = (props, filterBy) => {
   const appContext = React.useContext(AppContext);
   const activeFilter = appContext.settings.postsFilter;
 
@@ -15,7 +15,7 @@ const UserPosts = (props, filterBy) => {
       postTitle: "Post Title",
       postBody:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus doloremque obcaecati magnam maxime fugit error voluptatem placeat nesciunt assumenda eveniet consectetur amet ratione dolore id perferendis suscipit eum, ut neque.",
-      postIcon: "img/money-bag.svg",
+      postIcon: "/imgs/money-bag.svg",
       postDateTime: "17:50 | 25 Dec 2020",
       postType: "maintenance",
     },
@@ -24,7 +24,7 @@ const UserPosts = (props, filterBy) => {
       postTitle: "Post Title",
       postBody:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius delectus quidem numquam voluptatem voluptatum. Fugit soluta voluptatibus provident ut nesciunt, quo, minima error repellat eius sunt harum culpa id. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus doloremque obcaecati magnam maxime fugit error voluptatem placeat nesciunt assumenda eveniet consectetur amet ratione dolore id perferendis suscipit eum, ut neque.",
-      postIcon: "img/money-bag.svg",
+      postIcon: "/imgs/money-bag.svg",
       postDateTime: "17:50 | 25 Dec 2020",
       postType: "overdue",
     },
@@ -32,7 +32,7 @@ const UserPosts = (props, filterBy) => {
       id: 3,
       postTitle: "Post Title",
       postBody: "Lorem ipsum dolor, sit amet consectetur adipisicing e .",
-      postIcon: "img/money-bag.svg",
+      postIcon: "/imgs/money-bag.svg",
       postDateTime: "17:50 | 25 Dec 2020",
       postType: "offers",
       images: [
@@ -61,7 +61,7 @@ const UserPosts = (props, filterBy) => {
   ];
 
   var filteredPosts = posts;
-  if (activeFilter != "all") {
+  if (activeFilter !== "all") {
     filteredPosts = posts.filter((item) => item.postType.toLowerCase() === activeFilter.toLowerCase());
   }
 
@@ -78,4 +78,4 @@ const UserPosts = (props, filterBy) => {
   }
 };
 
-export default UserPosts;
+export default PostsList;

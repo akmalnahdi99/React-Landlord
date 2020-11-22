@@ -1,36 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
-import CartLink from "./Cart/CartLink";
-import { UserContext } from "../context/user";
-import LoginLink from "../components/LoginLink";
+//Images 
+import logo from "../assets/imgs/doorcase-logo.png";
+import logolight from "../assets/imgs/doorcase-lightlogo.png";
+import profileSmall from "../assets/imgs/profile_small.jpg";
+//import { AppContext } from "../context/settings";
+
+
 export default function Header() {
-  const { user } = React.useContext(UserContext);
+  //const  appContext  = React.useContext(AppContext); // for reading login status
+
   return (
-    <header className="header">
-      <img src={logo} alt="vintage tech logo" className="logo" />
-      <nav>
-        <ul>
-          <div>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            {user.token && (
-              <li>
-                <Link to="/checkout">checkout</Link>
-              </li>
-            )}
+    <header className="header border-green">
+      <nav className="navbar navbar-static-top" role="navigation" style={{ marginbottom: 0 }}>
+        <div className="navbar-header">
+          <Link className="navbar-minimalize minimalize-styl-2 hideburger" id="hide" to="a1">
+            <i className="fa fa-bars"></i>
+          </Link>
+          <div className="navbar-brand float-left ml-3 mt-2">
+            <Link to="a1">
+              <img alt="light logo" src={logolight} className="bigscreen" width="150px" />
+            </Link>
+            <Link to="a1">
+              <img alt="logo" src={logo} className="smallscreen" width="43.5px" />
+            </Link>
           </div>
-          <div>
-            <LoginLink />
-            <CartLink />
-          </div>
+        </div>
+
+        <ul className="nav navbar-top-links navbar-right">
+          <li className="dropdown">
+            <Link className="count-info" to="/landlord/notifications">
+              <i className="fa fa-bell"></i>
+              <span className="label label-primary">8</span>
+            </Link>
+          </li>
+          <li>
+            <Link className="count-info" to="a1">
+              <img alt="small " className="rounded-circle" src={profileSmall} width="30px" />
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

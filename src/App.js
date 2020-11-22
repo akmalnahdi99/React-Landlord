@@ -17,10 +17,15 @@ import { NavLink } from "react-router-dom";
 // import Alert from "./components/Alert";
 // import PrivateRoute from "./components/PrivateRoute";
 // import ScrollButton from "./components/ScrollButton";
+
+//Styles
+import "./assets/css/style.css";
+
 import LeftMenu from "./components/navigation/LeftMenu";
 import { AppProvider } from "./context/settings";
 //pages 
-import DashBoard from "./pages/Landlord/dashboard.js";
+import Activity from "./pages/Landlord/Activity.js";
+import Notifications from "./pages/Landlord/Notifications.js";
 
 
 export default function App() {
@@ -29,11 +34,16 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink to="/landlord/activity">Activity</NavLink>
+            <NavLink to="/landlord/notifications">Notifications</NavLink>
           </Route>
-          <Route path="/dashboard">
+          <Route path="/landlord/activity">
             <LeftMenu />
-            <DashBoard />
+            <Activity />
+          </Route>
+          <Route path="/landlord/notifications">
+            <LeftMenu />
+             <Notifications/>
           </Route>
         </Switch>
       </Router>
