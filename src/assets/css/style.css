@@ -13081,3 +13081,9 @@ body.md-skin {
   border:1px solid red;
 }
 
+/* //TASK Ayham This is not complete solution this is just a work around */
+.donut3__slice.donut3__slice__third.hh-red::after{
+  border-top-color: red;
+    border-right-color: red;
+    border-bottom-color: red;
+}

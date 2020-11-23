@@ -1,13 +1,12 @@
 import React from "react";
- 
-//import postIcon from "img/money-bag.svg";
+import PropTypes from "prop-types";
 
 const PostCard = (props) => {
   const { postIcon, postDateTime, postTitle, postBody, images } = { ...props };
 
   var imageGallery = null;
   if (images != null) {
-    imageGallery = images.map((image,index) => {
+    imageGallery = images.map((image, index) => {
       return (
         <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
           <a href={image.urlThumb}>
@@ -21,7 +20,7 @@ const PostCard = (props) => {
   return (
     <div className="vertical-timeline-block filterDiv rental" data-name="all, rental">
       <div className="vertical-timeline-icon white-bg">
-        <img src={postIcon} width="30px" alt="posticon" />
+        <img src={postIcon} width="30px" />
       </div>
       <div className="vertical-timeline-content">
         <small className="datetime">

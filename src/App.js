@@ -27,7 +27,11 @@ import { AppProvider } from "./context/settings";
 import Activity from "./pages/Landlord/Activity.js";
 import Notifications from "./pages/Landlord/Notifications.js";
 import Profile from "./pages/Landlord/Profile";
-
+import Payables from "./pages/Landlord/Payables";
+import Bills from "./pages/Landlord/Bills";
+import PropertyInfo from "./pages/Landlord/PropertyInfo";
+import Dashboard from "./pages/Landlord/Dashboard";
+import Viewings from "./pages/Landlord/Viewings";
 
 export default function App() {
   return (
@@ -35,8 +39,20 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <NavLink to="/landlord/activity">Activity</NavLink>
-            <NavLink to="/landlord/notifications">Notifications</NavLink>
+          <ul>
+            <li><NavLink to="/landlord/activity">Activity</NavLink></li>
+            <li><NavLink to="/landlord/notifications">Notifications</NavLink></li>
+            <li><NavLink to="/landlord/profile">Profile</NavLink></li>
+            <li><NavLink to="/landlord/payables">Payables</NavLink></li>
+            <li> <NavLink to="/landlord/bills">Bills</NavLink></li>
+            <li><NavLink to="/landlord/propertyinfo">Property Info</NavLink></li>
+            <li><NavLink to="/landlord/viewings">Viewings</NavLink></li>
+          </ul>
+
+          </Route>
+          <Route path="/landlord/dashboard">
+            <LeftMenu />
+            <Dashboard />
           </Route>
           <Route path="/landlord/activity">
             <LeftMenu />
@@ -50,13 +66,29 @@ export default function App() {
             <LeftMenu />
             <Profile />
           </Route>
+          <Route path="/landlord/payables">
+            <LeftMenu />
+            <Payables />
+          </Route>
+          <Route path="/landlord/bills">
+            <LeftMenu />
+            <Bills />
+          </Route>
+          <Route path="/landlord/propertyinfo">
+            <LeftMenu />
+            <PropertyInfo />
+            </Route>
+            <Route path="/landlord/viewings">
+            <LeftMenu />
+            <Viewings />
+          </Route>
         </Switch>
       </Router>
     </AppProvider>
   );
-}
- 
-  /* <Header />
+};
+
+/* <Header />
       <Alert />
       <ScrollButton />
       <Switch>

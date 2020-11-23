@@ -6,27 +6,29 @@ const NotificationList = () => {
   var notificatins = [
     {
       id: 0,
-      Date: "2020",
+      date: "2 days ago",
+      time: "5:51pm",
       title: "notification aboux",
       body: "notification body",
     },
     {
       id: 1,
-      Date: "2020",
+      date: "2 days ago",
+      time: "5:51pm",
       title: "notification aboux",
       body: "notification body",
     },
     {
       id: 2,
-      Date: "2020",
+      date: "2 days ago",
+      time: "5:51pm",
       title: "notification aboux",
       body: "notification body",
     },
   ];
- 
 
   return (
-    <div className="ibox" >
+    <div className="ibox">
       <div className="ibox-title">
         <h3>Notifications</h3>
         <hr />
@@ -35,11 +37,11 @@ const NotificationList = () => {
         <div className="row">
           <div className="col-sm-12">
             <ul className="sortable-list connectList agile-list ui-sortable">
-              {
-              notificatins.length > 0 ? (
-              notificatins.map((item) => {
-                return <NotificationItem key={item.id} {...item} />;
-              })):(
+              {notificatins.length > 0 ? (
+                notificatins.map((item) => {
+                  return <NotificationItem key={item.id} {...item} />;
+                })
+              ) : (
                 <Empty />
               )}
             </ul>

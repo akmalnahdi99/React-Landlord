@@ -9,7 +9,7 @@ import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
-export default function DashBoard() {
+export default function Activity() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
@@ -24,7 +24,7 @@ export default function DashBoard() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Activity" />
+              <SiteMap title="Activities &amp; News Feed" />
             </div>
           </div>
         </div>

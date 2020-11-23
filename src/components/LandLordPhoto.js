@@ -7,7 +7,7 @@ const LandLordPhotoCard = () => {
     id: 0,
     urlThumb: "/imgs/drsharon.jpg",
     verifiedStatus: "verified",
-    name:"LandLord Sample Name"
+    name: "new Happy Landlord ", //TASK please don't put any real data here source code can be leaked and and cause problems
   };
 
   return (

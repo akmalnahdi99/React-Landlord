@@ -11,7 +11,7 @@ export default function LeftMenu() {
         <ul className="nav metismenu" id="side-menu">
           <li className="nav-header">
             <div className="profile-element">
-              a
+              
               <Link className="navbar-minimalize float-right" to="">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
@@ -32,7 +32,7 @@ export default function LeftMenu() {
               </Link>
             </div>
             <div className="logo-element">
-              <Link className="navbar-minimalize menuburger2" id="show" to="/landlord/activity">
+              <Link className="navbar-minimalize menuburger2" id="show" to="">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
                   aria-hidden="true"
@@ -52,8 +52,8 @@ export default function LeftMenu() {
               </Link>
             </div>
           </li>
-          <li className="active">
-            <Link to="/landlord/dashboard">
+          <li>
+            <Link to="/landlord/activity">
               <svg
                 className="svg-inline--fa fa-user-clock fa-w-20"
                 aria-hidden="true"
@@ -74,7 +74,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link to="X42">
+            <Link to="/landlord/dashboard">
               <svg
                 className="svg-inline--fa fa-grip-horizontal fa-w-14"
                 aria-hidden="true"
@@ -137,7 +137,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link to="X7">
+            <Link to="/landlord/payables">
               <svg
                 className="svg-inline--fa fa-hand-holding-usd fa-w-18"
                 aria-hidden="true"
@@ -158,7 +158,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link to="X8">
+            <Link to="/landlord/viewings">
               <svg
                 className="svg-inline--fa fa-street-view fa-w-16"
                 aria-hidden="true"
