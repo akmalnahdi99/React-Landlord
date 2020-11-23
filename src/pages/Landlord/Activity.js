@@ -13,7 +13,7 @@ export default function DashBoard() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
-    <div id="page-wrapper" className="bg-white" style={{ border: "0px solid red" }}>
+    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
         <div className="container-fluid">
           <Header />
@@ -57,7 +57,7 @@ export default function DashBoard() {
         </div>
       </div>
 
-      <div className="wrapper wrapper-content animated pt-0 fadeInRight gray-bg">
+      <div className="wrapper wrapper-content animated pt-0 fadeInRight ">
         <div className="container-fluid">
           <div className="row mt-1 justify-content-center">
             <div className="col-lg-8">
