@@ -20,7 +20,7 @@ const PostCard = (props) => {
   return (
     <div className="vertical-timeline-block filterDiv rental" data-name="all, rental">
       <div className="vertical-timeline-icon white-bg">
-        <img src={postIcon} width="30px" />
+        <img src={postIcon} width="30px" alt={postTitle} />
       </div>
       <div className="vertical-timeline-content">
         <small className="datetime">
@@ -42,3 +42,4 @@ const PostCard = (props) => {
 };
 
 export default PostCard;
+

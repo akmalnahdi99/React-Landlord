@@ -1,6 +1,7 @@
 [2020-11-25]
 
 - Please Review maintainance list item file to see how it looks now, 
+- Please Review OfferListItem to make it follow the exact flow of MaintenanceListItem, use status instead of color 
 
 
 [2020-11-24]

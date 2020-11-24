@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function MaintenanceListItem({ date, name, applydate, images, status }) {
-  //TASK No Body of text here ?? 
+  //TASK No   text here ?? 
 
   if (!status) {
     status = "new";

@@ -16,18 +16,21 @@ export default function Viewings() {
      date: "Oct.23",
      time: "19:06",
      name: "Tenant name",
+     url: "/landlord/viewingDetails",
    },
    {
      id: 1,
      date: "Oct.23",
      time: "19:09",
      name: "Tenant name",
+     url: "/landlord/viewingDetails",
    },
    {
      id: 2,
      date: "Oct.23",
      time: "19:16",
      name: "Dennis",
+     url: "/landlord/viewingDetails",
    },
  ];
 
@@ -37,18 +40,21 @@ export default function Viewings() {
       date: "Oct.23",
       time: "19:06",
       name: "Tenant name 2",
+      url: "/landlord/viewingDetails",
     },
     {
       id: 1,
       date: "Oct.23",
       time: "19:09",
       name: "Tenant name 2",
+      url: "/landlord/viewingDetails",
     },
     {
       id: 2,
       date: "Oct.23",
       time: "19:16",
       name: "Dennis 2",
+      url: "/landlord/viewingDetails",
     },
   ];
 
