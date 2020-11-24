@@ -38,6 +38,7 @@ import ViewingDetails from "./pages/Landlord/ViewingDetails";
 import Offers from "./pages/Landlord/Offers";
 import OfferDetails from "./pages/Landlord/OfferDetails";
 import Maintenance from "./pages/Landlord/Maintenance";
+import BillOf from "./pages/Landlord/BillsOf";
 
 export default function App() {
   return (
@@ -101,10 +102,15 @@ export default function App() {
             <LeftMenu />
             <Payables />
           </Route>
-          <Route path="/landlord/bills">
+          <Route exact path="/landlord/bills">
             <LeftMenu />
             <Bills />
           </Route>
+          <Route path="/landlord/bills/:billType">
+            <LeftMenu />
+            <BillOf />
+          </Route>
+
           <Route path="/landlord/UnitInfo">
             <LeftMenu />
             <PropertyInfo />

@@ -1,13 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 
-// import { FaWindowClose } from "react-icons/fa";
-
+ //TASK put all bills in this page
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
-export default function Bills() {
+export default function BillOf() {
+  var t = useParams();
+  var billType = t.billType;
+
+  if (!billType) {
+      // if you don't have bill type we redirect back
+    return <Redirect to="/landlord/bills" />;
+  }
+ 
   const data = [
     {
       key: "ServiceCharge",
@@ -27,7 +34,20 @@ export default function Bills() {
     { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
   ];
-
+ 
+  var allowed = false;
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].key.toUpperCase() === billType.toUpperCase()) {
+      allowed = true;
+      break;
+    }
+  }
+ 
+  if (!allowed) {
+    // if billtype is not exist we go back
+    return <Redirect to="/landlord/bills" />;
+  }
+ 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -40,29 +60,13 @@ export default function Bills() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Bills" />
+              <SiteMap title={billType} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="wrapper wrapper-content animated fadeInRight ">
-        <div className="container">
-          <div className="row text-center">
-            <div className="col-12 align-self-center mt-4">
-              {data.map((item, index) => {
-                return (
-                  <Link key={index} to={"/landlord/bills/" + item.key} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src={item.icon} alt={item.text} width="24px" />
-                    <br />
-                    <span>{item.text} </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+      {billType}
 
       <Footer />
     </div>
