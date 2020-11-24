@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // import { FaWindowClose } from "react-icons/fa";
 
 import Footer from "../../components/static/Footer";
-import Payables from "../../components/PayablesList";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 

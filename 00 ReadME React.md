@@ -1,3 +1,8 @@
+[2020-11-25]
+
+- Please Review maintainance list item file to see how it looks now, 
+
+
 [2020-11-24]
 - Please consider that all html you write will be delivered to end user in one compact app, so we need to reduce the redundant code, please refer to dashBills.js to see how we can use the map function to loop over  items and save space.
 

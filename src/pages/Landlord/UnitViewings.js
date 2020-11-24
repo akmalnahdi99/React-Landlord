@@ -5,8 +5,8 @@ import Footer from "../../components/static/Footer";
 
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import ViewingHeader from "../../components/ViewingHeader";
 import ViewingList from "../../components/ViewingList";
+import DividedHeader from "../../components/DividedHeader";
  
 
 export default function Viewings() {
@@ -52,6 +52,12 @@ export default function Viewings() {
     },
   ];
 
+    const headerData = [
+      { name: "Past 30 days", value: 12 },
+      { name: "Today", value: 12 },
+      { name: "Future", value: 12 },
+    ];
+
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -76,7 +82,7 @@ export default function Viewings() {
             <div className="col-lg-12 mb-3 px-2">
               <div className="row">
                 <div className="col-sm-12">
-                  <ViewingHeader />
+                  <DividedHeader data={headerData} />
                 </div>
               </div>
             </div>
@@ -84,8 +90,8 @@ export default function Viewings() {
           <ViewingList title="Viewing Today" data={Today} />
           <ViewingList title="Past Viewing" data={Past} />
         </div>
-      </div> 
-      <Footer /> 
+      </div>
+      <Footer />
     </div>
   );
 }
