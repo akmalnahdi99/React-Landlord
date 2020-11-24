@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 //TASK Need To be completed
 
-const DashCalendar = () => {
+const DashCalendar = ({ title }) => {
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link href="calendar.html">Calendar</Link>
+          <Link to="/">{title}</Link>
         </h5>
         <div className="ibox-tools">
-          <Link href="calendar.html">
+          <Link to="/">
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Empty from "./Empty";
 import InfoCardItem from "./InfoCardItem";
 
@@ -24,12 +25,12 @@ export default function DashTodoList() {
     <div className="ibox illustrated2">
       <div className="ibox-title bg-transparent">
         <h5>
-          <a href="todolist.html">To-do List</a>
+          <Link to="">To-do List</Link>
         </h5>
         <div className="ibox-tools">
-          <a href="todolist.html">
+          <Link to="">
             <i className="fas fa-arrow-right"></i>
-          </a>
+          </Link>
         </div>
       </div>
 

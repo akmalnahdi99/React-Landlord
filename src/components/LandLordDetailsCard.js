@@ -13,7 +13,7 @@ const LandLordDetailsCard = ({title}) => {
     },
     {
       key: "Phone Number",
-      value: "65 9682 1232",
+      value: "+65 9682 1232",
     },
     {
       key: "Email",
@@ -21,11 +21,11 @@ const LandLordDetailsCard = ({title}) => {
     },
     {
       key: "NRIC No",
-      value: "11111",
+      value: "10009429761",
     },
     {
       key: "Passport Number",
-      value: "0000",
+      value: "TB450652",
     },
   ];
 

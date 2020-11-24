@@ -20,10 +20,11 @@ import { NavLink } from "react-router-dom";
 
 //Styles
 import "./assets/css/style.css";
+import "./assets/css/chartist.css";
 
 import LeftMenu from "./components/navigation/LeftMenu";
 import { AppProvider } from "./context/settings";
-//pages 
+//pages
 import Activity from "./pages/Landlord/Activity.js";
 import Notifications from "./pages/Landlord/Notifications.js";
 import Profile from "./pages/Landlord/Profile";
@@ -32,6 +33,11 @@ import Bills from "./pages/Landlord/Bills";
 import PropertyInfo from "./pages/Landlord/PropertyInfo";
 import Dashboard from "./pages/Landlord/Dashboard";
 import UnitViewings from "./pages/Landlord/UnitViewings";
+
+import ViewingDetails from "./pages/Landlord/ViewingDetails";
+import Offers from "./pages/Landlord/Offers";
+import OfferDetails from "./pages/Landlord/OfferDetails";
+import Maintenance from "./pages/Landlord/Maintenance";
 
 export default function App() {
   return (
@@ -60,6 +66,18 @@ export default function App() {
               </li>
               <li>
                 <NavLink to="/landlord/UnitViewings">Viewings</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/viewingdetails">ViewingDetails</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/offers">Offers</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/offerdetails">OfferDetails</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/maintenance">Maintenance</NavLink>
               </li>
             </ul>
           </Route>
@@ -95,11 +113,27 @@ export default function App() {
             <LeftMenu />
             <UnitViewings />
           </Route>
+          <Route path="/landlord/viewingdetails">
+            <LeftMenu />
+            <ViewingDetails />
+          </Route>
+          <Route path="/landlord/offers">
+            <LeftMenu />
+            <Offers />
+          </Route>
+          <Route path="/landlord/offerdetails">
+            <LeftMenu />
+            <OfferDetails />
+          </Route>
+          <Route path="/landlord/maintenance">
+            <LeftMenu />
+            <Maintenance />
+          </Route>
         </Switch>
       </Router>
     </AppProvider>
   );
-};
+}
 
 /* <Header />
       <Alert />
@@ -132,4 +166,3 @@ export default function App() {
           <Error />
         </Route>
       </Switch> */
- 

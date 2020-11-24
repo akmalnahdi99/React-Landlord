@@ -95,7 +95,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link to="X5">
+            <Link to="/landlord/maintenance">
               <svg
                 className="svg-inline--fa fa-toolbox fa-w-16"
                 aria-hidden="true"
@@ -158,7 +158,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link to="/landlord/viewings">
+            <Link to="/landlord/unitviewings">
               <svg
                 className="svg-inline--fa fa-street-view fa-w-16"
                 aria-hidden="true"
@@ -179,7 +179,7 @@ export default function LeftMenu() {
             </Link>
           </li>
           <li>
-            <Link to="X9">
+            <Link to="/landlord/offers">
               <svg
                 className="svg-inline--fa fa-hands-helping fa-w-20"
                 aria-hidden="true"

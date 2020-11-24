@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FinancialChart from "../components/FinancialChart"
 
 const DashFinancials = () => {
   const data = [
@@ -31,7 +32,7 @@ const DashFinancials = () => {
       <div className="ibox-content">
         <div className="row">
           <div className="col-12">
-            <div id="ct-chart1" className="ct-perfect-fourth"></div>
+            <FinancialChart />
           </div>
         </div>
         <div className="container">
@@ -39,10 +40,10 @@ const DashFinancials = () => {
             {data.map((item, index) => {
               return (
                 <div className="col-4 px-2">
-                  <ul className="dashlist ">
+                  <ul className="dashlist">
                     <li className=" text-truncate">
                       <i className={item.className}></i>
-                      {item.text}
+                      <span className="ml-2">{item.text}</span>
                     </li>
                   </ul>
                 </div>

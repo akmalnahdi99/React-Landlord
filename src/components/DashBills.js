@@ -7,7 +7,7 @@ const DashBills = ({title}) => {
     {
       icon: "/imgs/subscription.svg",
       text:"Subscription Fees",
-      url: "bills-subscription-fees.html",
+      url: "/landlord/notifications",
     },
     {
       icon: "/imgs/money-bag.svg",
