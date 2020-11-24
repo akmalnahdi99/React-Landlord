@@ -7,7 +7,7 @@ import NotificationList from "../../components/NotificationList";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
-export default function DashBoard() {
+export default function Notification() {
   // const { alert, hideAlert } = React.useContext(UserContext);
  
   return (
