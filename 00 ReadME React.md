@@ -2,7 +2,8 @@
 
 - Please Review maintainance list item file to see how it looks now, 
 - Please Review OfferListItem to make it follow the exact flow of MaintenanceListItem, use status instead of color 
-
+- Please review Bills File to see how we pass parameters to represent bill type
+- Please repeat the Bills File With Files Start with PI_ and please change it to someThing more clear that PI
 
 [2020-11-24]
 - Please consider that all html you write will be delivered to end user in one compact app, so we need to reduce the redundant code, please refer to dashBills.js to see how we can use the map function to loop over  items and save space.
