@@ -1,5 +1,5 @@
 [2020-11-25]
-
+- Please Create a new Branch from the master branch, no need to any pull requests I will do the merges daily
 - Please Review maintainance list item file to see how it looks now, 
 - Please Review OfferListItem to make it follow the exact flow of MaintenanceListItem, use status instead of color 
 - Please review Bills File to see how we pass parameters to represent bill type
