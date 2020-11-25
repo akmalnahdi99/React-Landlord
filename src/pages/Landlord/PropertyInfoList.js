@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Redirect, useParams } from "react-router-dom";
 
- //TASK put all List in this page
+ //TASK Check WIth PropertyInfo name 
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
