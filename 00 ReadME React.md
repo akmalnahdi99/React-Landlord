@@ -1,3 +1,7 @@
+[2020-11-26]
+- I did Create a new Branch from master branch (Development), since I noticed that there is a lot of files I deleted that still exists in the Branch Test-Environment
+- For all Files Started with PropertyInfo they all can be merged in one file please look at BillsOf
+
 [2020-11-25]
 - Please Create a new Branch from the master branch, no need to any pull requests I will do the merges daily
 - Please Review maintainance list item file to see how it looks now, 
