@@ -1,18 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import { FaWindowClose } from "react-icons/fa";
+import { Link, Redirect, useParams } from "react-router-dom";
 
+ //TASK put all List in this page
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
-export default function PropertyInfo() {
+export default function PropertyInfoList() {
+  var t = useParams();
+  var listType = t.listType;
+
+  if (!listType) {
+      // if you don't have list type we redirect back
+    return <Redirect to="/landlord/propertyinfo" />;
+  }
+ 
   const data = [
     {
-      text: "Tenancy",
-      icon: "/imgs/family.svg",
-      url: "",
-    },
+        text: "Tenancy",
+        icon: "/imgs/family.svg",
+        url: "",
+      },
     { text: "Utilities", icon: "/imgs/utilities.svg", url: "" },
     { text: "Insurance", icon: "/imgs/insurance.svg", url: "" },
     { text: "Building", icon: "/imgs/company.svg", url: "" },
@@ -23,7 +31,20 @@ export default function PropertyInfo() {
     { text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
     { text: "User Manual", icon: "/imgs/guide.svg", url: "" },
   ];
-
+ 
+  var allowed = false;
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].key.toUpperCase() === listType.toUpperCase()) {
+      allowed = true;
+      break;
+    }
+  }
+ 
+  if (!allowed) {
+    // if listtype is not exist we go back
+    return <Redirect to="/landlord/propertyinfo" />;
+  }
+ 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -36,32 +57,15 @@ export default function PropertyInfo() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Property Info" />
+              <SiteMap title={listType} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="wrapper wrapper-content animated fadeInRight ">
-        <div className="container">
-          <div className="row text-center">
-            <div className="col-12 align-self-center mt-4">
-              {data.map((item, index) => {
-                return (
-                  <Link key={index} to={"/landlord/propertyinfo/" + item.key} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src={item.icon} alt={item.text} width="24px" />
-                    <br />
-                    <span>{item.text} </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+      {listType}
 
       <Footer />
     </div>
   );
 }
-

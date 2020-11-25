@@ -9,7 +9,7 @@ import Payables from "../../components/PayablesList";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
-export default function PI_Utilities() {
+export default function Property_Info_Utilities() {
     // const { alert, hideAlert } = React.useContext(UserContext);
 
     return (
