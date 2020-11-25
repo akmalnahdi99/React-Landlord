@@ -69,6 +69,9 @@ export default function App() {
                 <NavLink to="/landlord/bills">Bills</NavLink>
               </li>
               <li>
+                <NavLink to="/landlord/propertyinfo">Property Info</NavLink>
+              </li>
+              <li>
                 <NavLink to="/landlord/UnitInfo">Unit Info</NavLink>
               </li>
               <li>
@@ -123,7 +126,7 @@ export default function App() {
             <LeftMenu />
             <PropertyInfo />
           </Route>
-          <Route path="/landlord/bills/:propertyInfoType">
+          <Route path="/landlord/propertyInfo/:propertyinfoType">
             <LeftMenu />
             <PropertyInfoOf />
           </Route>

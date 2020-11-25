@@ -20,8 +20,7 @@ export default function PropertyInfo() {
     { key: "Building", text: "Building", icon: "/imgs/company.svg", url: "" },
     { key: "Unit", text: "Unit", icon: "/imgs/tenant.svg", url: "" },
     { key: "ServiceCharge",text: "Service Charge", icon: "/imgs/money-bag.svg", url: "" },
-    { key: "RateTaxes", text: "Rate & Taxes", icon: "/imgs/pie-chart.svg", url: "" },
-    { key: "Assessment Rate",text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
+    { key: "AssessmentRate",text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
     { key: "QuitRent", text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
     { key: "UserManual",text: "User Manual", icon: "/imgs/guide.svg", url: "" },
   ];
