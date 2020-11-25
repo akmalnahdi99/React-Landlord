@@ -7243,15 +7243,15 @@ table.table-mail tr td {
 }
 
 .text-completedtask {
-  color: rgb(50, 159, 157) !important;
+  color: #329f9d !important;
 }
 
 .text-newtask {
-  color: rgb(32, 100, 145) !important;
+  color: #206491 !important;
 }
 
 .text-pendingtask {
-  color: rgb(251, 180, 92) !important;
+  color: #fbb45c !important;
 }
 
 .text-rejectedtask {
@@ -7312,6 +7312,46 @@ table.table-mail tr td {
   margin-top: 5px;
   padding: 5px 12px;
   display: inline-block;
+}
+
+.react-calendar {
+  width: 100% !important;
+  border: 0px solid #a0a096 !important;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.react-calendar__navigation button {
+  color: #fff !important;
+}
+.react-calendar__navigation {
+  height: auto !important;
+  margin-bottom: 0 !important;
+  background-color: rgb(32, 100, 145);
+    align-items: center;
+    padding: 10px 8px;
+}
+.react-calendar__month-view__weekdays {
+  background: #F1F1F1 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  text-transform: capitalize !important;
+  padding: 8px !important;
+}
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none !important;
+}
+.react-calendar__tile {
+  padding: 0.65em 0.5em !important;
+  font-size: 15px !important;
+}
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+  background-color: transparent !important;
+}
+.react-calendar__tile--active {
+  background: #329f9d !important;
+}
+.react-calendar__tile--now {
+  background: #206491 !important;
+  color: #fff !important
 }
 
 .img-shadow {

@@ -1,5 +1,7 @@
 import React from "react";
+import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom";
+import MetisMenu from 'react-metismenu';
  
  
 export default function LeftMenu() {
@@ -225,3 +227,5 @@ export default function LeftMenu() {
     </nav>
   );
 }
+
+ReactDOM.render(<MetisMenu />, document.getElementById('dom_id'));

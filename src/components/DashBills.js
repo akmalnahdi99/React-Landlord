@@ -7,47 +7,47 @@ const DashBills = ({title}) => {
     {
       icon: "/imgs/subscription.svg",
       text:"Subscription Fees",
-      url: "/landlord/notifications",
+      url: "/landlord/bills/SubscriptionFees",
     },
     {
       icon: "/imgs/money-bag.svg",
       text:"Service Charge",
-      url: "bills-service-charge.html",
+      url: "/landlord/bills/ServiceCharge",
     },
     {
       icon: "/imgs/assessment.svg",
       text:"Assessment Rate",
-      url: "bills-assessmentrate.html",
+      url: "/landlord/bills/AssessmentRate",
     },
     {
       icon: "/imgs/insurance.svg",
       text:" Insurance",
-      url: "bills-insurance.html",
+      url: "/landlord/bills/Insurance",
     },
     {
       icon: "/imgs/quitrent.svg",
       text:" Quit Rent",
-      url: "/",
+      url: "/landlord/bills/QuitRent",
     },
     {
       icon: "/imgs/settings.svg",
       text:"Maintenance",
-      url: "/",
+      url: "/landlord/bills/Maintenance",
     },
     {
       icon: "/imgs/water-drop.svg",
       text:"Water",
-      url: "/",
+      url: "/landlord/bills/Water",
     },
     {
       icon: "/imgs/electricity.svg",
       text:"Electricity",
-      url: "/",
+      url: "/landlord/bills/Electricity",
     },
     {
       icon: "/imgs/more.svg",
       text:"More",
-      url: "/",
+      url: "/landlord/bills",
     },
   ];
   return <DashIconsBox title={title} data={data} />;

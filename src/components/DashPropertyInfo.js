@@ -4,7 +4,7 @@ import DashIconsBox from "./DashIconsBox";
 
 const DashPropertyInfo = ({ title }) => {
   const data = [
-    { icon: "/imgs/family.svg", text: "Tenancy", url: "" },
+    { icon: "/imgs/family.svg", text: "Tenancy", url: "/landlord/propertyinfo/Tenancy", },
     { icon: "/imgs/money-bag.svg", text: "Service Charge", url: "" },
     { icon: "/imgs/assessment.svg", text: "Assessment Rate", url: "" },
     { icon: "/imgs/utilities.svg", text: "Utilities", url: "" },

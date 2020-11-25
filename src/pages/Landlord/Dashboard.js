@@ -62,7 +62,7 @@ export default function Dashboard() {
                 <TenantPayables />
               </div>
               <div className="col-lg-4 px-2">
-                <Calendar />
+                <Calendar title="Calendar" />
               </div>
             </div>
             <div className="row">
