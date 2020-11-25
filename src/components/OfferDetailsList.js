@@ -1,3 +1,4 @@
+//TASK under Review
 import React from "react";
 import Empty from "./Empty";
 //TASK Complete the data object
@@ -5,6 +6,16 @@ export default function OfferDetailsList() {
     const data = {
       condoName: "Pavilion Residence",
       tenantName: "Zhang Lei",
+      listingid: "123edxe",
+      appy: "29-09-2020",
+      nationality: "Malaysian",
+      occupants: "2",
+      gender: "Male",
+      moveInDate: "12-28-2020",
+      age: "32",
+      agentName: "Mike",
+      duration: "5 Years",
+      occupation: "doctor"
     };
   return (
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -19,7 +30,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3 mt-0">
-                      <strong>Listing ID: 123edxe</strong>
+                      <strong>Listing ID: {data.listingid}</strong>
                     </h4>
                     <p class="m-0">Applied date: 29-09-2020</p>
                   </div>
@@ -56,7 +67,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Nationality</h4>
-                    <p class="m-0">Nationality</p>
+                    <p class="m-0">{data.nationality}</p>
                   </div>
                 </div>
                 <hr />
@@ -65,7 +76,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Total occupants</h4>
-                    <p class="m-0">XXX</p>
+                    <p class="m-0">{data.occupants}</p>
                   </div>
                 </div>
                 <hr />
@@ -76,7 +87,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Gender</h4>
-                    <p class="m-0">Gender</p>
+                    <p class="m-0">{data.gender}</p>
                   </div>
                 </div>
                 <hr />
@@ -85,7 +96,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Move in date</h4>
-                    <p class="m-0">Move in date</p>
+                    <p class="m-0">{data.moveInDate}</p>
                   </div>
                 </div>
                 <hr />
@@ -96,7 +107,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Age</h4>
-                    <p class="m-0">Age</p>
+                    <p class="m-0">{data.age}</p>
                   </div>
                 </div>
                 <hr />
@@ -105,7 +116,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Duration of tenancy</h4>
-                    <p class="m-0">Duration of tenancy</p>
+                    <p class="m-0">{data.duration}</p>
                   </div>
                 </div>
                 <hr />
@@ -117,7 +128,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Occupation</h4>
-                    <p class="m-0">XXX</p>
+                    <p class="m-0">{data.occupation}</p>
                   </div>
                 </div>
               </div>
@@ -129,7 +140,7 @@ export default function OfferDetailsList() {
                 <div class="media">
                   <div class="media-body">
                     <h4 class="text-doorcase3">Attending agent name</h4>
-                    <p class="m-0">Attending agent name</p>
+                    <p class="m-0">{data.agentName}</p>
                   </div>
                 </div>
               </div>

@@ -1,42 +1,42 @@
+//TASK under Review
 import React from "react";
 import Empty from "./Empty";
 import OfferListItem from "./OfferListItem";
 
 const OfferList = () => {
-  //TASK use status instead of color
   var data = [
     {
       id: 0,
       date: "Oct 23",
       name: "Tenant name",
-      color: "green",
+      status: "offer accepted",
       payment: "not received",
     },
     {
       id: 1,
       name: "Tenant name",
-      color: "blue",
+      status: "new",
     },
     {
       id: 2,
       name: "Tenant Name",
-      color: "blue",
+      status: "new",
     },
     {
       id: 3,
       date: "Oct 19",
       name: "Tenant Name",
-      color: "yellow",
+      status: "rejected",
     },
     {
       id: 4,
       name: "Tenant Name",
-      color: "yellow",
+      status: "rejected",
     },
     {
       id: 5,
       name: "Tenant Name",
-      color: "yellow",
+      status: "rejected",
     },
   ];
 

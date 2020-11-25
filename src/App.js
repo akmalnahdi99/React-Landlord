@@ -1,3 +1,4 @@
+//TASK under Review
 import React from "react";
 
 // react router dom
@@ -31,6 +32,7 @@ import Profile from "./pages/Landlord/Profile";
 import Payables from "./pages/Landlord/Payables";
 import Bills from "./pages/Landlord/Bills";
 import PropertyInfo from "./pages/Landlord/PropertyInfo";
+import PropertyInfoOf from "./pages/Landlord/PropertyInfoOf";
 import Dashboard from "./pages/Landlord/Dashboard";
 import UnitViewings from "./pages/Landlord/UnitViewings";
 
@@ -39,6 +41,10 @@ import Offers from "./pages/Landlord/Offers";
 import OfferDetails from "./pages/Landlord/OfferDetails";
 import Maintenance from "./pages/Landlord/Maintenance";
 import BillOf from "./pages/Landlord/BillsOf";
+import MaintenanceDetails from "./pages/Landlord/MaintenanceDetails";
+import MaintenanceChatPayment from "./pages/Landlord/MaintenanceChatPayment";
+import MaintenanceChatMaintenance from "./pages/Landlord/MaintenanceChatMaintenance";
+import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteraction";
 
 export default function App() {
   return (
@@ -80,6 +86,9 @@ export default function App() {
               <li>
                 <NavLink to="/landlord/maintenance">Maintenance</NavLink>
               </li>
+              <li>
+                <NavLink to="/landlord/maintenancedetails">MaintenanceDetails</NavLink>
+              </li>
             </ul>
           </Route>
           <Route path="/landlord/dashboard">
@@ -110,7 +119,14 @@ export default function App() {
             <LeftMenu />
             <BillOf />
           </Route>
-
+          <Route exact path="/landlord/propertyInfo">
+            <LeftMenu />
+            <PropertyInfo />
+          </Route>
+          <Route path="/landlord/bills/:propertyInfoType">
+            <LeftMenu />
+            <PropertyInfoOf />
+          </Route>
           <Route path="/landlord/UnitInfo">
             <LeftMenu />
             <PropertyInfo />
@@ -126,14 +142,34 @@ export default function App() {
           <Route path="/landlord/offers">
             <LeftMenu />
             <Offers />
+          </Route> 
+          <Route path="/landlord/maintenance">
+            <LeftMenu />
+            <Maintenance />
+          </Route>
+          <Route path="/landlord/offers">
+            <LeftMenu />
+            <Offers />
           </Route>
           <Route path="/landlord/offerdetails">
             <LeftMenu />
             <OfferDetails />
           </Route>
-          <Route path="/landlord/maintenance">
+          <Route path="/landlord/maintenancedetails">
             <LeftMenu />
-            <Maintenance />
+            <MaintenanceDetails />
+          </Route>
+          <Route path="/landlord/maintenancechatpayment">
+            <LeftMenu />
+            <MaintenanceChatPayment />
+          </Route>
+          <Route path="/landlord/maintenancechatmaintenance">
+            <LeftMenu />
+            <MaintenanceChatMaintenance />
+          </Route>
+          <Route path="/landlord/maintenancechatinteraction">
+            <LeftMenu />
+            <MaintenanceChatInteraction />
           </Route>
         </Switch>
       </Router>

@@ -1,3 +1,4 @@
+//TASK under Review
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -53,9 +54,9 @@ export default function MaintenanceListItem({ date, name, applydate, images, sta
             </div>
           </div>
           <div class="col-3 text-right">
-            <a class="btn font-body" href="maintenance-details.html">
-              <i class="fas fa-arrow-right fa-lg text-completedtask"></i>
-            </a>
+            <Link to="/landlord/maintenancedetails" alt="">
+                  <i class="fas fa-arrow-right fa-lg text-completedtask"></i>
+            </Link>
           </div>
         </div>
         <div class="row">
