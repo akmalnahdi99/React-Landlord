@@ -228,4 +228,3 @@ export default function LeftMenu() {
   );
 }
 
-ReactDOM.render(<MetisMenu />, document.getElementById('dom_id'));
