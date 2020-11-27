@@ -1,3 +1,6 @@
+[2020-11-27]
+- While development just commit the files into Development Branch ( pull any files first to update your repo), then push the files, no need to any merge
+
 [2020-11-26]
 - I did Create a new Branch from master branch (Development), since I noticed that there is a lot of files I deleted that still exists in the Branch Test-Environment
 - For all Files Started with PropertyInfo they all can be merged in one file please look at BillsOf
