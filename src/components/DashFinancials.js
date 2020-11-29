@@ -21,10 +21,10 @@ const DashFinancials = () => {
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link top="/">Financials</Link>
+          <Link to="/landlord/financials">Financials</Link>
         </h5>
         <div className="ibox-tools">
-          <Link to="/">
+          <Link to="/landlord/financials">
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>

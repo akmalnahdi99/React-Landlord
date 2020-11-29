@@ -5,17 +5,17 @@ import 'react-calendar/dist/Calendar.css';
 
 
 //TASK Need To be completed
-
+//DISCUSS in Link use absolute path example: /landlord/page1 , not ../landlord/page1
 const DashCalendar = ({ title }) => {
   const [value, onChange] = useState(new Date());
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link to="/">{title}</Link>
+          <Link to="/landlord/calendars">{title}</Link>
         </h5>
         <div className="ibox-tools">
-          <Link to="/">
+          <Link to="/landlord/calendars">
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>

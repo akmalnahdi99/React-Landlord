@@ -1,3 +1,6 @@
+[2020-11-30]
+-  in Link use absolute path example: /landlord/page1 , not ../landlord/page1
+
 [2020-11-27]
 - While development just commit the files into Development Branch ( pull any files first to update your repo), then push the files, no need to any merge
 

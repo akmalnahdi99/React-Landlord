@@ -18,8 +18,8 @@ export default function DashIconsBox({ title, data }) {
         <div className="row text-center">
           {data.map((item, index) => {
             return (
-              <div key={index} class="col-md-4 col-sm-4 col-4 p-2">
-                <Link to={item.url} class="btn btn-default btn-block px-1 btn-dashboardicon text-truncate">
+              <div key={index} className="col-md-4 col-sm-4 col-4 p-2">
+                <Link to={item.url} className="btn btn-default btn-block px-1 btn-dashboardicon text-truncate">
                   <img src={item.icon} width="24px" alt={item.text} />
                   <br /> {item.text}
                 </Link>
