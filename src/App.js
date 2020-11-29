@@ -54,6 +54,7 @@ import TodoList from "./pages/Landlord/TodoList";
 import TenantPayables from "./pages/Landlord/TenantPayables";
 import PropertyViewing from "./pages/Landlord/PropertyViewing";
 import TenancyDocs from "./pages/Landlord/TenancyDocs";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
