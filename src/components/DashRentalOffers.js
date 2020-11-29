@@ -1,14 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import DashChart from "./DashChart";
+import { Link } from "react-router-dom";
 
-const DashRentalOffers = () => {
+const DashRentalOffers = ({ title }) => {
   const data = [
-    { text: "new", value: 10, className: "fa fa-circle text-newtask" },
-    { text: "Negotiations", value: 10, className: "fa fa-circle text-pendingtask" },
-    { text: "Rejected", value: 30, className: "fa fa-circle text-rejectedtask" },
+    { text: "New", value: 10, className: "fa fa-circle text-completedtask" },
+    { text: "Negotiations", value: 5, className: "fa fa-circle text-pendingtask" },
+    { text: "Rejected", value: 10, className: "fa fa-circle text-rejectedtask" },
   ];
-  return <DashChart title="Rental Offers" data={data} sliceColor="hh-red" />;
+  return (
+    <div className="ibox">
+      <div className="ibox-title">
+        <h5>
+          <Link to="/landlord/offers">{title}</Link>
+        </h5>
+        <div className="ibox-tools">
+          <Link to="/landlord/offers">
+            <i className="fas fa-arrow-right"></i>
+          </Link>
+        </div>
+      </div>
+      <DashChart data={data} />
+    </div>
+  );
 };
 
 export default DashRentalOffers;

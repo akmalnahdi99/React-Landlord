@@ -17,10 +17,11 @@ const Quicklinks = ({ title }) => {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h5>{title}</h5>
+        <h5>
+        <Link to="/landlord/quicklinks">{title}</Link></h5>
       </div>
       <div className="ibox-tools">
-        <Link to="add-shortcut.html">
+        <Link to="/landlord/quicklinks">
           <i className="fas fa-arrow-right"></i>
         </Link>
       </div>
