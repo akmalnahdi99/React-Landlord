@@ -45,6 +45,7 @@ import MaintenanceDetails from "./pages/Landlord/MaintenanceDetails";
 import MaintenanceChatPayment from "./pages/Landlord/MaintenanceChatPayment";
 import MaintenanceChatMaintenance from "./pages/Landlord/MaintenanceChatMaintenance";
 import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteraction";
+import  Login  from "./pages/Login";
 
 export default function App() {
   return (
@@ -94,6 +95,10 @@ export default function App() {
               </li>
             </ul>
           </Route>
+          <Route path="/login">
+            <Login /> 
+          </Route>
+
           <Route path="/landlord/dashboard">
             <LeftMenu />
             <Dashboard />
@@ -145,7 +150,7 @@ export default function App() {
           <Route path="/landlord/offers">
             <LeftMenu />
             <Offers />
-          </Route> 
+          </Route>
           <Route path="/landlord/maintenance">
             <LeftMenu />
             <Maintenance />

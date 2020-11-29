@@ -2,6 +2,7 @@ import React from "react";
 const AppContext = React.createContext();
 const defaultSettings = {
   postsFilter: "all",
+  login:false
 };
 
 function getsettingsFromLocalStorage() {
@@ -16,7 +17,14 @@ function AppProvider({ children }) {
     setSettings(newSettings);
     localStorage.setItem("settings", JSON.stringify(newSettings));
   };
-  return <AppContext.Provider value={{ settings, setPostsFilter }}>{children}</AppContext.Provider>;
+
+    const setlogin = () => {
+      const newSettings = { ...settings, login: true };
+      setSettings(newSettings);
+      localStorage.setItem("settings", JSON.stringify(newSettings));
+    };
+
+  return <AppContext.Provider value={{ settings, setPostsFilter, setlogin }}>{children}</AppContext.Provider>;
 }
 
 export { AppProvider, AppContext };

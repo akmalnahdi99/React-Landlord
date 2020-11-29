@@ -1,11 +1,23 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { Link } from "react-router-dom";
+import { Link, Redirect, Route } from "react-router-dom";
 import MetisMenu from 'react-metismenu';
+import { AppContext } from "../../context/settings";
  
  
 export default function LeftMenu() {
- 
+  const appContext = React.useContext(AppContext); // for reading login status
+
+  //Temporary Login for all pages that contain a leftmenu
+  // console.log("in menu", appContext.settings.login);
+  // if (appContext.settings.login === false)
+  // {
+  //    return (
+  //      <Route>
+  //        <Redirect to="/login"></Redirect>
+  //      </Route>
+  //    );
+  // }
   //All Svg Files need to be stored as files
   return (
     <nav className="navbar-default navbar-static-side">
@@ -13,7 +25,6 @@ export default function LeftMenu() {
         <ul className="nav metismenu" id="side-menu">
           <li className="nav-header">
             <div className="profile-element">
-              
               <Link className="navbar-minimalize float-right" to="">
                 <svg
                   className="svg-inline--fa fa-bars fa-w-14"
