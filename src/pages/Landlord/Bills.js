@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// import { FaWindowClose } from "react-icons/fa";
-
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";

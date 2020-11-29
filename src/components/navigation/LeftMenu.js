@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Redirect, Route } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import { Collapse } from "reactstrap";
@@ -12,11 +12,13 @@ export default function LeftMenu() {
 
   console.log("in menu", appContext.settings.login);
   if (appContext.settings.login === false) {
-    return (
-      <Route>
-        <Redirect to="/login"></Redirect>
-      </Route>
-    );
+    if (1 == 2) {
+      return (
+        <Route>
+          <Redirect to="/login"></Redirect>
+        </Route>
+      );
+    }
   }
 
   //All Svg Files need to be stored as files

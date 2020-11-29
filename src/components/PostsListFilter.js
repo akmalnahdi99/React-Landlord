@@ -1,13 +1,11 @@
+//under review
 import React from "react";
-// import { FaWindowClose } from "react-icons/fa";
-// import iconBars from "../../assets/Icons/i1.svg";
-// import useEffect from 'react';
 import { AppContext } from "../context/settings";
+import "slick-carousel/slick/slick.css"; 
+import Slider from "react-slick";
 
-// import { UserContext } from "../context/user";
 
 export default function PostsListFilter() {
-  // const { alert, hideAlert } = React.useContext(UserContext);
   const appContext =   React.useContext(AppContext);
   const selectedFilter = appContext.settings.postsFilter;
   
@@ -55,17 +53,54 @@ export default function PostsListFilter() {
      appContext.setPostsFilter(filter);
   };
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    centerMode: true,
+    accessibility: false,
+    responsive: [
+      {
+          breakpoint: 768,
+          settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              centerMode: false,
+              dots: false,
+              infinite: false,
+              arrows: false,
+              accessibility: false,
+          }
+      },
+      {
+          breakpoint: 480,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              centerMode: false,
+              dots: false,
+              infinite: false,
+              arrows: false,
+              accessibility: false,
+          }
+      }
+  ]
+  };
+
   return (
-    <div id="FilterContainer" className="mb-2 mt-2 multiple-items" style={{ display: "flex" }}>
+    <Slider {...settings} id="FilterContainer" className="mb-2 mt-2 multiple-items" style={{ display: "flex" }}>
       {Filters.map((filter) => {
         return (
           <div key={filter.id} className="widthfitcontent">
-            <p to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
               <i className={filter.iconClass}></i> {filter.name}
-            </p>
+            </div>
           </div>
         );
       })}
-    </div>
+    </Slider>
   );
 }

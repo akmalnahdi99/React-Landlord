@@ -1,20 +1,30 @@
+//under review
 import React from "react";
-import { Link, Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 
- //TASK put all bills in this page
+//TASK put all bills in this page
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
+
+import GasItem from "../../bills_component/GasItem";
+import WaterItem from "../../bills_component/WaterItem";
+import SewageItem from "../../bills_component/SewageItem";
+import ElectricityItem from "../../bills_component/ElectricityItem";
+import InternetItem from "../../bills_component/InternetItem";
+import CableTvItem from "../../bills_component/CableTvItem";
+import ServiceChargeItem from "../../bills_component/ServiceChargeItem";
+
 
 export default function BillOf() {
   var t = useParams();
   var billType = t.billType;
 
   if (!billType) {
-      // if you don't have bill type we redirect back
+    // if you don't have bill type we redirect back /land/bills/water
     return <Redirect to="/landlord/bills" />;
   }
- 
+
   const data = [
     {
       key: "ServiceCharge",
@@ -34,7 +44,7 @@ export default function BillOf() {
     { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
   ];
- 
+
   var allowed = false;
   for (var i = 0; i < data.length; i++) {
     if (data[i].key.toUpperCase() === billType.toUpperCase()) {
@@ -42,12 +52,12 @@ export default function BillOf() {
       break;
     }
   }
- 
+
   if (!allowed) {
     // if billtype is not exist we go back
     return <Redirect to="/landlord/bills" />;
   }
- 
+
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -66,7 +76,29 @@ export default function BillOf() {
         </div>
       </div>
 
-      {billType}
+
+
+      <div className="wrapper wrapper-content animated fadeInRight">
+          <div className="container-fluid">
+
+      { (billType==="ServiceCharge") ? <ServiceChargeItem /> :( "") }
+      { (billType==="Insurance") ? ("Insurance") : ( "") }
+      { (billType==="QuitRent") ? ("QuitRent"):( "") }
+      { (billType==="AssessmentRate") ? ("AssessmentRate"):( "") }
+      { (billType==="SubscriptionFees") ? ("SubscriptionFees"):( "") }
+      { (billType==="Maintenance") ? ("Maintenance"):( "") }
+
+      { (billType==="Water") ? <WaterItem /> :( "") }
+      { (billType==="Electricity") ? <ElectricityItem /> :( "") }
+      { (billType==="Sewage") ? <SewageItem /> :( "") }
+      { (billType==="Internet") ? <InternetItem /> :( "") }
+      { (billType==="Cabletv") ? <CableTvItem /> :( "") }              
+      { (billType==="Gas") ? <GasItem />:( "") }
+      
+
+      
+          </div>
+      </div>
 
       <Footer />
     </div>

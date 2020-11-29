@@ -1,8 +1,5 @@
 import React from "react";
-// import { FaWindowClose } from "react-icons/fa";
-
 import Footer from "../../components/static/Footer";
-
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import LandLordDetailsCard from "../../components/LandLordDetailsCard";

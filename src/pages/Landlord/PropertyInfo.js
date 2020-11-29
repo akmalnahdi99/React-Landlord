@@ -1,8 +1,6 @@
 //TASK under Review
 import React from "react";
 import { Link } from "react-router-dom";
-// import { FaWindowClose } from "react-icons/fa";
-
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
@@ -45,7 +43,7 @@ export default function PropertyInfo() {
 
       <div className="wrapper wrapper-content animated fadeInRight ">
         <div className="container">
-          <div className="row text-center">
+          <div className="row">
             <div className="col-12 align-self-center mt-4">
               {data.map((item, index) => {
                 return (

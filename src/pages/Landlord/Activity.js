@@ -1,6 +1,4 @@
 import React from "react";
-// import { FaWindowClose } from "react-icons/fa";
-
 import PostsList from "../../components/PostsList";
 import PostsListFilter from "../../components/PostsListFilter";
 import UnitInfoCard from "../../components/unitCart";
@@ -30,7 +28,7 @@ export default function Activity() {
         </div>
       </div>
 
-      <div className="wrapper wrapper-content py-4 animated fadeInRight">
+      <div className="wrapper wrapper-content py-4 animated fadeInRight bg-white">
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-md-8">

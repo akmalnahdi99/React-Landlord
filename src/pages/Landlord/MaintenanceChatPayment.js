@@ -1,10 +1,6 @@
 //TASK under Review
 import React from "react";
-import { FaWindowClose } from "react-icons/fa";
-// import { FaWindowClose } from "react-icons/fa";
-
 import Footer from "../../components/static/Footer";
-
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import MaintenanceDetailsList from "../../components/MaintenanceDetailsList";
@@ -26,7 +22,7 @@ export default function Maintenance() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Maintenance Details" />
+              <SiteMap title="Maintenance Chat" />
             </div>
           </div>
         </div>

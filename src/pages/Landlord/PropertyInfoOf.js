@@ -1,11 +1,12 @@
 //TASK under Review
 import React from "react";
-import { Link, Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 
  //TASK put all bills in this page
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
+import TenancyHome from "./TenancyHome";
 
 export default function PropertyInfoOf() {
   var t = useParams();
@@ -18,7 +19,7 @@ export default function PropertyInfoOf() {
   const data = [
     {
       key: "Tenancy",
-      text: "Tenancy",
+      text: "",
       icon: "/imgs/family.svg",
       url: "",
     },
@@ -59,12 +60,15 @@ export default function PropertyInfoOf() {
           <div className="row">
             <div className="col-lg-12">
               <SiteMap title={propertyinfoType} />
+              <div></div>
             </div>
           </div>
         </div>
       </div>
 
-      {propertyinfoType}
+      { (propertyinfoType==="Tenancy") ? (""):( "") }
+      
+      { (propertyinfoType==="Tenancy") ? <TenancyHome /> :( "") }
 
       <Footer />
     </div>

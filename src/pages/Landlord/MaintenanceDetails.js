@@ -1,19 +1,16 @@
 //TASK under Review
 import React from "react";
-import { FaWindowClose } from "react-icons/fa";
-// import { FaWindowClose } from "react-icons/fa";
-
 import Footer from "../../components/static/Footer";
-
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import MaintenanceDetailsList from "../../components/MaintenanceDetailsList";
 import MaintenanceTimeLine from "../../components/MaintenanceTimeLine";
+import { useParams } from "react-router-dom";
 
 
 export default function Maintenance() {
   // const { alert, hideAlert } = React.useContext(UserContext);
-
+  var t = useParams();
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">

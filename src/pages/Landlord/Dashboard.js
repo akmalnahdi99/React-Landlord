@@ -48,18 +48,18 @@ export default function Dashboard() {
                 <Quicklinks title="Quick Links" />
               </div>
               <div className="col-lg-4 px-2">
-                <Rental />
+                <Rental title="Rental" />
               </div>
               <div className="col-lg-4 px-2">
-                <TodoList />
+                <TodoList title="To-Do List" />
               </div>
             </div>
             <div className="row">
               <div className="col-lg-4 px-2">
-                <Maintenance />
+                <Maintenance title="Maintenance" />
               </div>
               <div className="col-lg-4 px-2">
-                <TenantPayables />
+                <TenantPayables title="Tenant Payables" />
               </div>
               <div className="col-lg-4 px-2">
                 <Calendar title="Calendar" />
@@ -67,7 +67,7 @@ export default function Dashboard() {
             </div>
             <div className="row">
               <div className="col-lg-4 px-2">
-                <Financials />
+                <Financials title="Financials" />
               </div>
               <div className="col-lg-4 px-2">
                 <Bills title="Bills" />
@@ -81,10 +81,10 @@ export default function Dashboard() {
                 <RentalLeads />
               </div>
               <div className="col-lg-4 px-2">
-                <PropertyViewing />
+                <PropertyViewing title="Property Viewing" />
               </div>
               <div className="col-lg-4 px-2">
-                <RentalOffers />
+                <RentalOffers title="Rental Offers" />
               </div>
             </div>
           </div>

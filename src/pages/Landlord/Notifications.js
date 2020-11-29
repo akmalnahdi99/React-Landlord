@@ -1,7 +1,4 @@
 import React from "react";
-// import { FaWindowClose } from "react-icons/fa";
-
-
 import Footer from "../../components/static/Footer";
 import NotificationList from "../../components/NotificationList";
 import Header from "../../components/Header";

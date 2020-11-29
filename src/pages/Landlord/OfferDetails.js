@@ -1,10 +1,6 @@
 //TASK under Review
 import React from "react";
-import { FaWindowClose } from "react-icons/fa";
-// import { FaWindowClose } from "react-icons/fa";
-
 import Footer from "../../components/static/Footer";
-
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import OfferDetailsList from "../../components/OfferDetailsList";
