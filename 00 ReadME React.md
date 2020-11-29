@@ -1,5 +1,7 @@
 [2020-11-30]
 -  in Link use absolute path example: /landlord/page1 , not ../landlord/page1
+- in file DashPropertyInfo I noticed that a new component created.  it is a copy of DashIconsBox called DashIconsProperty, the difference in components was the links, I modified the files to include the link as parameter, Please consider the fact of reusing existing Components effectively, more components means more files more complex project, and future modifications need to be applied on multiple files. Please consider this in future comonent and existing ones if any.
+
 
 [2020-11-27]
 - While development just commit the files into Development Branch ( pull any files first to update your repo), then push the files, no need to any merge
