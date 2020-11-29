@@ -49,7 +49,7 @@ const DashBills = ({title}) => {
       url: "/landlord/bills",
     },
   ];
-  return <DashIconsBox title={title} data={data} />;
+  return <DashIconsBox title={title} data={data} returnLink="/landlord/bills" />;
 };
 
 export default DashBills;

@@ -1,9 +1,8 @@
 //TASK under Review
 import React from "react";
-import { Link } from "react-router-dom";
 import DashIconsBox from "./DashIconsBox";
 
-const DashPropertyInfo = ({ title }) => {
+export default function DashPropertyInfo({ title }) {
   const data = [
     { icon: "/imgs/family.svg", text: "Tenancy", url: "/landlord/propertyinfo/Tenancy" },
     { icon: "/imgs/money-bag.svg", text: "Service Charge", url: "/landlord/propertyinfo/ServiceCharge" },
@@ -16,7 +15,5 @@ const DashPropertyInfo = ({ title }) => {
     { icon: "/imgs/guide.svg", text: "User Manual", url: "/landlord/propertyinfo/UserManual" },
   ];
 
-  return <DashIconsBox title={title} data={data} />;
-};
-
-export default DashPropertyInfo;
+  return <DashIconsBox title={title} data={data} returnLink="/landlord/propertyinfo" />;
+}

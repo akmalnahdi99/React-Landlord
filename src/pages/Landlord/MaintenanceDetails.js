@@ -33,9 +33,8 @@ export default function Maintenance() {
           <MaintenanceDetailsList />
       
           <MaintenanceTimeLine />
+          </div>
         </div>
-      </div>
-      
       <Footer />
     </div>
   );

@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //TASK check links
-export default function DashIconsBox({ title, data }) {
+export default function DashIconsBox({ title, data, returnLink }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link to="/landlord/bills">{title}</Link>
+          <Link to={returnLink}>{title}</Link>
         </h5>
         <div className="ibox-tools">
-          <Link to="/landlord/bills">
+          <Link to={returnLink}>
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
