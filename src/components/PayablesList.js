@@ -50,7 +50,7 @@ export default function PayablesList() {
       icon: "/imgs/quitrent.svg",
     },
   ];
-
+ // code insert :  Process list to produce the right image for every payment type 
   return (
     <div className="ibox">
       <div className="ibox-title">

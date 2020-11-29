@@ -3,10 +3,11 @@ import React from "react";
 import Empty from "./Empty";
 import MaintenanceListItem from "./MaintenanceListItem";
 
+
 const MaintenanceList = () => {
   var data = [
     {
-      id: 2,
+      id: 0,
       date: "Oct 23",
       name: "Tenant Name",
       status: "resolved",
@@ -27,7 +28,7 @@ const MaintenanceList = () => {
       ],
     },
     {
-      id: 0,
+      id: 1,
       date: "Oct 23",
       name: "Tenant name",
       status: "new",
@@ -48,7 +49,7 @@ const MaintenanceList = () => {
       ],
     },
     {
-      id: 1,
+      id: 2,
       date: "Oct 23",
       name: "Tenant name",
       status: "new",
@@ -113,9 +114,9 @@ const MaintenanceList = () => {
   ];
 
   return (
-    <div class="ibox">
-      <div class="ibox-content paddingtop minhigh">
-        <div class="viewing-timeline">
+    <div className="ibox">
+      <div className="ibox-content paddingtop minhigh">
+        <div className="viewing-timeline">
           {data.length > 0 ? (
             data.map((item, index) => {
               return <MaintenanceListItem key={index} {...item} />;

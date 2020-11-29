@@ -41,9 +41,9 @@ const OfferList = () => {
   ];
 
   return (
-    <div class="ibox">
-      <div class="ibox-content paddingtop minhigh">
-        <div class="viewing-timeline">
+    <div className="ibox">
+      <div className="ibox-content paddingtop minhigh">
+        <div className="viewing-timeline">
           {data.length > 0 ? (
             data.map((item, index) => {
               return <OfferListItem key={index} {...item} />;

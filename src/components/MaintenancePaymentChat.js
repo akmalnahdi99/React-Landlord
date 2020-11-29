@@ -30,12 +30,12 @@ const MaintenancePaymentChat = () =>  {
       ];
   
   return (
-    <div class="ibox">
-        <div class="ibox-title">
+    <div className="ibox">
+        <div className="ibox-content minhigh">
+        <div className="ibox-title">
             <h3> Oct 23 - Tenant made payment</h3>
         </div>
-        <div class="ibox-content minhigh">
-            <div class="row">
+        
                 {data.length > 0 ? (
                     data.map((item, index) => {
                     return <PaymentChatItem key={index} {...item} />;
@@ -43,25 +43,24 @@ const MaintenancePaymentChat = () =>  {
                     ) : (
                     <Empty />
                 )}
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <form role="form" id="contact-form" class="contact-form">
-                        <div class="row">
-                            <div class="col-11 pr-0">
-                                <div class="form-group m-0">
-                                    <textarea class="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
-                                </div>
+        <div className="row">
+            <div className="col-12">
+                <form id="contact-form" className="contact-form">
+                    <div className="row">
+                        <div className="col-11 pr-0">
+                            <div className="form-group m-0">
+                                <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                             </div>
-                            <div class="col-1 pl-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn pl-0"><i class="fas fa-play-circle fa-lg text-center text-completedtask"></i></button>
-                                </div>
+                        </div>
+                        <div className="col-1 pl-4">
+                            <div className="form-group">
+                                <button type="submit" className="btn pl-0"><i className="fas fa-play-circle fa-lg text-center text-completedtask"></i></button>
                             </div>
-                        </div>                           
-                    </form>
-                </div>
+                        </div>
+                    </div>                           
+                </form>
             </div>
+        </div>
         </div>
     </div>
   );

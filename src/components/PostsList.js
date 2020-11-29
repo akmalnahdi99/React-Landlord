@@ -1,3 +1,4 @@
+//under review for image gallery
 import React from "react";
 import PostCard from "./PostCard";
 import { AppContext } from "../context/settings";
@@ -12,50 +13,54 @@ const PostsList = (props, filterBy) => {
   const posts = [
     {
       id: 1,
-      postTitle: "Post Title",
+      postTitle: "Pipe Burst",
       postBody:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus doloremque obcaecati magnam maxime fugit error voluptatem placeat nesciunt assumenda eveniet consectetur amet ratione dolore id perferendis suscipit eum, ut neque.",
-      postIcon: "/imgs/money-bag.svg",
+      postIcon: "/imgs/settings.svg",
       postDateTime: "17:50 | 25 Dec 2020",
       postType: "maintenance",
+      images: [
+        {}
+      ]
     },
     {
       id: 2,
-      postTitle: "Post Title",
+      postTitle: "Subscription fees Overdues",
       postBody:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius delectus quidem numquam voluptatem voluptatum. Fugit soluta voluptatibus provident ut nesciunt, quo, minima error repellat eius sunt harum culpa id. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus doloremque obcaecati magnam maxime fugit error voluptatem placeat nesciunt assumenda eveniet consectetur amet ratione dolore id perferendis suscipit eum, ut neque.",
-      postIcon: "/imgs/money-bag.svg",
+      postIcon: "/imgs/schedule.svg",
       postDateTime: "17:50 | 25 Dec 2020",
       postType: "overdue",
     },
     {
       id: 3,
-      postTitle: "Post Title",
+      postTitle: "4 New Offers",
       postBody: "Lorem ipsum dolor, sit amet consectetur adipisicing e .",
-      postIcon: "/imgs/money-bag.svg",
+      postIcon: "/imgs/handshake.svg",
       postDateTime: "17:50 | 25 Dec 2020",
       postType: "offers",
       images: [
-        {
-          urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-          urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        },
-        {
-          urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-          urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        },
-        {
-          urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-          urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        },
-        {
-          urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-          urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        },
-        {
-          urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-          urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        },
+        {}
+        // {
+        //   urlThumb: "/imgs/btha1.jpg",
+        //   urlHref: "/imgs/btha1.jpg",
+        // },
+        // {
+        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        // },
+        // {
+        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        // },
+        // {
+        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        // },
+        // {
+        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
+        // },
       ],
     },
   ];

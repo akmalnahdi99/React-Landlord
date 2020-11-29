@@ -12,7 +12,7 @@ export default function PayableItem({ date, title, amount, icon, color }) {
       <div className="row">
         <div className="col-8">
           <div className="forum-sub-title">
-            <Link className="text-doorcase3" href="#">
+            <Link className="text-doorcase3" to="">
               <img src={icon} width="30px" alt={title} />
               <span className="ml-2 text-doorcase3">{title}</span>
               <br />

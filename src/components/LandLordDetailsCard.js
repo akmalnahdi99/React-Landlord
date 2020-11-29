@@ -30,18 +30,18 @@ const LandLordDetailsCard = ({title}) => {
   ];
 
   return (
-    <div class="ibox ">
-      <div class="ibox-title ">
+    <div className="ibox ">
+      <div className="ibox-title ">
         <h5>{title}</h5>
       </div>
-      <div class="ibox-content">
-        <div class="row text-left">
-          <div class="col-12">
+      <div className="ibox-content">
+        <div className="row text-left">
+          <div className="col-12">
             {details.map((item,index) => {
               return (
                 <React.Fragment key={index}>
-                  <h5 class="font-bold text-completedtask ">{item.key}</h5>
-                  <span class="mb-3 font-normal">{item.value}</span>
+                  <h5 className="font-bold text-completedtask ">{item.key}</h5>
+                  <span className="mb-3 font-normal">{item.value}</span>
                   <hr />
                 </React.Fragment>
               );
@@ -49,9 +49,9 @@ const LandLordDetailsCard = ({title}) => {
           </div>
         </div>
       </div>
-      <div class="ibox-footer">
-        <Link to="/logout" class="btn btn-link pl-0 font-bold">
-          <i class="fas fa-sign-out-alt"></i> Logout
+      <div className="ibox-footer">
+        <Link to="/logout" className="btn btn-link pl-0 font-bold">
+          <i className="fas fa-sign-out-alt"></i> Logout
         </Link>
       </div>
     </div>

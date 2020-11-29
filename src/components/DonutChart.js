@@ -1,13 +1,13 @@
 import React from 'react';
 import { ChartDonut, ChartLabel } from '@patternfly/react-charts';
 
-const DonutChart = ({ data }) => {
-
+const DonutChart = () => {
+// 
   return (
     <div style={{ height: 'auto',  width: '210px', margin:'0 auto' }}>
     <ChartDonut
       constrainToVisibleArea={true}
-      data={[{ x: 'New', y: 1, fill: '#206491' }, { x: 'In Progress', y: 2, fill: '#fbb45c' }, { x: 'Resolved', y: 5, fill:'#329f9d' }]}
+      data={[{ x: 'New', y: 1, fill: "#206491" }, { x: 'In Progress', y: 2, fill: "#fbb45c" }, { x: 'Resolved', y: 5, fill: "#329f9d" }, { x: 'Rejected', y: 5, fill: "#cc2a49" }]}
       donutOrientation="top"
       allowTooltip={false}
       labels={() => null}

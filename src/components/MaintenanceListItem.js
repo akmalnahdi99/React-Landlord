@@ -2,9 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function MaintenanceListItem({ date, name, applydate, images, status }) {
-  //TASK No   text here ?? 
 
+export default function MaintenanceListItem({id, date, name, applydate, images, status }) {
   if (!status) {
     status = "new";
   }
@@ -14,9 +13,9 @@ export default function MaintenanceListItem({ date, name, applydate, images, sta
     imageGallery = images.map((image, index) => {
       return (
         <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
-          <a href={image.urlThumb}>
+          <Link to={image.urlThumb}>
             <img className="img-responsive" src={image.urlHref} alt="post som" />
-          </a>
+          </Link>
         </li>
       );
     });
@@ -24,7 +23,7 @@ export default function MaintenanceListItem({ date, name, applydate, images, sta
 
   var statusClassName = "text-completedtask";
   var statusText = "New";
-
+ 
   if (status.toLowerCase() === "resolved") {
     statusClassName = "text-completedtask";
     statusText = "Resolved";
@@ -47,14 +46,14 @@ export default function MaintenanceListItem({ date, name, applydate, images, sta
         <div class="row">
           <div class="col-9 mb-2">
             <div class="media">
-              <img class="align-self-center mr-3" src="/imgs/avatar.svg" width="40px" alt="Generic placeholder image" />
+              <img class="align-self-center mr-3" src="/imgs/avatar.svg" width="40px" alt="Generic placeholder" />
               <div class="media-body align-self-center">
                 <h5 class="mt-0 mb-0">{name}</h5>
               </div>
             </div>
           </div>
           <div class="col-3 text-right">
-            <Link to="/landlord/maintenancedetails" alt="">
+            <Link to={"/landlord/maintenancedetails/"+ id} alt="">
                   <i class="fas fa-arrow-right fa-lg text-completedtask"></i>
             </Link>
           </div>

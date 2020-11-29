@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Empty from "./Empty";
 import InfoCardItem from "./InfoCardItem";
 
 export default function DashTenantPayables() {
+  let history = useHistory();
+  const RedirectTenantPay = () => {
+    history.push('/landlord/tenantpayables')
+  }
+  
   const data = [
     {
       title: "Due On: 10/28/2020",
@@ -22,7 +27,7 @@ export default function DashTenantPayables() {
     },
   ];
   return (
-    <div className="ibox illustrated3" onclick="location.href='tenant-payables.html'" style={{ cursor: "pointer" }}>
+    <div className="ibox illustrated3" onClick={RedirectTenantPay} style={{ cursor: "pointer" }}>
       <div className="ibox-title bg-transparent">
         <h5>Tenant Payables</h5>
         <div className="ibox-tools">

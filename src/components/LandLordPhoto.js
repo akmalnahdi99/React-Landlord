@@ -11,15 +11,15 @@ const LandLordPhotoCard = () => {
   };
 
   return (
-    <div class="ibox">
-      <div class="ibox-content minhigh450px">
-        <div class="profile-sidebar paddingontop">
-          <div class="profile-userpic text-center">
-            <img src={User.urlThumb} class="rounded-circle boxshadow align-self-center " alt="profile" />
+    <div className="ibox">
+      <div className="ibox-content minhigh450px">
+        <div className="profile-sidebar paddingontop">
+          <div className="profile-userpic text-center">
+            <img src={User.urlThumb} className="rounded-circle boxshadow align-self-center " alt="profile" />
           </div>
-          <div class="profile-usertitle mb-5">
-            <div class="profile-usertitle-name">{User.name}</div>
-            <div class="badge badge-primary">{User.verifiedStatus}</div>
+          <div className="profile-usertitle mb-5">
+            <div className="profile-usertitle-name">{User.name}</div>
+            <div className="badge badge-primary">{User.verifiedStatus}</div>
           </div>
         </div>
       </div>

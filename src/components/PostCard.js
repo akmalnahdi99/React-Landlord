@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Gallery from "./ImageGallery";
 
 const PostCard = (props) => {
   const { postIcon, postDateTime, postTitle, postBody, images } = { ...props };
@@ -8,10 +8,12 @@ const PostCard = (props) => {
   if (images != null) {
     imageGallery = images.map((image, index) => {
       return (
-        <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
-          <a href={image.urlThumb}>
+        <li key={index}>
+          {/* <Link to={image.urlThumb}>
             <img className="img-responsive" src={image.urlHref} alt="post som" />
-          </a>
+            
+          </Link> */}
+          <Gallery />
         </li>
       );
     });
@@ -32,7 +34,7 @@ const PostCard = (props) => {
         <h3 className="font-normal my-1">{postTitle}</h3>
         <p className="mt-0">{postBody}</p>
         <div className="demo-gallery">
-          <ul id="lightgallery" className="list-unstyled row">
+          <ul id="lightgallery" className="list-unstyled">
             {imageGallery}
           </ul>
         </div>
@@ -42,4 +44,3 @@ const PostCard = (props) => {
 };
 
 export default PostCard;
-
