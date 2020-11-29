@@ -22,6 +22,7 @@ import { NavLink } from "react-router-dom";
 //Styles
 import "./assets/css/style.css";
 import "./assets/css/chartist.css";
+import "lightgallery.js/dist/css/lightgallery.css"; //DISCUSS what this for
 
 import LeftMenu from "./components/navigation/LeftMenu";
 import { AppProvider } from "./context/settings";
@@ -35,7 +36,7 @@ import PropertyInfo from "./pages/Landlord/PropertyInfo";
 import PropertyInfoOf from "./pages/Landlord/PropertyInfoOf";
 import Dashboard from "./pages/Landlord/Dashboard";
 import UnitViewings from "./pages/Landlord/UnitViewings";
-
+import TenantTenancy from "./pages/Landlord/TenantTenancy";
 import ViewingDetails from "./pages/Landlord/ViewingDetails";
 import Offers from "./pages/Landlord/Offers";
 import OfferDetails from "./pages/Landlord/OfferDetails";
@@ -43,9 +44,16 @@ import Maintenance from "./pages/Landlord/Maintenance";
 import BillOf from "./pages/Landlord/BillsOf";
 import MaintenanceDetails from "./pages/Landlord/MaintenanceDetails";
 import MaintenanceChatPayment from "./pages/Landlord/MaintenanceChatPayment";
-import MaintenanceChatMaintenance from "./pages/Landlord/MaintenanceChatMaintenance";
+import MaintenanceChatRequest from "./pages/Landlord/MaintenanceChatRequest";
 import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteraction";
-import  Login  from "./pages/Login";
+
+import Financials from "./pages/Landlord/Financials";
+import Calendars from "./pages/Landlord/Calendars";
+import QuickLinks from "./pages/Landlord/QuickLinks";
+import TodoList from "./pages/Landlord/TodoList";
+import TenantPayables from "./pages/Landlord/TenantPayables";
+import PropertyViewing from "./pages/Landlord/PropertyViewing";
+import TenancyDocs from "./pages/Landlord/TenancyDocs";
 
 export default function App() {
   return (
@@ -56,6 +64,9 @@ export default function App() {
             <ul>
               <li>
                 <NavLink to="/landlord/activity">Activity</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/dashboard">Dashboard</NavLink>
               </li>
               <li>
                 <NavLink to="/landlord/notifications">Notifications</NavLink>
@@ -119,6 +130,18 @@ export default function App() {
             <LeftMenu />
             <Payables />
           </Route>
+          <Route path="/landlord/financials">
+            <LeftMenu />
+            <Financials />
+          </Route>
+          <Route path="/landlord/quicklinks">
+            <LeftMenu />
+            <QuickLinks />
+          </Route>
+          <Route path="/landlord/calendars">
+            <LeftMenu />
+            <Calendars />
+          </Route>
           <Route exact path="/landlord/bills">
             <LeftMenu />
             <Bills />
@@ -138,6 +161,10 @@ export default function App() {
           <Route path="/landlord/UnitInfo">
             <LeftMenu />
             <PropertyInfo />
+          </Route>
+          <Route path="/landlord/propertyviewing">
+            <LeftMenu />
+            <PropertyViewing />
           </Route>
           <Route path="/landlord/UnitViewings">
             <LeftMenu />
@@ -163,7 +190,7 @@ export default function App() {
             <LeftMenu />
             <OfferDetails />
           </Route>
-          <Route path="/landlord/maintenancedetails">
+          <Route path="/landlord/maintenancedetails/:mindex">
             <LeftMenu />
             <MaintenanceDetails />
           </Route>
@@ -171,13 +198,29 @@ export default function App() {
             <LeftMenu />
             <MaintenanceChatPayment />
           </Route>
-          <Route path="/landlord/maintenancechatmaintenance">
+          <Route path="/landlord/MaintenanceChatRequest">
             <LeftMenu />
-            <MaintenanceChatMaintenance />
+            <MaintenanceChatRequest />
           </Route>
           <Route path="/landlord/maintenancechatinteraction">
             <LeftMenu />
             <MaintenanceChatInteraction />
+          </Route>
+          <Route path="/landlord/tenanttenancy">
+            <LeftMenu />
+            <TenantTenancy />
+          </Route>
+          <Route path="/landlord/tenancydocs">
+            <LeftMenu />
+            <TenancyDocs />
+          </Route>
+          <Route path="/landlord/todolist">
+            <LeftMenu />
+            <TodoList />
+          </Route>
+          <Route path="/landlord/tenantpayables">
+            <LeftMenu />
+            <TenantPayables />
           </Route>
         </Switch>
       </Router>
