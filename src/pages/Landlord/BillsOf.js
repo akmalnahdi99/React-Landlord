@@ -7,13 +7,16 @@ import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
+
+import BillsServiceCharge from "./BillsServiceCharge";
+
+
 import GasItem from "../../bills_component/GasItem";
 import WaterItem from "../../bills_component/WaterItem";
 import SewageItem from "../../bills_component/SewageItem";
 import ElectricityItem from "../../bills_component/ElectricityItem";
 import InternetItem from "../../bills_component/InternetItem";
 import CableTvItem from "../../bills_component/CableTvItem";
-import ServiceChargeItem from "../../bills_component/ServiceChargeItem";
 
 
 export default function BillOf() {
@@ -76,12 +79,8 @@ export default function BillOf() {
         </div>
       </div>
 
+          { (billType==="ServiceCharge") ? <BillsServiceCharge /> :( "") }
 
-
-      <div className="wrapper wrapper-content animated fadeInRight">
-          <div className="container-fluid">
-
-      { (billType==="ServiceCharge") ? <ServiceChargeItem /> :( "") }
       { (billType==="Insurance") ? ("Insurance") : ( "") }
       { (billType==="QuitRent") ? ("QuitRent"):( "") }
       { (billType==="AssessmentRate") ? ("AssessmentRate"):( "") }
@@ -94,11 +93,8 @@ export default function BillOf() {
       { (billType==="Internet") ? <InternetItem /> :( "") }
       { (billType==="Cabletv") ? <CableTvItem /> :( "") }              
       { (billType==="Gas") ? <GasItem />:( "") }
-      
-
-      
-          </div>
-      </div>
+    
+      { (billType==="Tenancy") ? (""):( "") }
 
       <Footer />
     </div>
