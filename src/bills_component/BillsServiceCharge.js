@@ -1,9 +1,10 @@
 import React from "react";
-import Footer from "../../components/static/Footer";
+import Footer from "../components/static/Footer";
 
-import ServiceCharge_Details from "../../bills_component/ServiceCharge_Details";
-import Invoice from "../../bills_component/Invoice";
-import Invoice2 from "../../bills_component/Invoice2";
+import ServiceCharge_Details from "./ServiceCharge_Details";
+//TASK pls read the [2020-12-1] review for these two lines.
+import Invoice from "./Invoice";
+import Invoice2 from "./Invoice2";
 
 //TASK pls for Invoice and Invoice2 use extra parameter like type = "paid", 
 // then style the element based on the type 

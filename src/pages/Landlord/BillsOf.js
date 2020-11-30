@@ -8,7 +8,7 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
 
-import BillsServiceCharge from "./BillsServiceCharge";
+import BillsServiceCharge from "../../bills_component/BillsServiceCharge";
 
 
 import GasItem from "../../bills_component/GasItem";
