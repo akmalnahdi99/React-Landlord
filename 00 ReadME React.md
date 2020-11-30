@@ -1,3 +1,6 @@
+[2020-12-1]
+- for file invoive and invoice2 Please pass the difference as parameter like type='paid' then you set the className, as discussed previously for DashIconsBox
+
 [2020-11-30]
 - to qhyrun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images or reduce quality , 
 - in Links use absolute path example: /landlord/page1 , not ../landlord/page1

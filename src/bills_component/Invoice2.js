@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
+//TASK pls use Invoice Component and pass the difference as parameter
 const InvoiceDetails = ({title}) => {
   var invoice = {
       date: "07/23/2020",
