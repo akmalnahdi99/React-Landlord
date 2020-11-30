@@ -6,12 +6,11 @@ import ServiceCharge_Details from "./ServiceCharge_Details";
 import Invoice from "./Invoice";
 import Invoice2 from "./Invoice2";
 
-//TASK pls for Invoice and Invoice2 use extra parameter like type = "paid", 
-// then style the element based on the type 
+//TASK pls for Invoice and Invoice2 use extra parameter like type = "paid",
+// then style the element based on the type
 // if type==paid className = '...'
 // else if type="pending" className = '...'
 export default function BillsServiceCharge() {
-
   return (
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="container container-xs">

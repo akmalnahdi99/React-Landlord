@@ -5,18 +5,20 @@ import { Redirect, useParams } from "react-router-dom";
 //TASK put all bills in this page
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
+import SiteMap from "../../components/SiteMap"; 
+import Bills_ServiceCharge from "../../bills_component/Bills_ServiceCharge";
+import Bills_Insurance from "../../bills_component/Bills_Insurance";
+import Bills_QuitRent from "../../bills_component/Bills_QuitRent";
+import Bills_AssessmentRate from "../../bills_component/Bills_AssessmentRate";
+import Bills_SubscriptionFee from "../../bills_component/Bills_SubscriptionFee";
+import Bills_Maintenance from "../../bills_component/Bills_Maintenance";
+import Bills_Water from "../../bills_component/Bills_Water";
+import Bills_Electricity from "../../bills_component/Bills_Electricity";
+import Bills_Sewage from "../../bills_component/Bills_Sewage";
+import Bills_Internet from "../../bills_component/Bills_Internet";
+import Bills_Cabletv from "../../bills_component/Bills_Cabletv";
+import Bills_Gas from "../../bills_component/Bills_Gas";
 
-
-import BillsServiceCharge from "../../bills_component/BillsServiceCharge";
-
-
-import GasItem from "../../bills_component/GasItem";
-import WaterItem from "../../bills_component/WaterItem";
-import SewageItem from "../../bills_component/SewageItem";
-import ElectricityItem from "../../bills_component/ElectricityItem";
-import InternetItem from "../../bills_component/InternetItem";
-import CableTvItem from "../../bills_component/CableTvItem";
 
 
 export default function BillOf() {
@@ -79,22 +81,19 @@ export default function BillOf() {
         </div>
       </div>
 
-          { (billType==="ServiceCharge") ? <BillsServiceCharge /> :( "") }
+          { (billType==="ServiceCharge") ? <Bills_ServiceCharge /> :( "") }
+          { (billType==="Insurance") ? <Bills_Insurance /> :( "") }
+          { (billType==="QuitRent") ? <Bills_QuitRent /> :( "") }
+          { (billType==="AssessmentRate") ? <Bills_AssessmentRate /> :( "") }
+          { (billType==="SubscriptionFees") ? <Bills_SubscriptionFee /> :( "") }
+          { (billType==="Maintenance") ? <Bills_Maintenance /> :( "") }
+          { (billType==="Water") ? <Bills_Water /> :( "") }
+          { (billType==="Electricity") ? <Bills_Electricity /> :( "") }
+          { (billType==="Sewage") ? <Bills_Sewage /> :( "") }
+          { (billType==="Internet") ? <Bills_Internet /> :( "") }
+          { (billType==="Cabletv") ? <Bills_Cabletv /> :( "") }
+          { (billType==="Gas") ? <Bills_Gas /> :( "") }
 
-      { (billType==="Insurance") ? ("Insurance") : ( "") }
-      { (billType==="QuitRent") ? ("QuitRent"):( "") }
-      { (billType==="AssessmentRate") ? ("AssessmentRate"):( "") }
-      { (billType==="SubscriptionFees") ? ("SubscriptionFees"):( "") }
-      { (billType==="Maintenance") ? ("Maintenance"):( "") }
-
-      { (billType==="Water") ? <WaterItem /> :( "") }
-      { (billType==="Electricity") ? <ElectricityItem /> :( "") }
-      { (billType==="Sewage") ? <SewageItem /> :( "") }
-      { (billType==="Internet") ? <InternetItem /> :( "") }
-      { (billType==="Cabletv") ? <CableTvItem /> :( "") }              
-      { (billType==="Gas") ? <GasItem />:( "") }
-    
-      { (billType==="Tenancy") ? (""):( "") }
 
       <Footer />
     </div>
