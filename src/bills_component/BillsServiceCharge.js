@@ -1,8 +1,7 @@
 import React from "react";
 import Footer from "../components/static/Footer";
 
-import ServiceCharge_Details from "./ServiceCharge_Details";
-//TASK pls read the [2020-12-1] review for these two lines.
+import ServiceChargeDetails from "./ServiceChargeDetails";
 import Invoice from "./Invoice";
 import Invoice2 from "./Invoice2";
 
@@ -12,12 +11,12 @@ import Invoice2 from "./Invoice2";
 // else if type="pending" className = '...'
 export default function BillsServiceCharge() {
   return (
-    <div class="wrapper wrapper-content animated fadeInRight">
-      <div class="container container-xs">
-        <div class="ibox ">
-          <ServiceCharge_Details title="Service Charge &amp; Sinking Fund" />
-        </div>
-        <div class="ibox">
+      <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="container container-xs">
+          <div class="ibox ">
+              <ServiceChargeDetails title="Service Charge &amp; Sinking Fund" />
+          </div>
+          <div class="ibox">
           <Invoice title="Invoice" />
           {/* <Invoice title="Invoice"  type="paid"/> */}
         </div>

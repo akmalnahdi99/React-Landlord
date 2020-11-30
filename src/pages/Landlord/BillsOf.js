@@ -6,18 +6,18 @@ import { Redirect, useParams } from "react-router-dom";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap"; 
-import Bills_ServiceCharge from "../../bills_component/Bills_ServiceCharge";
-import Bills_Insurance from "../../bills_component/Bills_Insurance";
-import Bills_QuitRent from "../../bills_component/Bills_QuitRent";
-import Bills_AssessmentRate from "../../bills_component/Bills_AssessmentRate";
-import Bills_SubscriptionFee from "../../bills_component/Bills_SubscriptionFee";
-import Bills_Maintenance from "../../bills_component/Bills_Maintenance";
-import Bills_Water from "../../bills_component/Bills_Water";
-import Bills_Electricity from "../../bills_component/Bills_Electricity";
-import Bills_Sewage from "../../bills_component/Bills_Sewage";
-import Bills_Internet from "../../bills_component/Bills_Internet";
-import Bills_Cabletv from "../../bills_component/Bills_Cabletv";
-import Bills_Gas from "../../bills_component/Bills_Gas";
+import BillsServiceCharge from "../../bills_component/BillsServiceCharge";
+import BillsInsurance from "../../bills_component/BillsInsurance";
+import BillsQuitRent from "../../bills_component/BillsQuitRent";
+import BillsAssessmentRate from "../../bills_component/BillsAssessmentRate";
+import BillsSubscriptionFee from "../../bills_component/BillsSubscriptionFee";
+import BillsMaintenance from "../../bills_component/BillsMaintenance";
+import BillsWater from "../../bills_component/BillsWater";
+import BillsElectricity from "../../bills_component/BillsElectricity";
+import BillsSewage from "../../bills_component/BillsSewage";
+import BillsInternet from "../../bills_component/BillsInternet";
+import BillsCabletv from "../../bills_component/BillsCabletv";
+import BillsGas from "../../bills_component/BillsGas";
 
 
 
@@ -81,19 +81,18 @@ export default function BillOf() {
         </div>
       </div>
 
-          { (billType==="ServiceCharge") ? <Bills_ServiceCharge /> :( "") }
-          { (billType==="Insurance") ? <Bills_Insurance /> :( "") }
-          { (billType==="QuitRent") ? <Bills_QuitRent /> :( "") }
-          { (billType==="AssessmentRate") ? <Bills_AssessmentRate /> :( "") }
-          { (billType==="SubscriptionFees") ? <Bills_SubscriptionFee /> :( "") }
-          { (billType==="Maintenance") ? <Bills_Maintenance /> :( "") }
-          { (billType==="Water") ? <Bills_Water /> :( "") }
-          { (billType==="Electricity") ? <Bills_Electricity /> :( "") }
-          { (billType==="Sewage") ? <Bills_Sewage /> :( "") }
-          { (billType==="Internet") ? <Bills_Internet /> :( "") }
-          { (billType==="Cabletv") ? <Bills_Cabletv /> :( "") }
-          { (billType==="Gas") ? <Bills_Gas /> :( "") }
-
+          { (billType==="ServiceCharge") ? <BillsServiceCharge /> :( "") }
+          { (billType==="Insurance") ? <BillsInsurance /> :( "") }
+          { (billType==="QuitRent") ? <BillsQuitRent /> :( "") }
+          { (billType==="AssessmentRate") ? <BillsAssessmentRate /> :( "") }
+          { (billType==="SubscriptionFees") ? <BillsSubscriptionFee /> :( "") }
+          { (billType==="Maintenance") ? <BillsMaintenance /> :( "") }
+          { (billType==="Water") ? <BillsWater /> :( "") }
+          { (billType==="Electricity") ? <BillsElectricity /> :( "") }
+          { (billType==="Sewage") ? <BillsSewage /> :( "") }
+          { (billType==="Internet") ? <BillsInternet /> :( "") }
+          { (billType==="Cabletv") ? <BillsCabletv /> :( "") }
+          { (billType==="Gas") ? <BillsGas /> :( "") }
 
       <Footer />
     </div>
