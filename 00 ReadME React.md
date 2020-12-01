@@ -1,5 +1,6 @@
 [2020-12-1]
-- to qhairun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images or reduce quality , 
+- to qhairun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images 
+- to qhairun : pls review the file index.html and remove non required elements from it.
 - for file invoive and invoice2 Please pass the difference as parameter like type='paid' then you set the className, as discussed previously for DashIconsBox
 - for file BillsServiceCharge, I noticed that the path changed from '../../bills_component/Invoice' to './invoice' . if this was done because the element is shared then ok,
   but if this is done as a respond to the previous review then pls consider that I mentioned <Link path=""> only, because in web development the url of website should start form /something
