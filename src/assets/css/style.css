@@ -674,6 +674,35 @@ body.mini-navbar #page-wrapper {
   margin: 0 0 0 70px;
 }
 
+.barwidth {
+  width: 300px;
+}
+.box {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.box.green {
+  background-color: green; 
+}
+
+.width300 {
+  width: 300px !important;
+}
+
+.widthnormal {
+  width: 70px
+}
+
+.ml300 {
+  margin-left: 300px !important ;
+}
+
 body.fixed-sidebar.mini-navbar .footer,
 body.canvas-menu.mini-navbar .footer {
   margin: 0 0 0 0 !important;
@@ -5805,6 +5834,7 @@ samp {
   padding: 15px 20px;
   border-bottom: 1px solid #e7eaec;
 }
+
 
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
