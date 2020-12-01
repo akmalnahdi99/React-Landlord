@@ -1,6 +1,5 @@
 import React from "react";
 import Footer from "../components/static/Footer";
-
 import ServiceChargeDetails from "./ServiceChargeDetails";
 import Invoice from "./Invoice";
 import Invoice2 from "./Invoice2";

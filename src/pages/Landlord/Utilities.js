@@ -16,7 +16,7 @@ export default function Utilities() {
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
     <div class="wrapper wrapper-content animated fadeInRight ">
         <div className="container">
-          <div className="row text-center">
+          <div className="row iconres justify-content-center">
             <div className="col-12 align-self-center mt-4">
               {data.map((item, index) => {
                 return (

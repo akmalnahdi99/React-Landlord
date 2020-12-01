@@ -1,17 +1,16 @@
 import React from "react";
 
-import WaterDetails from "./WaterDetails";
+import InfoAssessmentDetails from "./InfoAssessmentDetails";
 
-export default function BillsWater() {
+export default function InfoAssessment() {
+
   return (
       <div class="wrapper wrapper-content animated fadeInRight">
         <div class="container container-xs">
           <div class="ibox ">
-              <WaterDetails title="Water" />
-         
+              <InfoAssessmentDetails title="Assessment Rate" />
+          </div>
         </div>
       </div>
-      <Footer />
-    </div>
   );
 }

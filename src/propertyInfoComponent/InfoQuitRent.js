@@ -1,17 +1,16 @@
 import React from "react";
 
-import WaterDetails from "./WaterDetails";
+import InfoQuitRentDetails from "./InfoQuitRentDetails";
 
-export default function BillsWater() {
+export default function InfoQuitRent() {
+
   return (
       <div class="wrapper wrapper-content animated fadeInRight">
         <div class="container container-xs">
           <div class="ibox ">
-              <WaterDetails title="Water" />
-         
+              <InfoQuitRentDetails title="Quit Rent" />
+          </div>
         </div>
       </div>
-      <Footer />
-    </div>
   );
 }

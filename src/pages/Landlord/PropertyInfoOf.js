@@ -8,6 +8,11 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import TenancyHome from "./TenancyHome";
 import Utilities from "./Utilities";
+import InfoInsurance from "../../propertyInfoComponent/InfoInsurance";
+import InfoServiceCharge from "../../propertyInfoComponent/InfoServiceCharge";
+import InfoAssessment from "../../propertyInfoComponent/InfoAssessment";
+import InfoQuitRent from "../../propertyInfoComponent/InfoQuitRent";
+
 
 export default function PropertyInfoOf() {
   var t = useParams();
@@ -67,10 +72,12 @@ export default function PropertyInfoOf() {
         </div>
       </div>
       
-      { (propertyinfoType==="Tenancy") ? (""):( "") }
-      
       { (propertyinfoType==="Tenancy") ? <TenancyHome /> :( "") }
       { (propertyinfoType==="Utilities") ? <Utilities /> :( "") }
+      { (propertyinfoType==="Insurance") ? <InfoInsurance /> :( "") }
+      { (propertyinfoType==="ServiceCharge") ? <InfoServiceCharge /> :( "") }
+      { (propertyinfoType==="AssessmentRate") ? <InfoAssessment /> :( "") }
+      { (propertyinfoType==="QuitRent") ? <InfoQuitRent /> :( "") }
 
       <Footer />
     </div>

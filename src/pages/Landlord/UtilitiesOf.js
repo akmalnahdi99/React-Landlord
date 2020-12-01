@@ -5,9 +5,6 @@ import { Redirect, useParams } from "react-router-dom";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-
-import BillsCabletv from "../../bills_component/BillsCabletv";
-
 import PropertyInfoGas from "../../propertyInfoComponent/PropertyInfoGas";
 import PropertyInfoElectricity from "../../propertyInfoComponent/PropertyInfoElectricity";
 import PropertyInfoWater from "../../propertyInfoComponent/PropertyInfoWater";
