@@ -42,7 +42,9 @@ export default function Bills() {
           </div>
         </div>
       </div>
-      
+
+    <div class="wrapper wrapper-content animated fadeInRight ">
+      <div class="container">
           <div className="row text-center">
             <div className="col-12 align-self-center mt-4">
               {data.map((item, index) => {
@@ -56,7 +58,9 @@ export default function Bills() {
               })}
             </div>
           </div>
-
+        </div>
+    </div>
+    
       <Footer />
     </div>
   );
