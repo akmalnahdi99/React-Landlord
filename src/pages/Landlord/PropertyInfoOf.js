@@ -7,6 +7,7 @@ import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import TenancyHome from "./TenancyHome";
+import Utilities from "./Utilities";
 
 export default function PropertyInfoOf() {
   var t = useParams();
@@ -65,10 +66,11 @@ export default function PropertyInfoOf() {
           </div>
         </div>
       </div>
-
+      
       { (propertyinfoType==="Tenancy") ? (""):( "") }
       
       { (propertyinfoType==="Tenancy") ? <TenancyHome /> :( "") }
+      { (propertyinfoType==="Utilities") ? <Utilities /> :( "") }
 
       <Footer />
     </div>

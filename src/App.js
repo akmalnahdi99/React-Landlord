@@ -56,6 +56,8 @@ import PropertyViewing from "./pages/Landlord/PropertyViewing";
 import TenancyDocs from "./pages/Landlord/TenancyDocs";
 import Login from "./pages/Login";
 import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
+import Utilities from "./pages/Landlord/Utilities";
+import UtilitiesOf from "./pages/Landlord/UtilitiesOf";
 
 export default function App() {
   return (
@@ -148,9 +150,17 @@ export default function App() {
             <LeftMenu />
             <Bills />
           </Route>
+          <Route exact path="/landlord/utilities">
+            <LeftMenu />
+            <Utilities />
+          </Route>
           <Route path="/landlord/bills/:billType">
             <LeftMenu />
             <BillOf />
+          </Route>
+          <Route path="/landlord/utilities/:utilityType">
+            <LeftMenu />
+            <UtilitiesOf />
           </Route>
           <Route exact path="/landlord/propertyInfo">
             <LeftMenu />

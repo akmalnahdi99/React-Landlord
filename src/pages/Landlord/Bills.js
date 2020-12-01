@@ -60,7 +60,6 @@ export default function Bills() {
           </div>
         </div>
     </div>
-    
       <Footer />
     </div>
   );
