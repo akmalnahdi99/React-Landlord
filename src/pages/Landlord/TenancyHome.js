@@ -9,7 +9,7 @@ export default function PropertyInfo() {
           <div class="container container-xs pt-5 pb-5 gray-bg">
                     <div class="row text-center">
                         <div class="col-12 align-self-center mt-4">
-                            <Link to="checkin.html" class="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
+                            <Link to="/landlord/CheckInCheckOut" class="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
                                 <img src="/imgs/completed-task.svg" width="30px" alt=""/>
                                 <br />
                                 <span class="mt-5 ">

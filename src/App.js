@@ -55,6 +55,7 @@ import TenantPayables from "./pages/Landlord/TenantPayables";
 import PropertyViewing from "./pages/Landlord/PropertyViewing";
 import TenancyDocs from "./pages/Landlord/TenancyDocs";
 import Login from "./pages/Login";
+import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
 
 export default function App() {
   return (
@@ -222,6 +223,10 @@ export default function App() {
           <Route path="/landlord/tenantpayables">
             <LeftMenu />
             <TenantPayables />
+          </Route>
+          <Route path="/landlord/CheckInCheckOut">
+            <LeftMenu />
+            <CheckInCheckOut />
           </Route>
         </Switch>
       </Router>
