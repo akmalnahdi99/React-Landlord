@@ -1,11 +1,12 @@
 [2020-12-1]
+- to qhairun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images or reduce quality , 
 - for file invoive and invoice2 Please pass the difference as parameter like type='paid' then you set the className, as discussed previously for DashIconsBox
 - for file BillsServiceCharge, I noticed that the path changed from '../../bills_component/Invoice' to './invoice' . if this was done because the element is shared then ok,
   but if this is done as a respond to the previous review then pls consider that I mentioned <Link path=""> only, because in web development the url of website should start form /something
   in react or any other development we have links for internal files, and we have links for the website itself. 
 
 [2020-11-30]
-- to qhyrun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images or reduce quality , 
+- to qhairun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images or reduce quality , 
 - in Links use absolute path example: /landlord/page1 , not ../landlord/page1
 - in file DashPropertyInfo I noticed that a new component created.  it is a copy of DashIconsBox called DashIconsProperty, the difference in components was the links, I modified the files to include the link as parameter, Please consider the fact of reusing existing Components effectively, more components means more files more complex project, and future modifications need to be applied on multiple files. Please consider this in future comonent and existing ones if any.
 - for bills items like gas, gasitem, internet item, please review the naming of component look at the file internet item for example, try to use names like service or servicedetail ...
