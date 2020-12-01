@@ -12,7 +12,7 @@ const CheckInDetails = () => {
                 Kit from Agent</p>
             <hr />
             <p className="my-3 text-doorcase3">17:50 - 11/11/2020</p>
-            <Link className="btn-success btn btn-block" to="checkinkit.html">Check In Kit &nbsp;
+            <Link className="btn-success btn btn-block" to="/landlord/checkinkit">Check In Kit &nbsp;
                 <i className="fas fa-long-arrow-alt-right"></i>
             </Link>
 

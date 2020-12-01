@@ -12,7 +12,7 @@ const CheckOutDetails = () => {
             <p className="my-3 font-title">-</p>
             <hr />
             <p className="my-3 text-doorcase3">-</p>
-            <Link className="btn-success btn btn-block" to="checkoutkit.html">Check Out Kit &nbsp;
+            <Link className="btn-success btn btn-block" to="/landlord/checkoutkit">Check Out Kit &nbsp;
                 <i className="fas fa-long-arrow-alt-right"></i>
             </Link>
         </div>

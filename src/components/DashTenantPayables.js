@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import Empty from "./Empty";
+import NoOverdue from "./EmptyOverdue";
 import InfoCardItem from "./InfoCardItem";
 
 export default function DashTenantPayables() {
@@ -44,7 +44,7 @@ export default function DashTenantPayables() {
               return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
             })
           ) : (
-            <Empty />
+            <NoOverdue />
           )}
         </ul>
       </div>

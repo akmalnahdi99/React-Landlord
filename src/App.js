@@ -58,6 +58,8 @@ import Login from "./pages/Login";
 import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
 import Utilities from "./pages/Landlord/Utilities";
 import UtilitiesOf from "./pages/Landlord/UtilitiesOf";
+import CheckInKit from "./pages/Landlord/CheckInKit";
+import CheckInLeaflet  from "./pages/Landlord/CheckInLeaflet";
 
 export default function App() {
   return (
@@ -237,6 +239,14 @@ export default function App() {
           <Route path="/landlord/CheckInCheckOut">
             <LeftMenu />
             <CheckInCheckOut />
+          </Route>
+          <Route path="/landlord/CheckInKit">
+            <LeftMenu />
+            <CheckInKit />
+          </Route>
+          <Route path="/landlord/CheckInLeaflet">
+            <LeftMenu />
+            <CheckInLeaflet />
           </Route>
         </Switch>
       </Router>

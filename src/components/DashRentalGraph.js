@@ -1,22 +1,31 @@
 import React from "react";
 import RentalDonut from "./RentalDonut";
 import InfoCardItem from "./InfoCardItem";
-const DashRentalGraph = () => {
-  const title = "Due On: 10/28/2020";
-  const Maintitle = "Rental";
-  const body = "Rent overdue";
+import NoOverdue from "./EmptyOverdue";
 
+export default function DashRentalGraph() {
+const data = [
+  {
+  title : "Due On: 10/28/2020",
+  body : "Rent overdue",
+  color : "red",
+  }
+];
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h5>{Maintitle}</h5>
+        <h5>Rental</h5>
       </div>
       <div className="ibox-content">
         <RentalDonut />
-        <InfoCardItem  title={title} body={body} />
+        {data.length > 0 ? (
+          data.map((item, index) => {
+            return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
+          })
+        ) : (
+          <NoOverdue/>
+        )}
       </div>
     </div>
   );
 };
-
-export default DashRentalGraph;
