@@ -18,3 +18,4 @@ export default class CalendarPage extends React.Component {
 
   handleDateClick = (arg) => { 
 }
+}
