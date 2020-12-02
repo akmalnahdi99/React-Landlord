@@ -60,6 +60,7 @@ import UtilitiesOf from "./pages/Landlord/UtilitiesOf";
 import CheckInKit from "./pages/Landlord/CheckInKit";
 import CheckInLeaflet  from "./pages/Landlord/CheckInLeaflet";
 import Login from "./pages/Landlord/Login";
+import InventoryList from "./pages/Landlord/InventoryList";
 
 export default function App() {
   return (
@@ -135,6 +136,10 @@ export default function App() {
           <Route path="/landlord/financials">
             <LeftMenu />
             <Financials />
+          </Route>
+          <Route path="/landlord/inventorylist">
+            <LeftMenu />
+            <InventoryList />
           </Route>
           <Route path="/landlord/quicklinks">
             <LeftMenu />
