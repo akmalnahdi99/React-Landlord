@@ -61,6 +61,7 @@ import CheckInKit from "./pages/Landlord/CheckInKit";
 import CheckInLeaflet  from "./pages/Landlord/CheckInLeaflet";
 import Login from "./pages/Landlord/Login";
 import InventoryList from "./pages/Landlord/InventoryList";
+import Login from "./pages/Landlord/Login";
 
 export default function App() {
   return (
@@ -112,6 +113,9 @@ export default function App() {
                 <NavLink to="/landlord/maintenancedetails">MaintenanceDetails</NavLink>
               </li>
             </ul>
+          </Route>
+          <Route path="/landlord/login">
+            <Login />
           </Route>
           <Route path="/landlord/dashboard">
             <LeftMenu />
