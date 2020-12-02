@@ -17,7 +17,7 @@ const Calendars = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Check In &amp; Check Out" />
+              <SiteMap title="Calendar" />
             </div>
           </div>
         </div>
