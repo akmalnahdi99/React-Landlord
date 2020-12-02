@@ -62,6 +62,7 @@ import CheckInLeaflet  from "./pages/Landlord/CheckInLeaflet";
 import Login from "./pages/Landlord/Login";
 import InventoryList from "./pages/Landlord/InventoryList";
 import Login from "./pages/Landlord/Login";
+import InventoryList from "./pages/Landlord/InventoryList";
 
 export default function App() {
   return (

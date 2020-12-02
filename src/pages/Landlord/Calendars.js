@@ -25,8 +25,8 @@ export default function Calendars() {
             </div>
         <div>
             
-            <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-                <div className="container-fluid pb-5">
+            <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5 gray-bg">
+                <div className="container pb-5">
                     <CalendarPage />
                 </div>
             </div>
