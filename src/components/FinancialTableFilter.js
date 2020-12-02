@@ -5,41 +5,62 @@ import Slider from "react-slick";
 
 
 export default function PostsListFilter() {
-  const appContext =   React.useContext(AppContext);
+  const appContext =  React.useContext(AppContext);
   const selectedFilter = appContext.settings.postsFilter;
-  
 
   const Filters = [
     {
-      id: 0,
-      name: "Payment",
-      iconClass: "fas fa-hand-holding-usd",
+      id: 13,
+      name: "All",
     },
     {
       id: 1,
-      name: "Maintenance",
-      iconClass: "fas fa-wrench",
+      name: "Jan",
     },
     {
       id: 2,
-      name: "Offers",
-      iconClass: "fas fa-hands-helping",
+      name: "Feb",
     },
     {
       id: 3,
-      name: "Viewing",
-      iconClass: "fas fa-eye",
+      name: "Mar",
     },
 
     {
       id: 4,
-      name: "Overdue",
-      iconClass: "fas fa-exclamation-triangle",
+      name: "Apr",
     },
     {
       id: 5,
-      name: "all",
-      iconClass: "fas fa-bars",
+      name: "May",
+    },
+    {
+      id: 6,
+      name: "Jun",
+    },
+    {
+      id: 7,
+      name: "Jul",
+    },
+    {
+      id: 8,
+      name: "Aug",
+    },
+    {
+      id: 9,
+      name: "Sep",
+    },
+    {
+      id: 10,
+      name: "Oct",
+    },
+    {
+      id: 11,
+      name: "Nov",
+    },
+    {
+      id: 12,
+      name: "Dec",
     },
   ];
    
@@ -57,8 +78,8 @@ export default function PostsListFilter() {
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToShow: 13,
+    slidesToScroll: 13,
     centerMode: true,
     accessibility: false,
     responsive: [
@@ -77,7 +98,7 @@ export default function PostsListFilter() {
       {
           breakpoint: 480,
           settings: {
-              slidesToShow: 2,
+              slidesToShow: 2 ,
               slidesToScroll: 1,
               centerMode: false,
               dots: false,
@@ -90,12 +111,14 @@ export default function PostsListFilter() {
   };
 
   return (
-    <Slider {...settings} id="FilterContainer" className="mb-2 mt-2 multiple-items" style={{ display: "flex" }}>
+    <Slider {...settings} id="FilterContainer" className="mb-2 mt-2 multiple-items" 
+    style={{ display: "flex" }}>
       {Filters.map((filter) => {
         return (
-          <div key={filter.id} className="widthfitcontent">
-            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
-              <i className={filter.iconClass}></i> {filter.name}
+          <div key={filter.id}>
+            <div to="" className={selectedFilter === filter.name ?
+               "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} 
+               value="rental" onClick={() => filterSelection(filter.name)}>{filter.name}
             </div>
           </div>
         );
