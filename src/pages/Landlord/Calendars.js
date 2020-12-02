@@ -13,15 +13,17 @@ const Calendars = () => {
         </div>
       </div>
 
-      <div className="wrapper border-bottom page-heading bg-white">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <SiteMap title="Calendar" />
+            <div className="wrapper border-bottom page-heading bg-white">
+                <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-12">
+                    <SiteMap title="Check In &amp; Check Out" />
+                    </div>
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+   
+   
 
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container-fluid pb-5">
