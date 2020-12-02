@@ -1,7 +1,8 @@
 import React from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
+import interactionPlugin from "@fullcalendar/interaction";
+// TASK to Ayham: im stucked doing the event display for this calendar
 
 export default class CalendarPage extends React.Component {
 

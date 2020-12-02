@@ -7402,6 +7402,10 @@ table.table-mail tr td {
   color: #fff !important
 }
 
+.fc-theme-standard .fc-scrollgrid {
+  background: #fff;
+}
+
 .img-shadow {
   -webkit-box-shadow: 0 0 3px 0 #919191;
   -moz-box-shadow: 0 0 3px 0 #919191;
