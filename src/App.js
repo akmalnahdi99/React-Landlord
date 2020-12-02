@@ -1,6 +1,5 @@
 //TASK under Review
 import React from "react";
-
 // react router dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // pages

@@ -6162,9 +6162,15 @@ video {
   z-index: 2200;
 }
 
+
 .modal-header .close {
   padding: 1.5rem 1.5rem;
   margin: -1rem -1rem -1rem auto;
+}
+.modal-header {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  border-bottom: 0px solid #dee2e6;
 }
 
 .modal-body {
@@ -6953,6 +6959,11 @@ table.table-mail tr td {
 }
 
 .ibox-tools a {
+  cursor: pointer;
+  margin-left: 5px;
+  color: rgb(50, 159, 157);
+}
+.ibox-tools p {
   cursor: pointer;
   margin-left: 5px;
   color: rgb(50, 159, 157);
@@ -11609,6 +11620,10 @@ body.landing-page {
   }
   body {
     line-height: 1.1;
+  }
+
+  .btnsvg svg{
+    vertical-align: -.125em !important;
   }
   .vertical-timeline-content p {
     line-height: 1.1;
