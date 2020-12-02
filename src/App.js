@@ -71,6 +71,10 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <ul>
+
+              <li>
+                <NavLink to="/landlord/login">Login</NavLink>
+              </li>
               <li>
                 <NavLink to="/landlord/activity">Activity</NavLink>
               </li>
