@@ -21,7 +21,7 @@ export default function PropertyInfo() {
       </div>
       <div class="row text-center">
         <div class="col-12 align-self-center">
-          <Link to="/landlord/InventoryList" class="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
+          <Link to="inventory-list.html" class="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
             <img src="/imgs/inventory.svg" width="30px" alt="" />
             <br />
             <span class="mt-5">Inventory List</span>

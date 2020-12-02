@@ -8,14 +8,15 @@ export default class CalendarPage extends React.Component {
 
   render() {
     return (
-        
-        <FullCalendar defaultView="dayGridMonth" dateClick={this.handleDateClick} select={this.handleSelectClick} selectable='true' plugins={[ dayGridPlugin, interactionPlugin ]}  events={[
-            { title: 'event 1', allDay: true, start: '2020-05-29', end: '2020-05-30' },
-            { title: 'event 2', allDay: true, start: '2020-05-29', end: '2020-05-30'}
-        ]}/>
+      <FullCalendar
+        plugins={[ dayGridPlugin, interactionPlugin ]}
+        dateClick={this.handleDateClick}
+      />
     )
   }
 
-  handleDateClick = (arg) => { 
-}
+  handleDateClick = (arg) => { // bind with an arrow function
+    alert(arg.dateStr)
+  }
+
 }
