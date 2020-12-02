@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import CallendarPage from '../../components/CallendarPage.js';
+import CalendarPage from '../../components/CalendarPage.js';
 
 
 const Calendars = () => {
@@ -26,7 +26,7 @@ const Calendars = () => {
             
             <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
                 <div className="container-fluid pb-5">
-                    <CallendarPage />
+                    <CalendarPage />
                 </div>
             </div>
 

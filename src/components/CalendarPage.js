@@ -1,7 +1,7 @@
 import React from 'react'
 import FullCalendar from '@fullcalendar/react'
 
-export default class CallendarPage extends React.Component {
+export default class CalendarPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
