@@ -7,6 +7,7 @@
     "@amcharts/amcharts4-fonts": "^4.0.1",
     "@fullcalendar/core": "^5.4.0",
     "@fullcalendar/daygrid": "^5.4.0",
+    "@fullcalendar/react": "^5.4.0",
     "@patternfly/react-charts": "^6.12.2",
     "@patternfly/react-core": "^4.79.2",
     "@trendmicro/react-sidenav": "^0.5.0",
