@@ -112,10 +112,6 @@ export default function App() {
               </li>
             </ul>
           </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-
           <Route path="/landlord/login">
             <Login />
           </Route>
