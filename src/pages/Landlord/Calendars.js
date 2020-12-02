@@ -2,7 +2,8 @@ import React from 'react'
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import Callendar from "../../components/Callendar";
+import CallendarPage from '../../components/CallendarPage.js';
+
 
 const Calendars = () => {
     return (
@@ -23,11 +24,9 @@ const Calendars = () => {
                 </div>
             </div>
             
-            <div className="wrapper border-bottom page-heading bg-white">
-                <div className="container-fluid">
-                    <div className="ibox">
-                        <Callendar/>
-                    </div>
+            <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+                <div className="container-fluid pb-5">
+                    <CallendarPage />
                 </div>
             </div>
 
