@@ -16,7 +16,5 @@ export default class CalendarPage extends React.Component {
     )
   }
 
-  handleDateClick = (arg) => { // bind with an arrow function
-    alert(arg.dateStr)
-  }
+  handleDateClick = (arg) => { 
 }
