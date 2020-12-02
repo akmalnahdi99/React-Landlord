@@ -18,7 +18,7 @@ export default function Calendars() {
                 <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-12">
-                    <SiteMap title="Calendar" />
+                    <SiteMap title="Check In &amp; Check Out" />
                     </div>
                 </div>
                 </div>

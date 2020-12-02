@@ -15,7 +15,6 @@ import InfoQuitRent from "../../propertyInfoComponent/InfoQuitRent";
 import InfoUnit from "../../propertyInfoComponent/InfoUnit";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
 
-
 export default function PropertyInfoOf() {
   var t = useParams();
   var propertyinfoType = t.propertyinfoType;

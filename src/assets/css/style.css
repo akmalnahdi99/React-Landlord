@@ -5969,10 +5969,6 @@ a:focus {
   margin-bottom: 15px;
 }
 
-.loginbg {
-  min-height: 100vh;
-}
-
 video {
   width: 100% !important;
   height: auto !important;
