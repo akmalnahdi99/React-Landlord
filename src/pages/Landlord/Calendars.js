@@ -1,6 +1,11 @@
 import React from 'react'
+import Footer from "../../components/static/Footer";
+import Header from "../../components/Header";
+import SiteMap from "../../components/SiteMap";
+import CalendarPage from '../../components/CalendarPage.js';
 
-const Calendars = () => {
+
+export default function Calendars() {
     return (
         <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
             <div className="border-bottom white-bg">
@@ -13,14 +18,21 @@ const Calendars = () => {
                 <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-12">
-                    <SiteMap title="Calendar" />
+                    <SiteMap title="Check In &amp; Check Out" />
                     </div>
                 </div>
                 </div>
             </div>
+        <div>
             
-        </div>
-    )
-}
+            <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+                <div className="container-fluid pb-5">
+                    <CalendarPage />
+                </div>
+            </div>
 
-export default Calendars
+            <Footer />
+        </div>
+    </div>
+    );
+}
