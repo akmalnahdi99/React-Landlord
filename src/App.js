@@ -78,6 +78,9 @@ import InventoryKey from "./pages/Landlord/InventoryKey";
 import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
 import CheckInKit from "./pages/Landlord/CheckInKit";
 import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
+import InventoryAccessCard from "./pages/Landlord/InventoryAccessCard";
+import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
+import InventoryVehicle from "./pages/Landlord/InventoryVehicle";
 
 export default function App() {
   return (
@@ -164,6 +167,18 @@ export default function App() {
           <Route path="/landlord/inventorylist">
             <LeftMenu />
             <InventoryList />
+          </Route>
+          <Route path="/landlord/inventoryaccesscard">
+            <LeftMenu />
+            <InventoryAccessCard />
+          </Route>
+          <Route path="/landlord/inventoryremotecontrol">
+            <LeftMenu />
+            <InventoryRemoteControl />
+          </Route>
+          <Route path="/landlord/inventoryvehicle">
+            <LeftMenu />
+            <InventoryVehicle />
           </Route>
           <Route path="/landlord/inventorybeds">
             <LeftMenu />

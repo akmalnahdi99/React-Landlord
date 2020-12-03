@@ -1,5 +1,6 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
+import { Link } from "react-router-dom";
  
 const InventoryItems = () => {
   var areas = [
@@ -60,17 +61,17 @@ const InventoryItems = () => {
     {
         name: "Access Cards",
         image: "/imgs/access.svg",
-        link: "/landlord/utilitycondition/"
+        link: "/landlord/inventoryaccesscard"
     },
     {
         name: "Vehicle Stickers",
         image: "/imgs/car.svg",
-        link: "/landlord/bathcondition/"
+        link: "/landlord/inventoryvehicle"
     },
     {
         name: "Remote Control",
         image: "/imgs/remote-control.svg",
-        link: "/landlord/bathcondition/"
+        link: "/landlord/inventoryremotecontrol"
     },
   ];
   var meterReadings = [
@@ -98,11 +99,11 @@ const InventoryItems = () => {
                         <div class="col-12 p-2 pt-3">
                            <div class="ibox white-bg" onclick="location.href='vr.html';">
                             <div class="ibox-content minhigh">
-                            <a href="#" class="btn-block text-truncate pt-3">
-                              <img src="/imgs/immersive.svg" width="24px" />
+                            <Link to = "/" class="btn-block text-truncate pt-3">
+                              <img src="/imgs/immersive.svg" width="24px" alt="name"/>
                               <br />
                               Virtual Tour
-                            </a>
+                            </Link>
                             </div>
                             </div>
                           </div>
@@ -120,11 +121,11 @@ const InventoryItems = () => {
                                     {areas.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}
@@ -144,11 +145,11 @@ const InventoryItems = () => {
                                     {rooms.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}
@@ -166,11 +167,11 @@ const InventoryItems = () => {
                                     {miscellaneous.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}
@@ -188,11 +189,11 @@ const InventoryItems = () => {
                                     {meterReadings.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}
