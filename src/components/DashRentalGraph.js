@@ -4,13 +4,13 @@ import InfoCardItem from "./InfoCardItem";
 import NoOverdue from "./EmptyOverdue";
 
 export default function DashRentalGraph() {
-const data = [
-  {
-  title : "Due On: 10/28/2020",
-  body : "Rent overdue",
-  color : "red",
-  }
-];
+  const data = [
+    {
+      title: "Due On: 10/28/2020",
+      body: "Rent overdue",
+      color: "red",
+    },
+  ];
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -23,9 +23,9 @@ const data = [
             return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
           })
         ) : (
-          <NoOverdue/>
+          <NoOverdue />
         )}
       </div>
     </div>
   );
-};
+}

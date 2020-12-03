@@ -14,7 +14,7 @@ export default function Utilities() {
 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-    <div class="wrapper wrapper-content animated fadeInRight ">
+      <div class="wrapper wrapper-content animated fadeInRight ">
         <div className="container">
           <div className="row iconres justify-content-center">
             <div className="col-12 align-self-center mt-4">
@@ -30,7 +30,7 @@ export default function Utilities() {
             </div>
           </div>
         </div>
-    </div>
+      </div>
       <Footer />
     </div>
   );

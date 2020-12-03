@@ -4,9 +4,7 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import CheckInLeafletData from "../../components/CheckInLeafletData";
 
-
 export default function CheckInLeaflet() {
-
   return (
     <div id="page-wrapper" className="gray-bg">
       <div className="border-bottom white-bg">

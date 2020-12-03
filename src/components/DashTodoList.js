@@ -41,7 +41,7 @@ export default function DashTodoList() {
             return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
           })
         ) : (
-          <NoToDo/>
+          <NoToDo />
         )}
       </div>
     </div>

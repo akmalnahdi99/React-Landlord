@@ -12,7 +12,6 @@ import PropertyInfoSewage from "../../propertyInfoComponent/PropertyInfoSewage";
 import PropertyInfoInternet from "../../propertyInfoComponent/PropertyInfoInternet";
 import PropertyInfoCableTv from "../../propertyInfoComponent/PropertyInfoCableTv";
 
-
 export default function UtilitiesOf() {
   var t = useParams();
   var utilityType = t.utilityType;
@@ -62,12 +61,12 @@ export default function UtilitiesOf() {
         </div>
       </div>
 
-          { (utilityType==="Water") ? <PropertyInfoWater /> :( "") }
-          { (utilityType==="Electricity") ? <PropertyInfoElectricity /> :( "") }
-          { (utilityType==="Sewage") ? <PropertyInfoSewage /> :( "") }
-          { (utilityType==="Internet") ? <PropertyInfoInternet /> :( "") }
-          { (utilityType==="Cabletv") ? <PropertyInfoCableTv /> :( "") }
-          { (utilityType==="Gas") ? <PropertyInfoGas /> :( "") }
+      {utilityType === "Water" ? <PropertyInfoWater /> : ""}
+      {utilityType === "Electricity" ? <PropertyInfoElectricity /> : ""}
+      {utilityType === "Sewage" ? <PropertyInfoSewage /> : ""}
+      {utilityType === "Internet" ? <PropertyInfoInternet /> : ""}
+      {utilityType === "Cabletv" ? <PropertyInfoCableTv /> : ""}
+      {utilityType === "Gas" ? <PropertyInfoGas /> : ""}
 
       <Footer />
     </div>

@@ -2,7 +2,7 @@
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 
- //TASK put all bills in this page
+//TASK put all bills in this page
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
@@ -13,13 +13,12 @@ import InfoServiceCharge from "../../propertyInfoComponent/InfoServiceCharge";
 import InfoAssessment from "../../propertyInfoComponent/InfoAssessment";
 import InfoQuitRent from "../../propertyInfoComponent/InfoQuitRent";
 
-
 export default function PropertyInfoOf() {
   var t = useParams();
   var propertyinfoType = t.propertyinfoType;
 
   if (!propertyinfoType) {
-      // if you don't have bill type we redirect back
+    // if you don't have bill type we redirect back
     return <Redirect to="/landlord/PropertyInfo" />;
   }
   const data = [
@@ -37,7 +36,7 @@ export default function PropertyInfoOf() {
     { key: "RateTaxes", text: "Rate & Taxes", icon: "/imgs/pie-chart.svg", url: "" },
     { key: "AssessmentRate", text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
     { key: "QuitRent", text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
-    { key: "UserManual",text: "User Manual", icon: "/imgs/guide.svg", url: "" },
+    { key: "UserManual", text: "User Manual", icon: "/imgs/guide.svg", url: "" },
   ];
 
   var allowed = false;
@@ -71,13 +70,13 @@ export default function PropertyInfoOf() {
           </div>
         </div>
       </div>
-      
-      { (propertyinfoType==="Tenancy") ? <TenancyHome /> :( "") }
-      { (propertyinfoType==="Utilities") ? <Utilities /> :( "") }
-      { (propertyinfoType==="Insurance") ? <InfoInsurance /> :( "") }
-      { (propertyinfoType==="ServiceCharge") ? <InfoServiceCharge /> :( "") }
-      { (propertyinfoType==="AssessmentRate") ? <InfoAssessment /> :( "") }
-      { (propertyinfoType==="QuitRent") ? <InfoQuitRent /> :( "") }
+
+      {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
+      {propertyinfoType === "Utilities" ? <Utilities /> : ""}
+      {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
+      {propertyinfoType === "ServiceCharge" ? <InfoServiceCharge /> : ""}
+      {propertyinfoType === "AssessmentRate" ? <InfoAssessment /> : ""}
+      {propertyinfoType === "QuitRent" ? <InfoQuitRent /> : ""}
 
       <Footer />
     </div>

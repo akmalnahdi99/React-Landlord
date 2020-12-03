@@ -6,7 +6,6 @@ import CheckInDetails from "../../components/CheckInDetails";
 import CheckOutDetails from "../../components/CheckOutDetails";
 
 export default function CheckInCheckOut() {
-
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">

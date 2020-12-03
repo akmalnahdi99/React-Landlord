@@ -6,9 +6,7 @@ import SiteMap from "../../components/SiteMap";
 import CheckInKitsList from "../../components/CheckInKitsList";
 
 export default function PropertyInfo() {
-
   return (
-    
     <div id="page-wrapper" className="gray-bg">
       <div className="border-bottom white-bg">
         <div className="container-fluid">
@@ -26,14 +24,13 @@ export default function PropertyInfo() {
         </div>
       </div>
 
-    <div className="wrapper wrapper-content animated fadeInRight ">
-    <div className="container">
-        <CheckInKitsList />
-    </div>
-    </div>
+      <div className="wrapper wrapper-content animated fadeInRight ">
+        <div className="container">
+          <CheckInKitsList />
+        </div>
+      </div>
 
-<Footer />
-</div>
+      <Footer />
+    </div>
   );
 }
-

@@ -5,10 +5,11 @@ import InfoCardItem from "./InfoCardItem";
 
 export default function DashTenantPayables() {
   let history = useHistory();
+
   const RedirectTenantPay = () => {
-    history.push('/landlord/tenantpayables')
-  }
-  
+    history.push("/landlord/tenantpayables");
+  };
+
   const data = [
     {
       title: "Due On: 10/28/2020",
