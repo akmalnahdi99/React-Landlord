@@ -78,12 +78,12 @@ const InventoryItems = () => {
     {
       name: "Electricity",
       image: "/imgs/electricity.svg",
-      link: "/landlord/bedscondition/"
+      link: "/landlord/inventoryelectricity"
     },
     {
         name: "Water",
         image: "/imgs/water-drop.svg",
-        link: "/landlord/utilitycondition/"
+        link: "/landlord/inventorywater"
     },
     {
         name: "Gas",
