@@ -3,14 +3,9 @@ import React from "react";
 // react router dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // pages
-// import About from "./pages/About";
-// import Cart from "./pages/Cart";
-// import Checkout from "./pages/Checkout";
-// import Error from "./pages/Error";
-// import Home from "./pages/Home";
-// import Login from "./pages/Login";
-// import Products from "./pages/Products";
-// import ProductDetails from "./pages/ProductDetails";
+import Login2 from "./pages/Login";
+import TenancySelect from "./pages/TenancySelection";
+import PropertySelect from "./pages/PropertySelection";
 import { NavLink } from "react-router-dom";
 // components
 // import Header from "./components/Header";
@@ -136,6 +131,15 @@ export default function App() {
                 <NavLink to="/landlord/maintenancedetails">MaintenanceDetails</NavLink>
               </li>
             </ul>
+          </Route>
+          <Route path="/pages/login">
+            <Login2 />
+          </Route>
+          <Route path="/pages/tenancyselection">
+            <TenancySelect />
+          </Route>
+          <Route path="/pages/propertyselection">
+            <PropertySelect />
           </Route>
           <Route path="/landlord/login">
             <Login />

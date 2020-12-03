@@ -19,11 +19,22 @@ export default function Activity(props) {
   const toggle = () => setModal(!modal);
   const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
 
-  const Unit = {
-    urlThumbnail: process.env.PUBLIC_URL + "/imgs/a4.jpg",
-    CondoName: "Widuri Impian Condo",
-    UnitName: "B-10-2",
-  };
+  var data = [
+    {
+      id: 0,
+      UnitName: process.env.PUBLIC_URL + "B-3A-03A",
+      BuildingName: "Puteri Palma",
+      image: "/imgs/a8.jpg",
+      altname: "P.P"
+    },
+    {
+      id: 1,
+      UnitName: "No. 46",
+      BuildingName: "Bandar Sunggala",
+      image: process.env.PUBLIC_URL + "/imgs/a4.jpg",
+      altname: "P.D"
+    },
+  ];
 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
@@ -65,23 +76,26 @@ export default function Activity(props) {
 
       <Modal isOpen={modal} toggle={toggle} className={className} centered={true}>
         <ModalHeader toggle={toggle} close={closeBtn} className="text-completedtask text-left font-title ml-3">Select Property</ModalHeader>
-        <ModalBody className="pt-0">
-          <Media className="mt-1" href="/" >
-            <Media left middle>
-              <Media className="img-fluid rounded-border align-self-center mr-3" object src={Unit.urlThumbnail} alt="PuteriPalma" width="50px" />
-            </Media>
-            <Media body className="align-self-center">
-              <Media heading className="m-0 text-completedtask">
-                {Unit.UnitName} 
-                <span>
-                <i class="fas fa-arrow-right fa-xs float-right"></i>
-              </span>
+        {data.map((item, index) => {
+          return (
+            <ModalBody className="pt-0">
+              <Media className="mt-1" href="/" >
+                <Media left middle>
+                  <Media className="img-fluid rounded-border align-self-center mr-3" object src={item.image} alt={item.altname} width="50px" />
+                </Media>
+                <Media body className="align-self-center">
+                  <Media heading className="m-0 text-completedtask">
+                    {item.UnitName}
+                    <span>
+                      <i class="fas fa-arrow-right fa-xs float-right"></i>
+                    </span>
+                  </Media>
+                  <p className="m-0 font-body text-completedtask">{item.BuildingName}</p>
+                </Media>
               </Media>
-              <p className="m-0 font-body text-completedtask">{Unit.CondoName}</p>
-              
-            </Media>
-          </Media>
-        </ModalBody>
+            </ModalBody>
+          );
+        })}
       </Modal>
 
       <div className="wrapper wrapper-content animated fadeInRight py-3 mb-0 gray-bg" style={{ borderBottom: "1px solid #fff" }}>

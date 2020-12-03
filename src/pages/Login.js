@@ -17,8 +17,9 @@ export default function Login() {
   // state values
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  // const [username, setUsername] = React.useState("default");
-  // const [isMember, setIsMember] = React.useState(true);
+  const [cpassword, confirmPassword] = React.useState("");
+  const [username, setUsername] = React.useState("default");
+  const [isMember, setIsMember] = React.useState(true);
 
   // let isEmpty = !email || !password || !username || alert.show;
 
@@ -40,28 +41,93 @@ export default function Login() {
   };
 
   return (
-    <div style={{ textAlign: "center", backgroundColor: "white" }}>
-      <h2>Please Log in :</h2>
-      <form>
+    <div className="form section loginbg doorcasedark-bg">
+      <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
-          <label htmlFor="email" style={{ color: "black" }}>
-            Email
-          </label>
-          <br />
-          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <br />
-          <label htmlFor="password" style={{ color: "black" }}>
-            Password
-          </label>
-          <br />
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-
-          <br />
-          <button type="submit" className="btn  btn-primary" onClick={handleSubmit}>
-            submit
-          </button>
+          <img alt="dr-logo" src="/imgs/doorcase-logo.png" class="img-fluid" />
         </div>
-      </form>
+
+        <div class="text-white">
+          <h3>Welcome to Doorcares</h3>
+          <p class="font-light">{isMember ? "Sign in" : "Register"} | Finger tip tenant management</p>
+        </div>
+
+        <form className="m-t">
+
+          <div className="form-group">
+
+            <input
+            className="form-control"
+              type="email"
+              id="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+          </div>
+
+          
+          {!isMember && (
+            <div className="form-group">
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                className="form-control"
+                placeholder="Username"
+              />
+            </div>
+          )}
+          
+          <div className="form-group">
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              class="form-control" placeholder="Password"
+            />
+          </div>
+          {/* end of single input */}
+          {/* single input */}
+          
+          {!isMember && (
+            <div className="form-group">
+            <input
+              type="password"
+              id="password"
+              value={cpassword}
+              onChange={e => confirmPassword(e.target.value)}
+              class="form-control" placeholder="Confirm Password"
+            />
+          </div>
+          )}
+      <hr />
+          {/* end of single input */}
+          {/* empty form text */}
+          {isEmpty && (
+            <p className="form-empty text-white">please fill out all form fields</p>
+          )}
+          {/* submit btn */}
+          {!isEmpty && (
+            <button
+              type="submit"
+              className="btn btn-primary block full-width m-b"
+              onClick={handleSubmit}
+            >
+              Login
+            </button>
+          )}
+          {/* register link */}
+          <small className="register-link text-white">
+            {isMember ? "Not a member? Please sign up" : "Already a member? "}
+            <button type="button" onClick={toggleMember} className="btn btn-link px-1">
+              click here
+          </button>
+          </small>
+        </form>
+      </div>
     </div>
   );
 

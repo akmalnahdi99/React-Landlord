@@ -2321,6 +2321,42 @@ a.list-group-item.active:focus {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.icon-xs {
+  font-size: .75em !important;
+}
+.icon-sm {
+  font-size: .875em !important;
+}
+.icon-lg {
+  font-size: 1.33em !important;
+}
+.icon-2x {
+  font-size: 2em !important;
+}
+.icon-3x {
+  font-size: 3em !important;
+}
+.icon-4x {
+  font-size: 4em !important;
+}
+.icon-5x {
+  font-size: 5em !important;
+}
+.icon-6x {
+  font-size: 6em !important;
+}
+.icon-7x {
+  font-size: 7em !important;
+}
+.icon-8x {
+  font-size: 8.0rem !important;
+}
+.icon-9x {
+  font-size: 9.0rem !important;
+}
+.icon-10x {
+  font-size: 10.0rem !important;
+}
 
 .minhigh {
   min-height: auto !important;
@@ -6404,7 +6440,7 @@ ol.unstyled {
 }
 
 .copyright-footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
