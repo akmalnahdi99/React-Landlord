@@ -14,8 +14,11 @@
     "axios": "^0.19.0",
     "chart.js": "^2.9.4",
     "chartist": "^0.11.4",
-    "jquery": "^3.5.1",
+<<<<<<< HEAD
     "fullcalendar-reactwrapper": "^1.0.7",
+=======
+    "jquery": "^3.5.1",
+>>>>>>> b17f2eee95a08dcca10a762bcaf50eeb7bed1c90
     "lightgallery": "^1.10.0",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",

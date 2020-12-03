@@ -8,22 +8,22 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 
 class Activity extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {addClass: false}
+  constructor(props) {
+    super(props);
+    this.state = { addClass: false };
+  }
+  toggle() {
+    this.setState({ addClass: !this.state.addClass });
+  }
+  render() {
+    let idClass = ["gray-bg"];
+    if (this.state.addClass) {
+      idClass.push("ml300");
     }
-    toggle() {
-      this.setState({addClass: !this.state.addClass});
-    }
-    render() {
-      let idClass = ["gray-bg"];
-      if(this.state.addClass) {
-        idClass.push('ml300');
-      }
-      
-      return(
-          <>
-          <div id="page-wrapper" className={idClass.join('  ')} style={{ border: "0px solid red" }}>
+
+    return (
+      <>
+        <div id="page-wrapper" className={idClass.join("  ")} style={{ border: "0px solid red" }}>
           <div className="border-bottom white-bg">
             <div className="container-fluid">
               <Header />
@@ -78,11 +78,8 @@ class Activity extends React.Component {
           </div>
           <Footer />
         </div>
-          </>
-      );
-    }
+      </>
+    );
   }
-  export default Activity
-
-
-
+}
+export default Activity;
