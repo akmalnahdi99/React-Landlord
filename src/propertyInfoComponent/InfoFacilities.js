@@ -1,7 +1,5 @@
 //TASK under Review
 import React from "react";
-import Empty from "../components/Empty";
-import InfoPropertyDetailsItems from "./InfoPropertyDetailsItems";
 
 
 const InfoPropertyDetails = () => {

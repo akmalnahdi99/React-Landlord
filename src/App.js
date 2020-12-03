@@ -56,15 +56,24 @@ import CheckInKit from "./pages/Landlord/CheckInKit";
 import CheckInLeaflet  from "./pages/Landlord/CheckInLeaflet";
 import Login from "./pages/Landlord/Login";
 import InventoryList from "./pages/Landlord/InventoryList";
-import InventoryBeds from "./pages/Landlord/InventoryBeds";
-import InventoryBath from "./pages/Landlord/InventoryBath";
-import InventoryKey from "./pages/Landlord/InventoryKey";
-import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
-import CheckInKit from "./pages/Landlord/CheckInKit";
-import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
-import InventoryAccessCard from "./pages/Landlord/InventoryAccessCard";
-import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
-import InventoryVehicle from "./pages/Landlord/InventoryVehicle";
+import PropertyCondition from "./pages/Landlord/PropertyCondition";
+import EntranceCondition from "./pages/Landlord/EntranceCondition";
+import KitchenCondition from "./pages/Landlord/KitchenCondition";
+import LivingCondition from "./pages/Landlord/LivingCondition";
+import DiningCondition from "./pages/Landlord/DiningCondition";
+import YardCondition from "./pages/Landlord/YardCondition";
+import BalconyCondition from "./pages/Landlord/BalconyCondition";
+import UtilityCondition from "./pages/Landlord/UtilityCondition";
+import BedsCondition from "./pages/Landlord/BedsCondition";
+import MBedCondition from "./pages/Landlord/MBedCondition";
+import CommonBed1Condition from "./pages/Landlord/CommonBed1Condition";
+import CommonBed2Condition from "./pages/Landlord/CommonBed2Condition";
+import CommonBed3Condition from "./pages/Landlord/CommonBed3Condition";
+import BathsCondition from "./pages/Landlord/BathsCondition";
+import MBathCondition from "./pages/Landlord/MBathCondition";
+import CommonBath1Condition from "./pages/Landlord/CommonBath1Condition";
+import CommonBath2Condition from "./pages/Landlord/CommonBath2Condition";
+import CommonBath3Condition from "./pages/Landlord/CommonBath3Condition";
 
 export default function App() {
   return (
@@ -281,17 +290,77 @@ export default function App() {
             <LeftMenu />
             <TenantPayables />
           </Route>
-          <Route path="/landlord/CheckInCheckOut">
+          <Route path="/landlord/PropertyCondition">
             <LeftMenu />
-            <CheckInCheckOut />
+            <PropertyCondition />
           </Route>
-          <Route path="/landlord/CheckInKit">
+          <Route path="/landlord/EntranceCondition">
             <LeftMenu />
-            <CheckInKit />
+            <EntranceCondition />
           </Route>
-          <Route path="/landlord/CheckInLeaflet">
+          <Route path="/landlord/KitchenCondition">
             <LeftMenu />
-            <CheckInLeaflet />
+            <KitchenCondition />
+          </Route>
+          <Route path="/landlord/LivingCondition">
+            <LeftMenu />
+            <LivingCondition />
+          </Route>
+          <Route path="/landlord/DiningCondition">
+            <LeftMenu />
+            <DiningCondition />
+          </Route>
+          <Route path="/landlord/YardCondition">
+            <LeftMenu />
+            <YardCondition />
+          </Route>
+          <Route path="/landlord/BalconyCondition">
+            <LeftMenu />
+            <BalconyCondition />
+          </Route>
+          <Route path="/landlord/UtilityCondition">
+            <LeftMenu />
+            <UtilityCondition />
+          </Route>
+          <Route path="/landlord/BedsCondition">
+            <LeftMenu />
+            <BedsCondition />
+          </Route>
+          <Route path="/landlord/MBedCondition">
+            <LeftMenu />
+            <MBedCondition />
+          </Route>
+          <Route path="/landlord/CommonBed1Condition">
+            <LeftMenu />
+            <CommonBed1Condition />
+          </Route>
+          <Route path="/landlord/CommonBed2Condition">
+            <LeftMenu />
+            <CommonBed2Condition />
+          </Route>
+          <Route path="/landlord/CommonBed3Condition">
+            <LeftMenu />
+            <CommonBed3Condition />
+          </Route>
+          <Route path="/landlord/BathsCondition">
+            <LeftMenu />
+            <BathsCondition />
+          </Route>
+          <Route path="/landlord/MBathCondition">
+            <LeftMenu />
+            <MBathCondition />
+          </Route>
+          <Route path="/landlord/CommonBath1Condition">
+            <LeftMenu />
+            <CommonBath1Condition />
+          </Route>
+          <Route path="/landlord/CommonBath2Condition">
+            <LeftMenu />
+            <CommonBath2Condition />
+          </Route>
+          <Route path="/landlord/CommonBath3Condition">
+            <LeftMenu />
+            <CommonBath3Condition />
           </Route>
         </Switch>
       </Router>

@@ -2,6 +2,7 @@
 import React from "react";
 import InfoPropertyDetails from "../propertyInfoComponent/InfoPropertyDetails";
 import InfoFacilities from "../propertyInfoComponent/InfoFacilities";
+import InfoPropertyManagement from "../propertyInfoComponent/InfoPropertyManagement";
 
 
 export default function InfoBuilding() {
@@ -13,6 +14,8 @@ export default function InfoBuilding() {
           <InfoPropertyDetails />
 
           <InfoFacilities/>
+
+          <InfoPropertyManagement title="Building Management"/>
         </div>
       </div>
     </div>
