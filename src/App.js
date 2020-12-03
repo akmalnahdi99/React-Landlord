@@ -72,6 +72,13 @@ import InventoryBeds from "./pages/Landlord/InventoryBeds";
 import InventoryBath from "./pages/Landlord/InventoryBath";
 import InventoryKey from "./pages/Landlord/InventoryKey";
  
+import InventoryBeds from "./pages/Landlord/InventoryBeds";
+import InventoryBath from "./pages/Landlord/InventoryBath";
+import InventoryKey from "./pages/Landlord/InventoryKey";
+import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
+import CheckInKit from "./pages/Landlord/CheckInKit";
+import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
+
 export default function App() {
   return (
     <AppProvider>
