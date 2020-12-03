@@ -21,15 +21,15 @@ export default function Login() {
   const [username, setUsername] = React.useState("default");
   const [isMember, setIsMember] = React.useState(true);
 
-  // let isEmpty = !email || !password || !username || alert.show;
+  let isEmpty = !email || !password || !username || alert.show;
 
-  // const toggleMember = () => {
-  //   setIsMember((prevMember) => {
-  //     let isMember = !prevMember;
-  //     isMember ? setUsername("default") : setUsername("");
-  //     return isMember;
-  //   });
-  // };
+  const toggleMember = () => {
+    setIsMember((prevMember) => {
+      let isMember = !prevMember;
+      isMember ? setUsername("default") : setUsername("");
+      return isMember;
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

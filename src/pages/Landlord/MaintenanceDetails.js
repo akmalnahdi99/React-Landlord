@@ -5,12 +5,11 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import MaintenanceDetailsList from "../../components/MaintenanceDetailsList";
 import MaintenanceTimeLine from "../../components/MaintenanceTimeLine";
-import { useParams } from "react-router-dom";
-
+// import { useParams } from "react-router-dom";
 
 export default function Maintenance() {
   // const { alert, hideAlert } = React.useContext(UserContext);
-  var t = useParams();
+ 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -31,10 +30,10 @@ export default function Maintenance() {
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container container-xs pb-5">
           <MaintenanceDetailsList />
-      
+
           <MaintenanceTimeLine />
-          </div>
         </div>
+      </div>
       <Footer />
     </div>
   );
