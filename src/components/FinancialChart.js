@@ -1,6 +1,8 @@
 // need maintainance
 import React from "react";
 import ChartistGraph from "react-chartist";
+
+
 //TASK This file need to be written the hooks way
 class LineChart extends React.Component {
   render() {
