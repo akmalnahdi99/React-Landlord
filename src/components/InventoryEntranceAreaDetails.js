@@ -1,12 +1,15 @@
+/* Need to add another array for 2nd item box*/
+
 import React from "react";
 import Empty from "../components/Empty";
-import InventoryWaterItem from "./InventoryWaterItem";
+import InventoryEntranceAreaItem from "./InventoryEntranceAreaItem";
 
-const WaterDetails = () => {
-  var water = [
+const EntranceDetails = () => {
+  var detail = [
     {
       id: 0,
-      date: "",
+      date: "Pendant Light",
+      no: "10",
       images: [
         {
           urlThumb: "/imgs/da1.jpg",
@@ -21,15 +24,15 @@ const WaterDetails = () => {
           urlHref: "/imgs/da3.jpg",
         },
       ],
-      description: "3200 m³",
+      description: "BFG-3300",
     },
   ];
 
   return (
     <div className="ibox">
-      {water.length > 0 ? (
-        water.map((item, index) => {
-          return <InventoryWaterItem key={index} {...item} />;
+      {detail.length > 0 ? (
+        detail.map((item, index) => {
+          return <InventoryEntranceAreaItem key={index} {...item} />;
         })
       ) : (
         <Empty />
@@ -38,4 +41,4 @@ const WaterDetails = () => {
   );
 };
 
-export default WaterDetails;
+export default EntranceDetails;

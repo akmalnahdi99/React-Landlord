@@ -1,9 +1,9 @@
 import React from "react";
 import Empty from "../components/Empty";
-import InventoryWaterItem from "./InventoryWaterItem";
+import InventoryGasItem from "./InventoryGasItem";
 
-const WaterDetails = () => {
-  var water = [
+const GasDetails = () => {
+  var gas = [
     {
       id: 0,
       date: "",
@@ -27,9 +27,9 @@ const WaterDetails = () => {
 
   return (
     <div className="ibox">
-      {water.length > 0 ? (
-        water.map((item, index) => {
-          return <InventoryWaterItem key={index} {...item} />;
+      {gas.length > 0 ? (
+        gas.map((item, index) => {
+          return <InventoryGasItem key={index} {...item} />;
         })
       ) : (
         <Empty />
@@ -38,4 +38,4 @@ const WaterDetails = () => {
   );
 };
 
-export default WaterDetails;
+export default GasDetails;

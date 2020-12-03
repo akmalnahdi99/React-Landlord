@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import InventoryMeterReading from "../../components/InventoryMeterReading";
+import InventoryGasReading from "../../components/InventoryGasReading";
 
 export default function LivingCondition() {
   // const { alert, hideAlert } = React.useContext(UserContext);
@@ -19,7 +19,7 @@ export default function LivingCondition() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Electricity" />
+              <SiteMap title="Gas" />
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function LivingCondition() {
         <div className="container container-xs pb-5">
           <div class="row m-t-sm justify-content-center">
             <div class="col-lg-9">
-              <InventoryMeterReading />
+              <InventoryGasReading />
             </div>
           </div>
         </div>

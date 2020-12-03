@@ -24,10 +24,14 @@ export default function LivingCondition() {
           </div>
         </div>
       </div>
-        
+
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container container-xs pb-5">
-          <InventoryWaterReading />
+          <div class="row m-t-sm justify-content-center">
+            <div class="col-lg-9">
+              <InventoryWaterReading />
+            </div>
+          </div>
         </div>
       </div>
 

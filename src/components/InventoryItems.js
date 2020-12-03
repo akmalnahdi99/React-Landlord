@@ -7,7 +7,7 @@ const InventoryItems = () => {
     {
       name: "Entrance",
       image: "/imgs/en1.svg",
-      link: "/landlord/entrancecondition"
+      link: "/landlord/inventoryentrance"
     },
     {
         name: "Kitchen",
@@ -88,7 +88,7 @@ const InventoryItems = () => {
     {
         name: "Gas",
         image: "/imgs/gas.svg",
-        link: "/landlord/bathcondition/"
+        link: "/landlord/inventorygas"
     },
   ];
   return (

@@ -80,6 +80,8 @@ import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
 import InventoryVehicle from "./pages/Landlord/InventoryVehicle";
 import InventoryElectricity from "./pages/Landlord/InventoryElectricity";
 import InventoryWater from "./pages/Landlord/InventoryWater";
+import InventoryGas from "./pages/Landlord/InventoryGas";
+import InventoryEntrance from "./pages/Landlord/InventoryEntrance";
 
 export default function App() {
   return (
@@ -181,9 +183,17 @@ export default function App() {
             <LeftMenu />
             <InventoryAccessCard />
           </Route>
+          <Route path="/landlord/inventoryentrance">
+            <LeftMenu />
+            <InventoryEntrance />
+          </Route>
           <Route path="/landlord/inventorywater">
             <LeftMenu />
             <InventoryWater />
+          </Route>
+          <Route path="/landlord/inventorygas">
+            <LeftMenu />
+            <InventoryGas />
           </Route>
           <Route path="/landlord/inventoryelectricity">
             <LeftMenu />

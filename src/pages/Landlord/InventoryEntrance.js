@@ -2,7 +2,8 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import InventoryMeterReading from "../../components/InventoryMeterReading";
+import InventoryAreaFilter from "../../components/InventoryAreaFilter";
+import InventoryEntranceAreaDetails from "../../components/InventoryEntranceAreaDetails";
 
 export default function LivingCondition() {
   // const { alert, hideAlert } = React.useContext(UserContext);
@@ -19,19 +20,21 @@ export default function LivingCondition() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Electricity" />
+              <SiteMap title="Entrance" />
             </div>
           </div>
         </div>
       </div>
-
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div className="container container-xs pb-5">
-          <div class="row m-t-sm justify-content-center">
-            <div class="col-lg-9">
-              <InventoryMeterReading />
-            </div>
+        <div className="row p-0 justify-content-center pb-0">
+          <div className="col-lg-8 px-2">
+          <InventoryAreaFilter/>
+          <hr/>
           </div>
+        </div>
+        <div className="container container-xs">
+          <InventoryEntranceAreaDetails />
+          <InventoryEntranceAreaDetails />
         </div>
       </div>
 

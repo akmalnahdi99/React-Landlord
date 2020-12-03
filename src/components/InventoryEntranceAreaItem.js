@@ -1,8 +1,7 @@
-//TASK under Review
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ConditionItem({ date, description, images }) {
+export default function ConditionItem({ date, description, images, no }) {
   var imageGallery = null;
   if (images != null) {
     imageGallery = images.map((image, index) => {
@@ -22,11 +21,19 @@ export default function ConditionItem({ date, description, images }) {
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h3 class="text-doorcase3">Meter Reading</h3>
+              <div class="col-2 float-right">
+                <h4 class="text-doorcase3">Quantity</h4>
+                <p class="m-0">{no}</p>
+              </div>
+              <h4 class="text-doorcase3">Item Name</h4>
+              <p class="m-0">{date}</p>
+
+              <hr />
             </div>
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-12">
           <div class="demo-gallery">
@@ -41,7 +48,7 @@ export default function ConditionItem({ date, description, images }) {
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h4 class="text-doorcase3">Reading</h4>
+              <h4 class="text-doorcase3">Model Number</h4>
               <p class="m-0">{description}</p>
             </div>
           </div>

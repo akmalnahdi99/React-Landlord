@@ -22,7 +22,7 @@ export default function ConditionItem({ date, description, images }) {
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h3 class="text-doorcase3">Meter Reading</h3>
+              <h3 class="text-doorcase3">Gas</h3>
             </div>
           </div>
         </div>
