@@ -7,11 +7,6 @@ import Login2 from "./pages/Login";
 import TenancySelect from "./pages/TenancySelection";
 import PropertySelect from "./pages/PropertySelection";
 import { NavLink } from "react-router-dom";
-// components
-// import Header from "./components/Header";
-// import Alert from "./components/Alert";
-// import PrivateRoute from "./components/PrivateRoute";
-// import ScrollButton from "./components/ScrollButton";
 
 //Styles
 import "./assets/css/style.css";
@@ -74,6 +69,15 @@ import MBathCondition from "./pages/Landlord/MBathCondition";
 import CommonBath1Condition from "./pages/Landlord/CommonBath1Condition";
 import CommonBath2Condition from "./pages/Landlord/CommonBath2Condition";
 import CommonBath3Condition from "./pages/Landlord/CommonBath3Condition";
+import InventoryBeds from "./pages/Landlord/InventoryBeds";
+import InventoryBath from "./pages/Landlord/InventoryBath";
+import InventoryKey from "./pages/Landlord/InventoryKey";
+import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
+import CheckInKit from "./pages/Landlord/CheckInKit";
+import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
+import InventoryAccessCard from "./pages/Landlord/InventoryAccessCard";
+import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
+import InventoryVehicle from "./pages/Landlord/InventoryVehicle";
 
 export default function App() {
   return (
@@ -82,8 +86,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <ul>
-
               <li>
+                <NavLink to="/pages/login">Login</NavLink>
+              </li><li>
                 <NavLink to="/landlord/login">Login</NavLink>
               </li>
               <li>
@@ -361,41 +366,18 @@ export default function App() {
           <Route path="/landlord/CommonBath3Condition">
             <LeftMenu />
             <CommonBath3Condition />
+          </Route>  
+          <Route path="/landlord/checkincheckout">
+            <CheckInCheckOut />
+          </Route>
+          <Route path="/landlord/checkinkit">
+            <CheckInKit />
+          </Route>
+          <Route path="/landlord/checkinleaflet">
+            <CheckInLeaflet />
           </Route>
         </Switch>
       </Router>
     </AppProvider>
   );
 }
-
-/* <Header />
-      <Alert />
-      <ScrollButton />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <PrivateRoute path="/checkout" name="john" msg="hello">
-          <Checkout />
-        </PrivateRoute>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/products">
-          <Products />
-        </Route>
-        <Route
-          path="/products/:id"
-          children={<ProductDetails></ProductDetails>}
-        ></Route>
-
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch> */
