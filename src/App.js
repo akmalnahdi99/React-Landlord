@@ -64,6 +64,14 @@ import InventoryList from "./pages/Landlord/InventoryList";
 import Login from "./pages/Landlord/Login";
 import InventoryList from "./pages/Landlord/InventoryList";
 
+import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
+import CheckInKit from "./pages/Landlord/CheckInKit";
+import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
+ 
+import InventoryBeds from "./pages/Landlord/InventoryBeds";
+import InventoryBath from "./pages/Landlord/InventoryBath";
+import InventoryKey from "./pages/Landlord/InventoryKey";
+ 
 export default function App() {
   return (
     <AppProvider>
@@ -149,6 +157,18 @@ export default function App() {
           <Route path="/landlord/inventorylist">
             <LeftMenu />
             <InventoryList />
+          </Route>
+          <Route path="/landlord/inventorybeds">
+            <LeftMenu />
+            <InventoryBeds />
+          </Route>
+          <Route path="/landlord/inventorybath">
+            <LeftMenu />
+            <InventoryBath />
+          </Route>
+          <Route path="/landlord/inventorykey">
+            <LeftMenu />
+            <InventoryKey />
           </Route>
           <Route path="/landlord/quicklinks">
             <LeftMenu />

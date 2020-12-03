@@ -4,8 +4,7 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import InventoryItems from "../../components/InventoryItems";
-
+import InventoryBedItems from "../../components/InventoryBedItems";
 export default function Inventory() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
@@ -20,17 +19,12 @@ export default function Inventory() {
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-12">
-                <SiteMap title="Inventory List" />
+                <SiteMap title="Beds" />
               </div>
             </div>
           </div>
         </div>
-        <div className="wrapper wrapper-content fadeInRight">
-          <div className="container container-xs">
-
-                <InventoryItems/>
-          </div>
-        </div>
+        <InventoryBedItems/>
 
         <Footer />
       </div>
