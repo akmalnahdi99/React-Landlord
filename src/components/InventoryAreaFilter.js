@@ -77,7 +77,9 @@ export default function PostsListFilter() {
       {Filters.map((filter) => {
         return (
           <div key={filter.id}>
-            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+            <div to="" className={selectedFilter === filter.name ? 
+              "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} 
+              value="rental" onClick={() => filterSelection(filter.name)}>
               {filter.name}
             </div>
           </div>

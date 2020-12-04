@@ -53,7 +53,12 @@ import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
 import InventoryList from "./pages/Landlord/InventoryList";
 import InventoryKey from "./pages/Landlord/InventoryKey";
 import InventoryGas from "./pages/Landlord/InventoryGas";
+import InventoryYard from "./pages/Landlord/InventoryYard";
+import InventoryBalcony from "./pages/Landlord/InventoryBalcony";
+import InventoryKitchen from "./pages/Landlord/InventoryKitchen";
 import InventoryEntrance from "./pages/Landlord/InventoryEntrance";
+import InventoryLiving from "./pages/Landlord/InventoryLiving";
+import InventoryDining from "./pages/Landlord/InventoryDining"
 import InventoryElectricity from "./pages/Landlord/InventoryElectricity";
 import InventoryBeds from "./pages/Landlord/InventoryBeds";
 import InventoryBath from "./pages/Landlord/InventoryBath";
@@ -184,6 +189,26 @@ export default function App() {
           <Route path="/landlord/inventorywater">
             <LeftMenu />
             <InventoryWater />
+          </Route>
+          <Route path="/landlord/inventorykitchen">
+            <LeftMenu />
+            <InventoryKitchen />
+          </Route>
+          <Route path="/landlord/inventorydining">
+            <LeftMenu />
+            <InventoryDining />
+          </Route>
+          <Route path="/landlord/inventoryyard">
+            <LeftMenu />
+            <InventoryYard />
+          </Route>
+          <Route path="/landlord/inventorybalcony">
+            <LeftMenu />
+            <InventoryBalcony />
+          </Route>
+          <Route path="/landlord/inventoryliving">
+            <LeftMenu />
+            <InventoryLiving />
           </Route>
           <Route path="/landlord/inventorygas">
             <LeftMenu />

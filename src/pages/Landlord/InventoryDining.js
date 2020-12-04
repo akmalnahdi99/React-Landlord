@@ -3,9 +3,9 @@ import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import InventoryAreaFilter from "../../components/InventoryAreaFilter";
-import InventoryEntranceAreaDetails from "../../components/InventoryEntranceAreaDetails";
+import InventoryDiningDetails from "../../components/InventoryDiningDetails";
 
-export default function LivingCondition() {
+export default function DiningCondition() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
@@ -20,7 +20,7 @@ export default function LivingCondition() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Entrance" />
+              <SiteMap title="Dining" />
             </div>
           </div>
         </div>
@@ -33,8 +33,8 @@ export default function LivingCondition() {
           </div>
         </div>
         <div className="container container-xs">
-          <InventoryEntranceAreaDetails />
-          <InventoryEntranceAreaDetails />
+          <InventoryDiningDetails />
+          <InventoryDiningDetails />
         </div>
       </div>
 

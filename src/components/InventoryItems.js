@@ -12,34 +12,34 @@ const InventoryItems = () => {
     {
         name: "Kitchen",
         image: "/imgs/k2.svg",
-        link: "/landlord/kitchencondition/"
+        link: "/landlord/inventorykitchen"
     },
     {
         name: "Living",
         image: "/imgs/l1.svg",
-        link: "/landlord/livingcondition/"
+        link: "/landlord/inventoryliving"
       },
       {
         name: "Dining",
         image: "/imgs/dining.svg",
-        link: "/landlord/diningcondition/"
+        link: "/landlord/inventorydining"
       },
       {
         name: "Yard",
         image: "/imgs/yard.svg",
-        link: "/landlord/yardcondition/"
+        link: "/landlord/inventoryyard"
       },
       {
         name: "Balcony",
         image: "/imgs/balcony.svg",
-        link: "/landlord/balconycondition/"
+        link: "/landlord/inventorybalcony"
       },
   ];
   var rooms = [
     {
       name: "Beds",
       image: "/imgs/bed1.svg",
-      link: "/landlord/inventorybeds/"
+      link: "/landlord/inventorybeds"
     },
     {
         name: "Utility",
