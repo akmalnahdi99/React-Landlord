@@ -25,7 +25,7 @@ export default function Notification() {
         </div>
       </div>
 
-      <div className="wrapper wrapper-content animated fadeInRight">
+      <div className="wrapper wrapper-content animated fadeInRight gray-bg">
         <div className="container container-xs">
           <NotificationList />
         </div>

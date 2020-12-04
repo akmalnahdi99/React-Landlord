@@ -46,7 +46,7 @@ export default function Bills() {
       <div class="wrapper wrapper-content animated fadeInRight ">
         <div class="container">
           <div className="row text-center">
-            <div className="col-12 align-self-center mt-4">
+            <div className="col-md-12 align-self-center mt-4">
               {data.map((item, index) => {
                 return (
                   <Link key={index} to={"/landlord/bills/" + item.key} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">

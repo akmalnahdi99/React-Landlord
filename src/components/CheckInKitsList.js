@@ -10,22 +10,22 @@ function CheckInKitsList() {
           <br />
           <span>Information leaflet</span>
         </Link>
-        <Link to="inventory-keys.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+        <Link to="/landlord/inventorykey" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
           <img src="/imgs/key.svg" width="30px" alt="" />
           <br />
           <span>Keys</span>
         </Link>
-        <Link to="inventory-accesscards.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+        <Link to="/landlord/inventoryaccesscard" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
           <img src="/imgs/access.svg" width="30px" alt="" />
           <br />
           <span>Access Cards</span>
         </Link>
-        <Link to="inventory-remotecontrols.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+        <Link to="/landlord/inventoryremotecontrol" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
           <img src="/imgs/remote-control.svg" width="30px" alt="" />
           <br />
           <span>Remote Controls</span>
         </Link>
-        <Link to="inventory-vehiclestickers.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+        <Link to="/landlord/inventoryvehicle" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
           <img src="/imgs/car.svg" width="30px" alt="" />
           <br />
           <span>Vehicle Stickers</span>

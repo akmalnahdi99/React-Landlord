@@ -114,7 +114,7 @@ const MaintenanceList = () => {
   ];
 
   return (
-    <div className="ibox">
+    <div className="ibox mt-4">
       <div className="ibox-content paddingtop minhigh">
         <div className="viewing-timeline">
           {data.length > 0 ? (

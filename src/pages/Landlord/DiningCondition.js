@@ -34,7 +34,11 @@ export default function LivingCondition() {
           </div>
         </div>
         <div className="container container-xs pb-5">
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
           <DiningConditionDetails />
+          </div>
+          </div>
         </div>
       </div>
 

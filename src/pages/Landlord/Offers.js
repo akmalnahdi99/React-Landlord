@@ -35,12 +35,13 @@ export default function Offers() {
 
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container container-xs pb-5 px-0">
-          <div className="row">
-            <div className="col-lg-12 mb-3">
+          <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
             <DividedHeader data={headerData} />
+            <OfferList />
             </div>
           </div>
-          <OfferList />
+          
         </div>
       </div>
       <Footer />

@@ -452,12 +452,15 @@ export default function App() {
             <CommonBath3Condition />
           </Route>  
           <Route path="/landlord/checkincheckout">
+          <LeftMenu />
             <CheckInCheckOut />
           </Route>
           <Route path="/landlord/checkinkit">
+          <LeftMenu />
             <CheckInKit />
           </Route>
           <Route path="/landlord/checkinleaflet">
+          <LeftMenu />
             <CheckInLeaflet />
           </Route>
         </Switch>

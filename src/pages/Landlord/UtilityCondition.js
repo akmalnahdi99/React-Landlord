@@ -34,7 +34,11 @@ export default function YardCondition() {
           </div>
         </div>
         <div className="container container-xs pb-5">
-          <UtilityConditionDetails />
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
+              <UtilityConditionDetails />
+          </div>
+          </div>
         </div>
       </div>
 
