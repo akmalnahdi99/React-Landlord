@@ -4,24 +4,24 @@ import React from "react";
 import Empty from "../components/Empty";
 import InventoryItem from "./InventoryItem";
 
-const InventoryEntranceAreaDetails = () => {
+const InventoryMBedDetails = () => {
   var drawer =  [
   {
       id: 0,
-      date: "Pendant",
-      no: "3",
+      date: "Chest Drawer",
+      no: "10",
       images: [
         {
-          urlThumb: "/imgs/pendant1.jpg",
-          urlHref: "/imgs/pendant1.jpg",
+          urlThumb: "/imgs/m-chestdrawer1.jpg",
+          urlHref: "/imgs/m-chestdrawer1.jpg",
         },
         {
-          urlThumb: "/imgs/pendant2.jpg",
-          urlHref: "/imgs/pendant2.jpg",
+          urlThumb: "/imgs/m-chestdrawer2.jpg",
+          urlHref: "/imgs/m-chestdrawer2.jpg",
         },
         {
-          urlThumb: "/imgs/pendant3.jpg",
-          urlHref: "/imgs/pendant3.jpg",
+          urlThumb: "/imgs/m-chestdrawer3.jpg",
+          urlHref: "/imgs/m-chestdrawer1.jpg",
         },
       ],
       description: "BFG-3300",
@@ -30,20 +30,20 @@ const InventoryEntranceAreaDetails = () => {
 var table =  [
     {
         id: 0,
-        date: "Shelf",
+        date: "Table",
         no: "10",
         images: [
           {
-            urlThumb: "/imgs/shelf1.jpg",
-            urlHref: "/imgs/shelf1.jpg",
+            urlThumb: "/imgs/m-bedside1.jpg",
+            urlHref: "/imgs/m-bedside1.jpg",
           },
           {
-            urlThumb: "/imgs/shelf2.jpg",
-            urlHref: "/imgs/shelf2.jpg",
+            urlThumb: "/imgs/m-bedside2.jpg",
+            urlHref: "/imgs/m-bedside2.jpg",
           },
           {
-            urlThumb: "/imgs/shelf3.jpg",
-            urlHref: "/imgs/shelf3.jpg",
+            urlThumb: "/imgs/m-bedside3.jpg",
+            urlHref: "/imgs/m-bedside3.jpg",
           },
         ],
         description: "BFG-3300",
@@ -73,4 +73,4 @@ var table =  [
   );
 };
 
-export default InventoryEntranceAreaDetails;
+export default InventoryMBedDetails;

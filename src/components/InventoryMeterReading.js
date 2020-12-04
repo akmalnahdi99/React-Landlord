@@ -9,16 +9,16 @@ const ElectricityDetails = () => {
       date: "",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/meter-r.jpg",
+          urlHref: "/imgs/meter-r.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/meter-r.jpg",
+          urlHref: "/imgs/meter-r.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/meter-r.jpg",
+          urlHref: "/imgs/meter-r.jpg",
         },
       ],
       description: "95732-7 kW/h",

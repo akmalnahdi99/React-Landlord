@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import InventoryAreaFilter from "../../components/InventoryAreaFilter";
-import InventoryKitchenDetails from "../../components/InventoryKitchenDetails";
+import InventoryCBath3Details from "../../components/InventoryCBath3Details";
+import ConditionFilter from "../../components/ConditionFilter";
 
-export default function LivingCondition() {
+export default function InventoryCBath3() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
@@ -20,20 +20,21 @@ export default function LivingCondition() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Kitchen" />
+              <SiteMap title="Common Bathroom 3" />
             </div>
           </div>
         </div>
       </div>
+
+
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="row p-0 justify-content-center pb-0">
           <div className="col-lg-8 px-2">
-          <InventoryAreaFilter/>
-          <br/>
+          <ConditionFilter/>
           </div>
         </div>
-        <div className="container container-xs">
-          <InventoryKitchenDetails />
+        <div className="container container-xs pb-5">
+          <InventoryCBath3Details />
         </div>
       </div>
 

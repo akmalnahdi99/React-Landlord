@@ -1,48 +1,74 @@
-/* Need to add another array for 2nd item box*/
-
 import React from "react";
 import Empty from "../components/Empty";
-import InventoryKitchenItem from "./InventoryKitchenItem";
+import InventoryItem from "./InventoryItem";
 
-const KitchenDetails = () => {
-  var detail =  [
+const InventoryKitchenDetails = () => {
+  var hood =  [
   {
       id: 0,
-      item: "Kitchen Hood",
+      date: "Kitchen Hood",
       no: "1",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/kitchen-hood1.jpg",
+          urlHref: "/imgs/kitchen-hood1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/kitchen-hood2.jpg",
+          urlHref: "/imgs/kitchen-hood2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/kitchen-hood3.jpg",
+          urlHref: "/imgs/kitchen-hood3.jpg",
         },
       ],
-      model: "PHP032871",
+      description: "BFG-3300",
     }
 ];
+var shelf =  [
+    {
+        id: 0,
+        date: "Shelf",
+        no: "10",
+        images: [
+          {
+            urlThumb: "/imgs/kitchen-shelf1.jpg",
+            urlHref: "/imgs/kitchen-shelf1.jpg",
+          },
+          {
+            urlThumb: "/imgs/kitchen-shelf2.jpg",
+            urlHref: "/imgs/kitchen-shelf2.jpg",
+          },
+          {
+            urlThumb: "/imgs/kitchen-shelf3.jpg",
+            urlHref: "/imgs/kitchen-shelf3.jpg",
+          },
+        ],
+        description: "BFG-3300",
+      }
+  ];
 
   return (
-    <div className="ibox">
-                {detail.length > 0 ? (
-                    detail.map((item, index) => {
-                    return <InventoryKitchenItem key={index} {...item} />;
-                    
+    <div>
+                {hood.length > 0 ? (
+                    hood.map((item, index) => {
+                    return <InventoryItem key={index} {...item} />;
                     })
                 ) : (
                     <Empty />
                 )}
-                
-                
-    </div>
-    
+                {shelf.length > 0 ? (
+                    shelf.map((item, index) => {
+                    return <InventoryItem key={index} {...item} />;
+                    })
+                ) : (
+                    <Empty />
+                )}
+
+    </div>        
+
+
   );
 };
 
-export default KitchenDetails;
+export default InventoryKitchenDetails;

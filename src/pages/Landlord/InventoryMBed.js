@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import InventoryAreaFilter from "../../components/InventoryAreaFilter";
-import InventoryKitchenDetails from "../../components/InventoryKitchenDetails";
+import InventoryMBedDetails from "../../components/InventoryMBedDetails";
+import ConditionFilter from "../../components/ConditionFilter";
 
-export default function LivingCondition() {
+export default function InventoryMBed() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
@@ -15,12 +15,11 @@ export default function LivingCondition() {
           <Header />
         </div>
       </div>
-
       <div className="wrapper border-bottom page-heading bg-white">
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Kitchen" />
+              <SiteMap title="Master Bedroom" />
             </div>
           </div>
         </div>
@@ -28,12 +27,12 @@ export default function LivingCondition() {
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="row p-0 justify-content-center pb-0">
           <div className="col-lg-8 px-2">
-          <InventoryAreaFilter/>
+          <ConditionFilter/>
           <br/>
           </div>
         </div>
-        <div className="container container-xs">
-          <InventoryKitchenDetails />
+        <div className="container container-xs pb-5">
+          <InventoryMBedDetails />
         </div>
       </div>
 

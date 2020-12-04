@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
  
 const InventoryBed = () => {
@@ -6,24 +7,24 @@ const InventoryBed = () => {
     {
       name: "Master Bedroom",
       image: "/imgs/mbed.svg",
-      link: "/landlord/entrancecondition"
+      link: "/landlord/inventorymbed"
     },
   ];
   var commonbed = [
     {
       name: "Common Bedroom 1",
       image: "/imgs/cb1.svg",
-      link: "/landlord/bedscondition/"
+      link: "/landlord/inventorycbed1"
     },
     {
         name: "Common Bedroom 2",
         image: "/imgs/cb1.svg",
-        link: "/landlord/utilitycondition/"
+        link: "/landlord/inventorycbed2"
     },
     {
         name: "Common Bedroom 3",
         image: "/imgs/cb1.svg",
-        link: "/landlord/bathcondition/"
+        link: "/landlord/inventorycbed3"
     },
   ];
   return (
@@ -44,11 +45,11 @@ const InventoryBed = () => {
                                     {masterbed.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}
@@ -68,11 +69,11 @@ const InventoryBed = () => {
                                     {commonbed.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}

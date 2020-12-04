@@ -12,16 +12,16 @@ const UtilityDetails = () => {
       no: "1",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/ua1.jpg",
+          urlHref: "/imgs/ua1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/ua2.jpg",
+          urlHref: "/imgs/ua2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/ua3.jpg",
+          urlHref: "/imgs/ua3.jpg",
         },
       ],
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
