@@ -12,16 +12,16 @@ const EntranceDetails = () => {
       no: "10",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/pendant1.jpg",
+          urlHref: "/imgs/pendant1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/pendant2.jpg",
+          urlHref: "/imgs/pendant2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/pendant3.jpg",
+          urlHref: "/imgs/pendant3.jpg",
         },
       ],
       description: "BFG-3300",

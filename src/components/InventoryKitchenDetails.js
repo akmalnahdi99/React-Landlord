@@ -12,16 +12,16 @@ const KitchenDetails = () => {
       no: "1",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/kitchen-hood1.jpg",
+          urlHref: "/imgs/kitchen-hood1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/kitchen-hood2.jpg",
+          urlHref: "/imgs/kitchen-hood2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/kitchen-hood3.jpg",
+          urlHref: "/imgs/kitchen-hood3.jpg",
         },
       ],
       model: "PHP032871",

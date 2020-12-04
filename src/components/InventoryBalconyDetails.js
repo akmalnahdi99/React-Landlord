@@ -12,16 +12,16 @@ const BalconyDetails = () => {
       no: "1",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/swing1.jpg",
+          urlHref: "/imgs/swing1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/swing2.jpg",
+          urlHref: "/imgs/swing2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/swing3.jpg",
+          urlHref: "/imgs/swing3.jpg",
         },
       ],
       model: "HNK-500-TP",

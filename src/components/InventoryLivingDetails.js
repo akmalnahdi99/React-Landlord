@@ -12,16 +12,16 @@ const KitchenDetails = () => {
       no: "2",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/tea-table1.jpg",
+          urlHref: "/imgs/tea-table1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/tea-table2.jpg",
+          urlHref: "/imgs/tea-table2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/tea-table3.jpg",
+          urlHref: "/imgs/tea-table3.jpg",
         },
       ],
       model: "HNK-500-TP",

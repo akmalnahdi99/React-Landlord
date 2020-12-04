@@ -12,16 +12,16 @@ const YardDetails = () => {
       no: "1",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/ya1.jpg",
+          urlHref: "/imgs/ya1.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/ya2.jpg",
+          urlHref: "/imgs/ya2.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/ya3.jpg",
+          urlHref: "/imgs/ya3.jpg",
         },
       ],
       model: "HNK-500-TP",
