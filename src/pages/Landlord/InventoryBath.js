@@ -1,5 +1,3 @@
-/*Need to align ibox and item.icon and text*/
-
 import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";

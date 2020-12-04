@@ -26,7 +26,9 @@ export default function LivingCondition() {
         </div>
       </div>
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div className="row p-0 justify-content-center pb-0">
+      <div className="row justify-content-center">
+            <div className="col-lg-8 mb-3">
+        <div className="row p-0 justify-content-center">
           <div className="col-lg-8 px-2">
           <InventoryAreaFilter/>
           <br/>
@@ -35,8 +37,9 @@ export default function LivingCondition() {
         <div className="container container-xs">
           <InventoryLivingDetails />
         </div>
+        </div>
       </div>
-
+      </div>
       <Footer />
     </div>
   );

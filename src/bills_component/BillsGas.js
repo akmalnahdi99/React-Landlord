@@ -10,7 +10,6 @@ export default function BillsGas() {
         <div className="col-lg-9 mb-3">
       <div class="ibox ">
           <GasDetails title="Internet" />
-    
     </div>
     </div>
   </div>
