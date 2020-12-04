@@ -7,24 +7,24 @@ const InventoryBed = () => {
     {
       name: "Master Bedroom",
       image: "/imgs/mbed.svg",
-      link: "/landlord/entrancecondition"
+      link: "/landlord/inventorymbed"
     },
   ];
   var commonbed = [
     {
       name: "Common Bedroom 1",
       image: "/imgs/cb1.svg",
-      link: "/landlord/bedscondition/"
+      link: "/landlord/inventorycbed1"
     },
     {
         name: "Common Bedroom 2",
         image: "/imgs/cb1.svg",
-        link: "/landlord/utilitycondition/"
+        link: "/landlord/inventorycbed2"
     },
     {
         name: "Common Bedroom 3",
         image: "/imgs/cb1.svg",
-        link: "/landlord/bathcondition/"
+        link: "/landlord/inventorycbed3"
     },
   ];
   return (

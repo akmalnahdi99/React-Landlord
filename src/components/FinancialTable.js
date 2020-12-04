@@ -3,12 +3,12 @@ import * as ReactBootstrap from "react-bootstrap";
 
 const FinancialTable = () => {
     const info = [
-        {category: "Income", amount: " "},
+        {categorytotal: "Income", amount: " "},
         {category: "+ Apartment Rental", amount: "20000.00"},
         {category: "+ Parking Lot Rental", amount: "2000.00"},
         {category: "+ Storage Rental", amount: "3000.00"},
-        {category: "Total Income", amount: "25000.00"},
-        {category: "Expenses", amount: " "},
+        {categorytotal: "Total Income", total: "25000.00"},
+        {categorytotal: "Expenses", amount: " "},
         {category: "- Service Charge", amount: "500.00"},
         {category: "- Sinking Fund", amount: "500.00"},
         {category: "- Assesment Fees", amount: "500.00"},
@@ -16,15 +16,19 @@ const FinancialTable = () => {
         {category: "- Subscription Fees", amount: "2000.00"},
         {category: "- Maintenance", amount: "1000.00"},
         {category: "- Insurance", amount: "2000.00"},
-        {category: "Total Expenses", amount: "7000.00"},
-        {category: "Net Profit", amount: "18000.00"},
+        {categorytotal: "Total Expenses", total: "7000.00"},
+        {categorytotal: "Net Profit", total: "18000.00"},
     ]
 
     const renderInfo = (table, index) => {
         return(
             <tr key={index}>
-                <td>{table.category}</td>
-                <td>{table.amount}</td>
+                <td>{table.category}
+                <strong>{table.categorytotal}</strong>
+                </td>
+                <td>{table.amount}
+                <strong>{table.total}</strong>
+                </td>
             </tr>
         )
     }

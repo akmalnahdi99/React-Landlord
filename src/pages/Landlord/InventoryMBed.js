@@ -15,7 +15,6 @@ export default function InventoryMBed() {
           <Header />
         </div>
       </div>
-
       <div className="wrapper border-bottom page-heading bg-white">
         <div className="container-fluid">
           <div className="row">
@@ -25,12 +24,11 @@ export default function InventoryMBed() {
           </div>
         </div>
       </div>
-
-
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="row p-0 justify-content-center pb-0">
-          <div className="col-lg-5 px-3 ">
+          <div className="col-lg-8 px-2">
           <ConditionFilter/>
+          <br/>
           </div>
         </div>
         <div className="container container-xs pb-5">

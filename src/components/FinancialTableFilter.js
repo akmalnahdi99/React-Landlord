@@ -111,7 +111,7 @@ export default function PostsListFilter() {
   };
 
   return (
-    <Slider {...settings} id="FilterContainer" className="mb-2 mt-2 multiple-items" 
+    <Slider {...settings} id="FilterContainer" className="text-center mb-2 mt-2 multiple-items" 
     style={{ display: "flex" }}>
       {Filters.map((filter) => {
         return (

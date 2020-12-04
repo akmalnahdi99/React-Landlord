@@ -1965,11 +1965,36 @@ button.dim:active:before {
   text-align: center;
 }
 
+.fc .fc-button-primary {
+  color: #fff;
+  color: var(--fc-button-text-color, #fff);
+  background-color: #329f9d !important;
+  background-color: var(--fc-button-bg-color, #329f9d) !important;
+  border-color: #329f9d !important;
+  border-color: var(--fc-button-border-color, #329f9d) !important;
+}
+
+.fc .fc-button-primary:focus {
+  box-shadow: 0 0 0 0.2rem  rgb(32, 100, 145, 0.5);
+}
+
+.fc-col-header {
+  background:  rgb(32, 100, 145);
+}
+
 .fc .fc-col-header-cell-cushion {
   display: inline-block;
   padding: 2px 4px;
+  margin-top: 15px;
   margin-bottom: 15px;
-  color: #1a2d41;
+  color: #fff;
+}
+
+.fc-toolbar-title {
+  font-size: 20px !important;
+  font-weight: 600;
+  color: #329f9d;
+
 }
 
 .fc .fc-toolbar {

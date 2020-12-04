@@ -9,7 +9,9 @@ export default function BillsSubscriptionFee() {
   return (
       <div class="wrapper wrapper-content animated fadeInRight">
         <div class="container container-xs">
-          <div class="ibox ">
+          <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
+              <div class="ibox ">
               <SubscriptionFeeDetails title="Subscription Fee" />
           </div>
           <div class="ibox">
@@ -18,6 +20,9 @@ export default function BillsSubscriptionFee() {
         <div class="ibox">
           <Invoice2 title="Invoice" />
         </div>
+            </div>
+          </div>
+          
       </div>
       <Footer />
     </div>

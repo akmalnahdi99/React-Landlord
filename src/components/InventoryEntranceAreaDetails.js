@@ -2,14 +2,14 @@
 
 import React from "react";
 import Empty from "../components/Empty";
-import InventoryEntranceAreaItem from "./InventoryEntranceAreaItem";
+import InventoryItem from "./InventoryItem";
 
-const EntranceDetails = () => {
-  var detail = [
-    {
+const InventoryEntranceAreaDetails = () => {
+  var drawer =  [
+  {
       id: 0,
-      date: "Pendant Light",
-      no: "10",
+      date: "Pendant",
+      no: "3",
       images: [
         {
           urlThumb: "/imgs/pendant1.jpg",
@@ -25,20 +25,52 @@ const EntranceDetails = () => {
         },
       ],
       description: "BFG-3300",
-    },
+    }
+];
+var table =  [
+    {
+        id: 0,
+        date: "Shelf",
+        no: "10",
+        images: [
+          {
+            urlThumb: "/imgs/shelf1.jpg",
+            urlHref: "/imgs/shelf1.jpg",
+          },
+          {
+            urlThumb: "/imgs/shelf2.jpg",
+            urlHref: "/imgs/shelf2.jpg",
+          },
+          {
+            urlThumb: "/imgs/shelf3.jpg",
+            urlHref: "/imgs/shelf3.jpg",
+          },
+        ],
+        description: "BFG-3300",
+      }
   ];
 
   return (
-    <div className="ibox">
-      {detail.length > 0 ? (
-        detail.map((item, index) => {
-          return <InventoryEntranceAreaItem key={index} {...item} />;
-        })
-      ) : (
-        <Empty />
-      )}
-    </div>
+    <div>
+                {drawer.length > 0 ? (
+                    drawer.map((item, index) => {
+                    return <InventoryItem key={index} {...item} />;
+                    })
+                ) : (
+                    <Empty />
+                )}
+                {table.length > 0 ? (
+                    table.map((item, index) => {
+                    return <InventoryItem key={index} {...item} />;
+                    })
+                ) : (
+                    <Empty />
+                )}
+
+    </div>        
+
+
   );
 };
 
-export default EntranceDetails;
+export default InventoryEntranceAreaDetails;

@@ -34,7 +34,6 @@ export default function LivingCondition() {
         </div>
         <div className="container container-xs">
           <InventoryKitchenDetails />
-          <InventoryKitchenDetails />
         </div>
       </div>
 
