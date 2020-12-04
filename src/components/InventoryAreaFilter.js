@@ -76,11 +76,9 @@ export default function PostsListFilter() {
     <Slider {...settings} id="FilterContainer" className="mb-2 mt-2 multiple-items" style={{ display: "flex" }}>
       {Filters.map((filter) => {
         return (
-          <div key={filter.id}>
-            <div to="" className={selectedFilter === filter.name ? 
-              "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} 
-              value="rental" onClick={() => filterSelection(filter.name)}>
-              {filter.name}
+          <div key={filter.id} className="widthfitcontent">
+            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+              <i className={filter.iconClass}></i> {filter.name}
             </div>
           </div>
         );
