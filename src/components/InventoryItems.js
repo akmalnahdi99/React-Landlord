@@ -44,7 +44,7 @@ const InventoryItems = () => {
     {
         name: "Utility",
         image: "/imgs/u1.svg",
-        link: "/landlord/utilitycondition/"
+        link: "/landlord/inventoryutility"
     },
     {
         name: "Bath",

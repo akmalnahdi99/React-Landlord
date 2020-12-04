@@ -58,7 +58,8 @@ import InventoryBalcony from "./pages/Landlord/InventoryBalcony";
 import InventoryKitchen from "./pages/Landlord/InventoryKitchen";
 import InventoryEntrance from "./pages/Landlord/InventoryEntrance";
 import InventoryLiving from "./pages/Landlord/InventoryLiving";
-import InventoryDining from "./pages/Landlord/InventoryDining"
+import InventoryDining from "./pages/Landlord/InventoryDining";
+import InventoryUtility from "./pages/Landlord/InventoryUtility";
 import InventoryElectricity from "./pages/Landlord/InventoryElectricity";
 import InventoryBeds from "./pages/Landlord/InventoryBeds";
 import InventoryBath from "./pages/Landlord/InventoryBath";
@@ -189,6 +190,10 @@ export default function App() {
           <Route path="/landlord/inventorywater">
             <LeftMenu />
             <InventoryWater />
+          </Route>
+          <Route path="/landlord/inventoryutility">
+            <LeftMenu />
+            <InventoryUtility />
           </Route>
           <Route path="/landlord/inventorykitchen">
             <LeftMenu />
