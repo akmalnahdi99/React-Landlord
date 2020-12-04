@@ -1,10 +1,8 @@
 //TASK under Review
 import React from "react";
 import { Link } from "react-router-dom";
-import data from "./MaintenanceList";
 
-export default function MaintenanceDetailsList({ id, name, images, status, applydate }) {
-  console.log("inside mli", { id, name, applydate, images, status });
+export default function MaintenanceDetailsList() {
   return (
     <div className="ibox">
       <div className="ibox-content border mb-5 paddingtop">
@@ -14,7 +12,7 @@ export default function MaintenanceDetailsList({ id, name, images, status, apply
               <img className="align-self-center mr-3" src="/imgs/avatar.svg" width="40px" alt="Generic placeholder" />
               <div className="media-body align-self-center">
                 <h5 className="mt-0 mb-0">
-                  <strong>{data.name}</strong>
+                  <strong>Zheng Wong</strong>
                 </h5>
               </div>
             </div>
@@ -25,7 +23,7 @@ export default function MaintenanceDetailsList({ id, name, images, status, apply
           <div className="col-md-12">
             <h4>
               <span className="font-light font-body">Status:</span>
-              <span className="ml-2 font-body Resolve">{data.status}</span>
+              <span className="ml-2 font-body Resolve">In Progress</span>
             </h4>
           </div>
         </div>
@@ -33,7 +31,7 @@ export default function MaintenanceDetailsList({ id, name, images, status, apply
           <div className="col-md-12">
             <span className="font-body">Applied date</span>
             <p className="font-body">
-              <strong>{data.applydate}</strong>
+              <strong>XX-XX-XXXX</strong>
             </p>
             <hr />
           </div>

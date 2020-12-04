@@ -34,7 +34,11 @@ export default function MBedCondition() {
           </div>
         </div>
         <div className="container container-xs pb-5">
-          <MBedConditionDetails />
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
+            <MBedConditionDetails />
+          </div>
+          </div>
         </div>
       </div>
 

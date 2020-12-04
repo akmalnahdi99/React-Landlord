@@ -34,7 +34,11 @@ export default function CommonBath3Condition() {
           </div>
         </div>
         <div className="container container-xs pb-5">
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
           <CommonBath3ConditionDetails />
+          </div>
+          </div>
         </div>
       </div>
 

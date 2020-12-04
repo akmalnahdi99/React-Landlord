@@ -34,7 +34,11 @@ export default function KitchenCondition() {
           </div>
         </div>
         <div className="container container-xs pb-5">
-          <KitchenConditionDetails />
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
+            <KitchenConditionDetails />
+          </div>
+          </div>
         </div>
       </div>
 
