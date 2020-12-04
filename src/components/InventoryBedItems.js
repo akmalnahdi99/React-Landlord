@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
  
 const InventoryBed = () => {
@@ -44,11 +45,11 @@ const InventoryBed = () => {
                                     {masterbed.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}
@@ -68,11 +69,11 @@ const InventoryBed = () => {
                                     {commonbed.map((item,index) => {
                                     return (
                                         <li key={index}>
-                                            <a href={item.link}>
+                                            <Link to={item.link}>
                                                 <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                     })}

@@ -63,6 +63,14 @@ import InventoryUtility from "./pages/Landlord/InventoryUtility";
 import InventoryElectricity from "./pages/Landlord/InventoryElectricity";
 import InventoryBeds from "./pages/Landlord/InventoryBeds";
 import InventoryBath from "./pages/Landlord/InventoryBath";
+import InventoryMBath from "./pages/Landlord/InventoryMBath";
+import InventoryCBath1 from "./pages/Landlord/InventoryCBath1";
+import InventoryCBath2 from "./pages/Landlord/InventoryCBath2";
+import InventoryCBath3 from "./pages/Landlord/InventoryCBath3";
+import InventoryMBed from "./pages/Landlord/InventoryMBed";
+import InventoryCBed1 from "./pages/Landlord/InventoryCBed1";
+import InventoryCBed2 from "./pages/Landlord/InventoryCBed2";
+import InventoryCBed3 from "./pages/Landlord/InventoryCBed3";
 import InventoryAccessCard from "./pages/Landlord/InventoryAccessCard";
 import Financials from "./pages/Landlord/Financials";
 import EntranceCondition from "./pages/Landlord/EntranceCondition";
@@ -238,6 +246,38 @@ export default function App() {
           <Route path="/landlord/inventorybath">
             <LeftMenu />
             <InventoryBath />
+          </Route>
+          <Route path="/landlord/InventoryMBath">
+            <LeftMenu />
+            <InventoryMBath />
+          </Route>
+          <Route path="/landlord/InventoryCBath1">
+            <LeftMenu />
+            <InventoryCBath1 />
+          </Route>
+          <Route path="/landlord/InventoryCBath2">
+            <LeftMenu />
+            <InventoryCBath2 />
+          </Route>
+          <Route path="/landlord/InventoryCBath3">
+            <LeftMenu />
+            <InventoryCBath3 />
+          </Route>
+          <Route path="/landlord/InventoryMBed">
+            <LeftMenu />
+            <InventoryMBed />
+          </Route>
+          <Route path="/landlord/InventoryCBed1">
+            <LeftMenu />
+            <InventoryCBed1 />
+          </Route>
+          <Route path="/landlord/InventoryCBed2">
+            <LeftMenu />
+            <InventoryCBed2 />
+          </Route>
+          <Route path="/landlord/InventoryCBed3">
+            <LeftMenu />
+            <InventoryCBed3 />
           </Route>
           <Route path="/landlord/inventorykey">
             <LeftMenu />
