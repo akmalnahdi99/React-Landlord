@@ -28,7 +28,7 @@ import FinancialTableFilter from "../../components/FinancialTableFilter";
         style={{ borderBottom: "1px solid #fff" }}>
         <div class="container-fluid">
         <div className="row p-0 justify-content-center">
-          <div className="col-lg-9 px-2">
+          <div className="col-lg-8 px-2">
             <FinancialTableFilter />
           </div>
         </div>
@@ -36,7 +36,7 @@ import FinancialTableFilter from "../../components/FinancialTableFilter";
       <div class="wrapper wrapper-content animated fadeInRight">
       <div class="container">
         <div className="row justify-content-center">
-          <div className="col-md-9">
+          <div className="col-lg-9">
           <div class="ibox ">
             <FinancialTable title="Financial" />
         </div>

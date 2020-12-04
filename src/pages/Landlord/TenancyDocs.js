@@ -28,8 +28,8 @@ export default function TenancyDocs() {
 
       <div class="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div class="container container-xs pb-5">
-          <div class="row">
-            <div class="col-md-12 px-2">
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
               <TenancyDocsList title="Tenancy Document" />
             </div>
           </div>
