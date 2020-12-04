@@ -2,43 +2,75 @@
 
 import React from "react";
 import Empty from "../components/Empty";
-import InventoryEntranceAreaItem from "./InventoryEntranceAreaItem";
+import InventoryItem from "./InventoryItem";
 
-const EntranceDetails = () => {
-  var detail = [
-    {
+const InventoryEntranceAreaDetails = () => {
+  var drawer =  [
+  {
       id: 0,
-      date: "Pendant Light",
+      date: "Chest Drawer",
       no: "10",
       images: [
         {
-          urlThumb: "/imgs/pendant1.jpg",
-          urlHref: "/imgs/pendant1.jpg",
+          urlThumb: "/imgs/m-chestdrawer1.jpg",
+          urlHref: "/imgs/m-chestdrawer1.jpg",
         },
         {
-          urlThumb: "/imgs/pendant2.jpg",
-          urlHref: "/imgs/pendant2.jpg",
+          urlThumb: "/imgs/m-chestdrawer2.jpg",
+          urlHref: "/imgs/m-chestdrawer2.jpg",
         },
         {
-          urlThumb: "/imgs/pendant3.jpg",
-          urlHref: "/imgs/pendant3.jpg",
+          urlThumb: "/imgs/m-chestdrawer3.jpg",
+          urlHref: "/imgs/m-chestdrawer1.jpg",
         },
       ],
       description: "BFG-3300",
-    },
+    }
+];
+var table =  [
+    {
+        id: 0,
+        date: "Table",
+        no: "10",
+        images: [
+          {
+            urlThumb: "/imgs/m-bedside1.jpg",
+            urlHref: "/imgs/m-bedside1.jpg",
+          },
+          {
+            urlThumb: "/imgs/m-bedside2.jpg",
+            urlHref: "/imgs/m-bedside2.jpg",
+          },
+          {
+            urlThumb: "/imgs/m-bedside3.jpg",
+            urlHref: "/imgs/m-bedside3.jpg",
+          },
+        ],
+        description: "BFG-3300",
+      }
   ];
 
   return (
-    <div className="ibox">
-      {detail.length > 0 ? (
-        detail.map((item, index) => {
-          return <InventoryEntranceAreaItem key={index} {...item} />;
-        })
-      ) : (
-        <Empty />
-      )}
-    </div>
+    <div>
+                {drawer.length > 0 ? (
+                    drawer.map((item, index) => {
+                    return <InventoryItem key={index} {...item} />;
+                    })
+                ) : (
+                    <Empty />
+                )}
+                {table.length > 0 ? (
+                    table.map((item, index) => {
+                    return <InventoryItem key={index} {...item} />;
+                    })
+                ) : (
+                    <Empty />
+                )}
+
+    </div>        
+
+
   );
 };
 
-export default EntranceDetails;
+export default InventoryEntranceAreaDetails;

@@ -1,5 +1,3 @@
-/* Need to add another array for 2nd item box*/
-
 import React from "react";
 import Empty from "../components/Empty";
 import InventoryYardItem from "./InventoryYardItem";
@@ -38,8 +36,6 @@ const YardDetails = () => {
                 ) : (
                     <Empty />
                 )}
-                
-                
     </div>
     
   );

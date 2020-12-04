@@ -54,7 +54,6 @@ var table =  [
     <div>
                 {drawer.length > 0 ? (
                     drawer.map((item, index) => {
-
                     return <InventoryItem key={index} {...item} />;
                     })
                 ) : (
