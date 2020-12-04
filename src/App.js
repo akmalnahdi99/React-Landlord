@@ -88,8 +88,6 @@ export default function App() {
             <ul>
               <li>
                 <NavLink to="/pages/login">Login</NavLink>
-              </li><li>
-                <NavLink to="/landlord/login">Login</NavLink>
               </li>
               <li>
                 <NavLink to="/landlord/activity">Activity</NavLink>
