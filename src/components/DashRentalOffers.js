@@ -1,5 +1,5 @@
 import React from "react";
-import DashChart from "./DashChart";
+import RentalOfferDashChart from "./RentalOfferDashChart";
 import { Link } from "react-router-dom";
 
 const DashRentalOffers = ({ title }) => {
@@ -20,7 +20,7 @@ const DashRentalOffers = ({ title }) => {
           </Link>
         </div>
       </div>
-      <DashChart data={data} />
+      <RentalOfferDashChart data={data} />
     </div>
   );
 };
