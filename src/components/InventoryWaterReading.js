@@ -9,16 +9,16 @@ const WaterDetails = () => {
       date: "",
       images: [
         {
-          urlThumb: "/imgs/da1.jpg",
-          urlHref: "/imgs/da1.jpg",
+          urlThumb: "/imgs/water-r.jpg",
+          urlHref: "/imgs/water-r.jpg",
         },
         {
-          urlThumb: "/imgs/da2.jpg",
-          urlHref: "/imgs/da2.jpg",
+          urlThumb: "/imgs/water-r.jpg",
+          urlHref: "/imgs/water-r.jpg",
         },
         {
-          urlThumb: "/imgs/da3.jpg",
-          urlHref: "/imgs/da3.jpg",
+          urlThumb: "/imgs/water-r.jpg",
+          urlHref: "/imgs/water-r.jpg",
         },
       ],
       description: "3200 m³",
