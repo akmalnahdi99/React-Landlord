@@ -41,7 +41,7 @@ const Quicklinks = ({ title }) => {
             } else {
               return (
                 <div className="col-md-4 col-sm-4 col-4 p-2">
-                  <Link to="add-shortcut.html" className="btn btn-shortcut btn-block text-truncate">
+                  <Link to="/quicklinks" className="btn btn-shortcut btn-block text-truncate">
                     <i className={item.icon}></i>
                     <br />
                     {item.text}

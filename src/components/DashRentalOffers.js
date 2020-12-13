@@ -1,10 +1,10 @@
 import React from "react";
-import DashChart from "./DashChart";
+import RentalOfferDashChart from "./RentalOfferDashChart";
 import { Link } from "react-router-dom";
 
 const DashRentalOffers = ({ title }) => {
   const data = [
-    { text: "New", value: 10, className: "fa fa-circle text-completedtask" },
+    { text: "New", value: 7, className: "fa fa-circle text-newtask" },
     { text: "Negotiations", value: 5, className: "fa fa-circle text-pendingtask" },
     { text: "Rejected", value: 10, className: "fa fa-circle text-rejectedtask" },
   ];
@@ -20,7 +20,7 @@ const DashRentalOffers = ({ title }) => {
           </Link>
         </div>
       </div>
-      <DashChart data={data} />
+      <RentalOfferDashChart data={data} />
     </div>
   );
 };

@@ -1,52 +1,50 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 
 const InventoryBath = () => {
-  var masterbed = [
+  var master = [
     {
       name: "Master Bathroom",
-      image: "/imgs/mbed.svg",
-      link: "/landlord/entrancecondition",
+      image: "/imgs/b1.svg",
+      link: "/landlord/InventoryMBath",
     },
   ];
-  var commonbed = [
+  var common = [
     {
       name: "Common Bathroom 1",
-      image: "/imgs/cb1.svg",
-      link: "/landlord/bedscondition/",
+      image: "/imgs/cb.svg",
+      link: "/landlord/InventoryCBath1/",
     },
     {
       name: "Common Bathroom 2",
-      image: "/imgs/cb1.svg",
-      link: "/landlord/utilitycondition/",
+      image: "/imgs/cb.svg",
+      link: "/landlord/InventoryCBath2/",
     },
     {
       name: "Common Bathroom 3",
-      image: "/imgs/cb1.svg",
-      link: "/landlord/bathcondition/",
+      image: "/imgs/cb.svg",
+      link: "/landlord/InventoryCBath3/",
     },
   ];
   return (
     <div class="container container-xs">
-      <div class="row text-center">
-        <div class="col-12 p-2 pt-3"></div>
-      </div>
-      <div class="row pb-5">
+      <div class="row pb-5 pt-5">
         <div class="col-lg-4 px-2">
           <div class="ibox">
             <div class="ibox-title">
-              <h3>Master Bath</h3>
+              <h3>Master Bathroom</h3>
             </div>
             <div class="ibox-content minhigh350px ">
               <ul class="folder-list">
-                {masterbed.map((item, index) => {
+                {master.map((item, index) => {
                   return (
                     <li key={index}>
-                      <a href={item.link}>
+                      <Link to={item.link}>
                         <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp;
                         {item.name} &nbsp;
                         <FaIcons.FaArrowRight className="float-right fa-xs" />
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
@@ -57,18 +55,18 @@ const InventoryBath = () => {
         <div class="col-lg-4 px-2">
           <div class="ibox">
             <div class="ibox-title">
-              <h3>Common Bath</h3>
+              <h3>Common Bathrooms</h3>
             </div>
             <div class="ibox-content minhigh350px">
               <ul class="folder-list">
-                {commonbed.map((item, index) => {
+                {common.map((item, index) => {
                   return (
                     <li key={index}>
-                      <a href={item.link}>
+                      <Link to={item.link}>
                         <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp;
                         {item.name} &nbsp;
                         <FaIcons.FaArrowRight className="float-right fa-xs" />
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
