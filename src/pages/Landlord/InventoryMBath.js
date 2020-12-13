@@ -2,18 +2,11 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import OfferList from "../../components/OfferList";
-import DividedHeader from "../../components/DividedHeader";
+import InventoryMBathDetails from "../../components/InventoryMBathDetails";
+import ConditionFilter from "../../components/ConditionFilter";
 
-
-export default function Offers() {
+export default function InventoryMBath() {
   // const { alert, hideAlert } = React.useContext(UserContext);
-  const headerData = [
-    { name: "New", value: 1 },
-    { name: "Accepted", value: 2 },
-    { name: "Negotiations", value: 3 },
-    { name: "Rejected", value: 4 },
-  ];
 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
@@ -21,29 +14,35 @@ export default function Offers() {
         <div className="container-fluid">
           <Header />
         </div>
-      </div>  
+      </div>
 
       <div className="wrapper border-bottom page-heading bg-white">
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Rental Offers" />
+              <SiteMap title="Master Bathroom" />
             </div>
           </div>
         </div>
       </div>
 
+
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div className="container container-xs pb-5 px-0">
-          <div className="row justify-content-center">
-            <div className="col-lg-9 mb-3">
-            <DividedHeader data={headerData} />
-            <OfferList />
-            </div>
+      <div className="row justify-content-center">
+            <div className="col-lg-8 mb-3">
+        <div className="row p-0 justify-content-center pb-0">
+          <div className="col-lg-8 px-2">
+          <ConditionFilter/>
+          <br/>
           </div>
-          
+        </div>
+        <div className="container container-xs pb-5">
+          <InventoryMBathDetails />
+        </div>
         </div>
       </div>
+      </div>
+
       <Footer />
     </div>
   );

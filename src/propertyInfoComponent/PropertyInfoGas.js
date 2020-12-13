@@ -6,9 +6,11 @@ export default function InfoGas() {
   return (
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="container container-xs">
-        <div class="ibox ">
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
           <InfoGasDetails title="Gas Rate" />
-        </div>
+          </div>
+          </div>
       </div>
       <Footer />
     </div>

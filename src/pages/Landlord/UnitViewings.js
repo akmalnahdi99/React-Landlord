@@ -80,18 +80,21 @@ export default function Viewings() {
       </div>
 
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div className="container container-xs pb-5">
-          <div className="row">
-            <div className="col-lg-12 mb-3 px-2">
+        <div className="container pb-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3 px-2 ">
               <div className="row">
                 <div className="col-sm-12">
                   <DividedHeader data={headerData} />
                 </div>
+                <div className="col-sm-12 mt-4">
+                <ViewingList title="Viewing Today" data={Today} />
+          <ViewingList title="Past Viewing" data={Past} />
+                </div>
               </div>
             </div>
           </div>
-          <ViewingList title="Viewing Today" data={Today} />
-          <ViewingList title="Past Viewing" data={Past} />
+          
         </div>
       </div>
       <Footer />

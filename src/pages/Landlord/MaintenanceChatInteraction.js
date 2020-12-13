@@ -29,9 +29,13 @@ export default function Maintenance() {
       </div>
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container container-xs pb-5">
-          <MaintenanceDetailsList />
+        <div className="row justify-content-center">
+            <div className="col-lg-9 mb-3">
+            <MaintenanceDetailsList />
       
-          <MaintenanceInteractionChat />
+            <MaintenanceInteractionChat />
+          </div>
+          </div>
         </div>
       </div>
       

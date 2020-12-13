@@ -53,10 +53,24 @@ import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
 import InventoryList from "./pages/Landlord/InventoryList";
 import InventoryKey from "./pages/Landlord/InventoryKey";
 import InventoryGas from "./pages/Landlord/InventoryGas";
+import InventoryYard from "./pages/Landlord/InventoryYard";
+import InventoryBalcony from "./pages/Landlord/InventoryBalcony";
+import InventoryKitchen from "./pages/Landlord/InventoryKitchen";
 import InventoryEntrance from "./pages/Landlord/InventoryEntrance";
+import InventoryLiving from "./pages/Landlord/InventoryLiving";
+import InventoryDining from "./pages/Landlord/InventoryDining";
+import InventoryUtility from "./pages/Landlord/InventoryUtility";
 import InventoryElectricity from "./pages/Landlord/InventoryElectricity";
 import InventoryBeds from "./pages/Landlord/InventoryBeds";
 import InventoryBath from "./pages/Landlord/InventoryBath";
+import InventoryMBath from "./pages/Landlord/InventoryMBath";
+import InventoryCBath1 from "./pages/Landlord/InventoryCBath1";
+import InventoryCBath2 from "./pages/Landlord/InventoryCBath2";
+import InventoryCBath3 from "./pages/Landlord/InventoryCBath3";
+import InventoryMBed from "./pages/Landlord/InventoryMBed";
+import InventoryCBed1 from "./pages/Landlord/InventoryCBed1";
+import InventoryCBed2 from "./pages/Landlord/InventoryCBed2";
+import InventoryCBed3 from "./pages/Landlord/InventoryCBed3";
 import InventoryAccessCard from "./pages/Landlord/InventoryAccessCard";
 import Financials from "./pages/Landlord/Financials";
 import EntranceCondition from "./pages/Landlord/EntranceCondition";
@@ -82,319 +96,376 @@ import Logout from "./pages/Landlord/Logout";
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <ul>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/activity">Activity</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/dashboard">Dashboard</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/notifications">Notifications</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/profile">Profile</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/payables">Payables</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/bills">Bills</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/propertyinfo">Property Info</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/UnitInfo">Unit Info</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/UnitViewings">Viewings</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/viewingdetails">ViewingDetails</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/offers">Offers</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/offerdetails">OfferDetails</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/maintenance">Maintenance</NavLink>
-            </li>
-            <li>
-              <NavLink to="/landlord/maintenancedetails">MaintenanceDetails</NavLink>
-            </li>
-          </ul>
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/pages/tenancyselection">
-          <TenancySelect />
-        </Route>
-        <Route path="/pages/propertyselection">
-          <PropertySelect />
-        </Route>
-        <Route path="/landlord/login">
-          <Login />
-        </Route>
-        <Route path="/logout">
-          <Logout />
-        </Route>
-        <Route path="/landlord/dashboard">
+    <AppProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <ul>
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/activity">Activity</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/dashboard">Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/notifications">Notifications</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/profile">Profile</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/payables">Payables</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/bills">Bills</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/propertyinfo">Property Info</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/UnitInfo">Unit Info</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/UnitViewings">Viewings</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/viewingdetails">ViewingDetails</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/offers">Offers</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/offerdetails">OfferDetails</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/maintenance">Maintenance</NavLink>
+              </li>
+              <li>
+                <NavLink to="/landlord/maintenancedetails">MaintenanceDetails</NavLink>
+              </li>
+            </ul>
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/pages/tenancyselection">
+            <TenancySelect />
+          </Route>
+          <Route path="/pages/propertyselection">
+            <PropertySelect />
+          </Route>
+          <Route path="/landlord/login">
+            <Login />
+          </Route>
+          <Route path="/landlord/dashboard">
+            <LeftMenu />
+            <Dashboard />
+          </Route>
+          <Route path="/landlord/activity">
+            <LeftMenu />
+            <Activity />
+          </Route>
+          <Route path="/landlord/notifications">
+            <LeftMenu />
+            <Notifications />
+          </Route>
+          <Route path="/landlord/profile">
+            <LeftMenu />
+            <Profile />
+          </Route>
+          <Route path="/landlord/payables">
+            <LeftMenu />
+            <Payables />
+          </Route>
+          <Route path="/landlord/financials">
+            <LeftMenu />
+            <Financials />
+          </Route>
+          <Route path="/landlord/inventorylist">
+            <LeftMenu />
+            <InventoryList />
+          </Route>
+          <Route path="/landlord/inventoryaccesscard">
+            <LeftMenu />
+            <InventoryAccessCard />
+          </Route>
+          <Route path="/landlord/inventoryentrance">
+            <LeftMenu />
+            <InventoryEntrance />
+          </Route>
+          <Route path="/landlord/inventorywater">
+            <LeftMenu />
+            <InventoryWater />
+          </Route>
+          <Route path="/landlord/inventoryutility">
+            <LeftMenu />
+            <InventoryUtility />
+          </Route>
+          <Route path="/landlord/inventorykitchen">
+            <LeftMenu />
+            <InventoryKitchen />
+          </Route>
+          <Route path="/landlord/inventorydining">
+            <LeftMenu />
+            <InventoryDining />
+          </Route>
+          <Route path="/landlord/inventoryyard">
+            <LeftMenu />
+            <InventoryYard />
+          </Route>
+          <Route path="/landlord/inventorybalcony">
+            <LeftMenu />
+            <InventoryBalcony />
+          </Route>
+          <Route path="/landlord/inventoryliving">
+            <LeftMenu />
+            <InventoryLiving />
+          </Route>
+          <Route path="/landlord/inventorygas">
+            <LeftMenu />
+            <InventoryGas />
+          </Route>
+          <Route path="/landlord/inventoryelectricity">
+            <LeftMenu />
+            <InventoryElectricity />
+          </Route>
+          <Route path="/landlord/inventoryremotecontrol">
+            <LeftMenu />
+            <InventoryRemoteControl />
+          </Route>
+          <Route path="/landlord/inventoryvehicle">
+            <LeftMenu />
+            <InventoryVehicle />
+          </Route>
+          <Route path="/landlord/inventorybeds">
+            <LeftMenu />
+            <InventoryBeds />
+          </Route>
+          <Route path="/landlord/inventorybath">
+            <LeftMenu />
+            <InventoryBath />
+          </Route>
+          <Route path="/landlord/InventoryMBath">
+            <LeftMenu />
+            <InventoryMBath />
+          </Route>
+          <Route path="/landlord/InventoryCBath1">
+            <LeftMenu />
+            <InventoryCBath1 />
+          </Route>
+          <Route path="/landlord/InventoryCBath2">
+            <LeftMenu />
+            <InventoryCBath2 />
+          </Route>
+          <Route path="/landlord/InventoryCBath3">
+            <LeftMenu />
+            <InventoryCBath3 />
+          </Route>
+          <Route path="/landlord/InventoryMBed">
+            <LeftMenu />
+            <InventoryMBed />
+          </Route>
+          <Route path="/landlord/InventoryCBed1">
+            <LeftMenu />
+            <InventoryCBed1 />
+          </Route>
+          <Route path="/landlord/InventoryCBed2">
+            <LeftMenu />
+            <InventoryCBed2 />
+          </Route>
+          <Route path="/landlord/InventoryCBed3">
+            <LeftMenu />
+            <InventoryCBed3 />
+          </Route>
+          <Route path="/landlord/inventorykey">
+            <LeftMenu />
+            <InventoryKey />
+          </Route>
+          <Route path="/landlord/quicklinks">
+            <LeftMenu />
+            <QuickLinks />
+          </Route>
+          <Route path="/landlord/calendars">
+            <LeftMenu />
+            <Calendars />
+          </Route>
+          <Route exact path="/landlord/bills">
+            <LeftMenu />
+            <Bills />
+          </Route>
+          <Route exact path="/landlord/utilities">
+            <LeftMenu />
+            <Utilities />
+          </Route>
+          <Route path="/landlord/bills/:billType">
+            <LeftMenu />
+            <BillOf />
+          </Route>
+          <Route path="/landlord/utilities/:utilityType">
+            <LeftMenu />
+            <UtilitiesOf />
+          </Route>
+          <Route exact path="/landlord/propertyInfo">
+            <LeftMenu />
+            <PropertyInfo />
+          </Route>
+          <Route path="/landlord/propertyInfo/:propertyinfoType">
+            <LeftMenu />
+            <PropertyInfoOf />
+          </Route>
+          <Route path="/landlord/UnitInfo">
+            <LeftMenu />
+            <PropertyInfo />
+          </Route>
+          <Route path="/landlord/propertyviewing">
+            <LeftMenu />
+            <PropertyViewing />
+          </Route>
+          <Route path="/landlord/UnitViewings">
+            <LeftMenu />
+            <UnitViewings />
+          </Route>
+          <Route path="/landlord/viewingdetails">
+            <LeftMenu />
+            <ViewingDetails />
+          </Route>
+          <Route path="/landlord/offers">
+            <LeftMenu />
+            <Offers />
+          </Route>
+          <Route path="/landlord/maintenance">
+            <LeftMenu />
+            <Maintenance />
+          </Route>
+          <Route path="/landlord/offers">
+            <LeftMenu />
+            <Offers />
+          </Route>
+          <Route path="/landlord/offerdetails">
+            <LeftMenu />
+            <OfferDetails />
+          </Route>
+          <Route path="/landlord/maintenancedetails/:mindex">
+            <LeftMenu />
+            <MaintenanceDetails />
+          </Route>
+          <Route path="/landlord/maintenancechatpayment">
+            <LeftMenu />
+            <MaintenanceChatPayment />
+          </Route>
+          <Route path="/landlord/MaintenanceChatRequest">
+            <LeftMenu />
+            <MaintenanceChatRequest />
+          </Route>
+          <Route path="/landlord/maintenancechatinteraction">
+            <LeftMenu />
+            <MaintenanceChatInteraction />
+          </Route>
+          <Route path="/landlord/tenanttenancy">
+            <LeftMenu />
+            <TenantTenancy />
+          </Route>
+          <Route path="/landlord/tenancydocs">
+            <LeftMenu />
+            <TenancyDocs />
+          </Route>
+          <Route path="/landlord/todolist">
+            <LeftMenu />
+            <TodoList />
+          </Route>
+          <Route path="/landlord/tenantpayables">
+            <LeftMenu />
+            <TenantPayables />
+          </Route>
+          <Route path="/landlord/PropertyCondition">
+            <LeftMenu />
+            <PropertyCondition />
+          </Route>
+          <Route path="/landlord/EntranceCondition">
+            <LeftMenu />
+            <EntranceCondition />
+          </Route>
+          <Route path="/landlord/KitchenCondition">
+            <LeftMenu />
+            <KitchenCondition />
+          </Route>
+          <Route path="/landlord/LivingCondition">
+            <LeftMenu />
+            <LivingCondition />
+          </Route>
+          <Route path="/landlord/DiningCondition">
+            <LeftMenu />
+            <DiningCondition />
+          </Route>
+          <Route path="/landlord/YardCondition">
+            <LeftMenu />
+            <YardCondition />
+          </Route>
+          <Route path="/landlord/BalconyCondition">
+            <LeftMenu />
+            <BalconyCondition />
+          </Route>
+          <Route path="/landlord/UtilityCondition">
+            <LeftMenu />
+            <UtilityCondition />
+          </Route>
+          <Route path="/landlord/BedsCondition">
+            <LeftMenu />
+            <BedsCondition />
+          </Route>
+          <Route path="/landlord/MBedCondition">
+            <LeftMenu />
+            <MBedCondition />
+          </Route>
+          <Route path="/landlord/CommonBed1Condition">
+            <LeftMenu />
+            <CommonBed1Condition />
+          </Route>
+          <Route path="/landlord/CommonBed2Condition">
+            <LeftMenu />
+            <CommonBed2Condition />
+          </Route>
+          <Route path="/landlord/CommonBed3Condition">
+            <LeftMenu />
+            <CommonBed3Condition />
+          </Route>
+          <Route path="/landlord/BathsCondition">
+            <LeftMenu />
+            <BathsCondition />
+          </Route>
+          <Route path="/landlord/MBathCondition">
+            <LeftMenu />
+            <MBathCondition />
+          </Route>
+          <Route path="/landlord/CommonBath1Condition">
+            <LeftMenu />
+            <CommonBath1Condition />
+          </Route>
+          <Route path="/landlord/CommonBath2Condition">
+            <LeftMenu />
+            <CommonBath2Condition />
+          </Route>
+          <Route path="/landlord/CommonBath3Condition">
+            <LeftMenu />
+            <CommonBath3Condition />
+          </Route>  
+          <Route path="/landlord/checkincheckout">
           <LeftMenu />
-          <Dashboard />
-        </Route>
-        <Route path="/landlord/activity">
+            <CheckInCheckOut />
+          </Route>
+          <Route path="/landlord/checkinkit">
           <LeftMenu />
-          <Activity />
-        </Route>
-        <Route path="/landlord/notifications">
+            <CheckInKit />
+          </Route>
+          <Route path="/landlord/checkinleaflet">
           <LeftMenu />
-          <Notifications />
-        </Route>
-        <Route path="/landlord/profile">
-          <LeftMenu />
-          <Profile />
-        </Route>
-        <Route path="/landlord/payables">
-          <LeftMenu />
-          <Payables />
-        </Route>
-        <Route path="/landlord/financials">
-          <LeftMenu />
-          <Financials />
-        </Route>
-        <Route path="/landlord/inventorylist">
-          <LeftMenu />
-          <InventoryList />
-        </Route>
-        <Route path="/landlord/inventoryaccesscard">
-          <LeftMenu />
-          <InventoryAccessCard />
-        </Route>
-        <Route path="/landlord/inventoryentrance">
-          <LeftMenu />
-          <InventoryEntrance />
-        </Route>
-        <Route path="/landlord/inventorywater">
-          <LeftMenu />
-          <InventoryWater />
-        </Route>
-        <Route path="/landlord/inventorygas">
-          <LeftMenu />
-          <InventoryGas />
-        </Route>
-        <Route path="/landlord/inventoryelectricity">
-          <LeftMenu />
-          <InventoryElectricity />
-        </Route>
-        <Route path="/landlord/inventoryremotecontrol">
-          <LeftMenu />
-          <InventoryRemoteControl />
-        </Route>
-        <Route path="/landlord/inventoryvehicle">
-          <LeftMenu />
-          <InventoryVehicle />
-        </Route>
-        <Route path="/landlord/inventorybeds">
-          <LeftMenu />
-          <InventoryBeds />
-        </Route>
-        <Route path="/landlord/inventorybath">
-          <LeftMenu />
-          <InventoryBath />
-        </Route>
-        <Route path="/landlord/inventorykey">
-          <LeftMenu />
-          <InventoryKey />
-        </Route>
-        <Route path="/landlord/quicklinks">
-          <LeftMenu />
-          <QuickLinks />
-        </Route>
-        <Route path="/landlord/calendars">
-          <LeftMenu />
-          <Calendars />
-        </Route>
-        <Route exact path="/landlord/bills">
-          <LeftMenu />
-          <Bills />
-        </Route>
-        <Route exact path="/landlord/utilities">
-          <LeftMenu />
-          <Utilities />
-        </Route>
-        <Route path="/landlord/bills/:billType">
-          <LeftMenu />
-          <BillOf />
-        </Route>
-        <Route path="/landlord/utilities/:utilityType">
-          <LeftMenu />
-          <UtilitiesOf />
-        </Route>
-        <Route exact path="/landlord/propertyInfo">
-          <LeftMenu />
-          <PropertyInfo />
-        </Route>
-        <Route path="/landlord/propertyInfo/:propertyinfoType">
-          <LeftMenu />
-          <PropertyInfoOf />
-        </Route>
-        <Route path="/landlord/UnitInfo">
-          <LeftMenu />
-          <PropertyInfo />
-        </Route>
-
-        <Route path="/landlord/propertyviewing">
-          <LeftMenu />
-          <PropertyViewing />
-        </Route>
-        <Route path="/landlord/UnitViewings">
-          <LeftMenu />
-          <UnitViewings />
-        </Route>
-        <Route path="/landlord/viewingdetails">
-          <LeftMenu />
-          <ViewingDetails />
-        </Route>
-        <Route path="/landlord/offers">
-          <LeftMenu />
-          <Offers />
-        </Route>
-        <Route path="/landlord/maintenance">
-          <LeftMenu />
-          <Maintenance />
-        </Route>
-        <Route path="/landlord/offers">
-          <LeftMenu />
-          <Offers />
-        </Route>
-        <Route path="/landlord/offerdetails">
-          <LeftMenu />
-          <OfferDetails />
-        </Route>
-        <Route path="/landlord/maintenancedetails/:mindex">
-          <LeftMenu />
-          <MaintenanceDetails />
-        </Route>
-        <Route path="/landlord/maintenancechatpayment">
-          <LeftMenu />
-          <MaintenanceChatPayment />
-        </Route>
-        <Route path="/landlord/MaintenanceChatRequest">
-          <LeftMenu />
-          <MaintenanceChatRequest />
-        </Route>
-        <Route path="/landlord/maintenancechatinteraction">
-          <LeftMenu />
-          <MaintenanceChatInteraction />
-        </Route>
-        <Route path="/landlord/tenanttenancy">
-          <LeftMenu />
-          <TenantTenancy />
-        </Route>
-        <Route path="/landlord/tenancydocs">
-          <LeftMenu />
-          <TenancyDocs />
-        </Route>
-        <Route path="/landlord/todolist">
-          <LeftMenu />
-          <TodoList />
-        </Route>
-        <Route path="/landlord/tenantpayables">
-          <LeftMenu />
-          <TenantPayables />
-        </Route>
-        <Route path="/landlord/PropertyCondition">
-          <LeftMenu />
-          <PropertyCondition />
-        </Route>
-        <Route path="/landlord/EntranceCondition">
-          <LeftMenu />
-          <EntranceCondition />
-        </Route>
-        <Route path="/landlord/KitchenCondition">
-          <LeftMenu />
-          <KitchenCondition />
-        </Route>
-        <Route path="/landlord/LivingCondition">
-          <LeftMenu />
-          <LivingCondition />
-        </Route>
-        <Route path="/landlord/DiningCondition">
-          <LeftMenu />
-          <DiningCondition />
-        </Route>
-        <Route path="/landlord/YardCondition">
-          <LeftMenu />
-          <YardCondition />
-        </Route>
-        <Route path="/landlord/BalconyCondition">
-          <LeftMenu />
-          <BalconyCondition />
-        </Route>
-        <Route path="/landlord/UtilityCondition">
-          <LeftMenu />
-          <UtilityCondition />
-        </Route>
-        <Route path="/landlord/BedsCondition">
-          <LeftMenu />
-          <BedsCondition />
-        </Route>
-        <Route path="/landlord/MBedCondition">
-          <LeftMenu />
-          <MBedCondition />
-        </Route>
-        <Route path="/landlord/CommonBed1Condition">
-          <LeftMenu />
-          <CommonBed1Condition />
-        </Route>
-        <Route path="/landlord/CommonBed2Condition">
-          <LeftMenu />
-          <CommonBed2Condition />
-        </Route>
-        <Route path="/landlord/CommonBed3Condition">
-          <LeftMenu />
-          <CommonBed3Condition />
-        </Route>
-        <Route path="/landlord/BathsCondition">
-          <LeftMenu />
-          <BathsCondition />
-        </Route>
-        <Route path="/landlord/MBathCondition">
-          <LeftMenu />
-          <MBathCondition />
-        </Route>
-        <Route path="/landlord/CommonBath1Condition">
-          <LeftMenu />
-          <CommonBath1Condition />
-        </Route>
-        <Route path="/landlord/CommonBath2Condition">
-          <LeftMenu />
-          <CommonBath2Condition />
-        </Route>
-        <Route path="/landlord/CommonBath3Condition">
-          <LeftMenu />
-          <CommonBath3Condition />
-        </Route>
-        <Route path="/landlord/checkincheckout">
-          <CheckInCheckOut />
-        </Route>
-        <Route path="/landlord/checkinkit">
-          <CheckInKit />
-        </Route>
-        <Route path="/landlord/checkinleaflet">
-          <CheckInLeaflet />
-        </Route>
-      </Switch>
-    </Router>
+            <CheckInLeaflet />
+          </Route>
+        </Switch>
+      </Router>
+    </AppProvider>
   );
 }
