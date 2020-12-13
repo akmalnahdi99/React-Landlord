@@ -1,33 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
- 
-const LandLordDetailsCard = ({title}) => {
-  var details = [
-    {
-      key: "Full Name",
-      value: "Sharon Bay Lin",
-    },
-    {
-      key: "Citizen",
-      value: "Singaporean",
-    },
-    {
-      key: "Phone Number",
-      value: "+65 9682 1232",
-    },
-    {
-      key: "Email",
-      value: "drsharonbay@yahoo.com",
-    },
-    {
-      key: "NRIC No",
-      value: "10009429761",
-    },
-    {
-      key: "Passport Number",
-      value: "TB450652",
-    },
-  ];
+import { AppContext } from "../context/settings";
+
+const LandLordDetailsCard = ({ title }) => {
+  var  {settings:{userInfo}} = React.useContext(AppContext);
 
   return (
     <div className="ibox ">
@@ -37,15 +13,24 @@ const LandLordDetailsCard = ({title}) => {
       <div className="ibox-content">
         <div className="row text-left">
           <div className="col-12">
-            {details.map((item,index) => {
-              return (
-                <React.Fragment key={index}>
-                  <h5 className="font-bold text-completedtask ">{item.key}</h5>
-                  <span className="mb-3 font-normal">{item.value}</span>
-                  <hr />
-                </React.Fragment>
-              );
-            })}
+            <h5 className="font-bold text-completedtask ">Full Name</h5>
+            <span className="mb-3 font-normal">{userInfo.userName}</span>
+            <hr />
+            <h5 className="font-bold text-completedtask ">Citizen</h5>
+            <span className="mb-3 font-normal">{userInfo.nationality || "N/A"}</span>
+            <hr />
+            <h5 className="font-bold text-completedtask ">Phone Number</h5>
+            <span className="mb-3 font-normal">{userInfo.phoneNumber || "N/A"}</span>
+            <hr />
+            <h5 className="font-bold text-completedtask ">Email</h5>
+            <span className="mb-3 font-normal">{userInfo.email}</span>
+            <hr />
+            <h5 className="font-bold text-completedtask ">NRIC No</h5>
+            <span className="mb-3 font-normal">{userInfo.nricNumber || "N/A"}</span>
+            <hr />
+            <h5 className="font-bold text-completedtask ">Passport Number</h5>
+            <span className="mb-3 font-normal">{userInfo.passportNumber || "N/A"}</span>
+        
           </div>
         </div>
       </div>

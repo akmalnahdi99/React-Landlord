@@ -1,31 +1,110 @@
-import React from 'react'
+import React from "react";
+import { Redirect } from "react-router-dom";
+import { AppContext } from "../../context/settings";
+import { GetUserInfo } from "./../../utils/landlordHelper";
+import { config } from "./../../constants";
 
 function Login() {
-    return (
-        <div className="loginbg doorcasedark-bg">
-            <div class="middle-box text-center loginscreen animated fadeInDown">
-                <div>
-                    <img alt="dr-logo" src="/imgs/doorcase-logo.png" class="img-fluid" />
-                </div>
-                <div class="text-white">
-                    <h3>Welcome to Doorcares</h3>
-                    <p class="font-light">Login | Finger tip tenant management</p>
-                </div>
-                <form class="m-t" action="tenancy-selection.html">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Username" required="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" required="" />
-                    </div>
-                    <button type="submit" class="btn btn-primary block full-width m-b">
-                        Login </button>
+  console.log("[Login component]");
+  const { updateAppContext, settings } = React.useContext(AppContext);
 
-                    <a href="forgotpassword.html" class="btn btn-sm btn-link btn-block"><small>Forgot password?</small></a>
-                </form>
-            </div>
+  const [user, setUser] = React.useState({ userId: "", password: "" });
+  const [errorMsg, setErrorMsg] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const { accessToken, isLogged } = settings;
+  var { apiUrl } = config;
+
+  // when user change name or password or any imput
+  const handleChange = (e) => {
+    var name = e.target.name;
+    var value = e.target.value;
+    var newUser = { ...user, [name]: value };
+    setUser(newUser);
+  };
+
+  // handle from submit button
+  const handleSubmit = (e) => {
+    console.log("in handle sumbit");
+    e.preventDefault();
+    if (user.userId !== "" && user.password !== "") {
+      authenticate();
+    } else {
+      setErrorMsg("please enter a userId & password");
+    }
+  };
+
+  //   React.useEffect(() => {
+  //     console.log("in Profile: try to get info");
+  //   }, []);
+
+  // if user already logged redirect him directly to main activites.
+  if (isLogged === true && accessToken !== null) {
+    return <Redirect to="/landlord/activity"></Redirect>;
+  }
+
+  const authenticate = () => {
+    console.log("[function authenticate]");
+    var userId = user.userId;
+    var password = user.password;
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: userId, password }),
+    };
+    setIsLoading(true);
+    fetch(apiUrl + "users/authenticate", requestOptions)
+      .then(async (resp) => {
+        if (resp.status === 200) {
+          var token = await resp.json();
+          console.log("update the token");
+          var userInfo = await GetUserInfo(token);
+          updateAppContext({ accessToken: token, isLogged: true, userInfo: userInfo });
+        } else {
+          throw new Error(resp.statusText);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setErrorMsg("Id or password is not correct");
+      })
+      .finally((f) => {
+        setIsLoading(false);
+      });
+
+    return;
+  };
+
+  return (
+    <div className="loginbg doorcasedark-bg">
+      <div className="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+          <img alt="dr-logo" src="/imgs/doorcase-logo.png" className="img-fluid" />
         </div>
-    )
+        <div className="text-white">
+          <h3>Welcome to Doorcares</h3>
+          <p className="font-light">Login | Finger tip tenant management</p>
+        </div>
+        <form className="m-t" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input type="text" className="form-control" placeholder="Username" required="" name="userId" value={user.userId} onChange={(e) => handleChange(e)} />
+          </div>
+          <div className="form-group">
+            <input type="password" className="form-control" placeholder="Password" required="" name="password" value={user.password} onChange={(e) => handleChange(e)} />
+          </div>
+          <button type="submit" className="btn btn-primary block full-width m-b" disabled={isLoading}>
+            Login
+          </button>
+          {errorMsg !== null ? <p style={{ color: "red" }}>{errorMsg}</p> : ""}
+          <a href="forgotpassword.html" className="btn btn-sm btn-link btn-block">
+            <small>Forgot password?</small>
+          </a>
+        </form>
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

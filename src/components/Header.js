@@ -18,10 +18,10 @@ export default function Header() {
             <i className="fa fa-bars"></i>
           </Link>
           <div className="navbar-brand float-left ml-3 mt-2">
-            <Link to="a1">
+            <Link  >
               <img alt="light logo" src={logolight} className="bigscreen" width="150px" />
             </Link>
-            <Link to="a1">
+            <Link  >
               <img alt="logo" src={logo} className="smallscreen" width="43.5px" />
             </Link>
           </div>

@@ -4,10 +4,12 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import LandLordDetailsCard from "../../components/LandLordDetailsCard";
 import LandLordPhotoCard from "../../components/LandLordPhoto";
+ 
 
 export default function Profile() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
+console.log(process);
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -26,13 +28,13 @@ export default function Profile() {
         </div>
       </div>
 
-      <div class="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div class="container container-xs pb-5">
-          <div class="row">
-            <div class="col-md-4 mb-3 px-2">
+      <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+        <div className="container container-xs pb-5">
+          <div className="row">
+            <div className="col-md-4 mb-3 px-2">
               <LandLordPhotoCard />
             </div>
-            <div class="col-md-8 px-2">
+            <div className="col-md-8 px-2">
               <LandLordDetailsCard title="Owner's Details" />
             </div>
           </div>

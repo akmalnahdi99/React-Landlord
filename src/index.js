@@ -5,16 +5,18 @@ import App from "./App";
 import ProductProvider from "./context/products";
 import { CartProvider } from "./context/cart";
 import { UserProvider } from "./context/user";
-
+import { AppProvider } from "./context/settings";
 
 ReactDOM.render(
-  <UserProvider>
-    <ProductProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </ProductProvider>
-  </UserProvider>,
+  <AppProvider >
+    <UserProvider>
+      <ProductProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </ProductProvider>
+    </UserProvider>
+  </AppProvider>,
 
   document.getElementById("root")
 );
