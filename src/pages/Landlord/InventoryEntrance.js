@@ -25,16 +25,19 @@ export default function LivingCondition() {
           </div>
         </div>
       </div>
-      <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div className="row p-0 justify-content-center pb-0">
-          <div className="col-lg-8 px-2">
-          <InventoryAreaFilter/>
-          <hr/>
+      <div className="wrapper wrapper-content animated fadeInRight">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 mb-3">
+            <div className="row p-0 justify-content-center">
+              <div className="col-lg-8 px-2">
+                <InventoryAreaFilter />
+                <br />
+              </div>
+            </div>
+            <div className="container container-xs">
+              <InventoryEntranceAreaDetails />
+            </div>
           </div>
-        </div>
-        <div className="container container-xs">
-          <InventoryEntranceAreaDetails />
-          <InventoryEntranceAreaDetails />
         </div>
       </div>
 

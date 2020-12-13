@@ -21,76 +21,77 @@ import PropertyViewing from "../../components/DashPropertyViewing";
 import RentalOffers from "../../components/DashRentalOffers";
 
 export default function Dashboard() {
-    // const { alert, hideAlert } = React.useContext(UserContext);
+  // const { alert, hideAlert } = React.useContext(UserContext);
 
-    return (
-      <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-        <div className="border-bottom white-bg">
-          <div className="container-fluid">
-            <Header />
-          </div>
+  return (
+    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
+      <div className="border-bottom white-bg">
+        <div className="container-fluid">
+          <Header />
         </div>
-
-        <div className="wrapper border-bottom page-heading">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-lg-12">
-                <SiteMap title="Dashboard" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="wrapper wrapper-content py-4 animated fadeInRight">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-lg-4 px-2">
-                <Quicklinks title="Quick Links" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <Rental title="Rental" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <TodoList title="To-Do List" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4 px-2">
-                <Maintenance title="Maintenance" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <TenantPayables title="Tenant Payables" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <Calendar title="Calendar" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4 px-2">
-                <Financials title="Financials" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <Bills title="Bills" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <PropertyInfo title="Property Info" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4 px-2">
-                <RentalLeads />
-              </div>
-              <div className="col-lg-4 px-2">
-                <PropertyViewing title="Property Viewing" />
-              </div>
-              <div className="col-lg-4 px-2">
-                <RentalOffers title="Rental Offers" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Footer />
       </div>
-    );
+
+      <div className="wrapper border-bottom page-heading">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-12">
+              <SiteMap title="Dashboard" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="wrapper wrapper-content py-4 animated fadeInRight">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-4 px-2">
+              <Quicklinks title="Quick Links" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <Rental title="Rental" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <TodoList title="To-Do List" />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-4 px-2">
+              <Maintenance title="Maintenance" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <TenantPayables title="Tenant Payables" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <Calendar title="Calendar" />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-4 px-2">
+              <Financials title="Financials" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <Bills title="Bills" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <PropertyInfo title="Property Info" />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-4 px-2">
+              <RentalLeads />
+            </div>
+            <div className="col-lg-4 px-2">
+              <PropertyViewing title="Property Viewing" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <RentalOffers title="Rental Offers" />
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <Footer />
+    </div>
+  );
 }

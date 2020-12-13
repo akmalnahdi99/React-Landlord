@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import CommonBath3ConditionDetails from "../../components/CommonBath3ConditionDetails";
+import InventoryCBed2Details from "../../components/InventoryCBed2Details";
 import ConditionFilter from "../../components/ConditionFilter";
 
-export default function CommonBath3Condition() {
+export default function InventoryCBed2() {
   // const { alert, hideAlert } = React.useContext(UserContext);
 
   return (
@@ -20,25 +20,27 @@ export default function CommonBath3Condition() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <SiteMap title="Common Bathroom 3 Condition" />
+              <SiteMap title="Common Bedroom 2" />
             </div>
           </div>
         </div>
       </div>
 
+
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+      <div className="row justify-content-center">
+            <div className="col-lg-8 mb-3">
         <div className="row p-0 justify-content-center pb-0">
-          <div className="col-lg-5 px-3 ">
-            <ConditionFilter />
+          <div className="col-lg-8 px-2">
+          <ConditionFilter/>
+          <br/>
           </div>
         </div>
         <div className="container container-xs pb-5">
-          <div className="row justify-content-center">
-            <div className="col-lg-9 mb-3">
-              <CommonBath3ConditionDetails />
-            </div>
-          </div>
+          <InventoryCBed2Details />
         </div>
+        </div>
+      </div>
       </div>
 
       <Footer />
