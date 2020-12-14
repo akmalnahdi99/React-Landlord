@@ -52,6 +52,7 @@ const InfoSewageDetails = ({ title }) => {
                 <p className="m-0">{details.charges}</p>
               </div>
             </div>
+            <hr />
           </div>
         </div>
       </div>

@@ -12,15 +12,14 @@ const InfoServiceChargeDetails = ({ title }) => {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}</h3>
-        <hr />
+        <h3 className="boldtext">{title}</h3>
       </div>
       <div className="ibox-content minhigh pt-0">
         <div className="row pt-2">
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Service charge monthly amount</h4>
+                <h4 className="textclr">Service charge monthly amount</h4>
                 <p className="m-0">{details.service_cherge}</p>
               </div>
             </div>
@@ -29,22 +28,21 @@ const InfoServiceChargeDetails = ({ title }) => {
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Sinking fund monthly amount</h4>
+                <h4 className="textclr">Sinking fund monthly amount</h4>
                 <p className="m-0">{details.sinking_fund}</p>
               </div>
             </div>
-            <hr />
+            <hr/>
           </div>
         </div>
         <div className="row pt-2">
           <div className="col-sm-12">
-            <h3>Payable To</h3>
-            <hr />
+           <h3 className="boldtext">Payable To</h3>
           </div>
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Name payable</h4>
+                <h4 className="textclr">Name payable</h4>
                 <p className="m-0">{details.name}</p>
               </div>
             </div>
@@ -53,7 +51,7 @@ const InfoServiceChargeDetails = ({ title }) => {
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Contact number</h4>
+                <h4 className="textclr">Contact number</h4>
                 <p className="m-0">{details.contact}</p>
               </div>
             </div>
@@ -65,15 +63,16 @@ const InfoServiceChargeDetails = ({ title }) => {
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Bank name</h4>
+                <h4 className="textclr">Bank name</h4>
                 <p className="m-0">{details.bank}</p>
               </div>
             </div>
+            <hr/>
           </div>
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Bank account number</h4>
+                <h4 className="textclr">Bank account number</h4>
                 <p className="m-0">{details.account}</p>
               </div>
             </div>
