@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Collapse } from 'reactstrap';
+import * as FaIcons from "react-icons/fa";
 
 const SubscriptionFeeDetails = ({ title }) => {
   var details = {
@@ -8,12 +10,21 @@ const SubscriptionFeeDetails = ({ title }) => {
     account: "N/A",
     contact: "+603 7983 5796",
   };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h3>{title}</h3>
+        <div class="ibox-tools">
+                                <p onClick={toggle}>
+                                    <FaIcons.FaInfoCircle className="fa-2x " />
+                                </p>
+                            </div>
       </div>
       <div className="ibox-content minhigh pt-0">
+      <Collapse isOpen={isOpen} className="ibox-content minhigh pt-0">
         <div className="row pt-2">
           <div className="col-sm-6">
             <div className="media">
@@ -61,6 +72,7 @@ const SubscriptionFeeDetails = ({ title }) => {
             </div>
           </div>
         </div>
+        </Collapse>
       </div>
     </div>
   );
