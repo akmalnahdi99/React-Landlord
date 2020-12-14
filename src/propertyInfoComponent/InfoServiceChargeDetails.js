@@ -12,8 +12,7 @@ const InfoServiceChargeDetails = ({ title }) => {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}</h3>
-        <hr />
+        <h3 className="boldtext">{title}</h3>
       </div>
       <div className="ibox-content minhigh pt-0">
         <div className="row pt-2">
@@ -38,8 +37,7 @@ const InfoServiceChargeDetails = ({ title }) => {
         </div>
         <div className="row pt-2">
           <div className="col-sm-12">
-            <h3>Payable To</h3>
-            <hr />
+           <h3 className="boldtext">Payable To</h3>
           </div>
           <div className="col-sm-6">
             <div className="media">

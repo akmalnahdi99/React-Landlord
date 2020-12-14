@@ -113,6 +113,10 @@ p {
   border: 0;
 }
 
+.boldtext{
+  font-weight: bold;
+}
+
 .navbar-default {
   background-color: transparent;
   border-color: #2f4050;
