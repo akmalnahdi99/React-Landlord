@@ -23,7 +23,7 @@ export default function PostsListFilter() {
     },
     {
       id: 2,
-      name: "Offers",
+      name: "Offer",
       iconClass: "fas fa-hands-helping",
     },
     {

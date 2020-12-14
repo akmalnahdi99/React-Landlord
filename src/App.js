@@ -3,7 +3,7 @@ import React from "react";
 // react router dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // pages
-import Login2 from "./pages/Login";
+ 
 import TenancySelect from "./pages/TenancySelection";
 import PropertySelect from "./pages/PropertySelection";
 import { NavLink } from "react-router-dom";
@@ -93,6 +93,7 @@ import BathsCondition from "./pages/Landlord/BathsCondition";
 import BalconyCondition from "./pages/Landlord/BalconyCondition";
 import Activity from "./pages/Landlord/Activity.js";
 import Logout from "./pages/Landlord/Logout";
+import { AppProvider } from "./context/settings";
 
 export default function App() {
   return (
@@ -150,6 +151,9 @@ export default function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/logout">
+            <Logout />
           </Route>
           <Route path="/pages/tenancyselection">
             <TenancySelect />
@@ -451,17 +455,17 @@ export default function App() {
           <Route path="/landlord/CommonBath3Condition">
             <LeftMenu />
             <CommonBath3Condition />
-          </Route>  
+          </Route>
           <Route path="/landlord/checkincheckout">
-          <LeftMenu />
+            <LeftMenu />
             <CheckInCheckOut />
           </Route>
           <Route path="/landlord/checkinkit">
-          <LeftMenu />
+            <LeftMenu />
             <CheckInKit />
           </Route>
           <Route path="/landlord/checkinleaflet">
-          <LeftMenu />
+            <LeftMenu />
             <CheckInLeaflet />
           </Route>
         </Switch>

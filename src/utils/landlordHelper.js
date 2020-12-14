@@ -1,27 +1,68 @@
 import { config } from "./../constants";
-export const GetUserInfo = async (accessToken) => {
-  console.log("[function getUserInfo]");
+import Cookies from "js-cookie";
+ 
+export const loadNotifications = async (accessToken) => {
   var { apiUrl } = config;
+
   const requestOptions = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + accessToken,
     },
-    //body: JSON.stringify({ title: "React POST Request Example" }),
   };
-  console.log("[get user info] 2");
-  var userInfo = null;
-  await fetch(apiUrl + "users/info", requestOptions)
+  var result = null;
+  await fetch(apiUrl + "users/notifications", requestOptions)
     .then(async (resp) => {
       if (resp.status === 200) {
-        userInfo = await resp.json();
+        result = await resp.json();
       } else {
         throw new Error(resp.statusText);
       }
     })
-    .then((users) => {})
-    .catch((error) => console.log("[Exception]" + error));
+    .catch((error) => {
+      console.log(error);
+    })
+    .finally((f) => {});
 
-  return userInfo;
+  return result;
+};
+
+export const apiCall = async (url) => {
+  
+  var jwtToken = Cookies.get("jwtToken") || null;
+  var { apiUrl } = config;
+
+  let headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+
+  if (jwtToken) {
+    headers.Authorization = `Bearer ${jwtToken}`;
+  }
+
+  const requestOptions = {
+    method: "GET",
+    headers: headers,
+  };
+
+  var apiResult = null;
+  var result = { status: null, data: null };
+  await fetch(apiUrl + url, requestOptions)
+    .then(async (resp) => {
+      if (resp.status === 200) {
+        apiResult = await resp.json();
+        result.status = true;
+      } else {
+        result.status = false;
+        throw new Error(resp.statusText);
+      }
+    })
+    .catch((error) => {
+      console.error(`[API ERROR (${url})] ` + error);
+    })
+    .finally((f) => {});
+  result.data = apiResult;
+  return result;
 };

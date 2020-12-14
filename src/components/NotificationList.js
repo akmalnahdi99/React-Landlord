@@ -1,50 +1,59 @@
 import React from "react";
+// import { AppContext } from "../context/settings";
 import Empty from "./Empty";
 import NotificationItem from "./NotificationItem";
+import Loading from "./static/Loading";
+import { apiCall } from "./../utils/landlordHelper";
 
 const NotificationList = () => {
-  var notificatins = [
-    {
-      id: 0,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "notification aboux",
-      body: "notification body",
-    },
-    {
-      id: 1,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "notification aboux",
-      body: "notification body",
-    },
-    {
-      id: 2,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "notification aboux",
-      body: "notification body",
-    },
-  ];
+  console.log("in notifications list");
+
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [notifications, setNotifications] = React.useState(null);
+
+  // const {
+  //   updateAppContext,
+  // } = React.useContext(AppContext);
+
+  React.useEffect(() => {
+    console.log("in effect");
+
+    async function loadNotificationsWrapper() {
+      setIsLoading(true);
+      var response = await apiCall("/users/notifications");
+      if (response.status) {
+        setNotifications(response.data);
+        setIsLoading(false);
+      }
+    }
+    loadNotificationsWrapper();
+
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>Notifications</h3>
+        <h3>Notifications </h3>
         <hr />
       </div>
+
       <div className="ibox-content minhigh">
         <div className="row">
           <div className="col-sm-12">
-            <ul className="sortable-list connectList agile-list ui-sortable">
-              {notificatins.length > 0 ? (
-                notificatins.map((item) => {
-                  return <NotificationItem key={item.id} {...item} />;
-                })
-              ) : (
-                <Empty />
-              )}
-            </ul>
+            {isLoading === true ? (
+              <Loading />
+            ) : (
+              <ul className="sortable-list connectList agile-list ui-sortable">
+                {notifications !== null && notifications.length > 0 ? (
+                  notifications.map((item, index) => {
+                    return <NotificationItem key={index} {...item} />;
+                  })
+                ) : (
+                  <Empty />
+                )}
+              </ul>
+            )}
             <hr />
           </div>
         </div>

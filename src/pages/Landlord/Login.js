@@ -1,10 +1,12 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { AppContext } from "../../context/settings";
-import { GetUserInfo } from "./../../utils/landlordHelper";
+import { apiCall, GetUserInfo } from "./../../utils/landlordHelper";
 import { config } from "./../../constants";
+import Cookies from "js-cookie";
 
 function Login() {
+
   console.log("[Login component]");
   const { updateAppContext, settings } = React.useContext(AppContext);
 
@@ -55,13 +57,15 @@ function Login() {
       body: JSON.stringify({ email: userId, password }),
     };
     setIsLoading(true);
-    fetch(apiUrl + "users/authenticate", requestOptions)
+    fetch(apiUrl + "/users/authenticate", requestOptions)
       .then(async (resp) => {
         if (resp.status === 200) {
           var token = await resp.json();
+          Cookies.set("jwtToken",token);
           console.log("update the token");
-          var userInfo = await GetUserInfo(token);
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: userInfo });
+          var response = await apiCall("/users/info");
+
+          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data });
         } else {
           throw new Error(resp.statusText);
         }

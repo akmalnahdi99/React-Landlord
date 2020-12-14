@@ -2,79 +2,69 @@
 import React from "react";
 import PostCard from "./PostCard";
 import { AppContext } from "../context/settings";
-
+import { apiCall } from "./../utils/landlordHelper";
+import Loading from "./static/Loading";
 //import postIcon from "img/money-bag.svg";
 
 const PostsList = (props, filterBy) => {
   const appContext = React.useContext(AppContext);
   const activeFilter = appContext.settings.postsFilter;
 
-  // Data will come from an api Later
-  const posts = [
-    {
-      id: 1,
-      postTitle: "Pipe Burst",
-      postBody:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus doloremque obcaecati magnam maxime fugit error voluptatem placeat nesciunt assumenda eveniet consectetur amet ratione dolore id perferendis suscipit eum, ut neque.",
-      postIcon: "/imgs/settings.svg",
-      postDateTime: "17:50 | 25 Dec 2020",
-      postType: "maintenance",
-      images: [
-        {}
-      ]
-    },
-    {
-      id: 2,
-      postTitle: "Subscription fees Overdues",
-      postBody:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius delectus quidem numquam voluptatem voluptatum. Fugit soluta voluptatibus provident ut nesciunt, quo, minima error repellat eius sunt harum culpa id. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus doloremque obcaecati magnam maxime fugit error voluptatem placeat nesciunt assumenda eveniet consectetur amet ratione dolore id perferendis suscipit eum, ut neque.",
-      postIcon: "/imgs/schedule.svg",
-      postDateTime: "17:50 | 25 Dec 2020",
-      postType: "overdue",
-    },
-    {
-      id: 3,
-      postTitle: "4 New Offers",
-      postBody: "Lorem ipsum dolor, sit amet consectetur adipisicing e .",
-      postIcon: "/imgs/handshake.svg",
-      postDateTime: "17:50 | 25 Dec 2020",
-      postType: "offers",
-      images: [
-        {}
-        // {
-        //   urlThumb: "/imgs/btha1.jpg",
-        //   urlHref: "/imgs/btha1.jpg",
-        // },
-        // {
-        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        // },
-        // {
-        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        // },
-        // {
-        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        // },
-        // {
-        //   urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        //   urlHref: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
-        // },
-      ],
-    },
-  ];
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [posts, setPosts] = React.useState(null);
+
+  React.useEffect(() => {
+    async function loadPostsWrapper() {
+      setIsLoading(true);
+      var response = await apiCall("/posts/list");
+      if (response.status) {
+        var r = response.data;
+        r = r.map((e) => {
+          if (e.postType === "maintenance") {
+            e.postIcon = "/imgs/settings.svg";
+          } else if (e.postType === "overdue") {
+            e.postIcon = "/imgs/schedule.svg";
+          } else if (e.postType === "offer") {
+            e.postIcon = "/imgs/handshake.svg";
+          } else if (e.postType === "viewing") {
+            e.postIcon = "/imgs/eye.svg";
+          } else if (e.postType === "payment") {
+            e.postIcon = "/imgs/money-bag.svg";
+          }
+          return e;
+        });
+        setPosts(r);
+      }
+      setIsLoading(false);
+    }
+    loadPostsWrapper();
+    // eslint-disable-next-line
+  }, []);
+
+  //     id: 3,
+  //     postTitle: "4 New Offers",
+  //     postBody: "Lorem ipsum dolor, sit amet consectetur adipisicing e .",
+  //     postIcon: "/imgs/handshake.svg",
+  //     postDateTime: "17:50 | 25 Dec 2020",
+  //     postType: "offers",
+  //     images: [],
+  //   },
+  // ];
 
   var filteredPosts = posts;
-  if (activeFilter !== "all") {
+  if (filteredPosts && activeFilter !== "all") {
     filteredPosts = posts.filter((item) => item.postType.toLowerCase() === activeFilter.toLowerCase());
   }
 
-  if (filteredPosts.length > 0) {
+  if (isLoading === true) {
+    return <Loading />;
+  }
+
+  if (filteredPosts !== null && filteredPosts.length > 0) {
     return (
       <div id="vertical-timeline" className="vertical-container light-timeline searchable">
-        {filteredPosts.map((postItem) => {
-          return <PostCard key={postItem.id} {...postItem} />;
+        {filteredPosts.map((postItem, index) => {
+          return <PostCard key={index} {...postItem} />;
         })}
       </div>
     );

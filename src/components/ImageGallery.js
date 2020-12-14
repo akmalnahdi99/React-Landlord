@@ -8,11 +8,11 @@ import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 const GROUP1 = [
   [
     "https://images.unsplash.com/photo-1592549585866-486f41343aaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1592549585866-486f41343aaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+   
   ],
   [
     "https://images.unsplash.com/photo-1594614271360-0ed9a570ae15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1594614271360-0ed9a570ae15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    
   ],
 ];
 
@@ -32,7 +32,7 @@ PhotoItem.propTypes = {
   group: PT.string.isRequired,
 };
 
-const ImageGallery = () => {
+const ImageGallery = ({images}) => {
   return (
     <>
       <LightgalleryProvider
@@ -56,8 +56,8 @@ const ImageGallery = () => {
             alignItems: "center",
           }}
         >
-          {GROUP1.map((p, idx) => (
-            <PhotoItem key={idx} image={p[0]} thumb={p[1]} group="group1" />
+          {images.map((p, idx) => (
+            <PhotoItem key={idx} image={p[0]} thumb={p[0]} group="group1" />
           ))}
         </div>
       </LightgalleryProvider>

@@ -1,9 +1,9 @@
 const prod = {
-  apiUrl: "http://api.tartil.online/api/",
+  apiUrl: "https://api.tartil.online/api",
 };
 
 const dev = {
-  apiUrl: "http://localhost:5000/api/",
+  apiUrl: "http://localhost:5000/api",
 };
 
 export const config = process.env.NODE_ENV === "development" ? dev : prod;
