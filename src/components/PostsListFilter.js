@@ -59,7 +59,7 @@ export default function PostsListFilter() {
     arrows: false,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToScroll: 6, //TASK qhairun pls check why this is generating a warning
     centerMode: true,
     accessibility: false,
     responsive: [

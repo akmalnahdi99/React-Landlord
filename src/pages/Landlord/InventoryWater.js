@@ -27,8 +27,8 @@ export default function LivingCondition() {
 
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container container-xs pb-5">
-          <div class="row m-t-sm justify-content-center">
-            <div class="col-lg-9">
+          <div className="row m-t-sm justify-content-center">
+            <div className="col-lg-9">
               <InventoryWaterReading />
             </div>
           </div>

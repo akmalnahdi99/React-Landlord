@@ -62,23 +62,23 @@ const TenancyDocsList = ({title}) => {
   ];
   return (
       <div> 
-        <div class="container container-xs">
+        <div className="container container-xs">
 
-    <div class="ibox">
-        <div class="ibox-title">
+    <div className="ibox">
+        <div className="ibox-title">
             
-            <div class="media-body">
-                <h4 class="text-doorcase3">Passport Size Photo</h4>
+            <div className="media-body">
+                <h4 className="text-doorcase3">Passport Size Photo</h4>
         
             </div>
             <hr />
 
         </div>
-        <div class="ibox-content minhigh">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="demo-gallery">
-                        <ul id="lightgallery2" class="list-unstyled row">
+        <div className="ibox-content minhigh">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="demo-gallery">
+                        <ul id="lightgallery2" className="list-unstyled row">
                         {passphoto.length > 0 ? (
                             passphoto.map((item) => {
                                 return <TenancyDocsItem key={item.id} {...item} color="red" />;
@@ -98,21 +98,21 @@ const TenancyDocsList = ({title}) => {
     </div>
 
 
-    <div class="container container-xs">
+    <div className="container container-xs">
 
-    <div class="ibox">
-        <div class="ibox-title">
+    <div className="ibox">
+        <div className="ibox-title">
             
-            <div class="media-body">
-                <h4 class="text-doorcase3">IC/ Passport Copy</h4>
+            <div className="media-body">
+                <h4 className="text-doorcase3">IC/ Passport Copy</h4>
             </div>
             <hr />
         </div>
-        <div class="ibox-content minhigh">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="demo-gallery">
-                        <ul id="lightgallery2" class="list-unstyled row">
+        <div className="ibox-content minhigh">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="demo-gallery">
+                        <ul id="lightgallery2" className="list-unstyled row">
                         {passcopy.length > 0 ? (
                             passcopy.map((item) => {
                                 return <TenancyDocsItem key={item.id} {...item} color="red" />;
@@ -131,23 +131,23 @@ const TenancyDocsList = ({title}) => {
     </div>
     </div>
 
-    <div class="container container-xs">
+    <div className="container container-xs">
 
-    <div class="ibox">
-        <div class="ibox-title">
+    <div className="ibox">
+        <div className="ibox-title">
             
-            <div class="media-body">
-                <h4 class="text-doorcase3">Visa Page</h4>
+            <div className="media-body">
+                <h4 className="text-doorcase3">Visa Page</h4>
         
             </div>
             <hr />
 
         </div>
-        <div class="ibox-content minhigh">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="demo-gallery">
-                        <ul id="lightgallery2" class="list-unstyled row">
+        <div className="ibox-content minhigh">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="demo-gallery">
+                        <ul id="lightgallery2" className="list-unstyled row">
                         {visa.length > 0 ? (
                             visa.map((item) => {
                                 return <TenancyDocsItem key={item.id} {...item} color="red" />;
@@ -166,23 +166,23 @@ const TenancyDocsList = ({title}) => {
     </div>
     </div>
 
-    <div class="container container-xs">
+    <div className="container container-xs">
 
-    <div class="ibox">
-        <div class="ibox-title">
+    <div className="ibox">
+        <div className="ibox-title">
             
-            <div class="media-body">
-                <h4 class="text-doorcase3">Student ID/ Employee ID/ Buisness Card/ Company Registration Letter</h4>
+            <div className="media-body">
+                <h4 className="text-doorcase3">Student ID/ Employee ID/ Buisness Card/ Company Registration Letter</h4>
             
             </div>
             <hr />
 
         </div>
-        <div class="ibox-content minhigh">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="demo-gallery">
-                        <ul id="lightgallery2" class="list-unstyled row">
+        <div className="ibox-content minhigh">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="demo-gallery">
+                        <ul id="lightgallery2" className="list-unstyled row">
                         {identity.length > 0 ? (
                             identity.map((item) => {
                                 return <TenancyDocsItem key={item.id} {...item} color="red" />;

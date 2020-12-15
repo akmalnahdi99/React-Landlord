@@ -35,7 +35,7 @@ const FinancialTable = () => {
 
     return(
 
-        <div class="ibox-content forum-container">
+        <div className="ibox-content forum-container">
             <br/>
         <ReactBootstrap.Table striped bordered hover>
             <thead>

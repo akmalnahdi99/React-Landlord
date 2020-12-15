@@ -9,13 +9,13 @@ const TodoListItem = ({ title, time, date, color }) => {
     return (
       <div>
         <ul className="sortable-list connectList agile-list ui-sortable pb-0" id="todo">
-          <li class="warning-element ui-sortable-handle">
-            <div class="agile-detail">
-              <small class="text-darkblue">
-                <i class="fas fa-bell"></i> {time} {date}
+          <li className="warning-element ui-sortable-handle">
+            <div className="agile-detail">
+              <small className="text-darkblue">
+                <i className="fas fa-bell"></i> {time} {date}
               </small>
             </div>
-            <p class="m-0">{title}</p>
+            <p className="m-0">{title}</p>
           </li>
         </ul>
       </div>
@@ -24,13 +24,13 @@ const TodoListItem = ({ title, time, date, color }) => {
     return (
       <div>
         <ul className="sortable-list connectList agile-list ui-sortable pb-0" id="todo">
-          <li class="success-element ui-sortable-handle">
-            <div class="agile-detail">
-              <small class="text-darkblue">
-                <i class="fas fa-bell"></i> {time} {date}
+          <li className="success-element ui-sortable-handle">
+            <div className="agile-detail">
+              <small className="text-darkblue">
+                <i className="fas fa-bell"></i> {time} {date}
               </small>
             </div>
-            <p class="m-0">{title}</p>
+            <p className="m-0">{title}</p>
           </li>
         </ul>
       </div>

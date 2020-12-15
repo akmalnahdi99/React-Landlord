@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export default function TenancyDocsItem({ images }) {
 
   return (
-    <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2"
+    <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2"
         data-responsive="/imgs/p-1.jpg"
         data-src="/imgs/p-1.jpg">
         <Link to="">
-            <img class="img-responsive" src= {images} alt=""/>
+            <img className="img-responsive" src= {images} alt=""/>
         </Link>
     </li>
   );

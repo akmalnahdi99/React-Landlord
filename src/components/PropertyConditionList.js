@@ -53,14 +53,14 @@ const PropertyConditionList = () => {
     },
   ];
   return (
-<div class="container container-xs">
+<div className="container container-xs">
 
-                    <div class="row text-center">
+                    <div className="row text-center">
                        
-                        <div class="col-12 p-2 pt-3">
-                           <div class="ibox white-bg" onclick="location.href='vr.html';">
-                            <div class="ibox-content minhigh">
-                            <Link to="#" class="btn-block text-truncate pt-3">
+                        <div className="col-12 p-2 pt-3">
+                           <div className="ibox white-bg" onclick="location.href='vr.html';">
+                            <div className="ibox-content minhigh">
+                            <Link to="#" className="btn-block text-truncate pt-3">
                               <img src="/imgs/immersive.svg" width="24px" alt=""/>
                               <br />
                               Virtual Tour
@@ -70,20 +70,20 @@ const PropertyConditionList = () => {
                           </div>
                         
                     </div>
-                        <div class="row pb-5">
-                          <div class="col-lg-4 px-2">
-                              <div class="ibox">
-                                <div class="ibox-title">
+                        <div className="row pb-5">
+                          <div className="col-lg-4 px-2">
+                              <div className="ibox">
+                                <div className="ibox-title">
                                   <h3>Areas</h3>
                 
                                 </div>
-                                <div class="ibox-content minhigh350px ">
-                                    <ul class="folder-list">
+                                <div className="ibox-content minhigh350px ">
+                                    <ul className="folder-list">
                                     {areas.map((item,index) => {
                                     return (
                                         <li key={index}>
                                             <Link to={item.link}>
-                                                <img src={item.image} class="align-self-center mr-2" width="25px" alt="" /> &nbsp; 
+                                                <img src={item.image} className="align-self-center mr-2" width="25px" alt="" /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
                                             </Link>
@@ -96,18 +96,18 @@ const PropertyConditionList = () => {
                                   
                                 </div>
                               </div>
-                          <div class="col-lg-4 px-2">
-                            <div class="ibox">
-                              <div class="ibox-title">
+                          <div className="col-lg-4 px-2">
+                            <div className="ibox">
+                              <div className="ibox-title">
                                 <h3>Rooms</h3>
                               </div>
-                              <div class="ibox-content minhigh350px">
-                                <ul class="folder-list">
+                              <div className="ibox-content minhigh350px">
+                                <ul className="folder-list">
                                     {rooms.map((item,index) => {
                                     return (
                                         <li key={index}>
                                             <Link to={item.link}>
-                                                <img src={item.image} class="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
+                                                <img src={item.image} className="align-self-center mr-2" width="25px" alt="..." /> &nbsp; 
                                                 {item.name} &nbsp;
                                                 <FaIcons.FaArrowRight className="float-right fa-xs"/>
                                             </Link>

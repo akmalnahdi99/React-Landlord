@@ -20,7 +20,7 @@ const RemoteControlTable = () => {
     }
 
     return(
-        <div class="ibox-content">
+        <div className="ibox-content">
         <ReactBootstrap.Table striped bordered hover>
             <thead>
                 <tr>

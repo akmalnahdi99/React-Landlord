@@ -9,9 +9,9 @@ import SiteMap from "../../components/SiteMap";
 import TenancyHome from "./TenancyHome";
 import Utilities from "./Utilities";
 import InfoInsurance from "../../propertyInfoComponent/InfoInsurance";
-import InfoServiceCharge from "../../propertyInfoComponent/InfoServiceCharge";
-import InfoAssessment from "../../propertyInfoComponent/InfoAssessment";
-import InfoQuitRent from "../../propertyInfoComponent/InfoQuitRent";
+import UnitServiceCharge from "../../propertyInfoComponent/UnitServiceCharge";
+import UnitAssessmentRateCard from "../../propertyInfoComponent/UnitAssessmentRateCard";
+import UnitQuitRentCard from "../../propertyInfoComponent/unitQuitRentCard";
 import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
 
@@ -76,16 +76,14 @@ export default function PropertyInfoOf() {
       <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
         <div className="container container-xs pb-5">
           <div className="row justify-content-center">
-           
-              {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
-              {propertyinfoType === "Utilities" ? <Utilities /> : ""}
-              {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
-              {propertyinfoType === "ServiceCharge" ? <InfoServiceCharge /> : ""}
-              {propertyinfoType === "AssessmentRate" ? <InfoAssessment /> : ""}
-              {propertyinfoType === "QuitRent" ? <InfoQuitRent /> : ""}
-              {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
-              {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
-         
+            {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
+            {propertyinfoType === "Utilities" ? <Utilities /> : ""}
+            {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
+            {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
+            {propertyinfoType === "AssessmentRate" ? <UnitAssessmentRateCard title="Assessment Rate" /> : ""}
+            {propertyinfoType === "QuitRent" ? <UnitQuitRentCard title="Quit Rent" /> : ""}
+            {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
+            {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
           </div>
         </div>
       </div>

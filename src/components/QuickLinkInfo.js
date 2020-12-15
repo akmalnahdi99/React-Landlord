@@ -7,7 +7,7 @@ import Footer from "./static/Footer";
 import Header from "./Header";
 import SiteMap from "./SiteMap";
 import InfoInsurance from "../propertyInfoComponent/InfoInsurance";
-import InfoServiceCharge from "../propertyInfoComponent/InfoServiceCharge";
+import UnitServiceCharge from "../propertyInfoComponent/UnitServiceCharge";
 import InfoAssessment from "../propertyInfoComponent/InfoAssessment";
 import InfoQuitRent from "../propertyInfoComponent/InfoQuitRent";
 import UnitDetailsCard from "../propertyInfoComponent/UnitDetailsCard";
@@ -60,7 +60,7 @@ export default function PropertyInfoOf() {
           </div>
         </div>
         {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
-        {propertyinfoType === "ServiceCharge" ? <InfoServiceCharge /> : ""}
+        {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
         {propertyinfoType === "AssessmentRate" ? <InfoAssessment /> : ""}
         {propertyinfoType === "QuitRent" ? <InfoQuitRent /> : ""}
         {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}

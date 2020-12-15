@@ -8,11 +8,11 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
 import { AppContext } from "../../context/settings";
-import { useHistory } from "react-router-dom";
+ 
 
 export default function Activity(props) {
   const { updateAppContext } = React.useContext(AppContext);
-  const history = useHistory();
+   
 
   const { className } = props;
   const [modal, setModal] = useState(false);
@@ -96,7 +96,7 @@ export default function Activity(props) {
                     <Media heading className="m-0 text-completedtask">
                       {unit.name}
                       <span>
-                        <i class="fas fa-arrow-right fa-xs float-right"></i>
+                        <i className="fas fa-arrow-right fa-xs float-right"></i>
                       </span>
                     </Media>
                     <p className="m-0 font-body text-completedtask">{unit.buildingName} 11</p>

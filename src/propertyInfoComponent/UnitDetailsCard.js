@@ -42,7 +42,7 @@ export default function UnitDetailsCard() {
   }
 
   return (
-    <div className="ibox ss" style={{ border: "2px solid red;" }}>
+    <div className="ibox ss" style={{ border: "0px solid red" }}>
       <div className="ibox-title">
         <h3>Details</h3>
       </div>

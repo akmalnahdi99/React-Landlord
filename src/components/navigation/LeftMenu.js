@@ -28,12 +28,12 @@ class LeftMenu extends React.Component {
               <ul className="nav metismenu" id="side-menu">
                 <li className="nav-header">
                   <div className="profile-element">
-                    <Link className="navbar-minimalize float-right" onClick={this.toggle.bind(this)}>
+                    <Link className="navbar-minimalize float-right" onClick={this.toggle.bind(this)} to="">
                       <FaIcons.FaBars />
                     </Link>
                   </div>
                   <div className="logo-element">
-                    <Link className="navbar-minimalize menuburger2" id="show" onClick={this.toggle.bind(this)}>
+                    <Link className="navbar-minimalize menuburger2" id="show" onClick={this.toggle.bind(this)} to="">
                       <FaIcons.FaBars />
                     </Link>
                   </div>

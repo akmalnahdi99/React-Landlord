@@ -158,13 +158,13 @@ export default function OfferDetailsList() {
                     </div>
                   </div>
                   <div className="col-9 text-center pr-0 pl-1">
-                    <Link className="btn btn-primary btn-full text-center ml-1" to="#">
+                    <Link className="btn btn-primary btn-full text-center ml-1" to="">
                       Accept Offer
                     </Link>
-                    <Link className="btn btn-warning btn-full text-center ml-1" to="#">
+                    <Link className="btn btn-warning btn-full text-center ml-1" to="">
                       Renegociate Offer
                     </Link>
-                    <Link className="btn btn-success btn-full text-center ml-1" to="#">
+                    <Link className="btn btn-success btn-full text-center ml-1" to="">
                       Reject Offer
                     </Link>
                   </div>

@@ -14,14 +14,14 @@ export default function Header() {
     <header className="header ">
       <nav className="navbar navbar-static-top" role="navigation" style={{ marginbottom: 0 }}>
         <div className="navbar-header">
-          <Link className="navbar-minimalize minimalize-styl-2 hideburger" id="hide" to="a1">
+          <Link to="" className="navbar-minimalize minimalize-styl-2 hideburger" id="hide"  >
             <i className="fa fa-bars"></i>
           </Link>
           <div className="navbar-brand float-left ml-3 mt-2">
-            <Link  >
+            <Link to="">
               <img alt="light logo" src={logolight} className="bigscreen" width="150px" />
             </Link>
-            <Link  >
+            <Link to="">
               <img alt="logo" src={logo} className="smallscreen" width="43.5px" />
             </Link>
           </div>

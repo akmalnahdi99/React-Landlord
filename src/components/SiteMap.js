@@ -6,7 +6,7 @@ export default function SiteMap({title}) {
   return (
     <ol className="breadcrumb bg-transparent mt-3">
       <li className="mr-3">
-        <Link onClick={()=>history.goBack()} className="">
+        <Link onClick={()=>history.goBack()} className="" to="">
           <i className="fas fa-chevron-left"></i>
         </Link>
       </li>

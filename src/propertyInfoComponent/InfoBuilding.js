@@ -1,8 +1,8 @@
 //TASK under Review
 import React from "react";
 
-import InfoFacilities from "../propertyInfoComponent/InfoFacilities";
-import InfoPropertyManagement from "../propertyInfoComponent/InfoPropertyManagement";
+import BuildingFacilitiesCard from "../propertyInfoComponent/BuildingFacilitiesCard";
+import BuildingManagementCard from "../propertyInfoComponent/BuildingManagementCard";
 import UnitDetailsCard from "./UnitDetailsCard";
 
 export default function InfoBuilding() {
@@ -10,9 +10,9 @@ export default function InfoBuilding() {
     <div>
       <UnitDetailsCard />
 
-      <InfoFacilities />
+      <BuildingFacilitiesCard />
 
-      <InfoPropertyManagement title="Building Management" />
+      <BuildingManagementCard title="Building Management" />
     </div>
   );
 }

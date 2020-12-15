@@ -17,7 +17,7 @@ const InsuranceDetails = ({ title }) => {
     <div className="ibox">
       <div className="ibox-title">
         <h3>{title}</h3>
-        <div class="ibox-tools">
+        <div className="ibox-tools">
                                 <p onClick={toggle}>
                                     <FaIcons.FaInfoCircle className="fa-2x " />
                                 </p>

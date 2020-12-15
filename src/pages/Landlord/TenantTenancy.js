@@ -28,13 +28,13 @@ export default function TenantTenancy() {
         </div>
       </div>
 
-      <div class="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div class="container container-xs pb-5">
-          <div class="row">
-            <div class="col-md-4 mb-3 px-2">
+      <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+        <div className="container container-xs pb-5">
+          <div className="row">
+            <div className="col-md-4 mb-3 px-2">
               <TenantPhotoCard />
             </div>
-            <div class="col-md-8 px-2">
+            <div className="col-md-8 px-2">
               <TenancyDetails title="Tenancy Details" />
               <TenantDetails title="Owner's Details" />
             </div>

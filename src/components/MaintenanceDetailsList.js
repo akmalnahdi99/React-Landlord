@@ -41,7 +41,7 @@ export default function MaintenanceDetailsList() {
             <div className="demo-gallery mb-0">
               <ul id="lightgallery" className="list-unstyled row">
                 <li
-                  class="col-xl-3 col-sm-4 col-md-2 col-lg-2 p-2"
+                  className="col-xl-3 col-sm-4 col-md-2 col-lg-2 p-2"
                   data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/2-1600.jpg"
                   data-src="https://sachinchoolur.github.io/lightgallery.js/static/img/2-1600.jpg"
                 >

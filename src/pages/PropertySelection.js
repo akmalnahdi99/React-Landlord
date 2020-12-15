@@ -62,25 +62,25 @@ export default function Login(props) {
     ];
     return (
         <div className="loginbg doorcasedark-bg">
-            <div class="tenantdiv">
+            <div className="tenantdiv">
                 <div className="tenantlogo">
-                    <img alt="dr-logo" src="/imgs/doorcase-logo.png" class="img-fluid" width="70px" />
+                    <img alt="dr-logo" src="/imgs/doorcase-logo.png" className="img-fluid" width="70px" />
                 </div>
 
-                <div class="container">
-                    <div class="text-center animated fadeInDown centeredbox">
-                        <div class="row">
+                <div className="container">
+                    <div className="text-center animated fadeInDown centeredbox">
+                        <div className="row">
                             {data.map((item, index) => {
                                 return (
-                                    <div class="col-md-4 col-sm-4 col-6 p-0 align-self-center mt-5">
+                                    <div className="col-md-4 col-sm-4 col-6 p-0 align-self-center mt-5">
                                         <Link to="/landlord/activity">
-                                            <img alt="wic" src={item.image} class="img-fluid rounded-border" width="80%" />
+                                            <img alt="wic" src={item.image} className="img-fluid rounded-border" width="80%" />
                                             <br /><br />
-                                            <span class="text-white font-light ">
+                                            <span className="text-white font-light ">
                                                 {item.Unitname}
                                             </span>
                                             <br />
-                                            <span class="text-white font-light font-small">
+                                            <span className="text-white font-light font-small">
                                                 {item.BuildingName}
                                             </span>
                                         </Link>
@@ -105,7 +105,7 @@ export default function Login(props) {
                                         <Media heading className="m-0 text-completedtask">
                                             {item.UnitName}
                                             <span>
-                                                <i class="fas fa-arrow-right fa-xs float-right"></i>
+                                                <i className="fas fa-arrow-right fa-xs float-right"></i>
                                             </span>
                                         </Media>
                                         <p className="m-0 font-body text-completedtask">{item.BuildingName}</p>
@@ -116,13 +116,13 @@ export default function Login(props) {
                     })}
                 </Modal>
 
-                <div class="tenantall text-center">
+                <div className="tenantall text-center">
                     <Button color="link" className="mt-3" onClick={toggle}>
                         See all tenant list &nbsp; <FaIcons.FaUserCog />
                     </Button>
                 </div>
-                <div class="copyright-footer">
-                    <p class="m-t text-center text-white">
+                <div className="copyright-footer">
+                    <p className="m-t text-center text-white">
                         <small>
                             &copy; <span className="ml-1">{getCurrentYear()} </span>
                             <span className="ml-1">Copyright by Jann Properties</span>

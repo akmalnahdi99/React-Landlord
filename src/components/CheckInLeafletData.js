@@ -2,14 +2,14 @@ import React from "react";
 
 function CheckInLeafletData() {
   return (
-    <div class="row justify-content-center">
-      <div class="col-md-8 p-0">
-        <div class="ibox">
-          <div class="ibox-title mt-3">
+    <div className="row justify-content-center">
+      <div className="col-md-8 p-0">
+        <div className="ibox">
+          <div className="ibox-title mt-3">
             <h3>Information Leaflet</h3>
             <hr />
           </div>
-          <div class="ibox-content forum-container">
+          <div className="ibox-content forum-container">
             <h4>Dear Tenant</h4>
             <br />
 
@@ -19,13 +19,13 @@ function CheckInLeafletData() {
               Kit containing the following:
             </p>
             <p>Items</p>
-            <div class="forum-item">
-              <div class="forum-sub-title">
-                <p class="text-newtask ml-2">1. Information Leaflet</p>
-                <p class="text-newtask ml-2">2. Keys</p>
-                <p class="text-newtask ml-2">3. Access Cards</p>
-                <p class="text-newtask ml-2">4. Remote Controls</p>
-                <p class="text-newtask ml-2">5. Car Sticker</p>
+            <div className="forum-item">
+              <div className="forum-sub-title">
+                <p className="text-newtask ml-2">1. Information Leaflet</p>
+                <p className="text-newtask ml-2">2. Keys</p>
+                <p className="text-newtask ml-2">3. Access Cards</p>
+                <p className="text-newtask ml-2">4. Remote Controls</p>
+                <p className="text-newtask ml-2">5. Car Sticker</p>
               </div>
               <br />
 
@@ -35,9 +35,9 @@ function CheckInLeafletData() {
               </p>
 
               <br />
-              <div class="forum-sub-title">
-                <p class="text-newtask ml-2">1. Inventory List</p>
-                <p class="text-newtask ml-2">2. Property Condition</p>
+              <div className="forum-sub-title">
+                <p className="text-newtask ml-2">1. Inventory List</p>
+                <p className="text-newtask ml-2">2. Property Condition</p>
               </div>
 
               <br />

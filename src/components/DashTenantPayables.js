@@ -32,7 +32,7 @@ export default function DashTenantPayables() {
       <div className="ibox-title bg-transparent">
         <h5>Tenant Payables</h5>
         <div className="ibox-tools">
-          <Link href="tenant-payables.html">
+          <Link to=""  >
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>

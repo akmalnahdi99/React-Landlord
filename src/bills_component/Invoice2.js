@@ -27,10 +27,14 @@ const InvoiceDetails = ({ title }) => {
             </div>
           </div>
         </div>
-        <div class="col-12 md-5">
-          <div class="btn-res">
-            <Link class="btn btn-primary width140 mr-2 mb-2">View Bill</Link>
-            <Link class="btn btn-success width140 mb-2">Upload Receipt</Link>
+        <div className="col-12 md-5">
+          <div className="btn-res">
+            <Link to="" className="btn btn-primary width140 mr-2 mb-2">
+              View Bill
+            </Link>
+            <Link to="" className="btn btn-success width140 mb-2">
+              Upload Receipt
+            </Link>
           </div>
         </div>
       </div>

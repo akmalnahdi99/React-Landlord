@@ -26,12 +26,12 @@ export default function AccessCard() {
           </div>
         </div>
         
-        <div class="wrapper wrapper-content animated fadeInRight">
-      <div class="container-fluid">
-      <div class="row m-t-sm justify-content-center">
-                        <div class="col-lg-9">
-        <div class="ibox">
-        <div class="ibox-title">
+        <div className="wrapper wrapper-content animated fadeInRight">
+      <div className="container-fluid">
+      <div className="row m-t-sm justify-content-center">
+                        <div className="col-lg-9">
+        <div className="ibox">
+        <div className="ibox-title">
             <h3>Remote Control</h3><hr/>
             <InventoryRemoteControlTable title="Remote Control" />
             </div>

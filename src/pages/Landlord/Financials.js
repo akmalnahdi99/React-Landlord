@@ -25,18 +25,18 @@ export default function Financials() {
       </div>
 
       <div className="wrapper wrapper-content animated fadeInRight py-3 mb-0 gray-bg" style={{ borderBottom: "1px solid #fff" }}>
-        <div class="container-fluid">
+        <div className="container-fluid">
           <div className="row p-0 justify-content-center">
             <div className="col-lg-8 px-2">
               <FinancialTableFilter />
             </div>
           </div>
         </div>
-        <div class="wrapper wrapper-content animated fadeInRight">
-          <div class="container">
+        <div className="wrapper wrapper-content animated fadeInRight">
+          <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-9">
-                <div class="ibox ">
+                <div className="ibox ">
                   <FinancialTable title="Financial" />
                 </div>
               </div>

@@ -19,12 +19,12 @@ export default function PropertyInfo() {
           </Link>
         </div>
       </div>
-      <div class="row text-center">
-        <div class="col-12 align-self-center">
-          <Link to="/landlord/InventoryList" class="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
+      <div className="row text-center">
+        <div className="col-12 align-self-center">
+          <Link to="/landlord/InventoryList" className="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
             <img src="/imgs/inventory.svg" width="30px" alt="" />
             <br />
-            <span class="mt-5">Inventory List</span>
+            <span className="mt-5">Inventory List</span>
           </Link>
           <Link to="/landlord/PropertyCondition" className="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
             <img src="/imgs/room.svg" width="30px" alt="" />

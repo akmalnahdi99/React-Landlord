@@ -7,17 +7,17 @@ import Invoice2 from "./Invoice2";
 
 export default function BillsQuitRent() {
   return (
-      <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="container container-xs">
+      <div className="wrapper wrapper-content animated fadeInRight">
+        <div className="container container-xs">
         <div className="row justify-content-center">
             <div className="col-lg-9 mb-3">
-          <div class="ibox ">
+          <div className="ibox ">
               <QuitRentDetails title="Quit Rent" />
           </div>
-          <div class="ibox">
+          <div className="ibox">
           <Invoice title="Invoice" />
         </div>
-        <div class="ibox">
+        <div className="ibox">
           <Invoice2 title="Invoice" />
         </div>
         </div>
