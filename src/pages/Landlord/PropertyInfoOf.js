@@ -12,7 +12,7 @@ import InfoInsurance from "../../propertyInfoComponent/InfoInsurance";
 import InfoServiceCharge from "../../propertyInfoComponent/InfoServiceCharge";
 import InfoAssessment from "../../propertyInfoComponent/InfoAssessment";
 import InfoQuitRent from "../../propertyInfoComponent/InfoQuitRent";
-import InfoUnit from "../../propertyInfoComponent/InfoUnit";
+import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
 
 export default function PropertyInfoOf() {
@@ -72,15 +72,24 @@ export default function PropertyInfoOf() {
           </div>
         </div>
       </div>
-      
-      { (propertyinfoType==="Tenancy") ? <TenancyHome /> :( "") }
-      { (propertyinfoType==="Utilities") ? <Utilities /> :( "") }
-      { (propertyinfoType==="Insurance") ? <InfoInsurance /> :( "") }
-      { (propertyinfoType==="ServiceCharge") ? <InfoServiceCharge /> :( "") }
-      { (propertyinfoType==="AssessmentRate") ? <InfoAssessment /> :( "") }
-      { (propertyinfoType==="QuitRent") ? <InfoQuitRent /> :( "") }
-      { (propertyinfoType==="Unit") ? <InfoUnit /> :( "") }
-      { (propertyinfoType==="Building") ? <InfoBuilding /> :( "") }
+
+      <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+        <div className="container container-xs pb-5">
+          <div className="row justify-content-center">
+           
+              {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
+              {propertyinfoType === "Utilities" ? <Utilities /> : ""}
+              {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
+              {propertyinfoType === "ServiceCharge" ? <InfoServiceCharge /> : ""}
+              {propertyinfoType === "AssessmentRate" ? <InfoAssessment /> : ""}
+              {propertyinfoType === "QuitRent" ? <InfoQuitRent /> : ""}
+              {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
+              {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
+         
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

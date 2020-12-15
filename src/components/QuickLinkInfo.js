@@ -10,7 +10,7 @@ import InfoInsurance from "../propertyInfoComponent/InfoInsurance";
 import InfoServiceCharge from "../propertyInfoComponent/InfoServiceCharge";
 import InfoAssessment from "../propertyInfoComponent/InfoAssessment";
 import InfoQuitRent from "../propertyInfoComponent/InfoQuitRent";
-import InfoUnit from "../propertyInfoComponent/InfoUnit";
+import UnitDetailsCard from "../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../propertyInfoComponent/InfoBuilding";
 
 export default function PropertyInfoOf() {
@@ -63,7 +63,7 @@ export default function PropertyInfoOf() {
         {propertyinfoType === "ServiceCharge" ? <InfoServiceCharge /> : ""}
         {propertyinfoType === "AssessmentRate" ? <InfoAssessment /> : ""}
         {propertyinfoType === "QuitRent" ? <InfoQuitRent /> : ""}
-        {propertyinfoType === "Unit" ? <InfoUnit /> : ""}
+        {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
         {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
         <Footer />
       </div>

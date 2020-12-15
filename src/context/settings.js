@@ -5,6 +5,7 @@ const defaultSettings = {
   isLogged: false,
   accessToken:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRpX2F5aGFtIiwibmFtZWlkIjoiNTY2MjI0NmYtMDVkMS00MmZjLWE5NzktZWVkMjUwNjRlMWNkIiwicm9sZSI6IlRlbmFudEluZGl2aWR1YWwiLCJuYmYiOjE2MDc3NDk0NzAsImV4cCI6MTYwODAwODY3MCwiaWF0IjoxNjA3NzQ5NDcwfQ.Kgz0uVC8aBkD-ZlgI1VOEO8Ajmo7Nfk0-ImHF7oQQ4U",
+  activeUnitId: 1004,
 };
 
 function getsettingsFromLocalStorage() {

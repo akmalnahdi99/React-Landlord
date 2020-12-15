@@ -1,40 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import PostsList from "../../components/PostsList";
 import PostsListFilter from "../../components/PostsListFilter";
-import UnitInfoCard from "../../components/unitCart";
+import InlineUnitInfoCard from "../../components/InlineUnitInfoCard";
 import * as FaIcons from "react-icons/fa";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import { Button, Modal, ModalHeader, ModalBody, Media } from 'reactstrap';
-
+import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
+import { AppContext } from "../../context/settings";
+import { useHistory } from "react-router-dom";
 
 export default function Activity(props) {
-  const {
-    className
-  } = props;
+  const { updateAppContext } = React.useContext(AppContext);
+  const history = useHistory();
 
+  const { className } = props;
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
-  const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
+  const closeBtn = (
+    <button className="close" onClick={toggle}>
+      &times;
+    </button>
+  );
 
-  var data = [
-    {
-      id: 0,
-      UnitName: process.env.PUBLIC_URL + "B-3A-03A",
-      BuildingName: "Puteri Palma",
-      image: "/imgs/a8.jpg",
-      altname: "P.P"
+  function setActiveUnit(unitId) {
+    updateAppContext({ activeUnitId: unitId });
+    setModal(false);
+  }
+
+  var {
+    settings: {
+      userInfo: { units },
     },
-    {
-      id: 1,
-      UnitName: "No. 46",
-      BuildingName: "Bandar Sunggala",
-      image: process.env.PUBLIC_URL + "/imgs/a4.jpg",
-      altname: "P.D"
-    },
-  ];
+  } = React.useContext(AppContext);
 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
@@ -61,7 +60,7 @@ export default function Activity(props) {
             <div className="col-md-8">
               <div className="row justify-content-center">
                 <div className="col-10 px-2">
-                  <UnitInfoCard />
+                  <InlineUnitInfoCard />
                 </div>
                 <div className="col-2 px-2">
                   <Button className="btn btn-primary btn-circle mt-3 float-right btnsvg" onClick={toggle}>
@@ -75,27 +74,37 @@ export default function Activity(props) {
       </div>
 
       <Modal isOpen={modal} toggle={toggle} className={className} centered={true}>
-        <ModalHeader toggle={toggle} close={closeBtn} className="text-completedtask text-left font-title ml-3">Select Property</ModalHeader>
-        {data.map((item, index) => {
-          return (
-            <ModalBody className="pt-0">
-              <Media className="mt-1" href="/" >
-                <Media left middle>
-                  <Media className="img-fluid rounded-border align-self-center mr-3" object src={item.image} alt={item.altname} width="50px" />
-                </Media>
-                <Media body className="align-self-center">
-                  <Media heading className="m-0 text-completedtask">
-                    {item.UnitName}
-                    <span>
-                      <i class="fas fa-arrow-right fa-xs float-right"></i>
-                    </span>
+        <ModalHeader toggle={toggle} close={closeBtn} className="text-completedtask text-left font-title ml-3">
+          Select Property
+        </ModalHeader>
+        {units &&
+          units.map((unit, index) => {
+            return (
+              <ModalBody
+                key={index}
+                className="pt-0"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveUnit(unit.id);
+                }}
+              >
+                <Media className="mt-1" style={{ cursor: "pointer" }}>
+                  <Media left middle>
+                    <Media className="img-fluid rounded-border align-self-center mr-3" style={{ width: "50px", height: "50px" }} object src={unit.urlThumb} alt={unit.name} width="50px" />
                   </Media>
-                  <p className="m-0 font-body text-completedtask">{item.BuildingName}</p>
+                  <Media body className="align-self-center">
+                    <Media heading className="m-0 text-completedtask">
+                      {unit.name}
+                      <span>
+                        <i class="fas fa-arrow-right fa-xs float-right"></i>
+                      </span>
+                    </Media>
+                    <p className="m-0 font-body text-completedtask">{unit.buildingName} 11</p>
+                  </Media>
                 </Media>
-              </Media>
-            </ModalBody>
-          );
-        })}
+              </ModalBody>
+            );
+          })}
       </Modal>
 
       <div className="wrapper wrapper-content animated fadeInRight py-3 mb-0 gray-bg" style={{ borderBottom: "1px solid #fff" }}>
@@ -117,5 +126,5 @@ export default function Activity(props) {
       </div>
       <Footer />
     </div>
-  )
+  );
 }

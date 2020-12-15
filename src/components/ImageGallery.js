@@ -5,16 +5,7 @@ import PT from "prop-types";
 import { Link } from "react-router-dom";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 
-const GROUP1 = [
-  [
-    "https://images.unsplash.com/photo-1592549585866-486f41343aaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-   
-  ],
-  [
-    "https://images.unsplash.com/photo-1594614271360-0ed9a570ae15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-    
-  ],
-];
+ 
 
 const PhotoItem = ({ image, thumb, group }) => (
   <div style={{ padding: "5px" }}>

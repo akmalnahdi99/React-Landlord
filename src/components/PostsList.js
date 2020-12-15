@@ -7,13 +7,17 @@ import Loading from "./static/Loading";
 //import postIcon from "img/money-bag.svg";
 
 const PostsList = (props, filterBy) => {
+  console.log("in posts list 0 ");
+
   const appContext = React.useContext(AppContext);
   const activeFilter = appContext.settings.postsFilter;
-
+  const activeUnitId = appContext.settings.activeUnitId;
+  
   const [isLoading, setIsLoading] = React.useState(true);
   const [posts, setPosts] = React.useState(null);
 
   React.useEffect(() => {
+    console.log("in posts list");
     async function loadPostsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/posts/list");
@@ -39,7 +43,7 @@ const PostsList = (props, filterBy) => {
     }
     loadPostsWrapper();
     // eslint-disable-next-line
-  }, []);
+  }, [activeUnitId]);
 
   //     id: 3,
   //     postTitle: "4 New Offers",

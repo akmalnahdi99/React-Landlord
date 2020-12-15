@@ -8,13 +8,12 @@ const LandLordPhotoCard = () => {
     settings: { userInfo },
   } = React.useContext(AppContext);
 
- 
   return (
     <div className="ibox">
       <div className="ibox-content minhigh450px">
         <div className="profile-sidebar paddingontop">
           <div className="profile-userpic text-center">
-            <img src={userInfo.urlThumb} className="rounded-circle boxshadow align-self-center " alt="profile" />
+            <img src={userInfo.urlThumb} className="rounded-circle boxshadow align-self-center " alt="profile" style={{ width: "100px", height: "100px" }} />
           </div>
           <div className="profile-usertitle mb-5">
             <div className="profile-usertitle-name">{userInfo.userName}</div>
