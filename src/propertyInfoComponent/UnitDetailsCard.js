@@ -41,156 +41,160 @@ export default function UnitDetailsCard() {
     });
   }
 
-  if (isLoading === true) return <Loading />;
-
   return (
     <div className="ibox ss" style={{ border: "2px solid red;" }}>
       <div className="ibox-title">
         <h3>Details</h3>
       </div>
       <div className="ibox-content">
-        <div className="row">
-          <div className="col-sm-12 ">
-            <div className="demo-gallery">
-              <ul id="lightgallery" className="list-unstyled row">
-                {imageGallery}
-              </ul>
-            </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Block</h4>
-                <p className="m-0">{unitDetails.block || "N/A"}</p>
+        {isLoading === true ? (
+          <Loading />
+        ) : (
+          <React.Fragment>
+            <div className="row">
+              <div className="col-sm-12 ">
+                <div className="demo-gallery">
+                  <ul id="lightgallery" className="list-unstyled row">
+                    {imageGallery}
+                  </ul>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Block</h4>
+                    <p className="m-0">{unitDetails.block || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Level</h4>
+                    <p className="m-0">{unitDetails.level || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Unit</h4>
+                    <p className="m-0">{unitDetails.unitNumber || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
               </div>
             </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Level</h4>
-                <p className="m-0">{unitDetails.level || "N/A"}</p>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Furnishing</h4>
+                    <p className="m-0">{unitDetails.furnishing || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Type</h4>
+                    <p className="m-0">{unitDetails.type || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Sqft.</h4>
+                    <p className="m-0">{unitDetails.area || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
               </div>
             </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Unit</h4>
-                <p className="m-0">{unitDetails.unitNumber || "N/A"}</p>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Room</h4>
+                    <p className="m-0">{unitDetails.roomCount || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Utility room</h4>
+                    <p className="m-0">{unitDetails.utilityRoomCount || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Bath</h4>
+                    <p className="m-0">{unitDetails.bathRoomCount || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
               </div>
             </div>
-            <hr />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Furnishing</h4>
-                <p className="m-0">{unitDetails.furnishing || "N/A"}</p>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Car park</h4>
+                    <p className="m-0">{unitDetails.carParkCount || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Car park No</h4>
+                    <p className="m-0">{unitDetails.carParkLocation || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Service charges</h4>
+                    <p className="m-0">{unitDetails.servicesCharge || "N/A"}</p>
+                  </div>
+                </div>
+                <hr />
               </div>
             </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Type</h4>
-                <p className="m-0">{unitDetails.type || "N/A"}</p>
+            <div className="row mb-5">
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Sinking fund</h4>
+                    <p className="m-0">{unitDetails.sinkingFund || "N/A"}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Insurance amount</h4>
+                    <p className="m-0">{unitDetails.insuranceAmount || "N/A"}</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Sqft.</h4>
-                <p className="m-0">{unitDetails.area || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Room</h4>
-                <p className="m-0">{unitDetails.roomCount || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Utility room</h4>
-                <p className="m-0">{unitDetails.utilityRoomCount || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Bath</h4>
-                <p className="m-0">{unitDetails.bathRoomCount || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Car park</h4>
-                <p className="m-0">{unitDetails.carParkCount || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Car park No</h4>
-                <p className="m-0">{unitDetails.carParkLocation || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Service charges</h4>
-                <p className="m-0">{unitDetails.servicesCharge || "N/A"}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-        </div>
-        <div className="row mb-5">
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Sinking fund</h4>
-                <p className="m-0">{unitDetails.sinkingFund || "N/A"}</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="text-doorcase3">Insurance amount</h4>
-                <p className="m-0">{unitDetails.insuranceAmount || "N/A"}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          </React.Fragment>
+        )}
       </div>
     </div>
   );

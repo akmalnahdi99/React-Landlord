@@ -6898,7 +6898,8 @@ code {
   background-color: #ffffff;
   color: inherit;
   padding: 1px 20px 20px 20px;
-  min-height: 323px;
+  /* Ayham : If you need it you can enable it, but pls specify why and where*/
+  /* min-height: 323px; */ 
 }
 
 .ibox-content.paddingtop {
@@ -13257,7 +13258,13 @@ body.md-skin {
 {
   border:1px solid red;
 }
-
+.facility-dark
+{
+color: black;
+}
+.facility-faint{
+color:rgb(220,220,220);
+}
 /* //TASK Ayham This is not complete solution this is just a work around */
 .donut3__slice.donut3__slice__third.hh-red::after{
   border-top-color: red;
