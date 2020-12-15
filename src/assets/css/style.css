@@ -113,6 +113,10 @@ p {
   border: 0;
 }
 
+.boldtext{
+  font-weight: bold;
+}
+
 .navbar-default {
   background-color: transparent;
   border-color: #2f4050;
@@ -317,6 +321,10 @@ ul.nav-second-level {
 
 .nav-header .text-muted {
   color: #8095a8 !important;
+}
+
+.textclr{
+  color:	rgb(128,128,128);
 }
 
 .minimalize-styl-2 {

@@ -53,6 +53,7 @@ const InfoWaterDetails = ({ title }) => {
                 <p className="m-0">{details.account}</p>
               </div>
             </div>
+            <hr />
           </div>
         </div>
       </div>
