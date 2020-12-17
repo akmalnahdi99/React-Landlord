@@ -1,6 +1,7 @@
-[]
+[2020-12-17]
+- master merged all this branche edits
 - landlord/notifications is notifications clickable
-- 
+
 [2020-12-1]
 - to qhairun : Pls delete non required images from src/assets/imgs there is around 12MB of images, pls also consider resizing the big images 
 - to qhairun : pls review the file index.html and remove non required elements from it.
