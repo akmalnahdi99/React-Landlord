@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/static/Footer";
  
 import Invoice from "../../src/bills_component/Invoice";
 import UnitServiceChargeSinkingFundCard from "./UnitServiceChargeSinkingFundCard";
@@ -19,7 +18,6 @@ export default function UnitServiceCharge() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

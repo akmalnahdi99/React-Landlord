@@ -1,10 +1,6 @@
 import React from "react";
 
-const InfoInternetDetails = ({ title }) => {
-  var details = {
-    company: "Telekom Malaysia Berhad",
-    contact: "03-2240 9494",
-  };
+export default function InfoInternetDetails({ title, ...details }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -15,19 +11,17 @@ const InfoInternetDetails = ({ title }) => {
         <div className="media">
           <div className="media-body">
             <h4 className="text-doorcase3">Company Name</h4>
-            <p className="m-0">{details.company}</p>
+            <p className="m-0">{details.companyName}</p>
           </div>
         </div>
         <hr />
         <div className="media">
           <div className="media-body">
             <h4 className="text-doorcase3">Contact number</h4>
-            <p className="m-0">{details.contact}</p>
+            <p className="m-0">{details.contactNumber}</p>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default InfoInternetDetails;
+}

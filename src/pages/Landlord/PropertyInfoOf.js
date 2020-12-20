@@ -8,12 +8,13 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import TenancyHome from "./TenancyHome";
 import Utilities from "./Utilities";
-import InfoInsurance from "../../propertyInfoComponent/InfoInsurance";
+ 
 import UnitServiceCharge from "../../propertyInfoComponent/UnitServiceCharge";
 import UnitAssessmentRateCard from "../../propertyInfoComponent/UnitAssessmentRateCard";
 import UnitQuitRentCard from "../../propertyInfoComponent/unitQuitRentCard";
 import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
+import BuildingInsuranceDetails from "../../propertyInfoComponent/BuildingInsuranceDetails";
 
 export default function PropertyInfoOf() {
   var t = useParams();
@@ -78,7 +79,7 @@ export default function PropertyInfoOf() {
           <div className="row justify-content-center">
             {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
             {propertyinfoType === "Utilities" ? <Utilities /> : ""}
-            {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
+            {propertyinfoType === "Insurance" ? <BuildingInsuranceDetails title="Insurance" /> : ""}
             {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
             {propertyinfoType === "AssessmentRate" ? <UnitAssessmentRateCard title="Assessment Rate" /> : ""}
             {propertyinfoType === "QuitRent" ? <UnitQuitRentCard title="Quit Rent" /> : ""}

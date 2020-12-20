@@ -1,13 +1,6 @@
 import React from "react";
 
-const InfoElectricityDetails = ({ title }) => {
-  var details = {
-    ref_no: "G-21-07",
-    name: "Big Matrix Sdn Bhd",
-    bank: "CIMB",
-    account: "8009656480",
-    contact: "03-7453 8045",
-  };
+export default function InfoElectricityDetails({ title, ...details }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -20,21 +13,21 @@ const InfoElectricityDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Company Name</h4>
-                <p className="m-0">{details.name}</p>
+                <p className="m-0">{details.companyName || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Contact number</h4>
-                <p className="m-0">{details.contact}</p>
+                <p className="m-0">{details.contactNumber || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Reference number</h4>
-                <p className="m-0">{details.ref_no}</p>
+                <p className="m-0">{details.referenceNumber || "N/A"}</p>
               </div>
             </div>
           </div>
@@ -43,14 +36,14 @@ const InfoElectricityDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Bank name</h4>
-                <p className="m-0">{details.bank}</p>
+                <p className="m-0">{details.bankName || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Bank account number</h4>
-                <p className="m-0">{details.account}</p>
+                <p className="m-0">{details.bankAccountNumber || "N/A"}</p>
               </div>
             </div>
             <hr />
@@ -59,6 +52,4 @@ const InfoElectricityDetails = ({ title }) => {
       </div>
     </div>
   );
-};
-
-export default InfoElectricityDetails;
+}

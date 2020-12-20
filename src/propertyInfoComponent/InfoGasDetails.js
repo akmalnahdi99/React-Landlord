@@ -1,10 +1,7 @@
 import React from "react";
 
-const InfoGasDetails = ({ title }) => {
-  var details = {
-    company: "N/A",
-    contact: "N/A",
-  };
+export default function InfoGasDetails   ({ title,...details })   {
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -15,14 +12,14 @@ const InfoGasDetails = ({ title }) => {
         <div className="media">
           <div className="media-body">
             <h4 className="text-doorcase3">Company Name</h4>
-            <p className="m-0">{details.company}</p>
+            <p className="m-0">{details.companyName || "N/A"}</p>
           </div>
         </div>
         <hr />
         <div className="media">
           <div className="media-body">
             <h4 className="text-doorcase3">Contact number</h4>
-            <p className="m-0">{details.contact}</p>
+            <p className="m-0">{details.contactNumber || "N/A"}</p>
           </div>
         </div>
       </div>
@@ -30,4 +27,4 @@ const InfoGasDetails = ({ title }) => {
   );
 };
 
-export default InfoGasDetails;
+ 

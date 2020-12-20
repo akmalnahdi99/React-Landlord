@@ -1,13 +1,6 @@
 import React from "react";
 
-const InfoSewageDetails = ({ title }) => {
-  var details = {
-    ref_no: "G-21-07",
-    name: "Indah Water Konsortium Sdn Bhd",
-    payable: "Indah Water Konsortium Sdn Bhd",
-    charges: "RM 8.00",
-    contact: "03-2780 1100",
-  };
+export default function InfoSewageDetails  ({ title,...details }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -20,21 +13,21 @@ const InfoSewageDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Company Name</h4>
-                <p className="m-0">{details.name}</p>
+                <p className="m-0">{details.companyName || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Contact number</h4>
-                <p className="m-0">{details.contact}</p>
+                <p className="m-0">{details.contactNumber || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Reference number</h4>
-                <p className="m-0">{details.ref_no}</p>
+                <p className="m-0">{details.referenceNumber || "N/A"}</p>
               </div>
             </div>
           </div>
@@ -42,14 +35,14 @@ const InfoSewageDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Name payable</h4>
-                <p className="m-0">{details.payable}</p>
+                <p className="m-0">{details.payableName || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Monthly charges</h4>
-                <p className="m-0">{details.charges}</p>
+                <p className="m-0">{details.monthlyCharge || "N/A"}</p>
               </div>
             </div>
             <hr />
@@ -59,5 +52,4 @@ const InfoSewageDetails = ({ title }) => {
     </div>
   );
 };
-
-export default InfoSewageDetails;
+ 
