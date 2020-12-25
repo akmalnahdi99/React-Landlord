@@ -23,7 +23,7 @@ export default function BuildingFacilitiesCard() {
   }
 
   React.useEffect(() => {
-    console.log("In Effect");
+    
     async function loadBuildingInfoWrapper() {
       setIsLoading(true);
       var response = await apiCall("/buildings/facilities/" + buildingId);

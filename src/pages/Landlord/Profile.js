@@ -3,11 +3,15 @@ import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import LandLordDetailsCard from "../../components/LandLordDetailsCard";
-import LandLordPhotoCard from "../../components/LandLordPhoto";
+import UserPhotoCard from "../../components/userPhotoCard";
+import { AppContext } from "../../context/settings";
  
 
 export default function Profile() {
   // const { alert, hideAlert } = React.useContext(UserContext);
+  var {
+    settings: { userInfo },
+  } = React.useContext(AppContext);
 
 console.log(process);
   return (
@@ -32,7 +36,7 @@ console.log(process);
         <div className="container container-xs pb-5">
           <div className="row">
             <div className="col-md-4 mb-3 px-2">
-              <LandLordPhotoCard />
+              <UserPhotoCard {...userInfo} />
             </div>
             <div className="col-md-8 px-2">
               <LandLordDetailsCard title="Owner's Details" />

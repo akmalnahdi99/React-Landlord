@@ -16,7 +16,7 @@ const NotificationList = () => {
   // } = React.useContext(AppContext);
 
   React.useEffect(() => {
-    console.log("in effect");
+    
 
     async function loadNotificationsWrapper() {
       setIsLoading(true);

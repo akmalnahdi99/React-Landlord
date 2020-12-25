@@ -332,7 +332,7 @@ export default function App() {
             <LeftMenu />
             <UnitViewings />
           </Route>
-          <Route path="/landlord/viewingdetails">
+          <Route path="/landlord/viewingdetails/:appointmentId">
             <LeftMenu />
             <ViewingDetails />
           </Route>
@@ -348,7 +348,7 @@ export default function App() {
             <LeftMenu />
             <Offers />
           </Route>
-          <Route path="/landlord/offerdetails">
+          <Route path="/landlord/offerdetails/:offerId">
             <LeftMenu />
             <OfferDetails />
           </Route>

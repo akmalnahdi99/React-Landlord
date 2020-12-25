@@ -24,7 +24,7 @@ export default function UtilitiesOf() {
   var utilityType = t.utilityType;
 
   React.useEffect(() => {
-    console.log("In Effect");
+    
     async function loadUtilityDetailsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/units/utilityInfo/unitId=" + activeUnitId + "&companyFor=" + utilityType);

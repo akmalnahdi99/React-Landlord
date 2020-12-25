@@ -13,7 +13,7 @@ export default function UnitServiceSinkingCard({ title }) {
   const activeUnitId = appContext.settings.activeUnitId;
   
   React.useEffect(() => {
-    console.log("In Effect");
+    
     async function loadBuildingInfoWrapper() {
       setIsLoading(true);
       var response = await apiCall("/units/ServiceChargeSinkingFund/" + activeUnitId);
