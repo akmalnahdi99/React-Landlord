@@ -1,19 +1,13 @@
 import React from "react";
-import { AppContext } from "../context/settings";
-// import Empty from "./Empty";
-// import NotificationItem from "./NotificationItem";
-
-const LandLordPhotoCard = () => {
-  var {
-    settings: { userInfo },
-  } = React.useContext(AppContext);
-
+ 
+export default function UserPhotoCard ({...userInfo})  {
+  
   return (
     <div className="ibox">
       <div className="ibox-content minhigh450px">
         <div className="profile-sidebar paddingontop">
           <div className="profile-userpic text-center">
-            <img src={userInfo.urlThumb} className="rounded-circle boxshadow align-self-center " alt="profile" style={{ width: "100px", height: "100px" }} />
+            <img src={userInfo.urlThumb} className="rounded-circle boxshadow align-self-center " alt="profile" style={{ width: "162px", height: "162px" }} />
           </div>
           <div className="profile-usertitle mb-5">
             <div className="profile-usertitle-name">{userInfo.userName}</div>
@@ -24,5 +18,3 @@ const LandLordPhotoCard = () => {
     </div>
   );
 };
-
-export default LandLordPhotoCard;

@@ -2,7 +2,7 @@ import React from "react";
 import Empty from "./Empty";
 import ViewingItem from "./ViewingItem";
 
-export default function ViewingList  ({ title,data }) {
+export default function ViewingList({ title, data }) {
   return (
     <div className="ibox">
       <div className="ibox-content paddingtop minhigh">
@@ -19,4 +19,4 @@ export default function ViewingList  ({ title,data }) {
       </div>
     </div>
   );
-};
+}

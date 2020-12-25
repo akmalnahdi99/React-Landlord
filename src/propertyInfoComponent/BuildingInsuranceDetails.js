@@ -15,7 +15,7 @@ export default function BuildingInsuranceDetails({ title }) {
   var buildingId = allUnits.filter((u) => u.id === activeUnitId)[0].buildingId || null;
 
   React.useEffect(() => {
-    console.log("In Effect");
+    
     async function loadBuildingInsuranceDetailsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/buildings/insuranceCompany/" + buildingId);

@@ -6898,8 +6898,7 @@ code {
   background-color: #ffffff;
   color: inherit;
   padding: 1px 20px 20px 20px;
-  /* Ayham : If you need it you can enable it, but pls specify why and where*/
-  /* min-height: 323px; */ 
+  min-height: 323px;  
 }
 
 .ibox-content.paddingtop {
@@ -13253,6 +13252,7 @@ body.md-skin {
 .border-red
 {
   border:1px solid red;
+  width: 80px;
 }
 .border-green
 {

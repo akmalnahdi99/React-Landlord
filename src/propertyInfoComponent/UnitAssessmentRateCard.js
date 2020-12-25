@@ -13,7 +13,7 @@ export default function UnitAssessmentRateCard({ title }) {
   const activeUnitId = appContext.settings.activeUnitId;
 
   React.useEffect(() => {
-    console.log("In Effect");
+    
     async function loadAssessmentRateWrapper() {
       setIsLoading(true);
       var response = await apiCall("/units/AssessmentRate/" + activeUnitId);
