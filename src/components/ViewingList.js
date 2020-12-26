@@ -9,8 +9,8 @@ export default function ViewingList({ title, data }) {
         <div className="viewing-timeline">
           <h5 className="text-completedtask text-center">{title}</h5>
           {data.length > 0 ? (
-            data.map((item) => {
-              return <ViewingItem key={item.id} {...item} />;
+            data.map((item, index) => {
+              return <ViewingItem key={index} {...item} />;
             })
           ) : (
             <Empty />

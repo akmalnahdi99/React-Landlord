@@ -17,7 +17,7 @@ export default function RentalDashChart({ data }) {
             <div className="row text-center mt-3">
               {data.map((item, index) => {
                 return (
-                  <div className="col-4 px-2">
+                  <div key={index} className="col-4 px-2">
                     <ul className="dashlist">
                       <li className="text-truncate">
                         <i className={item.className}></i>

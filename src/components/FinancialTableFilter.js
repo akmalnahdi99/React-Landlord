@@ -11,7 +11,7 @@ export default function PostsListFilter({ callBack, selectedMonth }) {
 
   const Filters = [
     {
-      id: 13,
+      id: 0,
       name: "All",
     },
     {
@@ -70,8 +70,8 @@ export default function PostsListFilter({ callBack, selectedMonth }) {
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 13,
-    slidesToScroll: 13,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     centerMode: true,
     accessibility: false,
     responsive: [

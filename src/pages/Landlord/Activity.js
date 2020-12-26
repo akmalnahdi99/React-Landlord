@@ -8,14 +8,16 @@ import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
 import { AppContext } from "../../context/settings";
- 
+import { apiCall } from "../../utils/landlordHelper";
 
 export default function Activity(props) {
-  const { updateAppContext } = React.useContext(AppContext);
-   
+  const { updateAppContext, settings } = React.useContext(AppContext);
 
   const { className } = props;
   const [modal, setModal] = useState(false);
+
+  const [activeUnitId, set_activeUnitId] = useState(settings.activeUnitId);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const toggle = () => setModal(!modal);
   const closeBtn = (
@@ -24,7 +26,25 @@ export default function Activity(props) {
     </button>
   );
 
+  React.useEffect(() => {
+    async function loadFinancialsWrapper() {
+      // setIsLoading(true);
+
+      console.log("Active unit is changed .. Load financials");
+
+      var response = await apiCall("/units/financialsPerYearMonths/?unitId=" + activeUnitId + "&year=" + new Date().getFullYear());
+
+      if (response.status) {
+        updateAppContext({ unitFinancials: response.data });
+      }
+      // setIsLoading(false);
+    }
+    loadFinancialsWrapper();
+    // eslint-disable-next-line
+  }, [activeUnitId]);
+
   function setActiveUnit(unitId) {
+    set_activeUnitId(unitId);
     updateAppContext({ activeUnitId: unitId });
     setModal(false);
   }

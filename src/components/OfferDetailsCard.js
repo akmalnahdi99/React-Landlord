@@ -130,7 +130,7 @@ export default function OfferDetailsCard({ offerId }) {
                     <div className="media">
                       <div className="media-body">
                         <h4 className="text-doorcase3">Duration of tenancy</h4>
-                        <p className="m-0">{offerDetails.duration || "N/A"}</p>
+                        <p className="m-0">{offerDetails.duration + " Months" || "N/A"}</p>
                       </div>
                     </div>
                     <hr />

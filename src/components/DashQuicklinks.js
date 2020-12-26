@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Quicklinks = ({ title }) => {
+export default function Quicklinks ({ title })  {
   const data = [
     { text: "TenantInfo", icon: "/imgs/id-card.svg",url:"" },
     { text: "Subscription Fees", icon: "/imgs/subscription.svg",url:"" },
@@ -30,7 +30,7 @@ const Quicklinks = ({ title }) => {
           {data.map((item, index) => {
             if (item.text.toLowerCase() !== "add shortcut".toLowerCase()) {
               return (
-                <div className="col-md-4 col-sm-4 col-4 p-2">
+                <div key={index} className="col-md-4 col-sm-4 col-4 p-2">
                   <Link to="tenant-details.html" className="btn btn-default btn-dashboardicon btn-block text-truncate">
                     <img src={item.icon} alt={item.text} width="24px" />
                     <br />
@@ -56,4 +56,4 @@ const Quicklinks = ({ title }) => {
   );
 };
 
-export default Quicklinks;
+

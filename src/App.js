@@ -27,7 +27,7 @@ import TenantTenancy from "./pages/Landlord/TenantTenancy";
 import TenantPayables from "./pages/Landlord/TenantPayables";
 import TenancyDocs from "./pages/Landlord/TenancyDocs";
 import QuickLinks from "./pages/Landlord/QuickLinks";
-import PropertyViewing from "./pages/Landlord/PropertyViewing";
+
 import PropertyInfoOf from "./pages/Landlord/PropertyInfoOf";
 import PropertyInfo from "./pages/Landlord/PropertyInfo";
 import PropertyCondition from "./pages/Landlord/PropertyCondition";
@@ -324,10 +324,7 @@ export default function App() {
             <LeftMenu />
             <PropertyInfo />
           </Route>
-          <Route path="/landlord/propertyviewing">
-            <LeftMenu />
-            <PropertyViewing />
-          </Route>
+     
           <Route path="/landlord/UnitViewings">
             <LeftMenu />
             <UnitViewings />

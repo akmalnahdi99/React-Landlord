@@ -1,47 +1,32 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
-import   { LoadingSmall } from "./static/Loading";
+import { getFinancialValueRoot, role_tenant, role_landlord, calculate_3_financials_per_month } from "./../utils/landlordHelper";
+import { LoadingSmall } from "./static/Loading";
 
-const FinancialTable = ({ isLoading, data }) => {
-  function getLandlordValue(key) {
-    if (isLoading === true) {
-      return "...";
-    }
- 
-    return  (data.landlord[key] && data.landlord[key].paidAmount) || 0;
+export default function FinancialTable  ({ isLoading, financialData, financialMonth })   {
+  function getFinancialValue(userRole, paymentOf) {
+    return getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf);
   }
 
-  function getTenantValue(key) {
-    if (isLoading === true) {
-      return "...";
-    }
-    return   (data.tenant[key] && data.tenant[key].paidAmount) || 0;
-  }
-  var totalExpenses = "...";
-  var netProfit = "...";
-  var totalIncome = "...";
-  if (isLoading === false) {
-    totalIncome = getTenantValue("Rental");
-    totalExpenses =
-      getLandlordValue("ServiceCharges") + getLandlordValue("SinkingFunds") + getLandlordValue("AssessmentRate") + getLandlordValue("QuitRent") + getLandlordValue("Subscription") + getLandlordValue("Maintenance") + getLandlordValue("Insurance");
-    netProfit = totalIncome - totalExpenses;
-  }
+  // calculate Total income, expenses, profit,
+  const { ...c } = calculate_3_financials_per_month(financialData, financialMonth);
+
   const info = [
     { categorytotal: "Income", amount: " " },
-    { category: "+ Apartment Rental", amount: "RM " + getTenantValue("Rental") },
-    { category: "+ Parking Lot Rental", amount: "RM " + getTenantValue("Rental1") },
-    { category: "+ Storage Rental", amount: "RM " + getTenantValue("Rental2") },
-    { categorytotal: "Total Income", total: "RM " + totalIncome },
+    { category: "+ Apartment Rental", amount: "RM " + getFinancialValue(role_tenant, "Rental") },
+    { category: "+ Parking Lot Rental", amount: "RM " + getFinancialValue(role_tenant, "Rental") * 0 },
+    { category: "+ Storage Rental", amount: "RM " + getFinancialValue(role_tenant, "Rental") * 0 },
+    { categorytotal: "Total Income", total: "RM " + c.totalIncome },
     { categorytotal: "Expenses", amount: " " },
-    { category: "- Service Charge", amount: "RM " + getLandlordValue("ServiceCharges") },
-    { category: "- Sinking Fund", amount: "RM " + getLandlordValue("SinkingFunds") },
-    { category: "- Assesment Fees", amount: "RM " + getLandlordValue("AssessmentRate") },
-    { category: "- Quit Rent", amount: "RM " + getLandlordValue("QuitRent") },
-    { category: "- Subscription Fees", amount: "RM " + getLandlordValue("Subscription") },
-    { category: "- Maintenance", amount: "RM " + getLandlordValue("Maintenance") },
-    { category: "- Insurance", amount: "RM " + getLandlordValue("Insurance") },
-    { categorytotal: "Total Expenses", total: "RM " + totalExpenses },
-    { categorytotal: "Net Profit", total: "RM " + netProfit },
+    { category: "- Service Charge", amount: "RM " + getFinancialValue(role_landlord, "ServiceCharges") },
+    { category: "- Sinking Fund", amount: "RM " + getFinancialValue(role_landlord, "SinkingFunds") },
+    { category: "- Assesment Fees", amount: "RM " + getFinancialValue(role_landlord, "AssessmentRate") },
+    { category: "- Quit Rent", amount: "RM " + getFinancialValue(role_landlord, "QuitRent") },
+    { category: "- Subscription Fees", amount: "RM " + getFinancialValue(role_landlord, "Subscription") },
+    { category: "- Maintenance", amount: "RM " + getFinancialValue(role_landlord, "Maintenance") },
+    { category: "- Insurance", amount: "RM " + getFinancialValue(role_landlord, "Insurance") },
+    { categorytotal: "Total Expenses", total: "RM " + c.totalExpenses },
+    { categorytotal: "Net Profit", total: "RM " + c.netProfit },
   ];
 
   const renderInfo = (table, index) => {
@@ -53,7 +38,7 @@ const FinancialTable = ({ isLoading, data }) => {
         </td>
         <td>
           {isLoading === true ? (
-            <LoadingSmall   />
+            <LoadingSmall />
           ) : (
             <React.Fragment>
               {table.amount}
@@ -65,7 +50,6 @@ const FinancialTable = ({ isLoading, data }) => {
     );
   };
 
-  
   return (
     <div className="ibox-content forum-container">
       <br />
@@ -83,6 +67,4 @@ const FinancialTable = ({ isLoading, data }) => {
       <br />
     </div>
   );
-};
-
-export default FinancialTable;
+}; 

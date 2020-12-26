@@ -15,7 +15,7 @@ const  DashPropertyViewing  = ({ title }) =>  {
           <Link to="/landlord/unitviewings">{title}</Link>
         </h5>
         <div className="ibox-tools">
-          <Link to="/landlord/propertyviewing">
+          <Link to="/landlord/unitviewings">
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>

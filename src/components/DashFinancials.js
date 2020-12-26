@@ -1,8 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FinancialChart from "../components/FinancialChart"
+import FinancialChart from "../components/FinancialChart";
+import { AppContext } from "../context/settings";
+import { calculate_3_financials_per_month } from "../utils/landlordHelper";
+ 
+export default function DashFinancials() {
+  const appContext = React.useContext(AppContext);
+ 
+  var financialData = appContext.settings.unitFinancials;
 
-const DashFinancials = () => {
+  var labels = [...Array(12).keys()].map((x) => new Date(2020, x, 1).toLocaleString("default", { month: "short" }));
+  var netProfit = [...Array(12).keys()].map((x) => calculate_3_financials_per_month(financialData, x + 1).netProfit);
+  var Incomes = [...Array(12).keys()].map((x) => calculate_3_financials_per_month(financialData, x + 1).totalIncome);
+  var Expenses = [...Array(12).keys()].map((x) => calculate_3_financials_per_month(financialData, x + 1).totalExpenses);
+ 
+
   const data = [
     {
       className: "fa fa-circle text-newtask",
@@ -17,6 +29,7 @@ const DashFinancials = () => {
       text: "Net",
     },
   ];
+
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -32,14 +45,14 @@ const DashFinancials = () => {
       <div className="ibox-content">
         <div className="row">
           <div className="col-12">
-            <FinancialChart />
+            <FinancialChart labels={labels} netProfit={netProfit} Incomes={Incomes} Expenses={Expenses} />
           </div>
         </div>
         <div className="container">
           <div className="row mt-3 text-center">
             {data.map((item, index) => {
               return (
-                <div className="col-4 px-2">
+                <div key={index} className="col-4 px-2">
                   <ul className="dashlist">
                     <li className=" text-truncate">
                       <i className={item.className}></i>
@@ -54,6 +67,4 @@ const DashFinancials = () => {
       </div>
     </div>
   );
-};
-
-export default DashFinancials;
+}

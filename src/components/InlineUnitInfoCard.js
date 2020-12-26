@@ -16,7 +16,7 @@ export default function InlineUnitInfoCard() {
   const [unit, setUnit] = React.useState(null);
 
   React.useEffect(() => {
-    console.log("CCCCCCCCCCCC");
+   
     
     var filtered = units.filter((u) => u.id === activeUnitId);
 

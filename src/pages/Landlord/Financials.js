@@ -4,36 +4,20 @@ import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
 import FinancialTableFilter from "../../components/FinancialTableFilter";
-import { apiCall } from "../../utils/landlordHelper";
+ 
 import { AppContext } from "../../context/settings";
 
 export default function LandLordFinancials() {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [selectedMonth, set_selectedMonth] = React.useState(new Date().getMonth());
-  const [financials, set_financials] = React.useState(null);
-
-  const appContext = React.useContext(AppContext);
-  const activeUnitId = appContext.settings.activeUnitId;
-
-  React.useEffect(() => {
-    async function loadFinancialsWrapper() {
-      setIsLoading(true);
-
-      var response = await apiCall("/units/financials/?unitId=" + activeUnitId + "&month=" + selectedMonth);
-
-      if (response.status) {
-        set_financials(response.data);
-      }
-      setIsLoading(false);
-    }
-    loadFinancialsWrapper();
-    // eslint-disable-next-line
-  }, [activeUnitId, selectedMonth]);
-
-
-
-  function filterSelection(x) {
-    set_selectedMonth(x);
+    const appContext = React.useContext(AppContext);
+  
+  const [selectedMonth, set_selectedMonth] = React.useState(appContext.settings.financialMonth);
+ 
+  var financialMonth =  appContext.settings.financialMonth;
+  var financialData = appContext.settings.unitFinancials;
+ 
+  function filterSelection(month) {
+    appContext.updateAppContext({   financialMonth: month });
+    set_selectedMonth(month);
   }
 
   return (
@@ -67,7 +51,7 @@ export default function LandLordFinancials() {
             <div className="row justify-content-center">
               <div className="col-lg-9">
                 <div className="ibox ">
-                  <FinancialTable title="Financial" isLoading={isLoading} data={financials} />
+                  <FinancialTable title="Financial" financialMonth={financialMonth} financialData={financialData}  />
                 </div>
               </div>
             </div>

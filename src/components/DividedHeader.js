@@ -7,7 +7,7 @@ export default function DividedHeader({ data }) {
       <div className="row">
         {data.map((item, index) => {
           return (
-            <React.Fragment>
+            <React.Fragment key={index}>
               <div className={"col text-truncate " + (index !== data.length-1 ? " border-right" : "")}>
                 <small>{item.name}</small>
                 <h2 className="font-bold m-t block">{item.value}</h2>
