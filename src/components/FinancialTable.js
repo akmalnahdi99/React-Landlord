@@ -1,56 +1,88 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
+import   { LoadingSmall } from "./static/Loading";
 
-const FinancialTable = () => {
-    const info = [
-        {categorytotal: "Income", amount: " "},
-        {category: "+ Apartment Rental", amount: "2,0000.00"},
-        {category: "+ Parking Lot Rental", amount: "2,000.00"},
-        {category: "+ Storage Rental", amount: "3,000.00"},
-        {categorytotal: "Total Income", total: "25,000.00"},
-        {categorytotal: "Expenses", amount: " "},
-        {category: "- Service Charge", amount: "500.00"},
-        {category: "- Sinking Fund", amount: "500.00"},
-        {category: "- Assesment Fees", amount: "500.00"},
-        {category: "- Quit Rent", amount: "500.00"},
-        {category: "- Subscription Fees", amount: "2000.00"},
-        {category: "- Maintenance", amount: "1,000.00"},
-        {category: "- Insurance", amount: "2,000.00"},
-        {categorytotal: "Total Expenses", total: "7,000.00"},
-        {categorytotal: "Net Profit", total: "18,000.00"},
-    ]
-
-    const renderInfo = (table, index) => {
-        return(
-            <tr key={index}>
-                <td>{table.category}
-                <strong>{table.categorytotal}</strong>
-                </td>
-                <td>{table.amount}
-                <strong>{table.total}</strong>
-                </td>
-            </tr>
-        )
+const FinancialTable = ({ isLoading, data }) => {
+  function getLandlordValue(key) {
+    if (isLoading === true) {
+      return "...";
     }
+ 
+    return  (data.landlord[key] && data.landlord[key].paidAmount) || 0;
+  }
 
-    return(
+  function getTenantValue(key) {
+    if (isLoading === true) {
+      return "...";
+    }
+    return   (data.tenant[key] && data.tenant[key].paidAmount) || 0;
+  }
+  var totalExpenses = "...";
+  var netProfit = "...";
+  var totalIncome = "...";
+  if (isLoading === false) {
+    totalIncome = getTenantValue("Rental");
+    totalExpenses =
+      getLandlordValue("ServiceCharges") + getLandlordValue("SinkingFunds") + getLandlordValue("AssessmentRate") + getLandlordValue("QuitRent") + getLandlordValue("Subscription") + getLandlordValue("Maintenance") + getLandlordValue("Insurance");
+    netProfit = totalIncome - totalExpenses;
+  }
+  const info = [
+    { categorytotal: "Income", amount: " " },
+    { category: "+ Apartment Rental", amount: "RM " + getTenantValue("Rental") },
+    { category: "+ Parking Lot Rental", amount: "RM " + getTenantValue("Rental1") },
+    { category: "+ Storage Rental", amount: "RM " + getTenantValue("Rental2") },
+    { categorytotal: "Total Income", total: "RM " + totalIncome },
+    { categorytotal: "Expenses", amount: " " },
+    { category: "- Service Charge", amount: "RM " + getLandlordValue("ServiceCharges") },
+    { category: "- Sinking Fund", amount: "RM " + getLandlordValue("SinkingFunds") },
+    { category: "- Assesment Fees", amount: "RM " + getLandlordValue("AssessmentRate") },
+    { category: "- Quit Rent", amount: "RM " + getLandlordValue("QuitRent") },
+    { category: "- Subscription Fees", amount: "RM " + getLandlordValue("Subscription") },
+    { category: "- Maintenance", amount: "RM " + getLandlordValue("Maintenance") },
+    { category: "- Insurance", amount: "RM " + getLandlordValue("Insurance") },
+    { categorytotal: "Total Expenses", total: "RM " + totalExpenses },
+    { categorytotal: "Net Profit", total: "RM " + netProfit },
+  ];
 
-        <div className="ibox-content forum-container">
-            <br/>
-        <ReactBootstrap.Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th className="text-doorcase3">Category</th>
-                    <th className="text-doorcase3">Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                {info.map(renderInfo)}
-            </tbody>
-        </ReactBootstrap.Table>
-        <br/>
-        </div>
+  const renderInfo = (table, index) => {
+    return (
+      <tr key={index}>
+        <td>
+          {table.category}
+          <strong>{table.categorytotal}</strong>
+        </td>
+        <td>
+          {isLoading === true ? (
+            <LoadingSmall   />
+          ) : (
+            <React.Fragment>
+              {table.amount}
+              <strong>{table.total}</strong>
+            </React.Fragment>
+          )}
+        </td>
+      </tr>
     );
-}
+  };
+
+  
+  return (
+    <div className="ibox-content forum-container">
+      <br />
+
+      <ReactBootstrap.Table striped bordered hover>
+        <thead>
+          <tr>
+            <th className="text-doorcase3">Category</th>
+            <th className="text-doorcase3">Amount</th>
+          </tr>
+        </thead>
+
+        <tbody>{info.map(renderInfo)}</tbody>
+      </ReactBootstrap.Table>
+      <br />
+    </div>
+  );
+};
 
 export default FinancialTable;

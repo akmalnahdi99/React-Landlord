@@ -1,12 +1,13 @@
 import React from "react";
-import { AppContext } from "../context/settings";
-import "slick-carousel/slick/slick.css"; 
+ 
+import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
-
-export default function PostsListFilter() {
-  const appContext =  React.useContext(AppContext);
-  const selectedFilter = appContext.settings.postsFilter;
+export default function PostsListFilter({ callBack, selectedMonth }) {
+ 
+  React.useEffect(() => {
+    // eslint-disable-next-line
+  }, []);
 
   const Filters = [
     {
@@ -63,15 +64,6 @@ export default function PostsListFilter() {
       name: "Dec",
     },
   ];
-   
- React.useEffect(() => {
-    console.log("call useEffect");
-  }, []);
-
-   const filterSelection = (filter) => {
-     console.log("set :" , filter);
-     appContext.setPostsFilter(filter);
-  };
 
   const settings = {
     dots: false,
@@ -84,41 +76,39 @@ export default function PostsListFilter() {
     accessibility: false,
     responsive: [
       {
-          breakpoint: 768,
-          settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              centerMode: false,
-              dots: false,
-              infinite: false,
-              arrows: false,
-              accessibility: false,
-          }
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: false,
+          dots: false,
+          infinite: false,
+          arrows: false,
+          accessibility: false,
+        },
       },
       {
-          breakpoint: 480,
-          settings: {
-              slidesToShow: 2 ,
-              slidesToScroll: 1,
-              centerMode: false,
-              dots: false,
-              infinite: false,
-              arrows: false,
-              accessibility: false,
-          }
-      }
-  ]
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: false,
+          dots: false,
+          infinite: false,
+          arrows: false,
+          accessibility: false,
+        },
+      },
+    ],
   };
 
   return (
-    <Slider {...settings} id="FilterContainer" className="text-center mb-2 mt-2 multiple-items" 
-    style={{ display: "flex" }}>
+    <Slider {...settings} id="FilterContainer" className="text-center mb-2 mt-2 multiple-items" style={{ display: "flex" }}>
       {Filters.map((filter) => {
         return (
           <div key={filter.id}>
-            <div to="" className={selectedFilter === filter.name ?
-               "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} 
-               value="rental" onClick={() => filterSelection(filter.name)}>{filter.name}
+            <div className={selectedMonth === filter.id ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => callBack(filter.id)}>
+              {filter.name}
             </div>
           </div>
         );
