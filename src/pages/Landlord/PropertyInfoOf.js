@@ -14,6 +14,8 @@ import UnitAssessmentRateCard from "../../propertyInfoComponent/UnitAssessmentRa
 import UnitQuitRentCard from "../../propertyInfoComponent/unitQuitRentCard";
 import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
+import UserManual from "../../propertyInfoComponent/UserManual";
+ 
 import BuildingInsuranceDetails from "../../propertyInfoComponent/BuildingInsuranceDetails";
 
 export default function PropertyInfoOf() {
@@ -85,6 +87,7 @@ export default function PropertyInfoOf() {
             {propertyinfoType === "QuitRent" ? <UnitQuitRentCard title="Quit Rent" /> : ""}
             {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
             {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
+            {propertyinfoType === "UserManual" ? <UserManual /> : ""}
           </div>
         </div>
       </div>

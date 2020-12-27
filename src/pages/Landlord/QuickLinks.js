@@ -4,17 +4,17 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import { Link, Redirect, useParams } from "react-router-dom";
-import { apiCall, userQuickLinks } from "./../../utils/landlordHelper";
+import {   Redirect, useParams } from "react-router-dom";
+import { apiCall, allQuickLinks } from "./../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
-// import { AppContext } from "../../context/settings";
+import { AppContext } from "../../context/settings";
 
 export default function QuickLinks() {
   var p = useParams();
   var cellId = p.cellId;
   cellId = Math.max(Math.min(cellId, 8), 0);
 
-  // const appContext = React.useContext(AppContext);
+  const appContext = React.useContext(AppContext);
   // const activeUnitId = appContext.settings.activeUnitId;
 
   const [billItems, set_billItems] = React.useState([]);
@@ -23,30 +23,33 @@ export default function QuickLinks() {
   const [isDone, setIsDone] = React.useState(false);
 
   React.useEffect(() => {
-    var billItemsList = Object.keys(userQuickLinks)
-      .filter((x) => userQuickLinks[x].type === "bill")
-      .map((x) => userQuickLinks[x]);
+    var billItemsList = Object.keys(allQuickLinks)
+      .filter((x) => allQuickLinks[x].type === "bill")
+      .map((x) => allQuickLinks[x]);
 
-    var unitItemsList = Object.keys(userQuickLinks)
-      .filter((x) => userQuickLinks[x].type === "unit")
-      .map((x) => userQuickLinks[x]);
+    var unitItemsList = Object.keys(allQuickLinks)
+      .filter((x) => allQuickLinks[x].type === "unit")
+      .map((x) => allQuickLinks[x]);
 
     set_billItems(billItemsList);
     set_unitItems(unitItemsList);
- 
   }, []);
 
   async function updateCell(index, Data) {
- 
     console.log("update cell", index, Data);
     var key = Data.id;
     setIsLoading(true);
     var response = await apiCall("/units/updateQuickLink/?cellId=" + cellId + "&key=" + key);
     if (response.status) {
+    }
+    response = await apiCall("/units/getQuickLinks");
+    if (response.status) {
+      appContext.updateAppContext({ quickAccessList: response.data });
       setIsLoading(false);
       setIsDone(true);
     }
   }
+
   if (isDone === true) {
     return <Redirect to="/landlord/dashboard" />;
   }
@@ -86,7 +89,6 @@ export default function QuickLinks() {
                         return (
                           <div
                             key={index}
-                            to={item.link}
                             onClick={() => {
                               return updateCell(index, item);
                             }}
@@ -112,11 +114,17 @@ export default function QuickLinks() {
                     <div className="col-12 align-self-center mt-4">
                       {unitItems.map((item, index) => {
                         return (
-                          <Link key={index} to={item.link} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+                          <div
+                            key={index}
+                            onClick={() => {
+                              return updateCell(index, item);
+                            }}
+                            className="btn btn-dashboardicon  btn-default width160 btn-lg m-2"
+                          >
                             <img src={item.img} width="30px" alt="" />
                             <br />
                             <span className="mt-5 font-light">{item.label}</span>
-                          </Link>
+                          </div>
                         );
                       })}
                     </div>

@@ -51,8 +51,8 @@ function AppProvider({ children }) {
   };
 
   const clearSettings = () => {
-    setSettings({});
-    localStorage.removeItem("settings");
+    // setSettings({});
+    // localStorage.removeItem("settings");
   };
 
   return <AppContext.Provider value={{ clearSettings, settings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;

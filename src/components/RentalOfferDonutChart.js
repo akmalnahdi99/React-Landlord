@@ -7,15 +7,27 @@ export default function RentalOffersDonutChart({ offersData }) {
   var negotiationP = offersData["Negotiation"] / total;
   var rejectedP = offersData["Rejected"] / total;
 
+  // Handle zero count case
+   var dataList = [
+     { x: "New", y: newP, fill: "#206491" },
+     { x: "Negotiations", y: negotiationP, fill: "#fbb45c" },
+     { x: "Rejected", y: rejectedP, fill: "#cc2a49" },
+   ];
+
+   // grey color for total=0, and fake circle
+   if (total === 0) {
+     dataList = [
+       { x: "New", y: 1, fill: "#777777" },
+       { x: "Negotiations", y: 0, fill: "#fbb45c" },
+       { x: "Rejected", y: 0, fill: "#cc2a49" },
+     ];
+   }
+
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
       <ChartDonut
         constrainToVisibleArea={true}
-        data={[
-          { x: "New", y: newP, fill: "#206491" },
-          { x: "Negotiations", y: negotiationP, fill: "#fbb45c" },
-          { x: "Rejected", y: rejectedP, fill: "#cc2a49" },
-        ]}
+        data={dataList}
         donutOrientation="top"
         allowTooltip={false}
         labels={() => null}
