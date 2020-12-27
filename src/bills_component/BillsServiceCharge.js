@@ -1,34 +1,25 @@
 import React from "react";
-import Footer from "../components/static/Footer";
 import ServiceChargeDetails from "./ServiceChargeDetails";
 import Invoice from "./Invoice";
-import Invoice2 from "./Invoice2";
 
-//TASK pls for Invoice and Invoice2 use extra parameter like type = "paid",
-// then style the element based on the type
-// if type==paid className = '...'
-// else if type="pending" className = '...'
-export default function BillsServiceCharge() {
+
+export default function BillsServiceCharge({ utilityDetails, payments }) {
   return (
-      <div className="wrapper wrapper-content animated fadeInRight">
-        <div className="container container-xs">
+    <div className="wrapper wrapper-content animated fadeInRight">
+      <div className="container container-xs">
         <div className="row justify-content-center">
-            <div className="col-lg-9 mb-3">
-          <div className="ibox ">
-              <ServiceChargeDetails title="Service Charge &amp; Sinking Fund" />
+          <div className="col-lg-9 mb-3">
+            <div className="ibox ">
+              <ServiceChargeDetails title="Service Charge &amp; Sinking Fund" details={utilityDetails} />  
+            </div>
+            <div className="ibox">
+              {payments.map((item, index) => {
+                return <Invoice key={index} title="Invoice" details={item} />;
+              })}
+            </div>
           </div>
-          <div className="ibox">
-          <Invoice title="Invoice" />
-          {/* <Invoice title="Invoice"  type="paid"/> */}
-        </div>
-        <div className="ibox">
-          {/* <Invoice title="Invoice"  type="pending"/> */}
-          <Invoice2 title="Invoice" />
-        </div>
         </div>
       </div>
-      </div>
-      <Footer />
     </div>
   );
 }

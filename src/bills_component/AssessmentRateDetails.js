@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
 
-const AssessmentRateDetails = ({ title }) => {
-  var details = {
-    service_cherge: "RM 0.00",
-    name: "Bendahari Bandaraya",
-    company: "Dewan Bandaraya Kuala Lumpur",
-    account: "N/A",
-    contact: "1-800-88-3255",
-  };
+const AssessmentRateDetails = ({ title,details }) => {
+ 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -30,7 +24,7 @@ const AssessmentRateDetails = ({ title }) => {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Service charge 6 months</h4>
-                  <p className="m-0">{details.service_cherge}</p>
+                  <p className="m-0">{(details.serviceCharge && "RM " + details.serviceCharge) || "N/A"}</p>
                 </div>
               </div>
               <hr />
@@ -44,7 +38,7 @@ const AssessmentRateDetails = ({ title }) => {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Company Name</h4>
-                  <p className="m-0">{details.company}</p>
+                  <p className="m-0">{details.companyName || "N/A"}</p>
                 </div>
               </div>
               <hr />
@@ -53,7 +47,7 @@ const AssessmentRateDetails = ({ title }) => {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{details.contact}</p>
+                  <p className="m-0">{details.contactNumber || "N/A"}</p>
                 </div>
               </div>
               <hr />
@@ -64,7 +58,7 @@ const AssessmentRateDetails = ({ title }) => {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Name Payable</h4>
-                  <p className="m-0">{details.name}</p>
+                  <p className="m-0">{details.companyName || "N/A"}</p>
                 </div>
               </div>
             </div>

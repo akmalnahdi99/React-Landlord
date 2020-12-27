@@ -7,7 +7,7 @@ import SiteMap from "../../components/SiteMap";
 export default function Bills() {
   const data = [
     {
-      key: "ServiceCharge",
+      key: "ServiceCharges",
       text: "Service Charge",
       icon: "/imgs/money-bag.svg",
       url: "",
@@ -15,7 +15,7 @@ export default function Bills() {
     { key: "Insurance", text: "Insurance", icon: "/imgs/insurance.svg", url: "" },
     { key: "QuitRent", text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
     { key: "AssessmentRate", text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
-    { key: "SubscriptionFees", text: "Subscription Fees", icon: "/imgs/subscription.svg", url: "" },
+    { key: "Subscription", text: "Subscription Fees", icon: "/imgs/subscription.svg", url: "" },
     { key: "Maintenance", text: "Maintenance", icon: "/imgs/settings.svg", url: "" },
     { key: "Water", text: "Water", icon: "/imgs/water-drop.svg", url: "" },
     { key: "Electricity", text: "Electricity", icon: "/imgs/electricity.svg", url: "" },

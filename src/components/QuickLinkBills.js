@@ -33,7 +33,7 @@ export default function BillOf() {
     { key: "Insurance", text: "Insurance", icon: "/imgs/insurance.svg", url: "" },
     { key: "QuitRent", text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
     { key: "AssessmentRate", text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
-    { key: "SubscriptionFees", text: "Subscription Fees", icon: "/imgs/subscription.svg", url: "" },
+    { key: "Subscription", text: "Subscription Fees", icon: "/imgs/subscription.svg", url: "" },
     { key: "Maintenance", text: "Maintenance", icon: "/imgs/settings.svg", url: "" },
     { key: "Water", text: "Water", icon: "/imgs/water-drop.svg", url: "" },
     { key: "Electricity", text: "Electricity", icon: "/imgs/electricity.svg", url: "" },
@@ -67,7 +67,7 @@ export default function BillOf() {
       {billType === "Insurance" ? <BillsInsurance /> : ""}
       {billType === "QuitRent" ? <BillsQuitRent /> : ""}
       {billType === "AssessmentRate" ? <BillsAssessmentRate /> : ""}
-      {billType === "SubscriptionFees" ? <BillsSubscriptionFee /> : ""}
+      {billType === "Subscription" ? <BillsSubscriptionFee /> : ""}
       {billType === "Maintenance" ? <BillsMaintenance /> : ""}
       {billType === "Water" ? <BillsWater /> : ""}
       {billType === "Electricity" ? <BillsElectricity /> : ""}
