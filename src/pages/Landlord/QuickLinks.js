@@ -4,9 +4,53 @@ import React from "react";
 import Footer from "../../components/static/Footer";
 import Header from "../../components/Header";
 import SiteMap from "../../components/SiteMap";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
+import { apiCall, userQuickLinks } from "./../../utils/landlordHelper";
+import Loading from "../../components/static/Loading";
+// import { AppContext } from "../../context/settings";
 
 export default function QuickLinks() {
+  var p = useParams();
+  var cellId = p.cellId;
+  cellId = Math.max(Math.min(cellId, 8), 0);
+
+  // const appContext = React.useContext(AppContext);
+  // const activeUnitId = appContext.settings.activeUnitId;
+
+  const [billItems, set_billItems] = React.useState([]);
+  const [unitItems, set_unitItems] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState([]);
+  const [isDone, setIsDone] = React.useState(false);
+
+  React.useEffect(() => {
+    var billItemsList = Object.keys(userQuickLinks)
+      .filter((x) => userQuickLinks[x].type === "bill")
+      .map((x) => userQuickLinks[x]);
+
+    var unitItemsList = Object.keys(userQuickLinks)
+      .filter((x) => userQuickLinks[x].type === "unit")
+      .map((x) => userQuickLinks[x]);
+
+    set_billItems(billItemsList);
+    set_unitItems(unitItemsList);
+ 
+  }, []);
+
+  async function updateCell(index, Data) {
+ 
+    console.log("update cell", index, Data);
+    var key = Data.id;
+    setIsLoading(true);
+    var response = await apiCall("/units/updateQuickLink/?cellId=" + cellId + "&key=" + key);
+    if (response.status) {
+      setIsLoading(false);
+      setIsDone(true);
+    }
+  }
+  if (isDone === true) {
+    return <Redirect to="/landlord/dashboard" />;
+  }
+
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
       <div className="border-bottom white-bg">
@@ -24,145 +68,65 @@ export default function QuickLinks() {
           </div>
         </div>
       </div>
-
-      <div className="wrapper wrapper-content animated fadeInRight">
-        <div className="container">
-          <div className="ibox">
-            <div className="ibox-title">
-              <h3>Bills</h3>
-              <hr />
-            </div>
-            <div className="ibox-content minhigh">
-              <div className="row text-left">
-                <div className="col-12 align-self-center mt-4">
-                  <Link key={1} to="BillsServiceCharge" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/money-bag.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Service Charge</span>
-                  </Link>
-                  <Link key={2} to="bills-insurance.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/insurance.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Insurance</span>
-                  </Link>
-                  <Link key={3} to="bills-quitrent.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/quitrent.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Quit Rent</span>
-                  </Link>
-                  <Link key={4} to="bills-assessmentrate.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/assessment.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Assessment Rate</span>
-                  </Link>
-                  <Link key={5} to="bills-subscription-fees.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/subscription.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Subscription Fees</span>
-                  </Link>
-                  <Link key={6} to="bills-maintenance.html" className="btn btn-dashboardicon btn-default width160 btn-lg m-2">
-                    <img src="/imgs/settings.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Maintenance</span>
-                  </Link>
-                  <Link key={7} to="bills-water.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/water-drop.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Water</span>
-                  </Link>
-                  <Link key={8} to="bills-electricity.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/electricity.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Electricity</span>
-                  </Link>
-                  <Link key={9} to="bills-sewage.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/sewage.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Sewage</span>
-                  </Link>
-                  <Link key={10} to="bills-internet.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/wifi.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Internet</span>
-                  </Link>
-                  <Link key={11} to="bills-cabletv.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/tv.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Cabletv</span>
-                  </Link>
-                  <Link key={12} to="bills-gas.html" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
-                    <img src="/imgs/gas.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Gas</span>
-                  </Link>
+      {isLoading === true ? (
+        <Loading />
+      ) : (
+        <div className="wrapper wrapper-content animated fadeInRight">
+          <div className="container">
+            <React.Fragment>
+              <div className="ibox">
+                <div className="ibox-title">
+                  <h3>Bills</h3>
+                  <hr />
+                </div>
+                <div className="ibox-content minhigh">
+                  <div className="row text-left">
+                    <div className="col-12 align-self-center mt-4">
+                      {billItems.map((item, index) => {
+                        return (
+                          <div
+                            key={index}
+                            to={item.link}
+                            onClick={() => {
+                              return updateCell(index, item);
+                            }}
+                            className="btn btn-dashboardicon  btn-default width160 btn-lg m-2"
+                          >
+                            <img src={item.img} width="30px" alt="" />
+                            <br />
+                            <span className="mt-5 font-light">{item.label}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="ibox">
-            <div className="ibox-title">
-              <h3>Property Info</h3>
-              <hr />
-            </div>
-            <div className="ibox-content minhigh">
-              <div className="row text-left">
-                <div className="col-12 align-self-center mt-4">
-                  <Link key={1} to="info-tenancy.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/family.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Tenancy</span>
-                  </Link>
-                  <Link key={2} to="info-utilities.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/utilities.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Utilities</span>
-                  </Link>
-                  <Link key={3} to="info-insurance.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/insurance.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Insurance</span>
-                  </Link>
-                  <Link key={4} to="info-building.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/company.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Building</span>
-                  </Link>
-                  <Link key={5} to="info-unit.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/tenant.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Unit</span>
-                  </Link>
-                  <Link key={6} to="info-servicecharge.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/money-bag.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Service Charge</span>
-                  </Link>
-                  <Link key={7} to="info-rate-taxes.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/pie-chart.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Rate & Taxes</span>
-                  </Link>
-                  <Link key={8} to="info-assessmentrate.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img img src="/imgs/assessment.svg" width="24px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Assessment Rate</span>
-                  </Link>
-                  <Link key={9} to="info-quitrent.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/quitrent.svg" width="24px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">Quit Rent</span>
-                  </Link>
-                  <Link key={10} to="info-user-guide.html" className="btn btn-dashboardicon current btn-default width160 btn-lg m-2">
-                    <img src="/imgs/guide.svg" width="30px" alt="" />
-                    <br />
-                    <span className="mt-5 font-light">User Manual</span>
-                  </Link>
+              <div className="ibox">
+                <div className="ibox-title">
+                  <h3>Property Info</h3>
+                  <hr />
+                </div>
+                <div className="ibox-content minhigh">
+                  <div className="row text-left">
+                    <div className="col-12 align-self-center mt-4">
+                      {unitItems.map((item, index) => {
+                        return (
+                          <Link key={index} to={item.link} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+                            <img src={item.img} width="30px" alt="" />
+                            <br />
+                            <span className="mt-5 font-light">{item.label}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </React.Fragment>
           </div>
         </div>
-      </div>
+      )}
 
       <Footer />
     </div>

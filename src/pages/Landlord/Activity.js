@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PostsList from "../../components/PostsList";
 import PostsListFilter from "../../components/PostsListFilter";
 import InlineUnitInfoCard from "../../components/InlineUnitInfoCard";
@@ -11,13 +11,24 @@ import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";
 
 export default function Activity(props) {
-  const { updateAppContext, settings } = React.useContext(AppContext);
   const { className } = props;
+
+  const {
+    settings,
+    settings: {
+      userInfo: { units },
+    },
+    updateAppContext,
+  } = React.useContext(AppContext);
+
+  const [data, setData] = React.useState(null); 
+ 
+
   const [modal, setModal] = useState(false);
-
   const [activeUnitId, set_activeUnitId] = useState(settings.activeUnitId);
-  // const [isLoading, setIsLoading] = useState(false);
+   const [isLoading, setIsLoading] = useState(false);
 
+  // toggle modal
   const toggle = () => setModal(!modal);
   const closeBtn = (
     <button className="close" onClick={toggle}>
@@ -27,45 +38,47 @@ export default function Activity(props) {
 
   React.useEffect(() => {
     async function loadFinancialsWrapper() {
-      // setIsLoading(true);
+      setIsLoading(true);
+
+      var stats,
+        financials,
+        quickLinks = {};
 
       console.log("Active unit is changed .. Load Stats");
-
       var response2 = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + activeUnitId);
-
       if (response2.status) {
-        updateAppContext({ viewingAndOfferStats: response2.data });
+        stats = response2.data;
       }
-      response2 = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + activeUnitId);
 
-      if (response2.status) {
-        updateAppContext({ viewingAndOfferStats: response2.data });
-      }
-      
-      await new Promise((r) => setTimeout(r, 2000));
       console.log("Active unit is changed .. Load Financials");
       var response = await apiCall("/units/financialsPerYearMonths/?unitId=" + activeUnitId + "&year=" + new Date().getFullYear());
-
       if (response.status) {
-        updateAppContext({ unitFinancials: response.data });
+        financials = response.data;
       }
-      // setIsLoading(false);
+      // await new Promise((r) => setTimeout(r, 4000));
+
+      var response3 = await apiCall("/units/getQuickLinks");
+      if (response3.status) {
+        var t = {};
+        [...Array(9).keys()].reduce((a, i) => (t[i] = null));
+        response3.data.forEach((x) => (t[x.position] = x.key));
+        quickLinks = t;
+      }
+      updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, quickAccessList: quickLinks });
+      
     }
     loadFinancialsWrapper();
+
     // eslint-disable-next-line
   }, [activeUnitId]);
+
+  
 
   function setActiveUnit(unitId) {
     set_activeUnitId(unitId);
     updateAppContext({ activeUnitId: unitId });
     setModal(false);
   }
-
-  var {
-    settings: {
-      userInfo: { units },
-    },
-  } = React.useContext(AppContext);
 
   return (
     <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
@@ -150,9 +163,7 @@ export default function Activity(props) {
       <div className="wrapper wrapper-content animated pt-0 fadeInRight">
         <div className="container-fluid">
           <div className="row mt-1 justify-content-center">
-            <div className="col-lg-8">
-              <PostsList />
-            </div>
+            <div className="col-lg-8">{/* <PostsList /> */}</div>
           </div>
         </div>
       </div>

@@ -1,24 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../context/settings";
+import { userQuickLinks } from "../utils/landlordHelper";
 
-export default function Quicklinks ({ title })  {
-  const data = [
-    { text: "TenantInfo", icon: "/imgs/id-card.svg",url:"" },
-    { text: "Subscription Fees", icon: "/imgs/subscription.svg",url:"" },
-    { text: "Service Charge", icon: "/imgs/money-bag.svg",url:"" },
-    { text: "Add Shortcut", icon: "fas fa-plus",url:"" },
-    { text: "Add Shortcut", icon: "fas fa-plus",url:"" },
-    { text: "Add Shortcut", icon: "fas fa-plus",url:"" },
-    { text: "Add Shortcut", icon: "fas fa-plus",url:"" },
-    { text: "Add Shortcut", icon: "fas fa-plus",url:"" },
-    { text: "Add Shortcut", icon: "fas fa-plus",url:"" },
-  ];
+export default function Quicklinks({ title }) {
+  var appContext = React.useContext(AppContext);
+  var userPreferencesQuickLinks = (appContext.settings && appContext.settings.quickAccessList) || {};
+
+  const [allQuickLinks, set_allQuickLinks] = React.useState(userQuickLinks);
+
+  React.useEffect(() => {
+    // eslint-disable-next-line
+  }, [userPreferencesQuickLinks]);
+
+  var datalist = [];
+
+  datalist = Object.keys(userPreferencesQuickLinks).map((i) => {
+    var value = userPreferencesQuickLinks[i];
+    return value === null ? null : allQuickLinks[value];
+  });
+
+  console.log("datalist:", datalist);
 
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-        <Link to="/quicklinks">{title}</Link></h5>
+          <Link to="/quicklinks">{title}</Link>
+        </h5>
       </div>
       <div className="ibox-tools">
         <Link to="/quicklinks">
@@ -27,24 +36,24 @@ export default function Quicklinks ({ title })  {
       </div>
       <div className="ibox-content pt-0">
         <div className="row text-center">
-          {data.map((item, index) => {
-            if (item.text.toLowerCase() !== "add shortcut".toLowerCase()) {
+          {datalist.map((item, index) => {
+            if (item) {
               return (
                 <div key={index} className="col-md-4 col-sm-4 col-4 p-2">
                   <Link to="tenant-details.html" className="btn btn-default btn-dashboardicon btn-block text-truncate">
-                    <img src={item.icon} alt={item.text} width="24px" />
+                    <img src={item.img} alt={item.label} width="24px" />
                     <br />
-                    {item.text}
+                    {item.label}
                   </Link>
                 </div>
               );
             } else {
               return (
                 <div className="col-md-4 col-sm-4 col-4 p-2">
-                  <Link to="/quicklinks" className="btn btn-shortcut btn-block text-truncate">
-                    <i className={item.icon}></i>
+                  <Link to={"/quicklinks/" + index} className="btn btn-shortcut btn-block text-truncate">
+                    <i className={"fas fa-plus"}></i>
                     <br />
-                    {item.text}
+                    Add Shortcut
                   </Link>
                 </div>
               );
@@ -54,6 +63,4 @@ export default function Quicklinks ({ title })  {
       </div>
     </div>
   );
-};
-
-
+}

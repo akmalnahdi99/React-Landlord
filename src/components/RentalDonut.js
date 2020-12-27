@@ -8,11 +8,15 @@ const RentalDonut = () => {
  const appContext = React.useContext(AppContext);
 
  var financialData = appContext.settings.unitFinancials;
- 
- var r = Object.keys(financialData).map((x) => financialData[x].tenant && financialData[x].tenant.Rental && financialData[x].tenant.Rental.paid);
+ if (financialData)
+ {var r = Object.keys(financialData).map((x) => financialData[x].tenant && financialData[x].tenant.Rental && financialData[x].tenant.Rental.paid);
  var currMonth =9;//new Date().getMonth();
  var t = r.map((x, indexMonth) => (x === true ? "paid" : (currMonth > indexMonth ? "due" : "future") ));
-
+ }
+ else
+ {
+   t=Array(12);
+ }
  console.log("payments " , t);
 
   

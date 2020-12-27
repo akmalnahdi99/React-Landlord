@@ -288,7 +288,7 @@ export default function App() {
             <LeftMenu />
             <InventoryKey />
           </Route>
-          <Route path="/quicklinks">
+          <Route path="/quicklinks/:cellId">
             <LeftMenu />
             <QuickLinks />
           </Route>
