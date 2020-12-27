@@ -18,10 +18,10 @@ export default function Quicklinks ({ title })  {
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-        <Link to="/landlord/quicklinks">{title}</Link></h5>
+        <Link to="/quicklinks">{title}</Link></h5>
       </div>
       <div className="ibox-tools">
-        <Link to="/landlord/quicklinks">
+        <Link to="/quicklinks">
           <i className="fas fa-arrow-right"></i>
         </Link>
       </div>

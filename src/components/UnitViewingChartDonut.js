@@ -1,20 +1,17 @@
 import React from "react";
 import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
 
-export default function RentalOffersDonutChart({ offersData }) {
-  var total = offersData["New"] + offersData["Negotiation"] + offersData["Rejected"];
-  var newP = offersData["New"] / total;
-  var negotiationP = offersData["Negotiation"] / total;
-  var rejectedP = offersData["Rejected"] / total;
+export default function UnitViewingChartDonut({ viewingStats }) {
+  var total = viewingStats["past30day"] + viewingStats["today"] + viewingStats["future"] || 0;
 
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
       <ChartDonut
         constrainToVisibleArea={true}
         data={[
-          { x: "New", y: newP, fill: "#206491" },
-          { x: "Negotiations", y: negotiationP, fill: "#fbb45c" },
-          { x: "Rejected", y: rejectedP, fill: "#cc2a49" },
+          { x: "New", y: viewingStats["future"], fill: "#206491" },
+          { x: "In Progress", y: viewingStats["today"], fill: "#fbb45c" },
+          { x: "Resolved", y: viewingStats["past30day"], fill: "#329f9d" },
         ]}
         donutOrientation="top"
         allowTooltip={false}
@@ -29,7 +26,7 @@ export default function RentalOffersDonutChart({ offersData }) {
         titleComponent={<ChartLabel y={110} style={[{ fontWeight: "600", fontSize: 36 }]} />}
         subTitleComponent={<ChartLabel y={140} style={[{ fontSize: "15px", fontWeight: "400", fill: "#666" }]} />}
         innerRadius={"80"}
-        subTitle="Total"
+        subTitle="total"
         style={{
           data: {
             fill: (d) => d.slice.data.fill,

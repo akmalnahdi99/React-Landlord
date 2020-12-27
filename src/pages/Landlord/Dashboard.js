@@ -17,8 +17,8 @@ import Financials from "../../components/DashFinancials";
 import Bills from "../../components/DashBills";
 import PropertyInfo from "../../components/DashPropertyInfo.js";
 import RentalLeads from "../../components/DashRentalLeads";
-import PropertyViewing from "../../components/DashPropertyViewing";
-import RentalOffers from "../../components/DashRentalOffers";
+import DashboardPropertyViewing from "../../components/DashPropertyViewing";
+import DashboardRentalOffers from "../../components/DashRentalOffers";
 
 export default function Dashboard() {
   // const { alert, hideAlert } = React.useContext(UserContext);
@@ -44,13 +44,13 @@ export default function Dashboard() {
       <div className="wrapper wrapper-content py-4 animated fadeInRight">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-4 px-2">
+            <div key={"1"} className="col-lg-4 px-2">
               <Quicklinks title="Quick Links" />
             </div>
-            <div className="col-lg-4 px-2">
+            <div key={"2"} className="col-lg-4 px-2">
               <Rental title="Rental" />
             </div>
-            <div className="col-lg-4 px-2">
+            <div key={"3"} className="col-lg-4 px-2">
               <TodoList title="To-Do List" />
             </div>
           </div>
@@ -81,10 +81,10 @@ export default function Dashboard() {
               <RentalLeads />
             </div>
             <div className="col-lg-4 px-2">
-              <PropertyViewing title="Property Viewing" />
+              <DashboardPropertyViewing title="Property Viewing" />
             </div>
             <div className="col-lg-4 px-2">
-              <RentalOffers title="Rental Offers" />
+              <DashboardRentalOffers title="Rental Offers" />
             </div>
           </div>
         </div>

@@ -37,6 +37,12 @@ export default function Activity(props) {
       if (response.status) {
         updateAppContext({ unitFinancials: response.data });
       }
+      response = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + activeUnitId);
+
+      if (response.status) {
+        updateAppContext({ viewingAndOfferStats: response.data });
+      }
+
       // setIsLoading(false);
     }
     loadFinancialsWrapper();

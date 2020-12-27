@@ -288,7 +288,7 @@ export default function App() {
             <LeftMenu />
             <InventoryKey />
           </Route>
-          <Route path="/landlord/quicklinks">
+          <Route path="/quicklinks">
             <LeftMenu />
             <QuickLinks />
           </Route>
