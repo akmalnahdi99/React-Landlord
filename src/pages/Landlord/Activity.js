@@ -12,7 +12,6 @@ import { apiCall } from "../../utils/landlordHelper";
 
 export default function Activity(props) {
   const { updateAppContext, settings } = React.useContext(AppContext);
-
   const { className } = props;
   const [modal, setModal] = useState(false);
 
@@ -30,19 +29,26 @@ export default function Activity(props) {
     async function loadFinancialsWrapper() {
       // setIsLoading(true);
 
-      console.log("Active unit is changed .. Load financials");
+      console.log("Active unit is changed .. Load Stats");
 
+      var response2 = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + activeUnitId);
+
+      if (response2.status) {
+        updateAppContext({ viewingAndOfferStats: response2.data });
+      }
+      response2 = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + activeUnitId);
+
+      if (response2.status) {
+        updateAppContext({ viewingAndOfferStats: response2.data });
+      }
+      
+      await new Promise((r) => setTimeout(r, 2000));
+      console.log("Active unit is changed .. Load Financials");
       var response = await apiCall("/units/financialsPerYearMonths/?unitId=" + activeUnitId + "&year=" + new Date().getFullYear());
 
       if (response.status) {
         updateAppContext({ unitFinancials: response.data });
       }
-      response = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + activeUnitId);
-
-      if (response.status) {
-        updateAppContext({ viewingAndOfferStats: response.data });
-      }
-
       // setIsLoading(false);
     }
     loadFinancialsWrapper();

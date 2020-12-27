@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AppContext } from "../context/settings";
 
 export default function InlineUnitInfoCard() {
-  console.log("ZZZZZZZZZZZZZZ");
+  
   const {
     settings: {
       userInfo: { units },

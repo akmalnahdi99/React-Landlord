@@ -1,6 +1,18 @@
 import React from "react";
 const AppContext = React.createContext();
 const defaultSettings = {
+  quickAccessList: {
+    0: "",
+    1: "unit_Unit",
+    2: "",
+    3: "",
+    4: "",
+    5: "",
+    6: "",
+    7: "",
+    8: "",
+  },
+  quickAccessSlot: 0,
   postsFilter: "all",
   isLogged: false,
   accessToken:
@@ -23,13 +35,26 @@ function AppProvider({ children }) {
   };
 
   const updateAppContext = (newSetting) => {
+    //setSettings(getsettingsFromLocalStorage());
+    console.log("[Update App Context] -------Start------" );
+    console.log("[Update App Context] size of old :", JSON.stringify(settings).length);
+    console.log("[Update App Context] size of new :", JSON.stringify(newSetting).length);
     const newSettings = { ...settings, ...newSetting };
-    console.log("[in settings] newSettings");
+    console.log("[Update App Context] size of both :", JSON.stringify(newSettings).length);
+
     setSettings(newSettings);
-    localStorage.setItem("settings", JSON.stringify(newSettings));
+    console.log("[Update App Context] size of fnl :", JSON.stringify(settings).length);
+    var a = JSON.stringify(newSettings);
+    // console.log("----------Size:", a.length );
+    localStorage.setItem("settings", a);
   };
 
-  return <AppContext.Provider value={{ settings, setSettings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;
+  const clearSettings = () => {
+     setSettings({});
+     localStorage.removeItem("settings");
+  };
+
+  return <AppContext.Provider value={{ clearSettings, settings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;
 }
 
 export { AppProvider, AppContext };

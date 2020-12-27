@@ -7,7 +7,7 @@ import Loading from "./static/Loading";
 //import postIcon from "img/money-bag.svg";
 
 const PostsList = (props, filterBy) => {
-  console.log("in posts list 0 ");
+ 
 
   const appContext = React.useContext(AppContext);
   const activeFilter = appContext.settings.postsFilter;
