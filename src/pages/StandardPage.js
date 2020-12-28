@@ -31,7 +31,7 @@ var t = useLocation();
       <LeftMenu />
 
       {/* Page */}
-      <div id="page-wrapper" className={"gray-bg " + expanded} style={{ border: "2px solid red" }}>
+      <div id="page-wrapper" className={"gray-bg " + expanded} style={{ border: "0px solid red" }}>
         <div className="border-bottom white-bg">
           <div className="container-fluid">
             <Header />
