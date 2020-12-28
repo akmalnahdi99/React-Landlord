@@ -42,7 +42,7 @@ export default function QuickLinks() {
     var response = await apiCall("/units/updateQuickLink/?cellId=" + cellId + "&key=" + key);
     if (response.status) {
     }
-    response = await apiCall("/units/getQuickLinks");
+    response = await apiCall("/users/getQuickLinks");
     if (response.status) {
       appContext.updateAppContext({ quickAccessList: response.data });
       setIsLoading(false);

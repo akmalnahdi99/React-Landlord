@@ -65,10 +65,12 @@ function Login() {
           var response = await apiCall("/users/info");
 
           var activeUnitId = null;
+          var quickLinks = null;
           if (response.data.units.length > 0) {
             activeUnitId = response.data.unitsIds[0];
+            quickLinks = response.data.quickLinks;
           }
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId });
+          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks });
         } else {
           throw new Error(resp.statusText);
         }
