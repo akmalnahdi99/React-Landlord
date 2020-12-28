@@ -3,9 +3,9 @@ import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
-import Footer from "../../components/static/Footer";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
+
+
+
 import BillsServiceCharge from "../../bills_component/BillsServiceCharge";
 import BillsInsurance from "../../bills_component/BillsInsurance";
 import BillsQuitRent from "../../bills_component/BillsQuitRent";
@@ -107,23 +107,7 @@ export default function BillOf() {
   }
 
   return (
-    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-      <div className="border-bottom white-bg">
-        <div className="container-fluid">
-          <Header />
-        </div>
-      </div>
-
-      <div className="wrapper border-bottom page-heading bg-white">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <SiteMap title={billType} />
-            </div>
-          </div>
-        </div>
-      </div>
-      {isLoading === true ? (
+    isLoading === true ? (
         <Loading />
       ) : (
         <React.Fragment>
@@ -160,8 +144,6 @@ export default function BillOf() {
             </div>
           </div>
         </React.Fragment>
-      )}
-      <Footer />
-    </div>
+      ) 
   );
 }

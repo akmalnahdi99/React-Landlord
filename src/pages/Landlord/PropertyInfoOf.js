@@ -3,19 +3,19 @@ import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
-import Footer from "../../components/static/Footer";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
+
+
+
 import TenancyHome from "./TenancyHome";
 import Utilities from "./Utilities";
- 
+
 import UnitServiceCharge from "../../propertyInfoComponent/UnitServiceCharge";
 import UnitAssessmentRateCard from "../../propertyInfoComponent/UnitAssessmentRateCard";
 import UnitQuitRentCard from "../../propertyInfoComponent/unitQuitRentCard";
 import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
 import UserManual from "../../propertyInfoComponent/UserManual";
- 
+
 import BuildingInsuranceDetails from "../../propertyInfoComponent/BuildingInsuranceDetails";
 
 export default function PropertyInfoOf() {
@@ -58,41 +58,20 @@ export default function PropertyInfoOf() {
   }
 
   return (
-    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-      <div className="border-bottom white-bg">
-        <div className="container-fluid">
-          <Header />
+    <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+      <div className="container container-xs pb-5">
+        <div className="row justify-content-center">
+          {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
+          {propertyinfoType === "Utilities" ? <Utilities /> : ""}
+          {propertyinfoType === "Insurance" ? <BuildingInsuranceDetails title="Insurance" /> : ""}
+          {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
+          {propertyinfoType === "AssessmentRate" ? <UnitAssessmentRateCard title="Assessment Rate" /> : ""}
+          {propertyinfoType === "QuitRent" ? <UnitQuitRentCard siteMap={"123"} title="Quit Rent" /> : ""}
+          {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
+          {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
+          {propertyinfoType === "UserManual" ? <UserManual /> : ""}
         </div>
       </div>
-
-      <div className="wrapper border-bottom page-heading bg-white">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <SiteMap title={propertyinfoType} />
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-        <div className="container container-xs pb-5">
-          <div className="row justify-content-center">
-            {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
-            {propertyinfoType === "Utilities" ? <Utilities /> : ""}
-            {propertyinfoType === "Insurance" ? <BuildingInsuranceDetails title="Insurance" /> : ""}
-            {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
-            {propertyinfoType === "AssessmentRate" ? <UnitAssessmentRateCard title="Assessment Rate" /> : ""}
-            {propertyinfoType === "QuitRent" ? <UnitQuitRentCard title="Quit Rent" /> : ""}
-            {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
-            {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
-            {propertyinfoType === "UserManual" ? <UserManual /> : ""}
-          </div>
-        </div>
-      </div>
-
-      <Footer />
     </div>
   );
 }

@@ -20,13 +20,13 @@ export default function LeftMenu() {
     appContext.updateAppContext({ leftMenuExpanded: n });
   }
 
-  React.useEffect(() => {
-    console.log("set:", leftMenuClass);
-    // let idClass = ["gray-bg"];
-    // if (this.state.addClass) {
-    //   idClass.push("ml300");
-    // }
-  }, [expanded]);
+  // React.useEffect(() => {
+  //   console.log("set:", leftMenuClass);
+  //   // let idClass = ["gray-bg"];
+  //   // if (this.state.addClass) {
+  //   //   idClass.push("ml300");
+  //   // }
+  // }, [expanded]);
 
   console.log("lmc1:", leftMenuClass);
   return (

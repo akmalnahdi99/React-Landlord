@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/static/Footer";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
+
+
+
 
 export default function Bills() {
   const data = [
@@ -26,22 +26,7 @@ export default function Bills() {
   ];
 
   return (
-    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-      <div className="border-bottom white-bg">
-        <div className="container-fluid">
-          <Header />
-        </div>
-      </div>
-
-      <div className="wrapper border-bottom page-heading bg-white">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <SiteMap title="Bills" />
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
       <div className="wrapper wrapper-content animated fadeInRight ">
         <div className="container">
@@ -60,7 +45,6 @@ export default function Bills() {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+      
   );
 }

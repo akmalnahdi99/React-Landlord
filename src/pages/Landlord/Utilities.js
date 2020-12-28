@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/static/Footer";
+
 
 export default function Utilities() {
   const data = [
@@ -13,7 +13,7 @@ export default function Utilities() {
   ];
 
   return (
-    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
+    
       <div className="wrapper wrapper-content animated fadeInRight ">
         <div className="container">
           <div className="row iconres justify-content-center">
@@ -31,7 +31,6 @@ export default function Utilities() {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+     
   );
 }

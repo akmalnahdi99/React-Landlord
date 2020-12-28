@@ -42,30 +42,14 @@ export default function PropertyInfoOf() {
   var allowed = false;
   for (var i = 0; i < data.length; i++)
     return (
-      <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-        <div className="border-bottom white-bg">
-          <div className="container-fluid">
-            <Header />
-          </div>
-        </div>
-
-        <div className="wrapper border-bottom page-heading bg-white">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-lg-12">
-                <SiteMap title={propertyinfoType} />
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      < >
         {propertyinfoType === "Insurance" ? <InfoInsurance /> : ""}
         {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
         {propertyinfoType === "AssessmentRate" ? <InfoAssessment /> : ""}
         {propertyinfoType === "QuitRent" ? <InfoQuitRent /> : ""}
         {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
         {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
-        <Footer />
-      </div>
+        
+      </>
     );
 }

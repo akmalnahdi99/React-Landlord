@@ -12,8 +12,6 @@ import "./assets/css/style.css";
 import "./assets/css/chartist.css";
 import "lightgallery.js/dist/css/lightgallery.css"; //DISCUSS what this for
 
-import LeftMenu from "./components/navigation/LeftMenu";
-
 //pages
 import YardCondition from "./pages/Landlord/YardCondition";
 import ViewingDetails from "./pages/Landlord/ViewingDetails";
@@ -95,6 +93,7 @@ import Logout from "./pages/Landlord/Logout";
 import { AppProvider } from "./context/settings";
 import { ProtectedRoute } from "./components/ProtectedComponent";
 import StandardPage from "./pages/StandardPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -110,321 +109,401 @@ export default function App() {
           <Route path="/logout">
             <Logout />
           </Route>
+        </Switch>
 
-          <ProtectedRoute>
+        <ProtectedRoute>
+          <Switch>
             <Route path="/landlord/dashboard">
               <StandardPage>
-                <Dashboard />
+                <Dashboard siteMap={"Dashboard"} />
               </StandardPage>
             </Route>
             <Route path="/landlord/activity">
-              <LeftMenu />
-              <Activity />
+              <StandardPage>
+                <Activity siteMap={"Activity"} />
+              </StandardPage>
             </Route>
-
             <Route path="/pages/tenancyselection">
-              <TenancySelect />
+              <StandardPage>
+                <TenancySelect siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/pages/propertyselection">
-              <PropertySelect />
+              <StandardPage>
+                <PropertySelect siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/notifications">
-              <LeftMenu />
-              <Notifications />
+              <StandardPage>
+                <Notifications siteMap={"Notifications"} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/profile">
-              <LeftMenu />
-              <Profile />
+              <StandardPage>
+                <Profile siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/payables">
-              <LeftMenu />
-              <Payables />
+              <StandardPage>
+                <Payables siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/financials">
-              <LeftMenu />
-              <Financials />
+              <StandardPage>
+                <Financials siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorylist">
-              <LeftMenu />
-              <InventoryList />
+              <StandardPage>
+                <InventoryList siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryaccesscard">
-              <LeftMenu />
-              <InventoryAccessCard />
+              <StandardPage>
+                <InventoryAccessCard siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryentrance">
-              <LeftMenu />
-              <InventoryEntrance />
+              <StandardPage>
+                <InventoryEntrance siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorywater">
-              <LeftMenu />
-              <InventoryWater />
+              <StandardPage>
+                <InventoryWater siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryutility">
-              <LeftMenu />
-              <InventoryUtility />
+              <StandardPage>
+                <InventoryUtility siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorykitchen">
-              <LeftMenu />
-              <InventoryKitchen />
+              <StandardPage>
+                <InventoryKitchen siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorydining">
-              <LeftMenu />
-              <InventoryDining />
+              <StandardPage>
+                <InventoryDining siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryyard">
-              <LeftMenu />
-              <InventoryYard />
+              <StandardPage>
+                <InventoryYard siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorybalcony">
-              <LeftMenu />
-              <InventoryBalcony />
+              <StandardPage>
+                <InventoryBalcony siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryliving">
-              <LeftMenu />
-              <InventoryLiving />
+              <StandardPage>
+                <InventoryLiving siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorygas">
-              <LeftMenu />
-              <InventoryGas />
+              <StandardPage>
+                <InventoryGas siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryelectricity">
-              <LeftMenu />
-              <InventoryElectricity />
+              <StandardPage>
+                <InventoryElectricity siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryremotecontrol">
-              <LeftMenu />
-              <InventoryRemoteControl />
+              <StandardPage>
+                <InventoryRemoteControl siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventoryvehicle">
-              <LeftMenu />
-              <InventoryVehicle />
+              <StandardPage>
+                <InventoryVehicle siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorybeds">
-              <LeftMenu />
-              <InventoryBeds />
+              <StandardPage>
+                <InventoryBeds siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorybath">
-              <LeftMenu />
-              <InventoryBath />
+              <StandardPage>
+                <InventoryBath siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryMBath">
-              <LeftMenu />
-              <InventoryMBath />
+              <StandardPage>
+                <InventoryMBath siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryCBath1">
-              <LeftMenu />
-              <InventoryCBath1 />
+              <StandardPage>
+                <InventoryCBath1 siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryCBath2">
-              <LeftMenu />
-              <InventoryCBath2 />
+              <StandardPage>
+                <InventoryCBath2 siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryCBath3">
-              <LeftMenu />
-              <InventoryCBath3 />
+              <StandardPage>
+                <InventoryCBath3 siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryMBed">
-              <LeftMenu />
-              <InventoryMBed />
+              <StandardPage>
+                <InventoryMBed siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryCBed1">
-              <LeftMenu />
-              <InventoryCBed1 />
+              <StandardPage>
+                <InventoryCBed1 siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryCBed2">
-              <LeftMenu />
-              <InventoryCBed2 />
+              <StandardPage>
+                <InventoryCBed2 siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/InventoryCBed3">
-              <LeftMenu />
-              <InventoryCBed3 />
+              <StandardPage>
+                <InventoryCBed3 siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/inventorykey">
-              <LeftMenu />
-              <InventoryKey />
+              <StandardPage>
+                <InventoryKey siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/quicklinks/:cellId">
-              <LeftMenu />
-              <QuickLinks />
+              <StandardPage>
+                <QuickLinks siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/calendars">
-              <LeftMenu />
-              <Calendars />
+              <StandardPage>
+                <Calendars siteMap={""} />
+              </StandardPage>
             </Route>
             <Route exact path="/landlord/bills">
-              <LeftMenu />
-              <Bills />
+              <StandardPage>
+                <Bills siteMap={""} />
+              </StandardPage>
             </Route>
             <Route exact path="/landlord/utilities">
-              <LeftMenu />
-              <Utilities />
+              <StandardPage>
+                <Utilities siteMap={"123"} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/bills/:billType">
-              <LeftMenu />
-              <BillOf />
+              <StandardPage>
+                <BillOf siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/utilities/:utilityType">
-              <LeftMenu />
-              <UtilitiesOf />
+              <StandardPage>
+                <UtilitiesOf siteMap={""} />
+              </StandardPage>
             </Route>
             <Route exact path="/landlord/propertyInfo">
-              <LeftMenu />
-              <PropertyInfo />
+              <StandardPage>
+                <PropertyInfo siteMap={"Property Info"} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/propertyInfo/:propertyinfoType">
-              <LeftMenu />
-              <PropertyInfoOf />
+              <StandardPage>
+                <PropertyInfoOf siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/UnitInfo">
-              <LeftMenu />
-              <PropertyInfo />
+              <StandardPage>
+                <PropertyInfo siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/UnitViewings">
-              <LeftMenu />
-              <UnitViewings />
+              <StandardPage>
+                <UnitViewings siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/viewingdetails/:appointmentId">
-              <LeftMenu />
-              <ViewingDetails />
+              <StandardPage>
+                <ViewingDetails siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/offers">
-              <LeftMenu />
-              <Offers />
+              <StandardPage>
+                <Offers siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/maintenance">
-              <LeftMenu />
-              <Maintenance />
+              <StandardPage>
+                <Maintenance siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/offers">
-              <LeftMenu />
-              <Offers />
+              <StandardPage>
+                <Offers siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/offerdetails/:offerId">
-              <LeftMenu />
-              <OfferDetails />
+              <StandardPage>
+                <OfferDetails siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/maintenancedetails/:mindex">
-              <LeftMenu />
-              <MaintenanceDetails />
+              <StandardPage>
+                <MaintenanceDetails siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/maintenancechatpayment">
-              <LeftMenu />
-              <MaintenanceChatPayment />
+              <StandardPage>
+                <MaintenanceChatPayment siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/MaintenanceChatRequest">
-              <LeftMenu />
-              <MaintenanceChatRequest />
+              <StandardPage>
+                <MaintenanceChatRequest siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/maintenancechatinteraction">
-              <LeftMenu />
-              <MaintenanceChatInteraction />
+              <StandardPage>
+                <MaintenanceChatInteraction siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/tenanttenancy">
-              <LeftMenu />
-              <TenantTenancy />
+              <StandardPage>
+                <TenantTenancy siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/tenancydocs">
-              <LeftMenu />
-              <TenancyDocs />
+              <StandardPage>
+                <TenancyDocs siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/todolist">
-              <LeftMenu />
-              <TodoList />
+              <StandardPage>
+                <TodoList siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/tenantpayables">
-              <LeftMenu />
-              <TenantPayables />
+              <StandardPage>
+                <TenantPayables siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/PropertyCondition">
-              <LeftMenu />
-              <PropertyCondition />
+              <StandardPage>
+                <PropertyCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/EntranceCondition">
-              <LeftMenu />
-              <EntranceCondition />
+              <StandardPage>
+                <EntranceCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/KitchenCondition">
-              <LeftMenu />
-              <KitchenCondition />
+              <StandardPage>
+                <KitchenCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/LivingCondition">
-              <LeftMenu />
-              <LivingCondition />
+              <StandardPage>
+                <LivingCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/DiningCondition">
-              <LeftMenu />
-              <DiningCondition />
+              <StandardPage>
+                <DiningCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/YardCondition">
-              <LeftMenu />
-              <YardCondition />
+              <StandardPage>
+                <YardCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/BalconyCondition">
-              <LeftMenu />
-              <BalconyCondition />
+              <StandardPage>
+                <BalconyCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/UtilityCondition">
-              <LeftMenu />
-              <UtilityCondition />
+              <StandardPage>
+                <UtilityCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/BedsCondition">
-              <LeftMenu />
-              <BedsCondition />
+              <StandardPage>
+                <BedsCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/MBedCondition">
-              <LeftMenu />
-              <MBedCondition />
+              <StandardPage>
+                <MBedCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/CommonBed1Condition">
-              <LeftMenu />
-              <CommonBed1Condition />
+              <StandardPage>
+                <CommonBed1Condition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/CommonBed2Condition">
-              <LeftMenu />
-              <CommonBed2Condition />
+              <StandardPage>
+                <CommonBed2Condition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/CommonBed3Condition">
-              <LeftMenu />
-              <CommonBed3Condition />
+              <StandardPage>
+                <CommonBed3Condition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/BathsCondition">
-              <LeftMenu />
-              <BathsCondition />
+              <StandardPage>
+                <BathsCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/MBathCondition">
-              <LeftMenu />
-              <MBathCondition />
+              <StandardPage>
+                <MBathCondition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/CommonBath1Condition">
-              <LeftMenu />
-              <CommonBath1Condition />
+              <StandardPage>
+                <CommonBath1Condition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/CommonBath2Condition">
-              <LeftMenu />
-              <CommonBath2Condition />
+              <StandardPage>
+                <CommonBath2Condition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/CommonBath3Condition">
-              <LeftMenu />
-              <CommonBath3Condition />
+              <StandardPage>
+                <CommonBath3Condition siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/checkincheckout">
-              <LeftMenu />
-              <CheckInCheckOut />
+              <StandardPage>
+                <CheckInCheckOut siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/checkinkit">
-              <LeftMenu />
-              <CheckInKit />
+              <StandardPage>
+                <CheckInKit siteMap={""} />
+              </StandardPage>
             </Route>
             <Route path="/landlord/checkinleaflet">
-              <LeftMenu />
-              <CheckInLeaflet />
+              <StandardPage>
+                <CheckInLeaflet siteMap={""} />
+              </StandardPage>
             </Route>
-            <Route path="*">
-              <p>Not found</p>
+
+            <Route path="/*">
+              <NotFoundPage siteMap={""} />
             </Route>
-          </ProtectedRoute>
-        </Switch>
+          </Switch>
+        </ProtectedRoute>
       </Router>
     </AppProvider>
   );

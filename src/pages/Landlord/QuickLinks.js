@@ -1,10 +1,10 @@
 /* Need to apply react */
 
 import React from "react";
-import Footer from "../../components/static/Footer";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
-import {   Redirect, useParams } from "react-router-dom";
+
+
+
+import { Redirect, useParams } from "react-router-dom";
 import { apiCall, allQuickLinks } from "./../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
@@ -54,89 +54,66 @@ export default function QuickLinks() {
     return <Redirect to="/landlord/dashboard" />;
   }
 
-  return (
-    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-      <div className="border-bottom white-bg">
-        <div className="container-fluid">
-          <Header />
+  return isLoading === true ? (
+    <Loading />
+  ) : (
+    <div className="wrapper wrapper-content animated fadeInRight">
+      <div className="container">
+        <div className="ibox">
+          <div className="ibox-title">
+            <h3>Bills</h3>
+            <hr />
+          </div>
+          <div className="ibox-content minhigh">
+            <div className="row text-left">
+              <div className="col-12 align-self-center mt-4">
+                {billItems.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => {
+                        return updateCell(index, item);
+                      }}
+                      className="btn btn-dashboardicon  btn-default width160 btn-lg m-2"
+                    >
+                      <img src={item.img} width="30px" alt="" />
+                      <br />
+                      <span className="mt-5 font-light">{item.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="wrapper border-bottom page-heading bg-white">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <SiteMap title="Quick Link" />
+        <div className="ibox">
+          <div className="ibox-title">
+            <h3>Property Info</h3>
+            <hr />
+          </div>
+          <div className="ibox-content minhigh">
+            <div className="row text-left">
+              <div className="col-12 align-self-center mt-4">
+                {unitItems.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => {
+                        return updateCell(index, item);
+                      }}
+                      className="btn btn-dashboardicon  btn-default width160 btn-lg m-2"
+                    >
+                      <img src={item.img} width="30px" alt="" />
+                      <br />
+                      <span className="mt-5 font-light">{item.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {isLoading === true ? (
-        <Loading />
-      ) : (
-        <div className="wrapper wrapper-content animated fadeInRight">
-          <div className="container">
-            <React.Fragment>
-              <div className="ibox">
-                <div className="ibox-title">
-                  <h3>Bills</h3>
-                  <hr />
-                </div>
-                <div className="ibox-content minhigh">
-                  <div className="row text-left">
-                    <div className="col-12 align-self-center mt-4">
-                      {billItems.map((item, index) => {
-                        return (
-                          <div
-                            key={index}
-                            onClick={() => {
-                              return updateCell(index, item);
-                            }}
-                            className="btn btn-dashboardicon  btn-default width160 btn-lg m-2"
-                          >
-                            <img src={item.img} width="30px" alt="" />
-                            <br />
-                            <span className="mt-5 font-light">{item.label}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="ibox">
-                <div className="ibox-title">
-                  <h3>Property Info</h3>
-                  <hr />
-                </div>
-                <div className="ibox-content minhigh">
-                  <div className="row text-left">
-                    <div className="col-12 align-self-center mt-4">
-                      {unitItems.map((item, index) => {
-                        return (
-                          <div
-                            key={index}
-                            onClick={() => {
-                              return updateCell(index, item);
-                            }}
-                            className="btn btn-dashboardicon  btn-default width160 btn-lg m-2"
-                          >
-                            <img src={item.img} width="30px" alt="" />
-                            <br />
-                            <span className="mt-5 font-light">{item.label}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </React.Fragment>
-          </div>
-        </div>
-      )}
-
-      <Footer />
     </div>
   );
 }

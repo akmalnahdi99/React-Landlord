@@ -2,9 +2,9 @@ import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
-import Footer from "../../components/static/Footer";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
+
+
+
 import { AppContext } from "../../context/settings";
 import Loading from "../../components/static/Loading";
 import { apiCall } from "../../utils/landlordHelper";
@@ -24,7 +24,6 @@ export default function UtilitiesOf() {
   var utilityType = t.utilityType;
 
   React.useEffect(() => {
-    
     async function loadUtilityDetailsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/units/utilityInfo/unitId=" + activeUnitId + "&companyFor=" + utilityType);
@@ -66,42 +65,22 @@ export default function UtilitiesOf() {
 
   console.log("In Facilities");
 
-  return (
-    <div id="page-wrapper" className="gray-bg" style={{ border: "0px solid red" }}>
-      <div className="border-bottom white-bg">
-        <div className="container-fluid">
-          <Header />
-        </div>
-      </div>
-
-      <div className="wrapper border-bottom page-heading bg-white">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <SiteMap title={utilityType} />
-            </div>
+  return isLoading === true ? (
+    <Loading />
+  ) : (
+    <div className="wrapper wrapper-content animated fadeInRight">
+      <div className="container container-xs">
+        <div className="row justify-content-center">
+          <div className="col-lg-9 mb-3">
+            {utilityType === "Water" ? <InfoWaterDetails title="Water Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Electricity" ? <InfoElectricityDetails title="Electricity Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Sewage" ? <InfoSewageDetails title="Sewage" {...utilityDetails} /> : ""}
+            {utilityType === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
+            {utilityType === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
+            {utilityType === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
           </div>
         </div>
       </div>
-      {isLoading === true ? (
-        <Loading />
-      ) : (
-        <div className="wrapper wrapper-content animated fadeInRight">
-          <div className="container container-xs">
-            <div className="row justify-content-center">
-              <div className="col-lg-9 mb-3">
-                {utilityType === "Water" ? <InfoWaterDetails title="Water Rate" {...utilityDetails} /> : ""}
-                {utilityType === "Electricity" ? <InfoElectricityDetails title="Electricity Rate" {...utilityDetails} /> : ""}
-                {utilityType === "Sewage" ? <InfoSewageDetails title="Sewage" {...utilityDetails} /> : ""}
-                {utilityType === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
-                {utilityType === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
-                {utilityType === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      <Footer />
     </div>
   );
 }

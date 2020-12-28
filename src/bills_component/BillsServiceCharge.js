@@ -4,6 +4,7 @@ import Invoice from "./Invoice";
 
 
 export default function BillsServiceCharge({ utilityDetails, payments }) {
+  
   return (
     <div className="wrapper wrapper-content animated fadeInRight">
       <div className="container container-xs">
