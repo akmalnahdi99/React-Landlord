@@ -1,12 +1,11 @@
 //TASK under Review
 import React from "react";
 // react router dom
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 // pages
 
 import TenancySelect from "./pages/TenancySelection";
 import PropertySelect from "./pages/PropertySelection";
-import { NavLink } from "react-router-dom";
 
 //Styles
 import "./assets/css/style.css";
@@ -95,6 +94,7 @@ import Activity from "./pages/Landlord/Activity.js";
 import Logout from "./pages/Landlord/Logout";
 import { AppProvider } from "./context/settings";
 import { ProtectedRoute } from "./components/ProtectedComponent";
+import StandardPage from "./pages/StandardPage";
 
 export default function App() {
   return (
@@ -102,53 +102,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <ul>
-              <li>
-                <NavLink to="/login">Login</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/activity">Activity</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/dashboard">Dashboard</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/notifications">Notifications</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/profile">Profile</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/payables">Payables</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/bills">Bills</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/propertyinfo">Property Info</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/UnitInfo">Unit Info</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/UnitViewings">Viewings</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/viewingdetails">ViewingDetails</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/offers">Offers</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/offerdetails">OfferDetails</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/maintenance">Maintenance</NavLink>
-              </li>
-              <li>
-                <NavLink to="/landlord/maintenancedetails">MaintenanceDetails</NavLink>
-              </li>
-            </ul>
+            <Redirect to="/login" />
           </Route>
           <Route path="/login">
             <Login />
@@ -159,8 +113,9 @@ export default function App() {
 
           <ProtectedRoute>
             <Route path="/landlord/dashboard">
-              <LeftMenu />
-              <Dashboard />
+              <StandardPage>
+                <Dashboard />
+              </StandardPage>
             </Route>
             <Route path="/landlord/activity">
               <LeftMenu />
@@ -173,10 +128,6 @@ export default function App() {
             <Route path="/pages/propertyselection">
               <PropertySelect />
             </Route>
-            <Route path="/landlord/login">
-              <Login />
-            </Route>
-
             <Route path="/landlord/notifications">
               <LeftMenu />
               <Notifications />
@@ -468,6 +419,9 @@ export default function App() {
             <Route path="/landlord/checkinleaflet">
               <LeftMenu />
               <CheckInLeaflet />
+            </Route>
+            <Route path="*">
+              <p>Not found</p>
             </Route>
           </ProtectedRoute>
         </Switch>

@@ -1,14 +1,13 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import { AppContext } from "../context/settings";
-import Activity from "../pages/Landlord/Activity";
-import LeftMenu from "./navigation/LeftMenu";
+ 
 
 export function ProtectedRoute({ props, children, ...rest }) {
 
-  console.log("props", props);
-  console.log("children", children);
-  console.log("rest", rest);
+  // console.log("props", props);
+  // console.log("children", children);
+  // console.log("rest", rest);
   var Children = children;
 
   var appContext = React.useContext(AppContext);
