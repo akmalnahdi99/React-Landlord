@@ -113,7 +113,7 @@ p {
   border: 0;
 }
 
-.boldtext{
+.boldtext {
   font-weight: bold;
 }
 
@@ -323,7 +323,7 @@ ul.nav-second-level {
   color: #8095a8 !important;
 }
 
-.textclr{
+.textclr {
   color: #999999;
 }
 
@@ -696,7 +696,7 @@ body.mini-navbar #page-wrapper {
   cursor: pointer;
 }
 .box.green {
-  background-color: green; 
+  background-color: green;
 }
 
 .width300 {
@@ -704,7 +704,7 @@ body.mini-navbar #page-wrapper {
 }
 
 .widthnormal {
-  width: 70px
+  width: 70px;
 }
 
 .ml300 {
@@ -1983,11 +1983,11 @@ button.dim:active:before {
 }
 
 .fc .fc-button-primary:focus {
-  box-shadow: 0 0 0 0.2rem  rgb(32, 100, 145, 0.5);
+  box-shadow: 0 0 0 0.2rem rgb(32, 100, 145, 0.5);
 }
 
 .fc-col-header {
-  background:  rgb(32, 100, 145);
+  background: rgb(32, 100, 145);
 }
 
 .fc .fc-col-header-cell-cushion {
@@ -2002,7 +2002,6 @@ button.dim:active:before {
   font-size: 20px !important;
   font-weight: 600;
   color: #329f9d;
-
 }
 
 .fc .fc-toolbar {
@@ -2332,7 +2331,7 @@ a.list-group-item.active:focus {
 }
 
 .illustrated {
-  background: url('../imgs/in-developement.png');
+  background: url("../imgs/in-developement.png");
   background-color: #e5f1ff;
   background-size: 320px;
   background-repeat: no-repeat;
@@ -2340,7 +2339,7 @@ a.list-group-item.active:focus {
 }
 
 .illustrated2 {
-  background: url('../imgs/todo.png');
+  background: url("../imgs/todo.png");
   background-color: #e5f1ff;
   background-size: 500px;
   background-repeat: no-repeat;
@@ -2348,17 +2347,17 @@ a.list-group-item.active:focus {
 }
 
 .illustrated3 {
-  background: url('../imgs/payable.png');
+  background: url("../imgs/payable.png");
   background-color: #e5f1ff;
   background-size: 613px;
   background-repeat: no-repeat;
   background-position: center center;
 }
 .icon-xs {
-  font-size: .75em !important;
+  font-size: 0.75em !important;
 }
 .icon-sm {
-  font-size: .875em !important;
+  font-size: 0.875em !important;
 }
 .icon-lg {
   font-size: 1.33em !important;
@@ -2382,13 +2381,13 @@ a.list-group-item.active:focus {
   font-size: 7em !important;
 }
 .icon-8x {
-  font-size: 8.0rem !important;
+  font-size: 8rem !important;
 }
 .icon-9x {
-  font-size: 9.0rem !important;
+  font-size: 9rem !important;
 }
 .icon-10x {
-  font-size: 10.0rem !important;
+  font-size: 10rem !important;
 }
 
 .minhigh {
@@ -5431,6 +5430,16 @@ a.forum-item-title:hover {
   padding-left: 3px;
 }
 
+/* sorter slider */
+
+.sorterslide {
+  overflow: scroll;
+  justify-content: center;
+}
+.sorterslide::-webkit-scrollbar {
+  display: none;
+}
+
 /*Slick Carousel */
 
 .slick-prev:before,
@@ -5904,7 +5913,6 @@ samp {
   border-bottom: 1px solid #e7eaec;
 }
 
-
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* background-color: #2f4050; */
@@ -6055,9 +6063,6 @@ video {
 
 .demo-gallery > ul > li {
   float: left;
-  margin-bottom: 15px;
-  margin-right: 15px;
-  width: 300px;
 }
 
 .demo-gallery > ul > li a {
@@ -6067,6 +6072,7 @@ video {
   overflow: hidden;
   position: relative;
   float: left;
+  height: 110px;
 }
 
 .demo-gallery > ul > li a > img {
@@ -6234,7 +6240,6 @@ video {
 .modal-dialog {
   z-index: 2200;
 }
-
 
 .modal-header .close {
   padding: 1.5rem 1.5rem;
@@ -6898,7 +6903,7 @@ code {
   background-color: #ffffff;
   color: inherit;
   padding: 1px 20px 20px 20px;
-  min-height: 323px;  
+  min-height: 323px;
 }
 
 .ibox-content.paddingtop {
@@ -7443,11 +7448,11 @@ table.table-mail tr td {
   height: auto !important;
   margin-bottom: 0 !important;
   background-color: rgb(32, 100, 145);
-    align-items: center;
-    padding: 10px 8px;
+  align-items: center;
+  padding: 10px 8px;
 }
 .react-calendar__month-view__weekdays {
-  background: #F1F1F1 !important;
+  background: #f1f1f1 !important;
   font-size: 15px !important;
   font-weight: 400 !important;
   text-transform: capitalize !important;
@@ -7460,7 +7465,8 @@ table.table-mail tr td {
   padding: 0.65em 0.5em !important;
   font-size: 15px !important;
 }
-.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
   background-color: transparent !important;
 }
 .react-calendar__tile--active {
@@ -7468,7 +7474,7 @@ table.table-mail tr td {
 }
 .react-calendar__tile--now {
   background: #206491 !important;
-  color: #fff !important
+  color: #fff !important;
 }
 
 .fc-theme-standard .fc-scrollgrid {
@@ -11647,6 +11653,9 @@ body.landing-page {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .sorterslide {
+  justify-content: start;
+}
   .paddingontop {
     padding-top: 100px;
   }
@@ -11699,8 +11708,8 @@ body.landing-page {
     line-height: 1.1;
   }
 
-  .btnsvg svg{
-    vertical-align: -.125em !important;
+  .btnsvg svg {
+    vertical-align: -0.125em !important;
   }
   .vertical-timeline-content p {
     line-height: 1.1;
@@ -13104,12 +13113,11 @@ body.md-skin {
   .navbar-top-links .dropdown-alerts {
     margin-left: auto;
   }
-  
 }
 @media (max-width: 767px) {
   body.mini-navbar #page-wrapper {
     margin: 0 0 0 0px;
-}
+  }
 }
 
 @media (max-width: 768px) {
@@ -13186,7 +13194,6 @@ body.md-skin {
     transition: background-color 500ms linear;
     background-color: #f3f3f4;
   }
-  
 }
 
 @media (max-width: 350px) {
@@ -13242,32 +13249,28 @@ body.md-skin {
   }
 }
 
-
 /*Ayham 
  Left Menu */
 .left-menu-icon {
   width: 18px;
   height: 18px;
 }
-.border-red
-{
-  border:1px solid red;
+.border-red {
+  border: 1px solid red;
   width: 80px;
 }
-.border-green
-{
-  border:1px solid red;
+.border-green {
+  border: 1px solid red;
 }
-.facility-dark
-{
-color: black;
+.facility-dark {
+  color: black;
 }
-.facility-faint{
-color:rgb(220,220,220);
+.facility-faint {
+  color: rgb(220, 220, 220);
 }
 /* //TASK Ayham This is not complete solution this is just a work around */
-.donut3__slice.donut3__slice__third.hh-red::after{
+.donut3__slice.donut3__slice__third.hh-red::after {
   border-top-color: red;
-    border-right-color: red;
-    border-bottom-color: red;
+  border-right-color: red;
+  border-bottom-color: red;
 }
