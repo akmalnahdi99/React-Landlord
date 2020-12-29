@@ -12,7 +12,7 @@ import LeftMenu from "../components/navigation/LeftMenu";
 import { useLocation } from "react-router-dom";
 
 export default function StandardPage({ children: Page, ...rest }) {
-  //var siteMap = Page.props.siteMap || ".";
+  var siteMap = Page.props.siteMap || "...";
   const [expanded, set_expanded] = React.useState(false);
   const appContext = React.useContext(AppContext);
 var t = useLocation();
@@ -42,7 +42,8 @@ var t = useLocation();
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-12">
-                <SiteMap title={t.pathname.replaceAll("/"," . ")} />
+                <SiteMap title={siteMap} />
+                {/* {t.pathname.replaceAll("/", " . ")} */}
               </div>
             </div>
           </div>

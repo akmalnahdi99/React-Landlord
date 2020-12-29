@@ -130,3 +130,26 @@ export const allQuickLinks = {
   unit_UserManual: { id: "unit_UserManual", type: "unit", label: "User Manual", img: "/imgs/guide.svg", link: "" },
   unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/propertyinfo/Utilities" },
 };
+
+export const CompanyServicesIcons = {
+  AssessmentRate: { img: "/imgs/assessment.svg" },
+  Cabletv: { img: "/imgs/tv.svg" },
+  Electricity: { img: "/imgs/electricity.svg" },
+  Gas: { img: "/imgs/gas.svg" },
+  Insurance: { img: "/imgs/insurance.svg" },
+  Internet: { img: "/imgs/wifi.svg" },
+  Maintenance: { img: "/imgs/settings.svg" },
+  QuitRent: { img: "/imgs/quitrent.svg" },
+  ServiceCharge: { img: "/imgs/money-bag.svg" },
+  Sewage: { img: "/imgs/sewage.svg" },
+  SubscriptionFees: { img: "/imgs/subscription.svg" },
+  Water: { img: "/imgs/water-drop.svg" },
+  Subscription: { img: "/imgs/subscription.svg" },
+  SinkingFunds: { img: "/imgs/money-bag.svg" },
+  Building: { img: "/imgs/company.svg" },
+  RateAndTaxes: { img: "/imgs/pie-chart.svg" },
+  Tenancy: { img: "/imgs/family.svg" },
+  Unit: { img: "/imgs/tenant.svg" },
+  UserManual: { img: "/imgs/guide.svg" },
+  Utilities: { img: "/imgs/utilities.svg" },
+};
