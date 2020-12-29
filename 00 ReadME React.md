@@ -1,3 +1,7 @@
+[2020-12-29]
+- for local development pls relpace last line in Constants.js file with :
+export const config = process.env.NODE_ENV === "development" ? prod : prod;
+
 [2020-12-17]
 - master merged all this branche edits
 - landlord/notifications is notifications clickable
