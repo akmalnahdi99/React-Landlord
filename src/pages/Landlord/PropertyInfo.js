@@ -27,7 +27,7 @@ export default function PropertyInfo() {
     <div className="wrapper wrapper-content animated fadeInRight ">
       <div className="container">
         <div className="row">
-          <div className="col-12 align-self-center mt-4">
+          <div className="col-12 align-self-center d-flex flex-wrap justify-content-center justify-content-lg-start mt-4">
             {data.map((item, index) => {
               return (
                 <Link key={index} to={"/landlord/propertyinfo/" + item.key} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">

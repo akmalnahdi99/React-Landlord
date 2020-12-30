@@ -4,29 +4,40 @@ import * as FaIcons from "react-icons/fa";
 import { AppContext } from "../../context/settings";
 
 export default function LeftMenu() {
+  const menuExpandedClass = "menu-expanded";
+  const menuCollapsedClass = "menu-collapsed";
   const [leftMenuClass, set_leftMenuClass] = React.useState(["navbar-default navbar-static-side"]);
   const [expanded, set_expanded] = React.useState(false);
   const appContext = React.useContext(AppContext);
 
   function toggle() {
     var n = !expanded;
-    set_expanded(!expanded);
-    if (n === true) {
-      leftMenuClass.push("width300");
-      set_leftMenuClass(leftMenuClass);
-    } else {
-      leftMenuClass.pop();
-    }
+    set_expanded(n);
+    updateMenuClass(n);
     appContext.updateAppContext({ leftMenuExpanded: n });
   }
 
-  // React.useEffect(() => {
-  //   console.log("set:", leftMenuClass);
-  //   // let idClass = ["gray-bg"];
-  //   // if (this.state.addClass) {
-  //   //   idClass.push("ml300");
-  //   // }
-  // }, [expanded]);
+  function updateMenuClass(menuExpanded) {
+  
+    if (menuExpanded === true) {
+      var index = leftMenuClass.indexOf(menuCollapsedClass);
+      if (index != -1) {
+        leftMenuClass.splice(index, 1);
+      }
+      leftMenuClass.push(menuExpandedClass);
+    } else {
+      var index = leftMenuClass.indexOf(menuExpandedClass);
+      if (index != -1) {
+        leftMenuClass.splice(index, 1);
+      }
+      leftMenuClass.push(menuCollapsedClass);
+    }
+    set_leftMenuClass(leftMenuClass);
+  }
+
+  React.useEffect(() => {
+    updateMenuClass(expanded);
+  }, [expanded]);
 
   console.log("lmc1:", leftMenuClass);
   return (
