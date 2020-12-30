@@ -67,6 +67,7 @@ p {
   font-weight: 600;
   padding: 17px 20px 17px 25px;
   display: block;
+  position: relative;
 }
 
 .nav.metismenu > li {
@@ -250,6 +251,7 @@ p {
 
 .nav-header {
   padding: 23px 25px;
+
   /* background-color: #2f4050; */
   background: rgba(50, 157, 156);
   /* background-image: url("patterns/header-profile.png"); */
@@ -643,7 +645,6 @@ body.mini-navbar .navbar-static-side {
 }
 
 body.mini-navbar .profile-element,
-body.mini-navbar .nav-label,
 body.mini-navbar .navbar-default .nav li a span {
   display: none;
 }
@@ -892,6 +893,90 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   padding: 15px 25px;
   font-size: 18px;
   line-height: 20px;
+}
+* Individual item */
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #fff;
+  transition: 0.1s;
+
+}
+.menu-item {
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.bm-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 255, 242, 0.863);
+}
+
+
+/* Change color on hover */
+.bm-item:hover {
+  color: white;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  left: 25px;
+  top: 20px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 5px;
+  width: 10px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: linear-gradient(
+    0deg,
+    rgb(32, 80, 114) 0%,
+    rgba(50, 157, 156) 100%
+  );
+  padding-top: 35px;
+  font-size: 1.65em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .top-navigation .navbar-top-links li:last-child {

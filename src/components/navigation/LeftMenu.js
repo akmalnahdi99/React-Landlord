@@ -1,104 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
-import { AppContext } from "../../context/settings";
+import { slide as Menu } from 'react-burger-menu'
 
 export default function LeftMenu() {
-  const [leftMenuClass, set_leftMenuClass] = React.useState(["navbar-default navbar-static-side"]);
-  const [expanded, set_expanded] = React.useState(false);
-  const appContext = React.useContext(AppContext);
-
-  function toggle() {
-    var n = !expanded;
-    set_expanded(!expanded);
-    if (n === true) {
-      leftMenuClass.push("width300");
-      set_leftMenuClass(leftMenuClass);
-    } else {
-      leftMenuClass.pop();
-    }
-    appContext.updateAppContext({ leftMenuExpanded: n });
-  }
-
-  // React.useEffect(() => {
-  //   console.log("set:", leftMenuClass);
-  //   // let idClass = ["gray-bg"];
-  //   // if (this.state.addClass) {
-  //   //   idClass.push("ml300");
-  //   // }
-  // }, [expanded]);
-
-  console.log("lmc1:", leftMenuClass);
   return (
-    <React.Fragment>
-      <div>
-        <nav className={leftMenuClass.join("  ")}>
-          <div className="sidebar-collapse">
-            <ul className="nav metismenu" id="side-menu">
-              <li className="nav-header">
-                <div className="profile-element">
-                  <div className="navbar-minimalize float-right" onClick={() => toggle()} style={{ cursor: "pointer" }}>
-                    <FaIcons.FaBars />
-                  </div>
-                </div>
-                <div className="logo-element">
-                  <div className="navbar-minimalize menuburger2" id="show" onClick={() => toggle()} style={{ cursor: "pointer" }}>
-                    <FaIcons.FaBars />
-                  </div>
-                </div>
-              </li>
-              <li>
-                <Link to="/landlord/activity">
-                  <FaIcons.FaUserClock />
-                  <span className="nav-label">Activity</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/dashboard">
-                  <FaIcons.FaGripHorizontal />
-                  <span className="nav-label">Dashboard</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/maintenance">
-                  <FaIcons.FaToolbox />
-                  <span className="nav-label">Maintenance</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/financials">
-                  <FaIcons.FaFileInvoiceDollar />
-                  <span className="nav-label">Financial</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/payables">
-                  <FaIcons.FaHandHoldingUsd />
-                  <span className="nav-label">Payables</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/unitviewings">
-                  <FaIcons.FaStreetView />
-                  <span className="nav-label">Property Viewing</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/offers">
-                  <FaIcons.FaHandsHelping />
-                  <span className="nav-label">Rental Offers</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/landlord/propertyInfo">
-                  <FaIcons.FaInfoCircle />
-                  <span className="nav-label">Property Info</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </React.Fragment>
+    <div>
+    <Menu {...LeftMenu}>
+      <Link className="menu-item" to="/landlord/activity">
+        <FaIcons.FaUserClock />
+        <span className="nav-label pl-2">Activity</span>
+      </Link>
+
+      <Link className="menu-item" to="/landlord/dashboard">
+        <FaIcons.FaGripHorizontal />
+        <span className="nav-label pl-2">Dashboard</span>
+      </Link>
+
+      <Link className="menu-item" to="/landlord/maintenance">
+        <FaIcons.FaToolbox />
+        <span className="nav-label pl-2">Maintenance</span>
+      </Link>
+
+      <Link className="menu-item" to="/landlord/financials">
+        <FaIcons.FaFileInvoiceDollar />
+        <span className="nav-label pl-2">Financial</span>
+      </Link>
+
+      <Link className="menu-item" to="/landlord/payables">
+        <FaIcons.FaHandHoldingUsd />
+        <span className="nav-label pl-2">Payables</span>
+      </Link>
+
+      <Link className="menu-item" to="/landlord/unitviewings">
+        <FaIcons.FaStreetView />
+        <span className="nav-label pl-2">Property Viewing</span>
+      </Link>
+
+      <Link className="menu-item" to="/landlord/offers">
+        <FaIcons.FaHandsHelping />
+        <span className="nav-label pl-2">Rental Offers</span>
+      </Link>
+              
+      <Link className="menu-item" to="/landlord/propertyInfo">
+        <FaIcons.FaInfoCircle />
+        <span className="nav-label pl-2">Property Info</span>
+      </Link>
+    </Menu>
+</div>
   );
 }
