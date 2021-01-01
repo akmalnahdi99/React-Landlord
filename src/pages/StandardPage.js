@@ -9,13 +9,13 @@ import Header from "./../components/Header";
 import SiteMap from "./../components/SiteMap";
 import { AppContext } from "./../context/settings";
 import LeftMenu from "../components/navigation/LeftMenu";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 export default function StandardPage({ children: Page, ...rest }) {
   var siteMap = Page.props.siteMap || "...";
   const [expanded, set_expanded] = React.useState(false);
-  const appContext = React.useContext(AppContext);
-var t = useLocation();
+  const appContext = React.useContext(AppContext); 
+// var t = useLocation();
 
   React.useEffect(() => {
     if (appContext.settings.leftMenuExpanded) {

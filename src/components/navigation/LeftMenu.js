@@ -18,16 +18,16 @@ export default function LeftMenu() {
   }
 
   function updateMenuClass(menuExpanded) {
-  
+   var index=-1;
     if (menuExpanded === true) {
-      var index = leftMenuClass.indexOf(menuCollapsedClass);
-      if (index != -1) {
+        index = leftMenuClass.indexOf(menuCollapsedClass);
+      if (index !== -1) {
         leftMenuClass.splice(index, 1);
       }
       leftMenuClass.push(menuExpandedClass);
     } else {
-      var index = leftMenuClass.indexOf(menuExpandedClass);
-      if (index != -1) {
+        index = leftMenuClass.indexOf(menuExpandedClass);
+      if (index !== -1) {
         leftMenuClass.splice(index, 1);
       }
       leftMenuClass.push(menuCollapsedClass);
@@ -37,6 +37,7 @@ export default function LeftMenu() {
 
   React.useEffect(() => {
     updateMenuClass(expanded);
+    // eslint-disable-next-line
   }, [expanded]);
 
   console.log("lmc1:", leftMenuClass);

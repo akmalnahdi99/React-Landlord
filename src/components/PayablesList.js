@@ -14,7 +14,7 @@ export default function PayablesList() {
     const curMonthFinancials = financials[month].landlord || [];
 
     for (const paymentName in curMonthFinancials) {
-      if (curMonthFinancials[paymentName].paid != true) {
+      if (curMonthFinancials[paymentName].paid !== true) {
         if (!result[paymentName]) {
           result[paymentName] = {date:curMonthFinancials[paymentName].paymentDue, paymentOf: paymentName, amount: 0, paid: false, icon: (CompanyServicesIcons[paymentName] && CompanyServicesIcons[paymentName].img) || "" };
         }
