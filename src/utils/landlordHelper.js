@@ -110,7 +110,7 @@ export function calculate_3_financials_per_month(financialData, financialMonth) 
 export function getUnitMainAreas(inventoryData) {
   return inventoryData.map((x) => x.roomName).filter((v, i, a) => a.indexOf(v) === i);
 }
-
+// filter inventory by type and location (room)
 export function filterInventory(location, inventoryOf, inventoryData) {
   if (!location || !inventoryOf || !inventoryData) return null;
   return inventoryData[inventoryOf].filter((x) => x.roomName === location);
