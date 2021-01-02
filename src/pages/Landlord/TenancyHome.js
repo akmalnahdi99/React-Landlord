@@ -7,7 +7,7 @@ export default function PropertyInfo() {
     <div className="container container-xs pt-5 pb-5 gray-bg">
       <div className="row text-center">
         <div className="col-12 align-self-center mt-4">
-          <Link to="/landlord/CheckInCheckOut" className="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
+          <Link to="/landlord/UnitCheckInOut" className="btn btn-dashboardicon  btn-default width190 btn-lg m-2">
             <img src="/imgs/completed-task.svg" width="30px" alt="" />
             <br />
             <span className="mt-5 ">Check In &amp; Check Out</span>

@@ -80,8 +80,8 @@ import CommonBath3Condition from "./pages/Landlord/CommonBath3Condition";
 import CommonBath2Condition from "./pages/Landlord/CommonBath2Condition";
 import CommonBath1Condition from "./pages/Landlord/CommonBath1Condition";
 import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
-import CheckInKit from "./pages/Landlord/CheckInKit";
-import CheckInCheckOut from "./pages/Landlord/CheckInCheckOut";
+import UnitKitsCats from "./pages/Landlord/UnitKitsCats";
+import UnitCheckInOut from "./pages/Landlord/UnitCheckInOut";
 import Calendars from "./pages/Landlord/Calendars";
 import Bills from "./pages/Landlord/Bills";
 import BillOf from "./pages/Landlord/BillsOf";
@@ -96,6 +96,8 @@ import StandardPage from "./pages/StandardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import InventoryOfArea from "./pages/InventoryOfArea";
 import UnitMeters from "./pages/Landlord/UnitMeters";
+import KitDetailsCard from "./pages/KitDetailsCard";
+ 
 
 export default function App() {
   return (
@@ -122,7 +124,6 @@ export default function App() {
             </Route>
             <Route path="/landlord/activity">
               <StandardPage>
-               
                 <Activity siteMap={"Activity"} />
               </StandardPage>
             </Route>
@@ -499,16 +500,22 @@ export default function App() {
                 <CommonBath3Condition siteMap={""} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/checkincheckout">
+            <Route path="/landlord/UnitCheckInOut">
               <StandardPage>
-                <CheckInCheckOut siteMap={""} />
+                <UnitCheckInOut siteMap={""} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/checkinkit">
+            <Route path="/landlord/unitKitsCats/:inventoryOf">
               <StandardPage>
-                <CheckInKit siteMap={""} />
+                <UnitKitsCats siteMap={""} />
               </StandardPage>
             </Route>
+            <Route path="/landlord/unitKits/Details/:inventoryOf/:kitOf">
+              <StandardPage>
+                <KitDetailsCard siteMap={"Unit Kits"} />
+              </StandardPage>
+            </Route>
+
             <Route path="/landlord/checkinleaflet">
               <StandardPage>
                 <CheckInLeaflet siteMap={""} />

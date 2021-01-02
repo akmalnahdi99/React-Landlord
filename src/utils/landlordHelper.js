@@ -106,7 +106,7 @@ export function calculate_3_financials_per_month(financialData, financialMonth) 
   return { totalIncome, totalExpenses, netProfit };
 }
 
-// Get Unit Areas
+// Get Unit Areas Main Rooms
 export function getUnitMainAreas(inventoryData) {
   return inventoryData.map((x) => x.roomName).filter((v, i, a) => a.indexOf(v) === i);
 }
@@ -114,6 +114,23 @@ export function getUnitMainAreas(inventoryData) {
 export function filterInventory(location, inventoryOf, inventoryData) {
   if (!location || !inventoryOf || !inventoryData) return null;
   return inventoryData[inventoryOf].filter((x) => x.roomName === location);
+}
+
+export function getUnitMainKitsCats(kitsData, inventoryOf ) {
+  if (!kitsData) return null;
+  var perInverntoryOf = kitsData[inventoryOf] || null;
+  if (!perInverntoryOf) return null;
+  var cats = [...Object.keys(perInverntoryOf)];
+  return cats || null;
+}
+
+export function getUnitKitItems(kitsData, inventoryOf, category) {
+  if (!kitsData) return null;
+  var perInverntoryOf = kitsData[inventoryOf] || null;
+  if (!perInverntoryOf) return null;
+  var perCats = perInverntoryOf[category];
+  if (!perCats) return null;
+  return perCats;
 }
 
 export const allQuickLinks = {
@@ -163,4 +180,12 @@ export const CompanyServicesIcons = {
   Unit: { img: "/imgs/tenant.svg" },
   UserManual: { img: "/imgs/guide.svg" },
   Utilities: { img: "/imgs/utilities.svg" },
+};
+
+export const UnitKitsIcons = {
+  "Information leaflet": { img: "/imgs/write-letter.svg" },
+  Keys: { img: "/imgs/key.svg" },
+  "Access Cards": { img: "/imgs/access.svg" },
+  "Remote Controls": { img: "/imgs/remote-control.svg" },
+  "Vehicle Stickers": { img: "/imgs/car.svg" },
 };

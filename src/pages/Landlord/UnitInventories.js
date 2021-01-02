@@ -28,13 +28,8 @@ export default function UnitInventories() {
         if (response.status) {
           set_inventoryData(response.data);
           set_areaNames(getUnitMainAreas(response.data["CheckIn"]));
+        }
 
-        }
-        if (responseMeters.status) {
-          // set_metersData(responseMeters.data);
-          // set_areaNames(getUnitMainAreas(response.data["CheckIn"]));
-        }
- 
         appContext.updateAppContext({ inventoryData: response.data, metersData: responseMeters.data });
         setIsLoading(false);
       }
@@ -105,8 +100,8 @@ export default function UnitInventories() {
                   return (
                     <li key={index}>
                       <Link to={"/landlord/unitMeters/" + item.id}>
-                        <img src={item.image} className="align-self-center mr-2" width="25px" alt="..." /> 
-                        {item.name} 
+                        <img src={item.image} className="align-self-center mr-2" width="25px" alt="..." />
+                        {item.name}
                         <FaIcons.FaArrowRight className="float-right fa-xs" />
                       </Link>
                     </li>

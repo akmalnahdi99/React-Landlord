@@ -65,7 +65,7 @@ export default function Activity(props) {
     // await new Promise((r) => setTimeout(r, 4000));
     //updateAppContext({ unitFinancials: {}, viewingAndOfferStats:{} });
    
-    updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId },["inventoryData", "metersData"]);
+    updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId }, ["inventoryData", "metersData", "kitsData"]);
    
     setIsLoading(false);
   }
