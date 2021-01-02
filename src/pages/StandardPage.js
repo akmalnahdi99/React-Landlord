@@ -38,7 +38,7 @@ export default function StandardPage({ children: Page, ...rest }) {
           </div>
         </div>
 
-        <div className="wrapper border-bottom page-heading">
+        <div className="wrapper border-bottom page-heading p-0 m-0">
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-12">
