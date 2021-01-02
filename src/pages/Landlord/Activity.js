@@ -18,6 +18,7 @@ export default function Activity(props) {
       userInfo: { units },
     },
     updateAppContext,
+   
   } = React.useContext(AppContext);
 
   // const [data, setData] = React.useState(null);
@@ -63,7 +64,9 @@ export default function Activity(props) {
     }
     // await new Promise((r) => setTimeout(r, 4000));
     //updateAppContext({ unitFinancials: {}, viewingAndOfferStats:{} });
-    updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId });
+   
+    updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId },["inventoryData", "metersData"]);
+   
     setIsLoading(false);
   }
 
@@ -141,7 +144,6 @@ export default function Activity(props) {
           </div>
         </div>
       </div>
-      <div>123</div>
     </React.Fragment>
   );
 }

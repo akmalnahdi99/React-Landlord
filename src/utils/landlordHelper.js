@@ -106,6 +106,16 @@ export function calculate_3_financials_per_month(financialData, financialMonth) 
   return { totalIncome, totalExpenses, netProfit };
 }
 
+// Get Unit Areas
+export function getUnitMainAreas(inventoryData) {
+  return inventoryData.map((x) => x.roomName).filter((v, i, a) => a.indexOf(v) === i);
+}
+
+export function filterInventory(location, inventoryOf, inventoryData) {
+  if (!location || !inventoryOf || !inventoryData) return null;
+  return inventoryData[inventoryOf].filter((x) => x.roomName === location);
+}
+
 export const allQuickLinks = {
   bill_AssessmentRate: { id: "bill_AssessmentRate", type: "bill", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/bills/AssessmentRate" },
   bill_Cabletv: { id: "bill_Cabletv", type: "bill", label: "Cabletv", img: "/imgs/tv.svg", link: "/landlord/bills/Cabletv" },
@@ -131,6 +141,7 @@ export const allQuickLinks = {
   unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/propertyinfo/Utilities" },
 };
 
+// get icons based on the service/bill
 export const CompanyServicesIcons = {
   AssessmentRate: { img: "/imgs/assessment.svg" },
   Cabletv: { img: "/imgs/tv.svg" },

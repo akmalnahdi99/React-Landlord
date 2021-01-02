@@ -34,7 +34,7 @@ function AppProvider({ children }) {
     localStorage.setItem("settings", JSON.stringify(newSettings));
   };
 
-  const updateAppContext = (newSetting) => {
+  const updateAppContext = (newSetting, toDelete) => {
     //setSettings(getsettingsFromLocalStorage());
     console.log("[Update App Context] -------Start------");
     console.log("[Update App Context] size of old :", JSON.stringify(settings).length);
@@ -42,6 +42,10 @@ function AppProvider({ children }) {
     setSettings(settings);
     const newSettings = { ...settings, ...newSetting };
     console.log("[Update App Context] size of both :", JSON.stringify(newSettings).length);
+ 
+    if (Array.isArray(toDelete)) {
+      toDelete.forEach((x) => delete newSettings[x]);
+    }
 
     setSettings(newSettings);
     console.log("[Update App Context] size of fnl :", JSON.stringify(settings).length);
@@ -50,12 +54,13 @@ function AppProvider({ children }) {
     localStorage.setItem("settings", a);
   };
 
+   
   const clearSettings = () => {
     // setSettings({});
     // localStorage.removeItem("settings");
   };
 
-  return <AppContext.Provider value={{ clearSettings, settings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ clearSettings,    settings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;
 }
 
 export { AppProvider, AppContext };

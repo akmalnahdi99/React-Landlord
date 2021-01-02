@@ -1,17 +1,23 @@
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
- 
-export default function LivingCondition() {
+import Empty from "../../components/Empty";
+import { AppContext } from "../../context/settings";
+
+export default function UnitMeters() {
   var t = useParams();
   var meterName = t.meterName;
-  if (["Gas","Electricity","Water"].indexOf(meterName) === -1)
-  {
-    return <Redirect to="/landlord/InventoryList"/>
+  var appContext = React.useContext(AppContext);
+  if (["Gas", "Electricity", "Water"].indexOf(meterName) === -1) {
+    return <Redirect to="/landlord/unitInventory" />;
   }
-  var data = {
-    urlImage: "",
-    reading: "",
-  };
+
+  const metersData = (appContext.settings && appContext.settings.metersData) || null;
+
+  var data = (metersData && metersData["CheckIn"] && metersData["CheckIn"].filter((x) => x.meterType === meterName)[0]) || null;
+
+
+  if (!data)
+  return <Empty title="No Data Found"/>
 
   return (
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
@@ -32,7 +38,7 @@ export default function LivingCondition() {
                 <div className="col-md-12">
                   <div className="demo-gallery">
                     <ul id="lightgallery" className="list-unstyled row">
-                      <img src={data.urlImage} alt="..." />
+                      <img src={data.urlThumb} alt="..." />
                     </ul>
                   </div>
                 </div>

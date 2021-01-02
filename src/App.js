@@ -47,7 +47,7 @@ import KitchenCondition from "./pages/Landlord/KitchenCondition";
 import InventoryWater from "./pages/Landlord/InventoryWater";
 import InventoryVehicle from "./pages/Landlord/InventoryVehicle";
 import InventoryRemoteControl from "./pages/Landlord/InventoryRemoteControl";
-import InventoryList from "./pages/Landlord/InventoryList";
+import UnitInventories from "./pages/Landlord/UnitInventories";
 import InventoryKey from "./pages/Landlord/InventoryKey";
 import InventoryGas from "./pages/Landlord/InventoryGas";
 import InventoryYard from "./pages/Landlord/InventoryYard";
@@ -94,6 +94,8 @@ import { AppProvider } from "./context/settings";
 import { ProtectedRoute } from "./components/ProtectedComponent";
 import StandardPage from "./pages/StandardPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import InventoryOfArea from "./pages/InventoryOfArea";
+import UnitMeters from "./pages/Landlord/UnitMeters";
 
 export default function App() {
   return (
@@ -120,6 +122,7 @@ export default function App() {
             </Route>
             <Route path="/landlord/activity">
               <StandardPage>
+               
                 <Activity siteMap={"Activity"} />
               </StandardPage>
             </Route>
@@ -153,11 +156,24 @@ export default function App() {
                 <Financials siteMap={""} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/inventorylist">
+
+            <Route path="/landlord/unitInventory">
               <StandardPage>
-                <InventoryList siteMap={""} />
+                <UnitInventories siteMap={"Inventory List"} />
               </StandardPage>
             </Route>
+
+            <Route path="/landlord/inventoryOf/:area">
+              <StandardPage>
+                <InventoryOfArea siteMap={"Inventory List of"} />
+              </StandardPage>
+            </Route>
+            <Route path="/landlord/UnitMeters/:meterName">
+              <StandardPage>
+                <UnitMeters siteMap={"Unit meters"} />
+              </StandardPage>
+            </Route>
+
             <Route path="/landlord/inventoryaccesscard">
               <StandardPage>
                 <InventoryAccessCard siteMap={""} />

@@ -1,27 +1,26 @@
 import React from "react";
-import { AppContext } from "../context/settings";
+// import { AppContext } from "../context/settings";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
-export default function PostsListFilter() {
-  const appContext = React.useContext(AppContext);
-  const selectedFilter = appContext.settings.postsFilter;
-
+export default function PostsListFilter({ updateFilter, selectedFilter }) {
+  // const appContext = React.useContext(AppContext);
+  
   const Filters = [
     {
-      id: 0,
+      id: "CheckIn",
       name: "Check In",
     },
     {
-      id: 1,
-      name: "Addition",
-    },
-    {
-      id: 2,
+      id: "Omissions",
       name: "Omission",
     },
     {
-      id: 3,
+      id: "Additions",
+      name: "Additions",
+    },
+    {
+      id: "CheckOut",
       name: "Check Out",
     },
   ];
@@ -30,18 +29,13 @@ export default function PostsListFilter() {
     console.log("call useEffect");
   }, []);
 
-  const filterSelection = (filter) => {
-    console.log("set :", filter);
-    appContext.setPostsFilter(filter);
-  };
-
   const settings = {
     dots: false,
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     centerMode: true,
     accessibility: false,
     responsive: [
@@ -60,7 +54,7 @@ export default function PostsListFilter() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
           dots: false,
@@ -74,10 +68,10 @@ export default function PostsListFilter() {
 
   return (
     <Slider {...settings} id="FilterContainer" className="mb-2 mt-2 multiple-items" style={{ display: "flex" }}>
-      {Filters.map((filter) => {
+      {Filters.map((filter, index) => {
         return (
-          <div key={filter.id} className="widthfitcontent">
-            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+          <div key={filter} className="widthfitcontent" onClick={() => updateFilter(filter.id)}>
+            <div className={selectedFilter === filter.id ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental">
               <i className={filter.iconClass}></i> {filter.name}
             </div>
           </div>

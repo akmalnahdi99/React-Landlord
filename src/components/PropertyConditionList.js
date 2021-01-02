@@ -58,7 +58,7 @@ const PropertyConditionList = () => {
                     <div className="row text-center">
                        
                         <div className="col-12 p-2 pt-3">
-                           <div className="ibox white-bg" onclick="location.href='vr.html';">
+                           <div className="ibox white-bg" onClick="location.href='vr.html';">
                             <div className="ibox-content minhigh">
                             <Link to="#" className="btn-block text-truncate pt-3">
                               <img src="/imgs/immersive.svg" width="24px" alt=""/>
