@@ -24,22 +24,23 @@ export default function PayablesList() {
   }
   console.log("All Resuls: ", result);
 
-  var due = [
-    {
-      id: 1,
-      date: "13/09/2020",
-      title: "Sinking Fund",
-      amount: "RM XXXX",
-      icon: "/imgs/money-bag.svg",
-    },
-    {
-      id: 2,
-      date: "13/09/2020",
-      title: "Quit Rent",
-      amount: "RM XXXX",
-      icon: "/imgs/quitrent.svg",
-    },
-  ];
+  var due =[];
+  //var a= [
+  //   {
+  //     id: 1,
+  //     date: "13/09/2020",
+  //     title: "Sinking Fund",
+  //     amount: "RM XXXX",
+  //     icon: "/imgs/money-bag.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     date: "13/09/2020",
+  //     title: "Quit Rent",
+  //     amount: "RM XXXX",
+  //     icon: "/imgs/quitrent.svg",
+  //   },
+  // ];
  
   return (
     <div className="ibox">
