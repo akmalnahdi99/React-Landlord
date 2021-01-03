@@ -4,20 +4,23 @@ import { Link } from "react-router-dom";
 export default function InvoiceDetails({ title, details }) {
   var className = "";
   var paidText = "";
- 
-  if (details.paid === true) {
-    className = "text-completedtask";
-    paidText= "Paid";
+
+
+  if (details) {
+    if (details.paid === true) {
+      className = "text-completedtask";
+      paidText = "Paid";
+    } else {
+      paidText = "Not Paid";
+      className = "text-danger";
+    }
   } else {
+    // Need to find a solution to remove this
     paidText = "Not Paid";
     className = "text-danger";
   }
 
-  // var invoice = {
-  //   date: "10/28/2020",
-  //   name: "Service Charge",
-  //   status: "Overdue",
-  // };
+  
   return (
     <div className="ibox">
       <div className="ibox-title ">

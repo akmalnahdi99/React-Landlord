@@ -13,7 +13,7 @@ export default function UnitServiceCharge() {
               <UnitServiceChargeSinkingFundCard title="Service Charge &amp; Sinking Fund" />
             </div>
             <div className="ibox">
-              <Invoice title="Invoice" />
+              <Invoice title="Invoice" details={{}}/>
             </div>
           </div>
         </div>

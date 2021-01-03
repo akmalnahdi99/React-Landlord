@@ -644,8 +644,26 @@ body.mini-navbar .navbar-static-side {
   width: 70px;
 }
 
+.menu-expanded {
+  width: 300px !important;
+}
+
+.menu-collapsed {
+  width: 70px !important;
+}
+
+body.mini-navbar nav.menu-expanded span.nav-label
+{
+  display: inline-block;
+  padding-left: 12px;
+} 
+body.mini-navbar nav.menu-collapsed span.nav-label
+{
+  display: none;
+}
+
 body.mini-navbar .profile-element,
-body.mini-navbar .navbar-default .nav li a span {
+body.mini-navbar .navbar-default.menu-collapsed .nav li a span {
   display: none;
 }
 
@@ -698,10 +716,6 @@ body.mini-navbar #page-wrapper {
 }
 .box.green {
   background-color: green;
-}
-
-.width300 {
-  width: 300px !important;
 }
 
 .widthnormal {

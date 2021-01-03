@@ -106,6 +106,56 @@ export function calculate_3_financials_per_month(financialData, financialMonth) 
   return { totalIncome, totalExpenses, netProfit };
 }
 
+// Get Unit Areas Main Rooms
+export function getUnitMainAreas(inventoryData) {
+  return inventoryData.map((x) => x.roomName).filter((v, i, a) => a.indexOf(v) === i);
+}
+// filter inventory by type and location (room)
+export function filterInventory(location, inventoryOf, inventoryData) {
+  if (!location || !inventoryOf || !inventoryData) return null;
+  return inventoryData[inventoryOf].filter((x) => x.roomName === location);
+}
+
+// get main categories of unit kits
+export function getUnitMainKitsCats(kitsData, inventoryOf) {
+  if (!kitsData) return null;
+  var perInverntoryOf = kitsData[inventoryOf] || null;
+  if (!perInverntoryOf) return null;
+  var cats = [...Object.keys(perInverntoryOf)];
+  return cats || null;
+}
+
+export function getUnitKitItems(kitsData, inventoryOf, category) {
+  if (!kitsData) return null;
+  var perInverntoryOf = kitsData[inventoryOf] || null;
+  if (!perInverntoryOf) return null;
+  var perCats = perInverntoryOf[category];
+  if (!perCats) return null;
+  return perCats;
+}
+
+export function getMainAreasFromConditionReports(conditionReports) {
+  var result = [];
+  if (!conditionReports) return null;
+
+  for (const key in conditionReports) {
+    var items = conditionReports[key];
+    for (const item in items) {
+      result.push(items[item].roomName);
+    }
+  }
+  return result.filter((v, i, a) => a.indexOf(v) === i);
+}
+
+export function getConditionReportsOflocation(conditionReports, inventoryOf, location) {
+  if (!conditionReports || !inventoryOf || !location) return null;
+ 
+  var items = conditionReports[inventoryOf] || null;
+  if (!items) return null;
+
+  return items.filter((x) => x.roomName === location);
+}
+
 export const allQuickLinks = {
   bill_AssessmentRate: { id: "bill_AssessmentRate", type: "bill", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/bills/AssessmentRate" },
   bill_Cabletv: { id: "bill_Cabletv", type: "bill", label: "Cabletv", img: "/imgs/tv.svg", link: "/landlord/bills/Cabletv" },
@@ -129,4 +179,36 @@ export const allQuickLinks = {
   unit_Unit: { id: "unit_Unit", type: "unit", label: "Unit", img: "/imgs/tenant.svg", link: "/landlord/propertyinfo/Unit" },
   unit_UserManual: { id: "unit_UserManual", type: "unit", label: "User Manual", img: "/imgs/guide.svg", link: "" },
   unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/propertyinfo/Utilities" },
+};
+
+// get icons based on the service/bill
+export const CompanyServicesIcons = {
+  AssessmentRate: { img: "/imgs/assessment.svg" },
+  Cabletv: { img: "/imgs/tv.svg" },
+  Electricity: { img: "/imgs/electricity.svg" },
+  Gas: { img: "/imgs/gas.svg" },
+  Insurance: { img: "/imgs/insurance.svg" },
+  Internet: { img: "/imgs/wifi.svg" },
+  Maintenance: { img: "/imgs/settings.svg" },
+  QuitRent: { img: "/imgs/quitrent.svg" },
+  ServiceCharge: { img: "/imgs/money-bag.svg" },
+  Sewage: { img: "/imgs/sewage.svg" },
+  SubscriptionFees: { img: "/imgs/subscription.svg" },
+  Water: { img: "/imgs/water-drop.svg" },
+  Subscription: { img: "/imgs/subscription.svg" },
+  SinkingFunds: { img: "/imgs/money-bag.svg" },
+  Building: { img: "/imgs/company.svg" },
+  RateAndTaxes: { img: "/imgs/pie-chart.svg" },
+  Tenancy: { img: "/imgs/family.svg" },
+  Unit: { img: "/imgs/tenant.svg" },
+  UserManual: { img: "/imgs/guide.svg" },
+  Utilities: { img: "/imgs/utilities.svg" },
+};
+
+export const UnitKitsIcons = {
+  "Information leaflet": { img: "/imgs/write-letter.svg" },
+  Keys: { img: "/imgs/key.svg" },
+  "Access Cards": { img: "/imgs/access.svg" },
+  "Remote Controls": { img: "/imgs/remote-control.svg" },
+  "Vehicle Stickers": { img: "/imgs/car.svg" },
 };

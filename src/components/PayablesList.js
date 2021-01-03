@@ -1,56 +1,47 @@
 import React from "react";
+import { AppContext } from "../context/settings";
+import { CompanyServicesIcons } from "../utils/landlordHelper";
 import Empty from "./Empty";
 import PayableItem from "./PayableItem";
 
 export default function PayablesList() {
-  var overdue = [
-    {
-      id: 0,
-      date: "20/02/2020",
-      title: "Service Charge",
-      amount: "RM XXXX",
-      icon: "/imgs/money-bag.svg",
-    },
-    {
-      id: 1,
-      date: "15/03/2020",
-      title: "Insurance",
-      amount: "RM XXXX",
-      icon: "/imgs/insurance.svg",
-    },
-    {
-      id: 2,
-      date: "17/02/2020",
-      title: "Subscription Fees",
-      amount: "RM XXXX",
-      icon: "/imgs/subscription.svg",
-    },
-    {
-      id: 3,
-      date: "17/02/2020",
-      title: "Maintenance",
-      amount: "RM XXXX",
-      icon: "/imgs/settings.svg",
-    },
-  ];
+  var appContext = React.useContext(AppContext);
+  var financials = (appContext.settings && appContext.settings.unitFinancials) || [];
+  var curMonth = new Date().getMonth();
 
-  var due = [
-    {
-      id: 1,
-      date: "13/09/2020",
-      title: "Sinking Fund",
-      amount: "RM XXXX",
-      icon: "/imgs/money-bag.svg",
-    },
-    {
-      id: 2,
-      date: "13/09/2020",
-      title: "Quit Rent",
-      amount: "RM XXXX",
-      icon: "/imgs/quitrent.svg",
-    },
-  ];
- // code insert :  Process list to produce the right image for every payment type 
+  var result = {};
+  for (let month = 1; month <= curMonth; month++) {
+    const curMonthFinancials = financials[month].landlord || [];
+
+    for (const paymentName in curMonthFinancials) {
+      if (curMonthFinancials[paymentName].paid !== true) {
+        if (!result[paymentName]) {
+          result[paymentName] = {date:curMonthFinancials[paymentName].paymentDue, paymentOf: paymentName, amount: 0, paid: false, icon: (CompanyServicesIcons[paymentName] && CompanyServicesIcons[paymentName].img) || "" };
+        }
+        result[paymentName].amount += curMonthFinancials[paymentName].amountRequired;
+      }
+    }
+  }
+  console.log("All Resuls: ", result);
+
+  var due =[];
+  //var a= [
+  //   {
+  //     id: 1,
+  //     date: "13/09/2020",
+  //     title: "Sinking Fund",
+  //     amount: "RM XXXX",
+  //     icon: "/imgs/money-bag.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     date: "13/09/2020",
+  //     title: "Quit Rent",
+  //     amount: "RM XXXX",
+  //     icon: "/imgs/quitrent.svg",
+  //   },
+  // ];
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -58,14 +49,16 @@ export default function PayablesList() {
       </div>
       <div className="ibox-content forum-container">
         <h4>Payment Overdue</h4>
-        {overdue.length > 0 ? (
-          overdue.map((item) => {
-            return <PayableItem key={item.id} {...item} color="red" />;
+
+        {Object.keys(result).length > 0 ? (
+          Object.keys(result).map((item, index) => {
+            return <PayableItem key={index} {...result[item]} color="red" />;
           })
         ) : (
           <Empty />
         )}
       </div>
+      {/* Need to understand the payment cycle login (End of month, or start month) */}
       <div className="ibox-content forum-container">
         <h4>Payment Due</h4>
         {due.length > 0 ? (

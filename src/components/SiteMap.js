@@ -1,16 +1,24 @@
-import React   from "react";
-import { Link, useHistory } from "react-router-dom";
-export default function SiteMap({title}) {
-   const history = useHistory(); 
+import React from "react";
+import {  useHistory } from "react-router-dom";
+export default function SiteMap({ title }) {
+  const history = useHistory();
 
   return (
-    <ol className="breadcrumb bg-transparent mt-3">
-      <li className="mr-3">
-        <Link onClick={()=>history.goBack()} style={{padding: "13px 12px"}} to="">
+    <ul className="breadcrumb bg-transparent">
+      <div
+        onClick={(e) => {
+          e.preventDefault();
+          history.goBack();
+        }}
+        style={{ color: "white", cursor: "pointer", padding: "12px 0px", minWidth:"120px" }}
+      >
+        <div className="d-flex justify-content-start align-items-center">
           <i className="fas fa-chevron-left"></i>
-        </Link>
-      </li>
-      <li className="breadcrumb-item active">{title}</li>
-    </ol>
+          <i className="breadcrumb-item active ml-2 " style={{ color: "white" }}>
+            {title}
+          </i>
+        </div>
+      </div>
+    </ul>
   );
 }
