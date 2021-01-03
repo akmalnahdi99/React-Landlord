@@ -1,3 +1,6 @@
+[2021-01-03]
+- I deleted These packages : react-modal chart.js lightgallery  metismenu node-sass react-chartjs-2 react-chartjs-2 recharts react-vizgrammar
+
 [2020-12-29]
 - for local development pls relpace last line in Constants.js file with :
 export const config = process.env.NODE_ENV === "development" ? prod : prod;
