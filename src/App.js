@@ -42,7 +42,7 @@ import Maintenance from "./pages/Landlord/Maintenance";
 import Login from "./pages/Landlord/Login";
 import Financials from "./pages/Landlord/Financials";
 import Dashboard from "./pages/Landlord/Dashboard";
-import EntranceCondition from "./pages/Landlord/EntranceCondition";
+import ConditionDetails from "./pages/Landlord/ConditionDetails";
 import UnitInventories from "./pages/Landlord/UnitInventories";
  
 
@@ -259,9 +259,9 @@ export default function App() {
                 <PropertyCondition siteMap={""} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/EntranceCondition">
+            <Route path="/landlord/conditionDetails/:location">
               <StandardPage>
-                <EntranceCondition siteMap={""} />
+                <ConditionDetails siteMap={""} />
               </StandardPage>
             </Route>
           

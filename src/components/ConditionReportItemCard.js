@@ -1,39 +1,32 @@
+//TASK under Review
 import React from "react";
-import { Link } from "react-router-dom";
-
-export default function ConditionItem({ date, description, images, no }) {
+export default function ConditionReportItemCard({ data }) {
   var imageGallery = null;
-  if (images != null) {
-    imageGallery = images.map((image, index) => {
+
+  if (data.urlThumbs != null) {
+    imageGallery = data.urlThumbs.map((url, index) => {
       return (
         <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
-          <Link to={image.urlThumb}>
-            <img className="img-responsive" src={image.urlHref} alt="post som" />
-          </Link>
+          <div>
+            <img className="img-responsive" src={url} style={{ width: "120px", height: "75px" }} alt="..." />
+          </div>
         </li>
       );
     });
   }
 
   return (
-    <div className="ibox-content minhigh">
+    <div className="ibox-content minhigh mb-3">
       <div className="row mb-4 pt-3">
         <div className="col-md-12">
           <div className="media">
             <div className="media-body">
-              <div className="col-2 float-right">
-                <h4 className="text-doorcase3">Quantity</h4>
-                <p className="m-0">{no}</p>
-              </div>
-              <h4 className="text-doorcase3">Item Name</h4>
-              <p className="m-0">{date}</p>
-
-              <hr />
+              <h4 className="text-doorcase3">Date of Condition</h4>
+              <p className="m-0">{data.dateOfCondition}</p>
             </div>
           </div>
         </div>
       </div>
-
       <div className="row">
         <div className="col-md-12">
           <div className="demo-gallery">
@@ -48,8 +41,8 @@ export default function ConditionItem({ date, description, images, no }) {
         <div className="col-md-12">
           <div className="media">
             <div className="media-body">
-              <h4 className="text-doorcase3">Model Number</h4>
-              <p className="m-0">{description}</p>
+              <h4 className="text-doorcase3">Description of Condition</h4>
+              <p className="m-0">{data.description}</p>
             </div>
           </div>
         </div>

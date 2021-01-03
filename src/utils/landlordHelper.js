@@ -116,7 +116,8 @@ export function filterInventory(location, inventoryOf, inventoryData) {
   return inventoryData[inventoryOf].filter((x) => x.roomName === location);
 }
 
-export function getUnitMainKitsCats(kitsData, inventoryOf ) {
+// get main categories of unit kits
+export function getUnitMainKitsCats(kitsData, inventoryOf) {
   if (!kitsData) return null;
   var perInverntoryOf = kitsData[inventoryOf] || null;
   if (!perInverntoryOf) return null;
@@ -131,6 +132,28 @@ export function getUnitKitItems(kitsData, inventoryOf, category) {
   var perCats = perInverntoryOf[category];
   if (!perCats) return null;
   return perCats;
+}
+
+export function getMainAreasFromConditionReports(conditionReports) {
+  var result = [];
+  if (!conditionReports) return null;
+
+  for (const key in conditionReports) {
+    var items = conditionReports[key];
+    for (const item in items) {
+      result.push(items[item].roomName);
+    }
+  }
+  return result.filter((v, i, a) => a.indexOf(v) === i);
+}
+
+export function getConditionReportsOflocation(conditionReports, inventoryOf, location) {
+  if (!conditionReports || !inventoryOf || !location) return null;
+ 
+  var items = conditionReports[inventoryOf] || null;
+  if (!items) return null;
+
+  return items.filter((x) => x.roomName === location);
 }
 
 export const allQuickLinks = {

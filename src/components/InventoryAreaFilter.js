@@ -3,7 +3,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
-export default function PostsListFilter({ updateFilter, selectedFilter }) {
+export default function InventoryFilter({ updateFilter, selectedFilter }) {
   // const appContext = React.useContext(AppContext);
   
   const Filters = [

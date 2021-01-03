@@ -18,7 +18,6 @@ export default function Activity(props) {
       userInfo: { units },
     },
     updateAppContext,
-   
   } = React.useContext(AppContext);
 
   // const [data, setData] = React.useState(null);
@@ -64,9 +63,9 @@ export default function Activity(props) {
     }
     // await new Promise((r) => setTimeout(r, 4000));
     //updateAppContext({ unitFinancials: {}, viewingAndOfferStats:{} });
-   
-    updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId }, ["inventoryData", "metersData", "kitsData"]);
-   
+
+    updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId }, ["conditionReports", "inventoryData", "metersData", "kitsData"]);
+
     setIsLoading(false);
   }
 
