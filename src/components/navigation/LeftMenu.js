@@ -18,15 +18,15 @@ export default function LeftMenu() {
   }
 
   function updateMenuClass(menuExpanded) {
-   var index=-1;
+    var index = -1;
     if (menuExpanded === true) {
-        index = leftMenuClass.indexOf(menuCollapsedClass);
+      index = leftMenuClass.indexOf(menuCollapsedClass);
       if (index !== -1) {
         leftMenuClass.splice(index, 1);
       }
       leftMenuClass.push(menuExpandedClass);
     } else {
-        index = leftMenuClass.indexOf(menuExpandedClass);
+      index = leftMenuClass.indexOf(menuExpandedClass);
       if (index !== -1) {
         leftMenuClass.splice(index, 1);
       }
@@ -44,7 +44,7 @@ export default function LeftMenu() {
   return (
     <React.Fragment>
       <div>
-        <nav className={leftMenuClass.join("  ")}>
+        <nav className={leftMenuClass.join(" ")}>
           <div className="sidebar-collapse">
             <ul className="nav metismenu" id="side-menu">
               <li className="nav-header">
