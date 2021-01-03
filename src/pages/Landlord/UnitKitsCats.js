@@ -2,13 +2,13 @@ import React from "react";
 import { Link, Redirect, useParams } from "react-router-dom";
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
-import { apiCall, getUnitMainKitsCats } from "../../utils/landlordHelper";
+import { apiCall } from "../../utils/landlordHelper";
 export default function UnitKits() {
   var t = useParams();
   var inventoryOf = t.inventoryOf;
   const [isLoading, setIsLoading] = React.useState(true);
  
-  const [kitsCats, set_kitsCats] = React.useState(null);
+  // const [kitsCats, set_kitsCats] = React.useState(null);
 
   var appContext = React.useContext(AppContext);
   const activeUnitId = appContext.settings.activeUnitId;
@@ -24,7 +24,7 @@ export default function UnitKits() {
 
         if (response.status) {
         
-          set_kitsCats(getUnitMainKitsCats(response.data, inventoryOf));
+          // set_kitsCats(getUnitMainKitsCats(response.data, inventoryOf));
         }
 
         appContext.updateAppContext({ kitsData: response.data });
@@ -35,7 +35,7 @@ export default function UnitKits() {
     } else {
       console.log("Kits Items found");
    
-      set_kitsCats(getUnitMainKitsCats(storedKitsItems));
+      // set_kitsCats(getUnitMainKitsCats(storedKitsItems));
       setIsLoading(false);
     }
 
