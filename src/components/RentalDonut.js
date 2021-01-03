@@ -1,25 +1,22 @@
 //under review
-import React from 'react';
-import { ChartDonut, ChartLabel } from '@patternfly/react-charts';
-import { AppContext } from '../context/settings';
+import React from "react";
+import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
+import { AppContext } from "../context/settings";
 
 const RentalDonut = () => {
   //TASK pls put colors in variables here example : var red = #329f9d
- const appContext = React.useContext(AppContext);
+  const appContext = React.useContext(AppContext);
 
- var financialData = appContext.settings.unitFinancials;
- if (financialData)
- {var r = Object.keys(financialData).map((x) => financialData[x].tenant && financialData[x].tenant.Rental && financialData[x].tenant.Rental.paid);
- var currMonth =9;//new Date().getMonth();
- var t = r.map((x, indexMonth) => (x === true ? "paid" : (currMonth > indexMonth ? "due" : "future") ));
- }
- else
- {
-   t=Array(12);
- }
- console.log("payments " , t);
+  var financialData = appContext.settings.unitFinancials;
+  if (financialData) {
+    var r = Object.keys(financialData).map((x) => financialData[x].tenant && financialData[x].tenant.Rental && financialData[x].tenant.Rental.paid);
+    var currMonth = new Date().getMonth();
+    var t = r.map((x, indexMonth) => (x === true ? "paid" : currMonth > indexMonth ? "due" : "future"));
+  } else {
+    t = Array(12);
+  }
+  console.log("payments ", t);
 
-  
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
       <ChartDonut
@@ -64,6 +61,6 @@ const RentalDonut = () => {
       />
     </div>
   );
-}
+};
 
-export default RentalDonut
+export default RentalDonut;
