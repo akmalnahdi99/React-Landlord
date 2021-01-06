@@ -40,7 +40,7 @@ import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteract
 import Maintenance from "./pages/Landlord/Maintenance";
 
 import Login from "./pages/Landlord/Login";
-// import Financials from "./pages/Landlord/Financials";
+// import Financials from "./pages/Landlord/Financials"; // for version2
 import Dashboard from "./pages/Landlord/Dashboard";
 import ConditionDetails from "./pages/Landlord/ConditionDetails";
 import UnitInventories from "./pages/Landlord/UnitInventories";
