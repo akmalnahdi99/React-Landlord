@@ -40,7 +40,7 @@ export default function RentalOffersDonutChart({ offersData }) {
         title={total.toString()}
         titleComponent={<ChartLabel y={110} style={[{ fontWeight: "600", fontSize: 36 }]} />}
         subTitleComponent={<ChartLabel y={140} style={[{ fontSize: "15px", fontWeight: "400", fill: "#666" }]} />}
-        innerRadius={"80"}
+        innerRadius={80}
         subTitle="Total"
         style={{
           data: {

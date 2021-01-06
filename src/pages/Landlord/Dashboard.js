@@ -44,25 +44,25 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-4 px-2">
+          {/* <div className="col-lg-4 px-2">
             <Financials title="Financials" />
-          </div>
+          </div> */}
           <div className="col-lg-4 px-2">
             <Bills title="Bills" />
           </div>
           <div className="col-lg-4 px-2">
             <PropertyInfo title="Property Info" />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 px-2">
-            <RentalLeads />
-          </div>
           <div className="col-lg-4 px-2">
             <DashboardPropertyViewing title="Property Viewing" />
           </div>
+        </div>
+        <div className="row">
           <div className="col-lg-4 px-2">
             <DashboardRentalOffers title="Rental Offers" />
+          </div>
+          <div className="col-lg-4 px-2">
+            <RentalLeads />
           </div>
         </div>
       </div>
