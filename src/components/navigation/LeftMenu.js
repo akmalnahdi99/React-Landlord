@@ -6,10 +6,11 @@ import { AppContext } from "../../context/settings";
 export default function LeftMenu() {
   const menuExpandedClass = "menu-expanded";
   const menuCollapsedClass = "menu-collapsed";
-  const [leftMenuClass, set_leftMenuClass] = React.useState(["navbar-default navbar-static-side"]);
-  const [expanded, set_expanded] = React.useState(false);
   const appContext = React.useContext(AppContext);
+  const forceShow = appContext.settings.leftMenu || "";
 
+  const [leftMenuClass, set_leftMenuClass] = React.useState(["navbar-default navbar-static-side"]);
+  const [expanded, set_expanded] = React.useState(appContext.settings.leftMenuExpanded || false);
   function toggle() {
     var n = !expanded;
     set_expanded(n);
@@ -19,6 +20,11 @@ export default function LeftMenu() {
 
   function updateMenuClass(menuExpanded) {
     var index = -1;
+    if (menuExpanded != false && forceShow === "show") {
+      set_leftMenuClass([leftMenuClass.push("menu-show")]);
+    } else {
+    }
+
     if (menuExpanded === true) {
       index = leftMenuClass.indexOf(menuCollapsedClass);
       if (index !== -1) {
@@ -26,6 +32,13 @@ export default function LeftMenu() {
       }
       leftMenuClass.push(menuExpandedClass);
     } else {
+      index = leftMenuClass.indexOf("menu-show");
+      if (index !== -1) {
+        leftMenuClass.splice(index, 1);
+        
+        appContext.updateAppContext({ leftMenu: "" });
+      }
+
       index = leftMenuClass.indexOf(menuExpandedClass);
       if (index !== -1) {
         leftMenuClass.splice(index, 1);
