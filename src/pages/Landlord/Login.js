@@ -66,11 +66,13 @@ function Login() {
 
           var activeUnitId = null;
           var quickLinks = null;
+          var notificationsCount=0;
           if (response.data.units.length > 0) {
             activeUnitId = response.data.unitsIds[0];
             quickLinks = response.data.quickLinks;
+            notificationsCount = response.data.notificationsCount;
           }
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks });
+          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);
         }

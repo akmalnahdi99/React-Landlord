@@ -4,10 +4,12 @@ import Empty from "./Empty";
 import NotificationItem from "./NotificationItem";
 import Loading from "./static/Loading";
 import { apiCall } from "./../utils/landlordHelper";
+import { AppContext } from "../context/settings";
 
 const NotificationList = () => {
   console.log("in notifications list");
-
+  const appContext = React.useContext(AppContext); // for reading login status
+  const notificationsCount = appContext.settings.notificationsCount || -1;
   const [isLoading, setIsLoading] = React.useState(true);
   const [notifications, setNotifications] = React.useState(null);
 
@@ -16,8 +18,6 @@ const NotificationList = () => {
   // } = React.useContext(AppContext);
 
   React.useEffect(() => {
-    
-
     async function loadNotificationsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/users/notifications");
@@ -27,6 +27,15 @@ const NotificationList = () => {
       }
     }
     loadNotificationsWrapper();
+
+    if (notificationsCount !== 0 && notificationsCount !== -1) {
+      setTimeout(async () => {
+        var response = await apiCall("/users/markNotificationsAsRead", "POST");
+        if (response.status) {
+          appContext.updateAppContext({ notificationsCount: 0 });
+        }
+      }, 100);
+    }
 
     // eslint-disable-next-line
   }, []);

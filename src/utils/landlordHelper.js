@@ -28,7 +28,7 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url) => {
+export const apiCall = async (url,method) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
@@ -40,9 +40,9 @@ export const apiCall = async (url) => {
   if (jwtToken) {
     headers.Authorization = `Bearer ${jwtToken}`;
   }
-
+if (!method)method = "Get";
   const requestOptions = {
-    method: "GET",
+    method: method,
     headers: headers,
   };
 
