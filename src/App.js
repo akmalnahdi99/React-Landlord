@@ -40,7 +40,7 @@ import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteract
 import Maintenance from "./pages/Landlord/Maintenance";
 
 import Login from "./pages/Landlord/Login";
-import Financials from "./pages/Landlord/Financials";
+// import Financials from "./pages/Landlord/Financials";
 import Dashboard from "./pages/Landlord/Dashboard";
 import ConditionDetails from "./pages/Landlord/ConditionDetails";
 import UnitInventories from "./pages/Landlord/UnitInventories";
@@ -117,11 +117,11 @@ export default function App() {
                 <Payables siteMap={""} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/financials">
+            {/* <Route path="/landlord/financials">
               <StandardPage>
                 <Financials siteMap={""} />
               </StandardPage>
-            </Route>
+            </Route> */}
 
             <Route path="/landlord/unitInventory">
               <StandardPage>
