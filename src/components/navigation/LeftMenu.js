@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
-import { slide as Menu } from 'react-burger-menu'
+import { AppContext } from "../../context/settings";
 
 export default function LeftMenu() {
   const menuExpandedClass = "menu-expanded";
@@ -20,7 +20,7 @@ export default function LeftMenu() {
 
   function updateMenuClass(menuExpanded) {
     var index = -1;
-    if (menuExpanded != false && forceShow === "show") {
+    if (menuExpanded !== false && forceShow === "show") {
       set_leftMenuClass([leftMenuClass.push("menu-show")]);
     } else {
     }

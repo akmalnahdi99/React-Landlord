@@ -2,7 +2,7 @@
 import React from "react";
 import { AppContext } from "../context/settings";
 import "slick-carousel/slick/slick.css"; 
-import Slider from "react-slick";
+ 
 
 
 export default function PostsListFilter() {
