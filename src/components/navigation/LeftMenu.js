@@ -20,7 +20,7 @@ export default function LeftMenu() {
 
   function updateMenuClass(menuExpanded) {
     var index = -1;
-    if (menuExpanded != false && forceShow === "show") {
+    if (menuExpanded !== false && forceShow === "show") {
       set_leftMenuClass([leftMenuClass.push("menu-show")]);
     } else {
     }
