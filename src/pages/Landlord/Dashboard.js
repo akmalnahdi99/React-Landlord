@@ -10,7 +10,7 @@ import TodoList from "../../components/DashTodoList.js";
 import Maintenance from "../../components/DashMaintenance";
 import TenantPayables from "../../components/DashTenantPayables";
 import Calendar from "../../components/DashCalendar";
-import Financials from "../../components/DashFinancials";
+// import Financials from "../../components/DashFinancials"; // for version 2
 import Bills from "../../components/DashBills";
 import PropertyInfo from "../../components/DashPropertyInfo.js";
 import RentalLeads from "../../components/DashRentalLeads";

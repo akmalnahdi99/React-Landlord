@@ -3,7 +3,7 @@ import React from "react";
 import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
 import { AppContext } from "../context/settings";
 
-const RentalDonut = () => {
+export default function RentalDonut  ()  {
   //TASK pls put colors in variables here example : var red = #329f9d
   const appContext = React.useContext(AppContext);
 
@@ -64,5 +64,3 @@ var paid = t.filter(x=>x==="paid").length;
     </div>
   );
 };
-
-export default RentalDonut;
