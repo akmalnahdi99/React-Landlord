@@ -9,7 +9,7 @@ import { AppContext } from "../context/settings";
 
 export default function Header() {
   const appContext = React.useContext(AppContext); // for reading login status
-
+  const notificationsCount = appContext.settings.notificationsCount || "";
   function updateLeftMenu() {
     console.log("show expanded");
     appContext.updateAppContext({ leftMenu: "show", leftMenuExpanded: true });
@@ -36,7 +36,7 @@ export default function Header() {
           <li className="dropdown">
             <Link className="count-info" to="/landlord/notifications">
               <i className="fa fa-bell"></i>
-              <span className="label label-primary">8</span>
+              {notificationsCount > 0 ? <span className="label label-primary">{notificationsCount}</span> : ""}
             </Link>
           </li>
           <li>

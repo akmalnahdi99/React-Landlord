@@ -10,7 +10,7 @@ import TodoList from "../../components/DashTodoList.js";
 import Maintenance from "../../components/DashMaintenance";
 import TenantPayables from "../../components/DashTenantPayables";
 import Calendar from "../../components/DashCalendar";
-import Financials from "../../components/DashFinancials";
+// import Financials from "../../components/DashFinancials"; // for version 2
 import Bills from "../../components/DashBills";
 import PropertyInfo from "../../components/DashPropertyInfo.js";
 import RentalLeads from "../../components/DashRentalLeads";
@@ -44,25 +44,25 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-4 px-2">
+          {/* <div className="col-lg-4 px-2">
             <Financials title="Financials" />
-          </div>
+          </div> */}
           <div className="col-lg-4 px-2">
             <Bills title="Bills" />
           </div>
           <div className="col-lg-4 px-2">
             <PropertyInfo title="Property Info" />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 px-2">
-            <RentalLeads />
-          </div>
           <div className="col-lg-4 px-2">
             <DashboardPropertyViewing title="Property Viewing" />
           </div>
+        </div>
+        <div className="row">
           <div className="col-lg-4 px-2">
             <DashboardRentalOffers title="Rental Offers" />
+          </div>
+          <div className="col-lg-4 px-2">
+            <RentalLeads />
           </div>
         </div>
       </div>

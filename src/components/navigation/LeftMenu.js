@@ -12,13 +12,21 @@ export default function LeftMenu() {
   const [leftMenuClass, set_leftMenuClass] = React.useState(["navbar-default navbar-static-side"]);
   const [expanded, set_expanded] = React.useState(appContext.settings.leftMenuExpanded || false);
   function toggle() {
+    console.log("in  left menu toggle");
     var n = !expanded;
     set_expanded(n);
     updateMenuClass(n);
     appContext.updateAppContext({ leftMenuExpanded: n });
   }
 
+  function updateLeftMenu() {
+    console.log("in update left menu to hide");
+    appContext.updateAppContext({ leftMenu: "", leftMenuExpanded: false });
+     set_expanded(false);
+  }
+
   function updateMenuClass(menuExpanded) {
+    console.log("in update menu class");
     var index = -1;
     if (menuExpanded !== false && forceShow === "show") {
       set_leftMenuClass([leftMenuClass.push("menu-show")]);
@@ -35,7 +43,7 @@ export default function LeftMenu() {
       index = leftMenuClass.indexOf("menu-show");
       if (index !== -1) {
         leftMenuClass.splice(index, 1);
-        
+
         appContext.updateAppContext({ leftMenu: "" });
       }
 
@@ -49,6 +57,7 @@ export default function LeftMenu() {
   }
 
   React.useEffect(() => {
+    console.log("in  left menu use Effect");
     updateMenuClass(expanded);
     // eslint-disable-next-line
   }, [expanded]);
@@ -73,49 +82,49 @@ export default function LeftMenu() {
                 </div>
               </li>
               <li>
-                <Link to="/landlord/activity">
+                <Link to="/landlord/activity" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaUserClock />
                   <span className="nav-label">Activity</span>
                 </Link>
               </li>
               <li>
-                <Link to="/landlord/dashboard">
+                <Link to="/landlord/dashboard" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaGripHorizontal />
                   <span className="nav-label">Dashboard</span>
                 </Link>
               </li>
               <li>
-                <Link to="/landlord/maintenance">
+                <Link to="/landlord/maintenance" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaToolbox />
                   <span className="nav-label">Maintenance</span>
                 </Link>
               </li>
-              <li>
-                <Link to="/landlord/financials">
+              {/* <li>
+                <Link to="/landlord/financials" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaFileInvoiceDollar />
                   <span className="nav-label">Financial</span>
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/landlord/payables">
+                <Link to="/landlord/payables" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaHandHoldingUsd />
                   <span className="nav-label">Payables</span>
                 </Link>
               </li>
               <li>
-                <Link to="/landlord/unitviewings">
+                <Link to="/landlord/unitviewings" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaStreetView />
                   <span className="nav-label">Property Viewing</span>
                 </Link>
               </li>
               <li>
-                <Link to="/landlord/offers">
+                <Link to="/landlord/offers" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaHandsHelping />
                   <span className="nav-label">Rental Offers</span>
                 </Link>
               </li>
               <li>
-                <Link to="/landlord/propertyInfo">
+                <Link to="/landlord/propertyInfo" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaInfoCircle />
                   <span className="nav-label">Property Info</span>
                 </Link>

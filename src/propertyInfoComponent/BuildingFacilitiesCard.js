@@ -38,7 +38,7 @@ export default function BuildingFacilitiesCard() {
   }, [activeUnitId]);
 
   return (
-    <div className="ibox">
+    <div className="ibox col-12">
       <div className="ibox-title">
         <h3>Faciities &amp; Amenities</h3>
       </div>

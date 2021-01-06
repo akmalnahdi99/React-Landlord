@@ -1,3 +1,7 @@
+[2021-01-06]
+- add x button to every quick link button or any other design you find good;
+- all charts are based on victory charts so documentations can be found here : https://formidable.com/open-source/victory/docs/victory-pie/
+
 [2021-01-03]
 - I deleted These packages : react-modal chart.js lightgallery  metismenu node-sass react-chartjs-2 react-chartjs-2 recharts react-vizgrammar
 - autoprefixer is a library that rely on caniuse for adding prefixes to css to adapt multi browsers configurations.

@@ -115,7 +115,7 @@ export default function BillOf() {
             <div className="container container-xs">
               <div className="row justify-content-center">
                 <div className="col-lg-9 mb-3">
-                  {billType === "ServiceCharges" ? <BillsServiceCharge utilityDetails={utilityDetails} payments={payments} /> : ""}
+                  {billType === "ServiceCharges" ? <BillsServiceCharge  utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "Insurance" ? <BillsInsurance utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "QuitRent" ? <BillsQuitRent utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "AssessmentRate" ? <BillsAssessmentRate utilityDetails={utilityDetails} payments={payments} /> : ""}
