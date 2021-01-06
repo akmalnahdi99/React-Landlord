@@ -15,7 +15,7 @@ import "lightgallery.js/dist/css/lightgallery.css"; //DISCUSS what this for
 //pages
 
 import ViewingDetails from "./pages/Landlord/ViewingDetails";
-import UtilitiesOf from "./pages/Landlord/UtilitiesOf";
+import UtilityOf from "./pages/Landlord/UtilityOf";
 import Utilities from "./pages/Landlord/Utilities";
 import UnitViewings from "./pages/Landlord/UnitViewings";
 import TodoList from "./pages/Landlord/TodoList";
@@ -166,7 +166,7 @@ export default function App() {
             </Route>
             <Route path="/landlord/utilities/:utilityType">
               <StandardPage>
-                <UtilitiesOf siteMap={""} />
+                <UtilityOf siteMap={"Utilities"} />
               </StandardPage>
             </Route>
             <Route exact path="/landlord/propertyInfo">
@@ -264,7 +264,7 @@ export default function App() {
                 <ConditionDetails siteMap={""} />
               </StandardPage>
             </Route>
-          
+
             <Route path="/landlord/UnitCheckInOut">
               <StandardPage>
                 <UnitCheckInOut siteMap={""} />

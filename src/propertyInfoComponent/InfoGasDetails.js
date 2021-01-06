@@ -1,11 +1,13 @@
 import React from "react";
 
-export default function InfoGasDetails   ({ title,...details })   {
- 
+export default function InfoGasDetails({ title, ...details }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}</h3>
+        <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
+          <img src={details.icon} alt="..." className="utilityIconTitle"></img>
+          <h3>{title}</h3>
+        </div>
         <hr />
       </div>
       <div className="ibox-content minhigh pt-0">
@@ -25,6 +27,4 @@ export default function InfoGasDetails   ({ title,...details })   {
       </div>
     </div>
   );
-};
-
- 
+}

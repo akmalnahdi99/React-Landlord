@@ -3,8 +3,6 @@ import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
 
-
-
 import { AppContext } from "../../context/settings";
 import Loading from "../../components/static/Loading";
 import { apiCall } from "../../utils/landlordHelper";
@@ -57,7 +55,8 @@ export default function UtilitiesOf() {
       break;
     }
   }
-
+  
+  var selectedIcon = data.filter((x) => x.key === utilityType)[0].icon || "";
   if (!allowed) {
     // if billtype is not exist we go back
     return <Redirect to="/landlord/propertyinfo" />;
@@ -72,12 +71,12 @@ export default function UtilitiesOf() {
       <div className="container container-xs">
         <div className="row justify-content-center">
           <div className="col-lg-9 mb-3">
-            {utilityType === "Water" ? <InfoWaterDetails title="Water Rate" {...utilityDetails} /> : ""}
-            {utilityType === "Electricity" ? <InfoElectricityDetails title="Electricity Rate" {...utilityDetails} /> : ""}
-            {utilityType === "Sewage" ? <InfoSewageDetails title="Sewage" {...utilityDetails} /> : ""}
-            {utilityType === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
-            {utilityType === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
-            {utilityType === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Water" ? <InfoWaterDetails icon={selectedIcon} title="Water Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Electricity" ? <InfoElectricityDetails icon={selectedIcon} title="Electricity Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Sewage" ? <InfoSewageDetails icon={selectedIcon} title="Sewage" {...utilityDetails} /> : ""}
+            {utilityType === "Internet" ? <InfoInternetDetails icon={selectedIcon} title="Internet" {...utilityDetails} /> : ""}
+            {utilityType === "Cabletv" ? <InfoCableTvDetails icon={selectedIcon} title="Cable TV" {...utilityDetails} /> : ""}
+            {utilityType === "Gas" ? <InfoGasDetails icon={selectedIcon} title="Gas Rate" {...utilityDetails} /> : ""}
           </div>
         </div>
       </div>
