@@ -21,7 +21,7 @@ import UnitViewings from "./pages/Landlord/UnitViewings";
 import TodoList from "./pages/Landlord/TodoList";
 import TenantTenancy from "./pages/Landlord/TenantTenancy";
 import TenantPayables from "./pages/Landlord/TenantPayables";
-import TenancyDocs from "./pages/Landlord/TenancyDocs";
+// import TenancyDocs from "./pages/Landlord/TenancyDocs";
 import QuickLinks from "./pages/Landlord/QuickLinks";
 
 import PropertyInfoOf from "./pages/Landlord/PropertyInfoOf";
@@ -239,11 +239,11 @@ export default function App() {
                 <TenantTenancy siteMap={""} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/tenancydocs">
+            {/*  <Route path="/landlord/tenancydocs">
               <StandardPage>
                 <TenancyDocs siteMap={""} />
               </StandardPage>
-            </Route>
+            </Route> */}
             <Route path="/landlord/todolist">
               <StandardPage>
                 <TodoList siteMap={""} />

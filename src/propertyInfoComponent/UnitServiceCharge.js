@@ -1,6 +1,5 @@
 import React from "react";
  
-import Invoice from "../../src/bills_component/Invoice";
 import UnitServiceChargeSinkingFundCard from "./UnitServiceChargeSinkingFundCard";
 
 export default function UnitServiceCharge() {
@@ -11,9 +10,6 @@ export default function UnitServiceCharge() {
           <div className="col-lg-12 mb-3">
             <div className="ibox ">
               <UnitServiceChargeSinkingFundCard title="Service Charge &amp; Sinking Fund" />
-            </div>
-            <div className="ibox">
-              <Invoice title="Invoice" details={{}}/>
             </div>
           </div>
         </div>

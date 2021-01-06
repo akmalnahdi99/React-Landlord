@@ -4,7 +4,7 @@ import React from "react";
 export default function UserManual() {
   return (
     <div>
-      <h1>User Manual</h1>
+      <h1>Home Appliances</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem ipsa, qui amet perspiciatis vel quidem, maxime adipisci quas illum pariatur deleniti assumenda facere nostrum totam dolore, neque ipsum. Minima, corrupti.
       </p>

@@ -89,9 +89,9 @@ export default function TenancyDetails({ title }) {
                 </Link>
               </div>
               <div className="col-6 text-center">
-                <Link to="/landlord/TenancyDocs/" className="btn btn-primary btn-block btn-lg mt-4">
+                {/* <Link to="/landlord/TenancyDocs/" className="btn btn-primary btn-block btn-lg mt-4">
                   Tenant's Documents
-                </Link>
+                </Link> */}
               </div>
             </div>
           </React.Fragment>

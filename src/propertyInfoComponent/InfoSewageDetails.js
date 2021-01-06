@@ -5,7 +5,7 @@ export default function InfoSewageDetails  ({ title,...details }) {
     <div className="ibox">
       <div className="ibox-title">
         <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-          <img src={details.icon} alt="..." className="utilityIconTitle"></img>
+          <img src="/imgs/sewage.svg" alt="..." className="utilityIconTitle"></img>
           <h3>{title}</h3>
         </div>
         <hr />

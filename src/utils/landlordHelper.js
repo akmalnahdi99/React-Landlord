@@ -167,7 +167,7 @@ export const allQuickLinks = {
   bill_QuitRent: { id: "bill_QuitRent", type: "bill", label: "Quit Rent", img: "/imgs/quitrent.svg", link: "/landlord/bills/QuitRent" },
   bill_ServiceCharge: { id: "bill_ServiceCharge", type: "bill", label: "Service Charge", img: "/imgs/money-bag.svg", link: "/landlord/bills/ServiceCharge" },
   bill_Sewage: { id: "bill_Sewage", type: "bill", label: "Sewage", img: "/imgs/sewage.svg", link: "/landlord/bills/Sewage" },
-  bill_SubscriptionFees: { id: "bill_SubscriptionFees", type: "bill", label: "Subscription Fees", img: "/imgs/subscription.svg", link: "/landlord/bills/SubscriptionFees" },
+  bill_SubscriptionFees: { id: "bill_SubscriptionFees", type: "bill", label: "Subscription Fees", img: "/imgs/subscription.svg", link: "/landlord/bills/Subscription" },
   bill_Water: { id: "bill_Water", type: "bill", label: "Water", img: "/imgs/water-drop.svg", link: "/landlord/bills/Water" },
 
   unit_AssessmentRate: { id: "unit_AssessmentRate", type: "unit", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/propertyinfo/AssessmentRate" },
@@ -177,7 +177,7 @@ export const allQuickLinks = {
   unit_RateAndTaxes: { id: "unit_RateAndTaxes", type: "unit", label: "Rate & Taxes", img: "/imgs/pie-chart.svg", link: "" },
   unit_Tenancy: { id: "unit_Tenancy", type: "unit", label: "Tenancy", img: "/imgs/family.svg", link: "/landlord/propertyinfo/Tenancy" },
   unit_Unit: { id: "unit_Unit", type: "unit", label: "Unit", img: "/imgs/tenant.svg", link: "/landlord/propertyinfo/Unit" },
-  unit_UserManual: { id: "unit_UserManual", type: "unit", label: "User Manual", img: "/imgs/guide.svg", link: "" },
+  unit_HomeAppliance: { id: "unit_HomeAppliance", type: "unit", label: "Home Appliances", img: "/imgs/guide.svg", link: "/landlord/propertyinfo/HomeAppliance" },
   unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/propertyinfo/Utilities" },
 };
 
@@ -201,7 +201,7 @@ export const CompanyServicesIcons = {
   RateAndTaxes: { img: "/imgs/pie-chart.svg" },
   Tenancy: { img: "/imgs/family.svg" },
   Unit: { img: "/imgs/tenant.svg" },
-  UserManual: { img: "/imgs/guide.svg" },
+  HomeAppliance: { img: "/imgs/guide.svg" },
   Utilities: { img: "/imgs/utilities.svg" },
 };
 
