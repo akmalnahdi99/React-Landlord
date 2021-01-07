@@ -12,7 +12,7 @@ export default function DashPropertyInfo({ title }) {
     { icon: "/imgs/insurance.svg", text: "Insurance", url: "/landlord/propertyinfo/Insurance" },
     { icon: "/imgs/tenant.svg", text: "Unit", url: "/landlord/propertyinfo/Unit" },
     { icon: "/imgs/company.svg", text: "Building", url: "/landlord/propertyinfo/Building" },
-    { icon: "/imgs/guide.svg", text: "User Manual", url: "/landlord/propertyinfo/UserManual" },
+    { icon: "/imgs/guide.svg", text: "User Manual", url: "/landlord/propertyinfo/HomeAppliance" },
   ];
 
   return <DashIconsBox title={title} data={data} returnLink="/landlord/propertyinfo" />;

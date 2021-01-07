@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
 
-const AssessmentRateDetails = ({ title,details }) => {
+export default function AssessmentRateDetails  ({ title,details })  {
  
   const [isOpen, setIsOpen] = useState(false);
 
@@ -68,5 +68,4 @@ const AssessmentRateDetails = ({ title,details }) => {
     </div>
   );
 };
-
-export default AssessmentRateDetails;
+ 

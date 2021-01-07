@@ -57,6 +57,11 @@ export default function Quicklinks({ title }) {
           <Link to="/quicklinks">{title}</Link>
         </h5>
       </div>
+      <div className="ibox-tools">
+        {/* <Link to="/quicklinks">
+          <i className="fas fa-arrow-right"></i>
+        </Link> */}
+      </div>
       <div className="ibox-content pt-0">
         <React.Fragment>
           <div className="row text-center">
@@ -73,7 +78,7 @@ export default function Quicklinks({ title }) {
                 );
               } else {
                 return (
-                  <div className="col-md-4 col-sm-4 col-4 p-2">
+                  <div key={index} className="col-md-4 col-sm-4 col-4 p-2">
                     <Link to={"/quicklinks/" + index} className="btn btn-shortcut btn-block text-truncate">
                       <i className={"fas fa-plus"}></i>
                       <br />

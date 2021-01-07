@@ -15,13 +15,13 @@ import "lightgallery.js/dist/css/lightgallery.css"; //DISCUSS what this for
 //pages
 
 import ViewingDetails from "./pages/Landlord/ViewingDetails";
-import UtilitiesOf from "./pages/Landlord/UtilitiesOf";
+import UtilityOf from "./pages/Landlord/UtilityOf";
 import Utilities from "./pages/Landlord/Utilities";
 import UnitViewings from "./pages/Landlord/UnitViewings";
 import TodoList from "./pages/Landlord/TodoList";
 import TenantTenancy from "./pages/Landlord/TenantTenancy";
 import TenantPayables from "./pages/Landlord/TenantPayables";
-import TenancyDocs from "./pages/Landlord/TenancyDocs";
+// import TenancyDocs from "./pages/Landlord/TenancyDocs";
 import QuickLinks from "./pages/Landlord/QuickLinks";
 
 import PropertyInfoOf from "./pages/Landlord/PropertyInfoOf";
@@ -40,7 +40,7 @@ import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteract
 import Maintenance from "./pages/Landlord/Maintenance";
 
 import Login from "./pages/Landlord/Login";
-import Financials from "./pages/Landlord/Financials";
+// import Financials from "./pages/Landlord/Financials"; // for version2
 import Dashboard from "./pages/Landlord/Dashboard";
 import ConditionDetails from "./pages/Landlord/ConditionDetails";
 import UnitInventories from "./pages/Landlord/UnitInventories";
@@ -117,11 +117,11 @@ export default function App() {
                 <Payables siteMap={"Payables"} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/financials">
+            {/* <Route path="/landlord/financials">
               <StandardPage>
                 <Financials siteMap={"Financials"} />
               </StandardPage>
-            </Route>
+            </Route> */}
 
             <Route path="/landlord/unitInventory">
               <StandardPage>
@@ -166,7 +166,7 @@ export default function App() {
             </Route>
             <Route path="/landlord/utilities/:utilityType">
               <StandardPage>
-                <UtilitiesOf siteMap={""} />
+                <UtilityOf siteMap={"Utilities"} />
               </StandardPage>
             </Route>
             <Route exact path="/landlord/propertyInfo">
@@ -234,11 +234,11 @@ export default function App() {
                 <TenantTenancy siteMap={"Tenant Tenancy"} />
               </StandardPage>
             </Route>
-            <Route path="/landlord/tenancydocs">
+            {/*  <Route path="/landlord/tenancydocs">
               <StandardPage>
                 <TenancyDocs siteMap={"Tenancy Documents"} />
               </StandardPage>
-            </Route>
+            </Route> */}
             <Route path="/landlord/todolist">
               <StandardPage>
                 <TodoList siteMap={"To-do List"} />
@@ -259,7 +259,7 @@ export default function App() {
                 <ConditionDetails siteMap={""} />
               </StandardPage>
             </Route>
-          
+
             <Route path="/landlord/UnitCheckInOut">
               <StandardPage>
                 <UnitCheckInOut siteMap={"Check In & Check Out"} />

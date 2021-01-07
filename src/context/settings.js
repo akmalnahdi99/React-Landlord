@@ -12,6 +12,7 @@ const defaultSettings = {
     7: "",
     8: "",
   },
+  notificationsCount:0,
   quickAccessSlot: 0,
   postsFilter: "all",
   isLogged: false,

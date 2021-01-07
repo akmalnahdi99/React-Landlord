@@ -14,7 +14,7 @@ import UnitAssessmentRateCard from "../../propertyInfoComponent/UnitAssessmentRa
 import UnitQuitRentCard from "../../propertyInfoComponent/unitQuitRentCard";
 import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
-import UserManual from "../../propertyInfoComponent/UserManual";
+import HomeAppliance from "../../propertyInfoComponent/HomeAppliance";
 
 import BuildingInsuranceDetails from "../../propertyInfoComponent/BuildingInsuranceDetails";
 
@@ -41,7 +41,7 @@ export default function PropertyInfoOf() {
     { key: "RateTaxes", text: "Rate & Taxes", icon: "/imgs/pie-chart.svg", url: "" },
     { key: "AssessmentRate", text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
     { key: "QuitRent", text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
-    { key: "UserManual", text: "User Manual", icon: "/imgs/guide.svg", url: "" },
+    { key: "HomeAppliance", text: "Home Appliances", icon: "/imgs/guide.svg", url: "" },
   ];
 
   var allowed = false;
@@ -69,7 +69,7 @@ export default function PropertyInfoOf() {
           {propertyinfoType === "QuitRent" ? <UnitQuitRentCard siteMap={"123"} title="Quit Rent" /> : ""}
           {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
           {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
-          {propertyinfoType === "UserManual" ? <UserManual /> : ""}
+          {propertyinfoType === "HomeAppliance" ? <HomeAppliance /> : ""}
         </div>
       </div>
     </div>

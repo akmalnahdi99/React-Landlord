@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
 
-const SubscriptionFeeDetails = ({ title }) => {
+export default function SubscriptionFeeDetails  ({ title })   {
   var details = {
     service_cherge: "RM 0.00",
     name: "JANN Properties",
@@ -84,4 +84,4 @@ const SubscriptionFeeDetails = ({ title }) => {
   );
 };
 
-export default SubscriptionFeeDetails;
+ 

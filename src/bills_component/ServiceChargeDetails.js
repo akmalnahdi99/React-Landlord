@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
 
-const BillsDetails = ({ title,details }) => {
-//   var details = {
-//     service_cherge: "RM 0.00",
-//     name: "Raine, Horne & Zaki Property Management Sdn Bhd",
-//     bank: "Maybank",
-//     sinking_fund: "RM 0.00",
-//     account: "123456789012",
-//     contact: "+603 123 456",
-//   };
+export default function BillsDetails({ title, details }) {
+  //   var details = {
+  //     service_cherge: "RM 0.00",
+  //     name: "Raine, Horne & Zaki Property Management Sdn Bhd",
+  //     bank: "Maybank",
+  //     sinking_fund: "RM 0.00",
+  //     account: "123456789012",
+  //     contact: "+603 123 456",
+  //   };
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -92,6 +92,5 @@ const BillsDetails = ({ title,details }) => {
       </div>
     </div>
   );
-};
-
-export default BillsDetails;
+}
+ 

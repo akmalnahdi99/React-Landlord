@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Collapse } from 'reactstrap';
 import * as FaIcons from "react-icons/fa";
 
-const QuitRentDetails = ({ title, details }) => {
+export default function QuitRentDetails  ({ title, details })   {
   
   const [isOpen, setIsOpen] = useState(false);
 
@@ -76,5 +76,4 @@ const QuitRentDetails = ({ title, details }) => {
     </div>
   );
 };
-
-export default QuitRentDetails;
+ 

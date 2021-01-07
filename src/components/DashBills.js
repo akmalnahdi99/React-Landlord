@@ -1,55 +1,53 @@
 import React from "react";
 import DashIconsBox from "./DashIconsBox";
 
-const DashBills = ({title}) => {
+export default function DashBills({ title }) {
   const data = [
     {
       icon: "/imgs/subscription.svg",
-      text:"Subscription Fees",
-      url: "/landlord/bills/SubscriptionFees",
+      text: "Subscription Fees",
+      url: "/landlord/bills/Subscription",
     },
     {
       icon: "/imgs/money-bag.svg",
-      text:"Service Charge",
+      text: "Service Charge",
       url: "/landlord/bills/ServiceCharge",
     },
     {
       icon: "/imgs/assessment.svg",
-      text:"Assessment Rate",
+      text: "Assessment Rate",
       url: "/landlord/bills/AssessmentRate",
     },
     {
       icon: "/imgs/insurance.svg",
-      text:" Insurance",
+      text: " Insurance",
       url: "/landlord/bills/Insurance",
     },
     {
       icon: "/imgs/quitrent.svg",
-      text:" Quit Rent",
+      text: " Quit Rent",
       url: "/landlord/bills/QuitRent",
     },
     {
       icon: "/imgs/settings.svg",
-      text:"Maintenance",
+      text: "Maintenance",
       url: "/landlord/bills/Maintenance",
     },
     {
       icon: "/imgs/water-drop.svg",
-      text:"Water",
+      text: "Water",
       url: "/landlord/bills/Water",
     },
     {
       icon: "/imgs/electricity.svg",
-      text:"Electricity",
+      text: "Electricity",
       url: "/landlord/bills/Electricity",
     },
     {
       icon: "/imgs/more.svg",
-      text:"More",
+      text: "More",
       url: "/landlord/bills",
     },
   ];
   return <DashIconsBox title={title} data={data} returnLink="/landlord/bills" />;
-};
-
-export default DashBills;
+}

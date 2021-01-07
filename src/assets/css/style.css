@@ -13362,6 +13362,13 @@ body.md-skin {
 
 /*Ayham 
  Left Menu */
+
+.utilityIconTitle{
+  margin-right:10px;
+  width: 25px;
+  height: 25px
+}
+
 .left-menu-icon {
   width: 18px;
   height: 18px;
@@ -13379,6 +13386,8 @@ body.md-skin {
 .facility-faint {
   color: rgb(220, 220, 220);
 }
+
+
 /* //TASK Ayham This is not complete solution this is just a work around */
 .donut3__slice.donut3__slice__third.hh-red::after {
   border-top-color: red;

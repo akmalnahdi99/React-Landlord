@@ -30,7 +30,7 @@ export default function InfoPropertyManagement ({title})  {
 
 
   return (
-    <div className="ibox ">
+    <div className="ibox col-12">
       <div className="ibox-title ">
         <h5>{title}</h5>
       </div>
