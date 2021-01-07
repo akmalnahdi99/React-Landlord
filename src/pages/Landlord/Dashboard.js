@@ -16,9 +16,12 @@ import PropertyInfo from "../../components/DashPropertyInfo.js";
 import RentalLeads from "../../components/DashRentalLeads";
 import DashboardPropertyViewing from "../../components/DashPropertyViewing";
 import DashboardRentalOffers from "../../components/DashRentalOffers";
+import * as FaIcons from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   return (
+    <div>
     <div className="wrapper wrapper-content py-4 animated fadeInRight">
       <div className="container-fluid">
         <div className="row">
@@ -67,6 +70,10 @@ export default function Dashboard() {
         </div>
       </div>
       <br />
+    </div>
+      <Link to="./activity" class="float">
+        <FaIcons.FaUserClock className="my-float" />
+      </Link>
     </div>
   );
 }

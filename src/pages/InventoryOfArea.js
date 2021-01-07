@@ -45,19 +45,22 @@ export default function InventoryOfArea() {
     <Loading />
   ) : (
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-      <div className="row justify-content-center">
-        <div className="col-lg-8 mb-3">
-          <div className="row p-0 justify-content-center pb-0">
-            <div className="col-lg-8 px-2">
+      <div className="row p-0 justify-content-center pb-0">
+            <div className="col-lg-5 px-2">
               <InventoryAreaFilter updateFilter={updateFilter} selectedFilter={inventoryOf} />
               <br />
             </div>
           </div>
-          <div className="container container-xs">
-            {items &&
-              items.map((item, index) => {
+      <div className="row justify-content-center">
+      <div className="col-10 mb-3">
+      <div className="row">
+      {items &&
+              items.map((item, name) => {
                 return (
-                  <div key={index} className="ibox-content minhigh mb-2">
+                  
+        <div className="col-6 px-0 mb-3">
+          <div className="container container-xs">
+                  <div key={name} className="ibox-content minhigh mb-2">
                     <div className="row mb-4 pt-3">
                       <div className="col-md-12">
                         <div className="media">
@@ -72,7 +75,6 @@ export default function InventoryOfArea() {
                             </div>
                             <h4 className="text-doorcase3">Item Name</h4>
                             <p className="m-0">{item.itemName}</p>
-
                             <hr />
                           </div>
                         </div>
@@ -100,10 +102,14 @@ export default function InventoryOfArea() {
                       </div>
                     </div>
                   </div>
-                );
-              })}
+                
           </div>
         </div>
+        
+        );
+      })}
+      </div>
+      </div>
       </div>
     </div>
   );

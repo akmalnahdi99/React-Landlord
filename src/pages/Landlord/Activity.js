@@ -8,6 +8,7 @@ import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
+import { Link } from "react-router-dom";
 
 export default function Activity(props) {
   const { className } = props;
@@ -143,6 +144,9 @@ export default function Activity(props) {
             </div>
           </div>
         </div>
+        <Link to="./dashboard" class="float">
+        <FaIcons.FaGripHorizontal className="my-float" />
+        </Link>
       </React.Fragment>
     );
 }

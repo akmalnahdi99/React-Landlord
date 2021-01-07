@@ -26,11 +26,12 @@ export default function TenancyDetails({ title }) {
     
   return (
     <div className="ibox">
+      <div className="ibox-content minhigh450px pt-0">
       <div className="ibox-title ">
         <h3>{title}</h3>
         <hr />
       </div>
-      <div className="ibox-content minhigh pt-0">
+      
         {isLoading === true ? (
           <Loading />
         ) : (
