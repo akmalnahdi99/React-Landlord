@@ -3,22 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-export default function MaintenanceListItem({id, date, name, applydate, images, status }) {
+export default function MaintenanceListItem({id, date, name, applydate, images, status, media }) {
   if (!status) {
     status = "new";
-  }
-
-  var imageGallery = null;
-  if (images != null) {
-    imageGallery = images.map((image, index) => {
-      return (
-        <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
-          <Link to={image.urlThumb}>
-            <img className="img-responsive" src={image.urlHref} alt="post som" />
-          </Link>
-        </li>
-      );
-    });
   }
 
   var statusClassName = "text-completedtask";
@@ -35,14 +22,27 @@ export default function MaintenanceListItem({id, date, name, applydate, images, 
     statusText = "New";
   }
 
+  var latest = "fas fa-video";
+  var latesttext = "video";
+ 
+  if (media === "image") {
+    latest = "fas fa-images";
+    latesttext = "Image";
+  } else if (status.toLowerCase() === "video") {
+    latest = "fas fa-video";
+    latesttext = "Video";
+  }
+
   return (
     <div className="row">
       <div className="col-2 date active pt-3 pl-0">
         <i className="fas fa-circle"></i>
-        {date}
+        
         <br />
       </div>
       <div className="col-10 content pb-5">
+        <Link to={"/landlord/maintenancedetails/"+ id} style={{color: "#000"}}>
+      <p style={{fontSize: "12px"}}>{date}</p>
         <div className="row">
           <div className="col-9 mb-2">
             <div className="media">
@@ -59,30 +59,27 @@ export default function MaintenanceListItem({id, date, name, applydate, images, 
           </div>
         </div>
         <div className="row">
-          <div className="col-12">
-            <h4>
+          <div className="col-12 mb-1">
+            <h4 className="m-0">
               <span className="font-light font-body">Status:</span>
               <span className={"ml-2 font-body " + statusClassName}>{statusText}</span>
             </h4>
           </div>
         </div>
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 mb-1">
             <span className="font-body">Applied date</span>
-            <p className="font-body">
+            <p className="font-body mb-0">
               <strong>{applydate}</strong>
             </p>
           </div>
         </div>
         <div className="row">
           <div className="col-12">
-            <div className="demo-gallery mb-0">
-              <ul id="lightgallery" className="list-unstyled row">
-                {imageGallery}
-              </ul>
-            </div>
+            <span style={{fontSize: "12px"}}><i class={latest}></i> {latesttext}</span>
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );

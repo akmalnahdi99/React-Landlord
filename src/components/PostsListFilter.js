@@ -31,7 +31,6 @@ export default function PostsListFilter() {
       name: "Viewing",
       iconClass: "fas fa-eye",
     },
-
     {
       id: 4,
       name: "Overdue",

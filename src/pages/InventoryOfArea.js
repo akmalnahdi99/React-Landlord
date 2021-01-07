@@ -55,12 +55,12 @@ export default function InventoryOfArea() {
       <div className="col-10 mb-3">
       <div className="row">
       {items &&
-              items.map((item, name) => {
+              items.map((item, index) => {
                 return (
                   
         <div className="col-6 px-0 mb-3">
           <div className="container container-xs">
-                  <div key={name} className="ibox-content minhigh mb-2">
+                  <div key={index} className="ibox-content minhigh mb-2">
                     <div className="row mb-4 pt-3">
                       <div className="col-md-12">
                         <div className="media">

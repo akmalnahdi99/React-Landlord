@@ -12,19 +12,19 @@ export default function InventoryFilter() {
 
   const Filters = [
     {
-      id: 0,
+      id: "Check In",
       name: "Check In",
     },
     {
-      id: 1,
+      id: "Addition",
       name: "Addition",
     },
     {
-      id: 2,
+      id: "Omission",
       name: "Omission",
     },
     {
-      id: 3,
+      id: "Check Out",
       name: "Check Out",
     },
   ];
@@ -42,7 +42,7 @@ export default function InventoryFilter() {
 
   return (
     <div id="FilterContainer" className="mb-2 mt-2 multiple-items sorterslide" style={{ display: "flex" }}>
-      {Filters.map((filter, index) => {
+      {Filters.map((filter) => {
         return (
           <div key={filter.id} className="widthfitcontent">
             <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
