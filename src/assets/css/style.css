@@ -13207,7 +13207,7 @@ body.md-skin {
     min-height: 100vh;
   }
   .navbar-static-side {
-    position: absolute;
+    position: fixed;
     width: 220px;
     z-index: 2;
     min-height: 100vh;
@@ -13234,7 +13234,8 @@ body.md-skin {
   .body-small .navbar-static-side {
     display: none;
     z-index: 2001;
-    position: absolute;
+    position: fixed
+    ;
     width: 70px;
   }
   .body-small.mini-navbar .navbar-static-side {
@@ -13290,7 +13291,7 @@ body.md-skin {
     display: block;
   }
   .navbar-static-side {
-    position: absolute;
+    position: fixed;
     display: none;  
     z-index: 2;
     background: linear-gradient( 0deg, rgb(32, 80, 114) 0%, rgba(50, 157, 156) 100% );

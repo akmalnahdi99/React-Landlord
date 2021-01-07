@@ -21,7 +21,6 @@ const NotificationItem = ({title, body, time, relativeDate}) => {
           <div className="col-3">
             <h5 className="font-light text-center">
               <p>{time}</p>
-              <i className="fas fa-arrow-right text-completedtask"></i>
             </h5>
           </div>
         </div>

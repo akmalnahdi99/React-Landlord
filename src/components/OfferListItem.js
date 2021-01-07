@@ -54,7 +54,7 @@ export default function OfferListItem({ id, offerDate, tenantName, urlThumb, sta
               <span className={"ml-2 font-body " + statusClassName}>{statusText}</span>
             </h4>
           </div>
-          <div className="col-2 text-right px-2">
+          <div className="col-2 text-right">
             <Link to={"/landlord/offerdetails/" + id} alt="">
               <i className="fas fa-arrow-right fa-lg text-completedtask"></i>
             </Link>
