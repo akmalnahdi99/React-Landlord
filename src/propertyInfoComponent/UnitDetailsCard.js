@@ -32,7 +32,7 @@ export default function UnitDetailsCard() {
   if (unitDetails && unitDetails.images != null) {
     imageGallery = unitDetails.images.map((image, index) => {
       return (
-        <li className="col-xs-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
+        <li className="col-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
           <Link to={image.urlThumb}>
             <img className="img-responsive" src={image.urlThumb} alt="post som" />
           </Link>
@@ -51,7 +51,7 @@ export default function UnitDetailsCard() {
           <Loading />
         ) : (
           <React.Fragment>
-            <div className="row">
+            <div className="row mb-5">
               <div className="col-sm-12 ">
                 <div className="demo-gallery">
                   <ul id="lightgallery" className="list-unstyled row">
@@ -60,7 +60,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Block</h4>
@@ -69,7 +69,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Level</h4>
@@ -78,7 +78,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Unit</h4>
@@ -87,9 +87,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Furnishing</h4>
@@ -98,7 +96,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Type</h4>
@@ -107,7 +105,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Sqft.</h4>
@@ -116,9 +114,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Room</h4>
@@ -127,7 +123,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Utility room</h4>
@@ -136,7 +132,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Bath</h4>
@@ -145,9 +141,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Car park</h4>
@@ -156,7 +150,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Car park No</h4>
@@ -165,7 +159,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Service charges</h4>
@@ -174,9 +168,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-            </div>
-            <div className="row mb-5">
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Sinking fund</h4>
@@ -184,7 +176,7 @@ export default function UnitDetailsCard() {
                   </div>
                 </div>
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Insurance amount</h4>

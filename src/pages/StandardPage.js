@@ -19,7 +19,7 @@ export default function StandardPage({ children: Page, ...rest }) {
 
   React.useEffect(() => {
     if (appContext.settings.leftMenuExpanded) {
-      set_expanded("ml300");
+      set_expanded("");
     } else {
       set_expanded("");
     }

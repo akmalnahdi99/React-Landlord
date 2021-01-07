@@ -11,6 +11,7 @@ const MaintenanceList = () => {
       name: "Tenant Name",
       status: "resolved",
       applydate: "XX-XX-XXXX",
+      media: "image",
       images: [
         {
           urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
@@ -32,6 +33,7 @@ const MaintenanceList = () => {
       name: "Tenant name",
       status: "new",
       applydate: "XX-XX-XXXX",
+      media: "image",
       images: [
         {
           urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
@@ -53,6 +55,7 @@ const MaintenanceList = () => {
       name: "Tenant name",
       status: "new",
       applydate: "XX-XX-XXXX",
+      media: "video",
       images: [
         {
           urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
@@ -74,6 +77,7 @@ const MaintenanceList = () => {
       name: "Tenant Name",
       status: "inprogress",
       applydate: "XX-XX-XXXX",
+      media: "image",
       images: [
         {
           urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",
@@ -95,6 +99,7 @@ const MaintenanceList = () => {
       name: "Tenant Name",
       status: "in progress",
       applydate: "XX-XX-XXXX",
+      media: "video",
       images: [
         {
           urlThumb: "https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-13.jpg",

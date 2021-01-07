@@ -40,6 +40,7 @@ export default function OfferListItem({ id, offerDate, tenantName, urlThumb, sta
         <br />
       </div>
       <div className="col-10 content pb-5 ">
+        <Link to={"/landlord/offerdetails/" + id} style={{color: "black"}}>
         <div className="row">
           <div className="col-10 mb-2 px-0">
             <div className="media">
@@ -54,12 +55,13 @@ export default function OfferListItem({ id, offerDate, tenantName, urlThumb, sta
               <span className={"ml-2 font-body " + statusClassName}>{statusText}</span>
             </h4>
           </div>
-          <div className="col-2 text-right px-2">
+          <div className="col-2 text-right">
             <Link to={"/landlord/offerdetails/" + id} alt="">
               <i className="fas fa-arrow-right fa-lg text-completedtask"></i>
             </Link>
-          </div>
+          </div> 
         </div>
+        </Link>
       </div>
     </div>
   );

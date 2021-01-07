@@ -45,56 +45,59 @@ export default function InventoryOfArea() {
     <Loading />
   ) : (
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
+      <div className="row p-0 justify-content-center pb-0">
+        <div className="col-lg-5 px-2">
+          <InventoryAreaFilter updateFilter={updateFilter} selectedFilter={inventoryOf} />
+          <br />
+        </div>
+      </div>
       <div className="row justify-content-center">
-        <div className="col-lg-8 mb-3">
-          <div className="row p-0 justify-content-center pb-0">
-            <div className="col-lg-8 px-2">
-              <InventoryAreaFilter updateFilter={updateFilter} selectedFilter={inventoryOf} />
-              <br />
-            </div>
-          </div>
-          <div className="container container-xs">
+        <div className="col-10 mb-3">
+          <div className="row">
             {items &&
               items.map((item, index) => {
                 return (
-                  <div key={index} className="ibox-content minhigh mb-2">
-                    <div className="row mb-4 pt-3">
-                      <div className="col-md-12">
-                        <div className="media">
-                          <div className="media-body">
-                            <div className="col-2 float-right">
-                              <h4 className="text-doorcase3">Quantity</h4>
-                              <p className="m-0">
-                                {item.quantity}
-                                {item.markAddition === true ? <span className="m-0">+</span> : ""}
-                                {item.markOmission === true ? <span className="m-0">-</span> : ""}
-                              </p>
+                  <div key={index} className="col-6 px-0 mb-3">
+                    <div className="container container-xs">
+                      <div key={index} className="ibox-content minhigh mb-2">
+                        <div className="row mb-4 pt-3">
+                          <div className="col-md-12">
+                            <div className="media">
+                              <div className="media-body">
+                                <div className="col-2 float-right">
+                                  <h4 className="text-doorcase3">Quantity</h4>
+                                  <p className="m-0">
+                                    {item.quantity}
+                                    {item.markAddition === true ? <span className="m-0">+</span> : ""}
+                                    {item.markOmission === true ? <span className="m-0">-</span> : ""}
+                                  </p>
+                                </div>
+                                <h4 className="text-doorcase3">Item Name</h4>
+                                <p className="m-0">{item.itemName}</p>
+                                <hr />
+                              </div>
                             </div>
-                            <h4 className="text-doorcase3">Item Name</h4>
-                            <p className="m-0">{item.itemName}</p>
-
-                            <hr />
                           </div>
                         </div>
-                      </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="demo-gallery">
-                          <ul id="lightgallery" className="list-unstyled row">
-                            <img src={item.urlPhoto} alt="123" />
-                          </ul>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <div className="demo-gallery">
+                              <ul id="lightgallery" className="list-unstyled row">
+                                <img src={item.urlPhoto} alt="123" />
+                              </ul>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div className="row mb-4">
-                      <div className="col-md-12">
-                        <div className="media">
-                          <div className="media-body">
-                            <h4 className="text-doorcase3">Model Number</h4>
-                            <p className="m-0">{item.itemModel}</p>
+                        <hr />
+                        <div className="row mb-4">
+                          <div className="col-md-12">
+                            <div className="media">
+                              <div className="media-body">
+                                <h4 className="text-doorcase3">Model Number</h4>
+                                <p className="m-0">{item.itemModel}</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
