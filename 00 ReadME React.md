@@ -1,6 +1,9 @@
 [2021-01-07]
 - for file InventoryOfArea pls check the small screen layout (text out of card)
-- 
+- for the file of Development and production pls don't push this file when modify for development, this file is read directly in production.
+
+
+
 [2021-01-06]
 - add x button to every quick link button or any other design you find good;
 - all charts are based on victory charts so documentations can be found here : https://formidable.com/open-source/victory/docs/victory-pie/
