@@ -1,3 +1,12 @@
+[2021-01-09]
+- when doing HTML pls dont put <Link> inside another <Link> because <Link> is converted to <a > element, and in HTML <a> inside <a> is prevented.
+
+[2021-01-08]
+- akmal: inventoryOfArea layout fixed
+- akmal: maintenance layout fixed
+- akmal: offer layout fixed
+- akmal: viewing layout fixed
+
 [2021-01-07]
 - for file InventoryOfArea pls check the small screen layout (text out of card)
 - for the file of Development and production pls don't push this file when modify for development, this file is read directly in production.
