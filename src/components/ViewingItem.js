@@ -6,11 +6,12 @@ export default function ViewingItem({ appointmentDate, appointmentTime, tenantNa
     <div className="row">
       <div className="col-2 date active pt-3 pl-0">
         <i className="fas fa-circle text-darkblue"></i>
-        {appointmentDate}
-        <br />
-        <small className="text-navy">{appointmentTime}</small>
+        
       </div>
       <div className="col-10 content">
+      <Link to={"/landlord/viewingdetails/"+ appointmentId} style={{color: "#000"}}>
+      <p className="mb-0" style={{fontSize: "12px"}}>{appointmentDate}</p>
+        <small className="text-navy">{appointmentTime}</small>
         <div className="row">
           <div className="col-9 mb-2">
             <div className="media">
@@ -26,6 +27,7 @@ export default function ViewingItem({ appointmentDate, appointmentTime, tenantNa
             </Link>
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );

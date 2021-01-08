@@ -1,3 +1,9 @@
+[2021-01-08]
+-inventoryOfArea layout fixed
+-maintenance layout fixed
+-offer layout fixed
+-viewing layout fixed
+
 [2021-01-07]
 - for file InventoryOfArea pls check the small screen layout (text out of card)
 - for the file of Development and production pls don't push this file when modify for development, this file is read directly in production.
