@@ -54,7 +54,7 @@ const PostsList = (props, filterBy) => {
   // ];
 
   var filteredPosts = posts;
-  if (filteredPosts && activeFilter !== "all") {
+  if (filteredPosts && activeFilter !== "All") {
     filteredPosts = posts.filter((item) => item.postType.toLowerCase() === activeFilter.toLowerCase());
   }
 

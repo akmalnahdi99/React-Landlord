@@ -35,7 +35,7 @@ export default function PostsListFilter() {
     },
     {
       id: 5,
-      name: "all",
+      name: "All",
       iconClass: "fas fa-bars",
     },
   ];

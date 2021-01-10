@@ -4,8 +4,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 // pages
 
-import TenancySelect from "./pages/TenancySelection";
-import PropertySelect from "./pages/PropertySelection";
+// import TenancySelect from "./pages/TenancySelection";
+// import PropertySelect from "./pages/PropertySelection";
 
 //Styles
 import "./assets/css/style.css";
@@ -44,7 +44,6 @@ import Login from "./pages/Landlord/Login";
 import Dashboard from "./pages/Landlord/Dashboard";
 import ConditionDetails from "./pages/Landlord/ConditionDetails";
 import UnitInventories from "./pages/Landlord/UnitInventories";
- 
 
 import CheckInLeaflet from "./pages/Landlord/CheckInLeaflet";
 import UnitKitsCats from "./pages/Landlord/UnitKitsCats";
@@ -62,7 +61,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import InventoryOfArea from "./pages/InventoryOfArea";
 import UnitMeters from "./pages/Landlord/UnitMeters";
 import KitDetailsCard from "./pages/KitDetailsCard";
- 
+import ResetPassword from "./pages/Landlord/ResetPassword";
 
 export default function App() {
   return (
@@ -75,8 +74,12 @@ export default function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/login1">{<script>console.log(123);</script>}</Route>
           <Route path="/logout">
             <Logout />
+          </Route>
+          <Route path="/resetPassword">
+            <p>123</p>
           </Route>
         </Switch>
 
@@ -92,16 +95,16 @@ export default function App() {
                 <Activity siteMap={"Activity"} />
               </StandardPage>
             </Route>
-            <Route path="/pages/tenancyselection">
+            {/* <Route path="/pages/tenancyselection">
               <StandardPage>
-                <TenancySelect siteMap={""} />
+                <TenancySelect siteMap={"Tenancy"} />
               </StandardPage>
-            </Route>
-            <Route path="/pages/propertyselection">
+            </Route> */}
+            {/* <Route path="/pages/propertyselection">
               <StandardPage>
                 <PropertySelect siteMap={""} />
               </StandardPage>
-            </Route>
+            </Route> */}
             <Route path="/landlord/notifications">
               <StandardPage>
                 <Notifications siteMap={"Notifications"} />
@@ -131,7 +134,7 @@ export default function App() {
 
             <Route path="/landlord/inventoryOf/:area">
               <StandardPage>
-                <InventoryOfArea siteMap={"Inventory List of"} />
+                <InventoryOfArea siteMap={"Inventory Details"} />
               </StandardPage>
             </Route>
             <Route path="/landlord/UnitMeters/:meterName">
@@ -141,7 +144,7 @@ export default function App() {
             </Route>
             <Route path="/quicklinks/:cellId">
               <StandardPage>
-                <QuickLinks siteMap={""} />
+                <QuickLinks siteMap={"Go Back"} />
               </StandardPage>
             </Route>
             <Route path="/landlord/calendars">
@@ -161,7 +164,7 @@ export default function App() {
             </Route>
             <Route path="/landlord/bills/:billType">
               <StandardPage>
-                <BillOf siteMap={""} />
+                <BillOf siteMap={"Bills Details"} />
               </StandardPage>
             </Route>
             <Route path="/landlord/utilities/:utilityType">
@@ -176,12 +179,12 @@ export default function App() {
             </Route>
             <Route path="/landlord/propertyInfo/:propertyinfoType">
               <StandardPage>
-                <PropertyInfoOf siteMap={""} />
+                <PropertyInfoOf siteMap={"Property Info"} />
               </StandardPage>
             </Route>
             <Route path="/landlord/UnitInfo">
               <StandardPage>
-                <PropertyInfo siteMap={""} />
+                <PropertyInfo siteMap={"Property Info"} />
               </StandardPage>
             </Route>
             <Route path="/landlord/UnitViewings">
@@ -281,10 +284,12 @@ export default function App() {
                 <CheckInLeaflet siteMap={"Check In Leaflet"} />
               </StandardPage>
             </Route>
-
+   
             <Route path="/*">
-              <NotFoundPage siteMap={""} />
-            </Route>
+              <StandardPage>
+                <NotFoundPage siteMap={"Go Back"} />
+              </StandardPage>
+            </Route> 
           </Switch>
         </ProtectedRoute>
       </Router>
