@@ -13381,7 +13381,16 @@ body.md-skin {
 
 /*Ayham 
  Left Menu */
-
+.site-map-button
+{
+transition: 0.2s ease-in-out;
+}
+.site-map-button:hover
+{
+background-color: rgb(32, 80, 114);
+ 
+transition: 0.1s ease-in-out;
+}
 .utilityIconTitle{
   margin-right:10px;
   width: 25px;

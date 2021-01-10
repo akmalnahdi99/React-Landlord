@@ -58,15 +58,18 @@ import { AppProvider } from "./context/settings";
 import { ProtectedRoute } from "./components/ProtectedComponent";
 import StandardPage from "./pages/StandardPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPublicPage from "./pages/NotFoundPublicPage";
 import InventoryOfArea from "./pages/InventoryOfArea";
 import UnitMeters from "./pages/Landlord/UnitMeters";
 import KitDetailsCard from "./pages/KitDetailsCard";
 import ResetPassword from "./pages/Landlord/ResetPassword";
+import ForgotPassword from "./pages/Landlord/ForgotPassword";
 
 export default function App() {
   return (
     <AppProvider>
       <Router>
+      
         <Switch>
           <Route exact path="/">
             <Redirect to="/login" />
@@ -74,224 +77,233 @@ export default function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/login1">{<script>console.log(123);</script>}</Route>
+
           <Route path="/logout">
             <Logout />
           </Route>
           <Route path="/resetPassword">
-            <p>123</p>
+            <ResetPassword />
           </Route>
-        </Switch>
 
-        <ProtectedRoute>
-          <Switch>
-            <Route path="/landlord/dashboard">
-              <StandardPage>
-                <Dashboard siteMap={"Dashboard"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/activity">
-              <StandardPage>
-                <Activity siteMap={"Activity"} />
-              </StandardPage>
-            </Route>
-            {/* <Route path="/pages/tenancyselection">
+          <Route path="/forgotPassword">
+            <ForgotPassword />
+          </Route>
+
+          <Route path="/landlord/*">
+            <ProtectedRoute>
+              <Switch>
+                <Route path="/landlord/dashboard">
+                  <StandardPage>
+                    <Dashboard siteMap={"Dashboard"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/activity">
+                  <StandardPage>
+                    <Activity siteMap={"Activity"} />
+                  </StandardPage>
+                </Route>
+                {/* <Route path="/pages/tenancyselection">
               <StandardPage>
                 <TenancySelect siteMap={"Tenancy"} />
               </StandardPage>
             </Route> */}
-            {/* <Route path="/pages/propertyselection">
+                {/* <Route path="/pages/propertyselection">
               <StandardPage>
                 <PropertySelect siteMap={""} />
               </StandardPage>
             </Route> */}
-            <Route path="/landlord/notifications">
-              <StandardPage>
-                <Notifications siteMap={"Notifications"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/profile">
-              <StandardPage>
-                <Profile siteMap={"Profile"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/payables">
-              <StandardPage>
-                <Payables siteMap={"Payables"} />
-              </StandardPage>
-            </Route>
-            {/* <Route path="/landlord/financials">
+                <Route path="/landlord/notifications">
+                  <StandardPage>
+                    <Notifications siteMap={"Notifications"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/profile">
+                  <StandardPage>
+                    <Profile siteMap={"Profile"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/payables">
+                  <StandardPage>
+                    <Payables siteMap={"Payables"} />
+                  </StandardPage>
+                </Route>
+                {/* <Route path="/landlord/financials">
               <StandardPage>
                 <Financials siteMap={"Financials"} />
               </StandardPage>
             </Route> */}
 
-            <Route path="/landlord/unitInventory">
-              <StandardPage>
-                <UnitInventories siteMap={"Inventory List"} />
-              </StandardPage>
-            </Route>
+                <Route path="/landlord/unitInventory">
+                  <StandardPage>
+                    <UnitInventories siteMap={"Inventory List"} />
+                  </StandardPage>
+                </Route>
 
-            <Route path="/landlord/inventoryOf/:area">
-              <StandardPage>
-                <InventoryOfArea siteMap={"Inventory Details"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/UnitMeters/:meterName">
-              <StandardPage>
-                <UnitMeters siteMap={"Unit meters"} />
-              </StandardPage>
-            </Route>
-            <Route path="/quicklinks/:cellId">
-              <StandardPage>
-                <QuickLinks siteMap={"Go Back"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/calendars">
-              <StandardPage>
-                <Calendars siteMap={"Calendars"} />
-              </StandardPage>
-            </Route>
-            <Route exact path="/landlord/bills">
-              <StandardPage>
-                <Bills siteMap={"Bills"} />
-              </StandardPage>
-            </Route>
-            <Route exact path="/landlord/utilities">
-              <StandardPage>
-                <Utilities siteMap={"Utilities"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/bills/:billType">
-              <StandardPage>
-                <BillOf siteMap={"Bills Details"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/utilities/:utilityType">
-              <StandardPage>
-                <UtilityOf siteMap={"Utilities"} />
-              </StandardPage>
-            </Route>
-            <Route exact path="/landlord/propertyInfo">
-              <StandardPage>
-                <PropertyInfo siteMap={"Property Info"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/propertyInfo/:propertyinfoType">
-              <StandardPage>
-                <PropertyInfoOf siteMap={"Property Info"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/UnitInfo">
-              <StandardPage>
-                <PropertyInfo siteMap={"Property Info"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/UnitViewings">
-              <StandardPage>
-                <UnitViewings siteMap={"Unit"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/viewingdetails/:appointmentId">
-              <StandardPage>
-                <ViewingDetails siteMap={""} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/offers">
-              <StandardPage>
-                <Offers siteMap={"Offers"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/maintenance">
-              <StandardPage>
-                <Maintenance siteMap={"Maintenance"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/offerdetails/:offerId">
-              <StandardPage>
-                <OfferDetails siteMap={""} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/maintenancedetails/:mindex">
-              <StandardPage>
-                <MaintenanceDetails siteMap={""} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/maintenancechatpayment">
-              <StandardPage>
-                <MaintenanceChatPayment siteMap={"Maintenance Chat"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/MaintenanceChatRequest">
-              <StandardPage>
-                <MaintenanceChatRequest siteMap={"Maintenance Chat"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/maintenancechatinteraction">
-              <StandardPage>
-                <MaintenanceChatInteraction siteMap={"Maintenance Chat"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/tenanttenancy">
-              <StandardPage>
-                <TenantTenancy siteMap={"Tenant Tenancy"} />
-              </StandardPage>
-            </Route>
-            {/*  <Route path="/landlord/tenancydocs">
+                <Route path="/landlord/inventoryOf/:area">
+                  <StandardPage>
+                    <InventoryOfArea siteMap={"Inventory Details"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/UnitMeters/:meterName">
+                  <StandardPage>
+                    <UnitMeters siteMap={"Unit meters"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/quicklinks/:cellId">
+                  <StandardPage>
+                    <QuickLinks siteMap={"Go Back"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/calendars">
+                  <StandardPage>
+                    <Calendars siteMap={"Calendars"} />
+                  </StandardPage>
+                </Route>
+                <Route exact path="/landlord/bills">
+                  <StandardPage>
+                    <Bills siteMap={"Bills"} />
+                  </StandardPage>
+                </Route>
+                <Route exact path="/landlord/utilities">
+                  <StandardPage>
+                    <Utilities siteMap={"Utilities"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/bills/:billType">
+                  <StandardPage>
+                    <BillOf siteMap={"Bills Details"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/utilities/:utilityType">
+                  <StandardPage>
+                    <UtilityOf siteMap={"Utilities"} />
+                  </StandardPage>
+                </Route>
+                <Route exact path="/landlord/propertyInfo">
+                  <StandardPage>
+                    <PropertyInfo siteMap={"Property Info"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/propertyInfo/:propertyinfoType">
+                  <StandardPage>
+                    <PropertyInfoOf siteMap={"Property Info"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/UnitInfo">
+                  <StandardPage>
+                    <PropertyInfo siteMap={"Property Info"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/UnitViewings">
+                  <StandardPage>
+                    <UnitViewings siteMap={"Unit"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/viewingdetails/:appointmentId">
+                  <StandardPage>
+                    <ViewingDetails siteMap={""} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/offers">
+                  <StandardPage>
+                    <Offers siteMap={"Offers"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/maintenance">
+                  <StandardPage>
+                    <Maintenance siteMap={"Maintenance"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/offerdetails/:offerId">
+                  <StandardPage>
+                    <OfferDetails siteMap={""} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/maintenancedetails/:mindex">
+                  <StandardPage>
+                    <MaintenanceDetails siteMap={""} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/maintenancechatpayment">
+                  <StandardPage>
+                    <MaintenanceChatPayment siteMap={"Maintenance Chat"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/MaintenanceChatRequest">
+                  <StandardPage>
+                    <MaintenanceChatRequest siteMap={"Maintenance Chat"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/maintenancechatinteraction">
+                  <StandardPage>
+                    <MaintenanceChatInteraction siteMap={"Maintenance Chat"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/tenanttenancy">
+                  <StandardPage>
+                    <TenantTenancy siteMap={"Tenant Tenancy"} />
+                  </StandardPage>
+                </Route>
+                {/*  <Route path="/landlord/tenancydocs">
               <StandardPage>
                 <TenancyDocs siteMap={"Tenancy Documents"} />
               </StandardPage>
             </Route> */}
-            <Route path="/landlord/todolist">
-              <StandardPage>
-                <TodoList siteMap={"To-do List"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/tenantpayables">
-              <StandardPage>
-                <TenantPayables siteMap={"Tenent Payables"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/PropertyCondition">
-              <StandardPage>
-                <PropertyCondition siteMap={"Property Condition"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/conditionDetails/:location">
-              <StandardPage>
-                <ConditionDetails siteMap={""} />
-              </StandardPage>
-            </Route>
+                <Route path="/landlord/todolist">
+                  <StandardPage>
+                    <TodoList siteMap={"To-do List"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/tenantpayables">
+                  <StandardPage>
+                    <TenantPayables siteMap={"Tenent Payables"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/PropertyCondition">
+                  <StandardPage>
+                    <PropertyCondition siteMap={"Property Condition"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/conditionDetails/:location">
+                  <StandardPage>
+                    <ConditionDetails siteMap={""} />
+                  </StandardPage>
+                </Route>
 
-            <Route path="/landlord/UnitCheckInOut">
-              <StandardPage>
-                <UnitCheckInOut siteMap={"Check In & Check Out"} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/unitKitsCats/:inventoryOf">
-              <StandardPage>
-                <UnitKitsCats siteMap={""} />
-              </StandardPage>
-            </Route>
-            <Route path="/landlord/unitKits/Details/:inventoryOf/:kitOf">
-              <StandardPage>
-                <KitDetailsCard siteMap={"Unit Kits"} />
-              </StandardPage>
-            </Route>
+                <Route path="/landlord/UnitCheckInOut">
+                  <StandardPage>
+                    <UnitCheckInOut siteMap={"Check In & Check Out"} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/unitKitsCats/:inventoryOf">
+                  <StandardPage>
+                    <UnitKitsCats siteMap={""} />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/unitKits/Details/:inventoryOf/:kitOf">
+                  <StandardPage>
+                    <KitDetailsCard siteMap={"Unit Kits"} />
+                  </StandardPage>
+                </Route>
 
-            <Route path="/landlord/checkinleaflet">
-              <StandardPage>
-                <CheckInLeaflet siteMap={"Check In Leaflet"} />
-              </StandardPage>
-            </Route>
-   
-            <Route path="/*">
-              <StandardPage>
-                <NotFoundPage siteMap={"Go Back"} />
-              </StandardPage>
-            </Route> 
-          </Switch>
-        </ProtectedRoute>
+                <Route path="/landlord/checkinleaflet">
+                  <StandardPage>
+                    <CheckInLeaflet siteMap={"Check In Leaflet"} />
+                  </StandardPage>
+                </Route>
+
+                <Route exact path="/landlord/*">
+                  <StandardPage>
+                    <NotFoundPage siteMap={"Go Back"} />
+                  </StandardPage>
+                </Route>
+              </Switch>
+            </ProtectedRoute>
+          </Route>
+          <Route path="/*">
+            <NotFoundPublicPage />
+          </Route>
+        </Switch>
       </Router>
     </AppProvider>
   );

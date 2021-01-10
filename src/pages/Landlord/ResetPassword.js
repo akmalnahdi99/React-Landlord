@@ -1,31 +1,31 @@
 import React from "react";
-import { Link, Redirect, useLocation, useParams } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";
 import { parseUrl } from "query-string";
 export default function ResetPassword(props) {
-    console.log("---------------------");
   var location = useLocation().search;
   var query = parseUrl(location).query;
- 
+
   const [errorMsg, setErrorMsg] = React.useState(null);
   const [isDone, set_isDone] = React.useState(false);
- 
+  const [infoMsg, set_infoMsg] = React.useState(null);
+
   const [isLoading, setIsLoading] = React.useState(false);
   const [form, set_form] = React.useState({ newPassword: "", newPasswordConfirmation: "", userId: "", token: "" });
-  const { 
+  const {
+ 
     settings: { isLogged },
   } = React.useContext(AppContext);
- 
-    console.log("---------------------2");
+
   React.useEffect(() => {});
 
-//   if (!query.userId || !query.token) {
+  if (!query.userId || !query.token) {
+    console.log("requied data is wrong so, redirect to login");
+    return <Redirect to="/login"></Redirect>;
+  }
  
-//     console.log("requied data is wrong so, redirect to login");
-//     return <Redirect to="/login"></Redirect>;
-//   }
-    console.log("---------------------3");
+
   const handleChange = (e) => {
     var name = e.target.name;
     var value = e.target.value;
@@ -35,7 +35,7 @@ export default function ResetPassword(props) {
     console.log("formData", formData);
     set_form(formData);
   };
-  console.log("---------------------4");
+
   const handleSubmit = async (e) => {
     console.log("in handle sumbit");
     e.preventDefault();
@@ -48,6 +48,7 @@ export default function ResetPassword(props) {
       var result = await apiCall("/users/resetPassword", "POST", form);
 
       if (result.status === true) {
+        set_infoMsg("Your password is updated please log in with the new one");
         set_isDone(true);
       } else {
         setErrorMsg(result.data);
@@ -57,39 +58,52 @@ export default function ResetPassword(props) {
       setErrorMsg("please key in both passwords");
     }
   };
-  console.log("---------------------5");
-//   if (isLogged === true) {
-//         debugger;
-//     console.log("user is logged so goto login");
-//     updateAppContext({ accessToken: null, isLogged: false });
-//     return <Redirect to="/login"></Redirect>;
-//   }
+
+  if (isLogged === true) {
+    console.log("user is logged so goto login");
+    // updateAppContext({ accessToken: null, isLogged: false });
+    return <Redirect to="/login"></Redirect>;
+  }
 
   return (
     <div className="loginbg doorcasedark-bg">
-      <div className="middle-box text-center loginscreen animated fadeInDown">
+      <div className="middle-box text-center loginscreen  animated fadeInDown">
         <div>
           <img alt="dr-logo" src="/imgs/doorcase-logo.png" className="img-fluid" />
         </div>
-        <div className="text-white">
-          <h3>Password Reset</h3>
-          <p className="font-light">Please Enter you new password twice</p>
-        </div>
-        <form className="m-t" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input type="password" className="form-control" placeholder="New Password" required="" name="newPassword" autoComplete="" value={form.newPassword} onChange={(e) => handleChange(e)} />
-          </div>
-          <div className="form-group">
-            <input type="password" className="form-control" placeholder="Password Confirmation" required="" name="newPasswordConfirmation" autoComplete="" value={form.newPasswordConfirmation} onChange={(e) => handleChange(e)} />
-          </div>
-          <button type="submit" className="btn btn-primary block full-width m-b" disabled={isLoading}>
-            Update Password
-          </button>
-          {errorMsg !== null ? <p style={{ color: "red" }}>{errorMsg}</p> : ""}
-          <Link to="/login" className="btn btn-sm btn-link btn-block">
-            <small> Login </small>
-          </Link>
-        </form>
+        {isDone === true ? (
+          <React.Fragment>
+            <p className="my-4" style={{ color: "white" }}>
+              {infoMsg}
+            </p>
+
+            <Link to="login" className="btn btn-primary block full-width m-b">
+              Login
+            </Link>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <div className="text-white">
+              <h3>Password Reset</h3>
+              <p className="font-light">Please Enter you new password twice</p>
+            </div>
+            <form className="m-t" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input type="password" className="form-control" placeholder="New Password" required="" name="newPassword" autoComplete="" value={form.newPassword} onChange={(e) => handleChange(e)} />
+              </div>
+              <div className="form-group">
+                <input type="password" className="form-control" placeholder="Password Confirmation" required="" name="newPasswordConfirmation" autoComplete="" value={form.newPasswordConfirmation} onChange={(e) => handleChange(e)} />
+              </div>
+              <button type="submit" className="btn btn-primary block full-width m-b" disabled={isLoading}>
+                Update Password
+              </button>
+              {errorMsg !== null ? <p style={{ color: "red" }}>{errorMsg}</p> : ""}
+            </form>
+            <Link to="/login" className="btn btn-sm btn-link btn-block">
+              <small>Login</small>
+            </Link>
+          </React.Fragment>
+        )}
       </div>
     </div>
   );
