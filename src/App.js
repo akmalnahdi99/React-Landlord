@@ -69,7 +69,6 @@ export default function App() {
   return (
     <AppProvider>
       <Router>
-      
         <Switch>
           <Route exact path="/">
             <Redirect to="/login" />
@@ -191,7 +190,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/UnitInfo">
                   <StandardPage>
-                    <PropertyInfo siteMap={"Property Info"} />
+                    <PropertyInfo siteMap={"Unit Info"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/UnitViewings">
@@ -201,7 +200,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/viewingdetails/:appointmentId">
                   <StandardPage>
-                    <ViewingDetails siteMap={""} />
+                    <ViewingDetails siteMap={"Viewing Details"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/offers">
@@ -216,12 +215,12 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/offerdetails/:offerId">
                   <StandardPage>
-                    <OfferDetails siteMap={""} />
+                    <OfferDetails siteMap={"offer Details"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/maintenancedetails/:mindex">
                   <StandardPage>
-                    <MaintenanceDetails siteMap={""} />
+                    <MaintenanceDetails siteMap={"Maintenance Details"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/maintenancechatpayment">
@@ -256,7 +255,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/tenantpayables">
                   <StandardPage>
-                    <TenantPayables siteMap={"Tenent Payables"} />
+                    <TenantPayables siteMap={"Tenant Payables"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/PropertyCondition">
@@ -266,7 +265,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/conditionDetails/:location">
                   <StandardPage>
-                    <ConditionDetails siteMap={""} />
+                    <ConditionDetails siteMap={"Condition Details"} />
                   </StandardPage>
                 </Route>
 
@@ -277,7 +276,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/unitKitsCats/:inventoryOf">
                   <StandardPage>
-                    <UnitKitsCats siteMap={""} />
+                    <UnitKitsCats siteMap={"Unit Kits Cats"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/unitKits/Details/:inventoryOf/:kitOf">

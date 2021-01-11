@@ -9416,6 +9416,16 @@ table.issue-tracker tbody tr td {
   display: block;
 }
 
+.btn-upload {
+  position: absolute;
+    top: 214px;
+    right: 105px;
+    color: #fff;
+    border-radius: 50px;
+    background-color: #17a3b6;
+    width: 40px;
+}
+
 /* TEAMS */
 
 .team-members {
