@@ -11,7 +11,7 @@ export default function InteractionChatItem({ datetime, name, text, type }) {
   return (
     <div className="row">
       <div className="col-12">
-        <div className="chat-discussion minhigh">
+        <div className="chat-discussion minhigh py-0">
           <div className={"chat-message " + userClassName}>
             <img className="message-avatar" src="/imgs/a4.jpg" alt="" />
             <div className="message">
