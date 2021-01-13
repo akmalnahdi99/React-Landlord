@@ -4,8 +4,9 @@ import { AppContext } from "../context/settings";
 import { filterInventory } from "../utils/landlordHelper";
 import InventoryAreaFilter from "../components/InventoryAreaFilter";
 import Loading from "../components/static/Loading";
+import Empty from "../components/Empty";
 
-export default function InventoryOfArea() {
+export default function InventoryOfRoom() {
   var t = useParams();
   var area = t.area || null;
   const [inventoryOf, set_inventoryOf] = React.useState("CheckIn");
@@ -17,7 +18,6 @@ export default function InventoryOfArea() {
   var storedInventoryItems = appContext.settings.inventoryData || null;
 
   React.useEffect(() => {
-    console.log("redraw");
     set_isLoading(true);
 
     var it = filterInventory(area, inventoryOf, storedInventoryItems);
@@ -38,9 +38,8 @@ export default function InventoryOfArea() {
 
     set_items(it);
     set_inventoryOf(newInventoryOf);
-    console.log("update filter with ", it.length);
   }
-
+console.log(items);
   return isLoading === true ? (
     <Loading />
   ) : (
@@ -54,18 +53,20 @@ export default function InventoryOfArea() {
       <div className="row justify-content-center">
         <div className="col-lg-10 col-xs-12 mb-3">
           <div className="row">
-            {items &&
+            {items && items.length > 0 ? (
+          
+           
               items.map((item, index) => {
                 return (
                   <div key={index} className="col-lg-6 col-xs-12 px-0 mb-3">
                     <div className="container container-xs">
-                      <div key={index} className="ibox-content minhigh mb-2">
+                      <div className="ibox-content minhigh mb-2">
                         <div className="row mb-4 pt-3">
                           <div className="col-md-12">
                             <div className="media">
                               <div className="media-body">
-                                <div className="col-6 float-right">         
-                                <h4 className="text-doorcase3">Quantity</h4>
+                                <div className="col-6 float-right">
+                                  <h4 className="text-doorcase3">Quantity</h4>
                                   <p className="m-0">
                                     {item.quantity}
                                     {item.markAddition === true ? <span className="m-0">+</span> : ""}
@@ -73,8 +74,8 @@ export default function InventoryOfArea() {
                                   </p>
                                 </div>
                                 <div className="col-6">
-                                <h4 className="text-doorcase3">Item Name</h4>
-                                <p className="m-0">{item.itemName}</p>
+                                  <h4 className="text-doorcase3">Item Name</h4>
+                                  <p className="m-0">{item.itemName}</p>
                                 </div>
                                 <hr />
                               </div>
@@ -106,7 +107,12 @@ export default function InventoryOfArea() {
                     </div>
                   </div>
                 );
-              })}
+              })
+            ) : (
+              <div className="container container-xs justify-content-center ">
+                <Empty title="No Items" />
+              </div>
+            )}
           </div>
         </div>
       </div>

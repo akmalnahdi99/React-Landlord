@@ -1,11 +1,11 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "./../../utils/landlordHelper";
 import { config } from "./../../constants";
 import Cookies from "js-cookie";
 
-function Login() {
+export default function Login() {
   console.log("[Login component]");
   const { updateAppContext, settings } = React.useContext(AppContext);
 
@@ -66,7 +66,7 @@ function Login() {
 
           var activeUnitId = null;
           var quickLinks = null;
-          var notificationsCount=0;
+          var notificationsCount = 0;
           if (response.data.units.length > 0) {
             activeUnitId = response.data.unitsIds[0];
             quickLinks = response.data.quickLinks;
@@ -100,22 +100,20 @@ function Login() {
         </div>
         <form className="m-t" onSubmit={handleSubmit}>
           <div className="form-group">
-            <input type="text" className="form-control" placeholder="Username" required="" name="userId" value={user.userId} onChange={(e) => handleChange(e)} />
+            <input type="text" className="form-control" placeholder="Username" required="" name="userId" autoComplete="username" value={user.userId} onChange={(e) => handleChange(e)} />
           </div>
           <div className="form-group">
-            <input type="password" className="form-control" placeholder="Password" required="" name="password" value={user.password} onChange={(e) => handleChange(e)} />
+            <input type="password" className="form-control" placeholder="Password" required="" name="password" autoComplete="current-password" value={user.password} onChange={(e) => handleChange(e)} />
           </div>
           <button type="submit" className="btn btn-primary block full-width m-b" disabled={isLoading}>
             Login
           </button>
           {errorMsg !== null ? <p style={{ color: "red" }}>{errorMsg}</p> : ""}
-          <a href="forgotpassword.html" className="btn btn-sm btn-link btn-block">
+          <Link to="/forgotPassword" className="btn btn-sm btn-link btn-block">
             <small>Forgot password?</small>
-          </a>
+          </Link>
         </form>
       </div>
     </div>
   );
 }
-
-export default Login;
