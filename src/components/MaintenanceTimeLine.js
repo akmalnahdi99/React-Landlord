@@ -33,20 +33,19 @@ export default function MaintenanceDetailsList() {
 
   return (
     <div className="ibox">
-      <div className="ibox-content minhigh paddingtop">
+      <div className="ibox-content minhigh p-0">
         <div className="inspinia-timeline p-4 px-0">
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date active pt-3">
+              <div className="col-1 date active p-0">
                 <i className="fas fa-circle"></i>
-                Oct.21
-                <br />
-                <small className="text-navy">16:23</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>Maintenance is resolved</p>
+                  <span style={{fontSize: "12px"}}>21/10/2020 | <span className="text-navy">04:23 PM</span></span>
+                <br />
+                    <p className="mt-2">Maintenance is resolved</p>
                   </div>
                 </div>
               </div>
@@ -54,17 +53,16 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.21
-                <br />
-                <small className="text-navy">15:41</small>
               </div>
 
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row" onClick={RedirectPayment} style={{ cursor: "pointer" }}>
                   <div className="col-12">
-                    <p>Tenant made the payment</p>
+                    <span style={{fontSize: "12px"}}>21/10/2020 | <span className="text-navy">03:41 PM</span></span>
+                    <br />
+                    <p className="mt-2">Tenant made the payment</p>
                     <div className="chat-discussion minhigh">
                       <div className="chat-message p-0">
                         <div className="row">
@@ -105,16 +103,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.21
-                <br />
-                <small className="text-navy">14:11</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>PIC and tenant interacted</p>
+                  <span style={{fontSize: "12px"}}>21/10/2020 | <span className="text-navy">02:11 PM</span></span>
+                <br />
+                    <p className="mt-2">PIC and tenant interacted</p>
                   </div>
                 </div>
               </div>
@@ -122,16 +119,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.20
-                <br />
-                <small className="text-navy">16:22</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>Maintenance team analysed situation and started work</p>
+                      <span style={{fontSize: "12px"}}>20/10/2020 | <span className="text-navy">04:22 PM</span></span>
+                    <br />
+                    <p className="mt-2">Maintenance team analysed situation and started work</p>
                   </div>
                 </div>
                 <div className="row">
@@ -155,16 +151,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.19
-                <br />
-                <small className="text-navy">19:21</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>Agent arranged a maintenance team</p>
+                  <span style={{fontSize: "12px"}}>19/10/2020 | <span className="text-navy">07:21 PM</span></span>
+                <br />
+                    <p className="mt-2">Agent arranged a maintenance team</p>
                   </div>
                 </div>
                 <div className="row">
@@ -188,16 +183,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.19
-                <br />
-                <small className="text-navy">13:59</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>PIC and agent interacted</p>
+                      <span style={{fontSize: "12px"}}>19/10/2020 | <span className="text-navy">01:59 PM</span></span>
+                    <br />
+                    <p className="pt-2">PIC and agent interacted</p>
                   </div>
                 </div>
               </div>
@@ -205,16 +199,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.18
-                <br />
-                <small className="text-navy">19:06</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>PIC and tenant interacted</p>
+                      <span style={{fontSize: "12px"}}>18/10/2020 | <span className="text-navy">07:06 PM</span></span>
+                    <br />
+                    <p className="mt-2">PIC and tenant interacted</p>
                   </div>
                 </div>
               </div>
@@ -222,16 +215,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.18
-                <br />
-                <small className="text-navy">15:14</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>Landlord and tenant interaction</p>
+                      <span style={{fontSize: "12px"}}>18/10/2020 | <span className="text-navy">03:14 PM</span></span>
+                    <br />
+                    <p className="mt-2">Landlord and tenant interaction</p>
                   </div>
                 </div>
               </div>
@@ -239,16 +231,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.17
-                <br />
-                <small className="text-navy">16:05</small>
               </div>
-              <div className="col-9 content pb-3 ">
+              <div className="col-11 content pb-3 ">
                 <div className="row" onClick={RedirectInteraction} style={{ cursor: "pointer" }}>
                   <div className="col-12">
-                    <p>PIC and tenant interacted</p>
+                      <span style={{fontSize: "12px"}}>17/10/2020 | <span className="text-navy">04:05 PM</span></span>
+                    <br />
+                    <p className="mt-2">PIC and tenant interacted</p>
                     <div className="chat-discussion minhigh">
                       <div className="chat-message p-0">
                         <div className="row">
@@ -289,16 +280,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.16
-                <br />
-                <small className="text-navy">17:46</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                    <p>PIC viewed this request</p>
+                      <span style={{fontSize: "12px"}}>16/10/2020 | <span className="text-navy">05:46 PM</span></span>
+                    <br />
+                    <p className="mt-2">PIC viewed this request</p>
                   </div>
                 </div>
                 <div className="row">
@@ -322,16 +312,15 @@ export default function MaintenanceDetailsList() {
           </div>
           <div className="timeline-item">
             <div className="row">
-              <div className="col-3 date pt-3">
+              <div className="col-1 date p-0">
                 <i className="fas fa-circle"></i>
-                Oct.16
-                <br />
-                <small className="text-navy">11:39</small>
               </div>
-              <div className="col-9 content pb-3">
+              <div className="col-11 content pb-3">
                 <div className="row" onClick={RedirectRequest} style={{ cursor: "pointer" }}>
                   <div className="col-12">
-                    <p>Tenant request for a maintenance</p>
+                      <span style={{fontSize: "12px"}}>16/10/2020 | <span className="text-navy">11:39 AM</span></span>
+                    <br />
+                    <p className="mt-2">Tenant request for a maintenance</p>
                     <div className="chat-discussion minhigh">
                       <div className="chat-message p-0">
                         <div className="row">
