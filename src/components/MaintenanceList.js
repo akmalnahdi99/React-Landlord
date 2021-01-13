@@ -8,7 +8,7 @@ const MaintenanceList = () => {
     {
       id: 0,
       date: "Oct 23",
-      name: "Tenant Name",
+      category: "Plumbing",
       status: "resolved",
       applydate: "XX-XX-XXXX",
       media: "image",
@@ -30,7 +30,7 @@ const MaintenanceList = () => {
     {
       id: 1,
       date: "Oct 23",
-      name: "Tenant name",
+      category: "Appliance",
       status: "new",
       applydate: "XX-XX-XXXX",
       media: "image",
@@ -52,7 +52,7 @@ const MaintenanceList = () => {
     {
       id: 2,
       date: "Oct 23",
-      name: "Tenant name",
+      category: "Household",
       status: "new",
       applydate: "XX-XX-XXXX",
       media: "video",
@@ -74,7 +74,7 @@ const MaintenanceList = () => {
     {
       id: 3,
       date: "Oct 19",
-      name: "Tenant Name",
+      category: "Plumbing",
       status: "inprogress",
       applydate: "XX-XX-XXXX",
       media: "image",
@@ -96,7 +96,7 @@ const MaintenanceList = () => {
     {
       id: 4,
       date: "Oct 23",
-      name: "Tenant Name",
+      category: "Electrical",
       status: "in progress",
       applydate: "XX-XX-XXXX",
       media: "video",

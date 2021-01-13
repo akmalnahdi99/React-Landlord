@@ -108,7 +108,7 @@ export default function App() {
             </Route> */}
                 {/* <Route path="/pages/propertyselection">
               <StandardPage>
-                <PropertySelect siteMap={""} />
+                <PropertySelect siteMap={"Property Selection"} />
               </StandardPage>
             </Route> */}
                 <Route path="/landlord/notifications">

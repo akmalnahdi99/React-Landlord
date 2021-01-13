@@ -59,8 +59,9 @@ export default function PropertyInfoOf() {
 
   return (
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-      <div className="container container-xs pb-5">
+      <div className="container-fluid">
         <div className="row justify-content-center">
+        <div className="col-lg-8 mb-3 px-0">
           {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
           {propertyinfoType === "Utilities" ? <Utilities /> : ""}
           {propertyinfoType === "Insurance" ? <BuildingInsuranceDetails title="Insurance" /> : ""}
@@ -70,6 +71,7 @@ export default function PropertyInfoOf() {
           {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
           {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
           {propertyinfoType === "HomeAppliance" ? <HomeAppliance /> : ""}
+          </div>
         </div>
       </div>
     </div>

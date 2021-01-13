@@ -33,6 +33,14 @@ export default function MaintenanceDetailsList() {
             <p className="font-body">
               <strong>XX-XX-XXXX</strong>
             </p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <span className="font-body">Message</span>
+            <p className="font-body">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+            </p>
             <hr />
           </div>
         </div>
