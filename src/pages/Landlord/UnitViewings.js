@@ -46,9 +46,9 @@ export default function UnitViewings() {
 
   return (
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
-      <div className="container pb-5">
+      <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-lg-9 mb-3 px-2 ">
+          <div className="col-lg-8 mb-3 px-0">
             <div className="row">
               <div className="col-sm-12">
                 <DividedHeader data={headerData} />

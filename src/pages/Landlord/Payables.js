@@ -10,8 +10,8 @@ export default function LandLordPay() {
    
       <div className="wrapper wrapper-content animated fadeInRight">
         <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-md-8 p-0">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 mb-3 px-0">
               <Payables />
             </div>
           </div>

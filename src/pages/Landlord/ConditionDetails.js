@@ -39,9 +39,9 @@ export default function EntranceCondition() {
           <InventoryFilter updateFilter={updateFilter} selectedFilter={inventoryOf} />
         </div>
       </div>
-      <div className="container container-xs pb-5">
+      <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-lg-9 mb-3">
+          <div className="col-lg-8 mb-3 px-0">
             {items && items.length > 0 ? (
               items.map((item, index) => {
                 return <ConditionReportItemCard key={index} data={item} />;
