@@ -19,6 +19,16 @@ export default function UnitViewingChartDonut({ viewingStats }) {
     ];
   }
 
+  // we count how many zero we have
+  var a = [...Object.keys(viewingStats)].map((x) => viewingStats[x]).filter((x) => x === 0).length;
+  var paddAng = 1;
+  // we add padding only if 
+  // we have 2 or 3 zero values 
+  // or when we have 1 value only or 0 no value
+  if (a === 2 || a === 3) {
+    paddAng = 0;
+  }
+
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
       <ChartDonut
@@ -33,10 +43,11 @@ export default function UnitViewingChartDonut({ viewingStats }) {
           right: 0,
           top: 0,
         }}
+        padAngle={paddAng}
         title={total.toString()}
         titleComponent={<ChartLabel y={110} style={[{ fontWeight: "600", fontSize: 36 }]} />}
         subTitleComponent={<ChartLabel y={140} style={[{ fontSize: "15px", fontWeight: "400", fill: "#666" }]} />}
-        innerRadius={"80"}
+        innerRadius={80}
         subTitle="total"
         style={{
           data: {

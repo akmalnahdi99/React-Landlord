@@ -19,7 +19,7 @@ export default function StandardPage({ children: Page, ...rest }) {
 
   React.useEffect(() => {
     if (appContext.settings.leftMenuExpanded) {
-      set_expanded("ml300");
+      set_expanded("");
     } else {
       set_expanded("");
     }
@@ -41,7 +41,7 @@ export default function StandardPage({ children: Page, ...rest }) {
         <div className="wrapper border-bottom page-heading p-0 m-0">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-12">
+              <div className="col-lg-12 pl-0">
                 <SiteMap title={siteMap} />
                 {/* {t.pathname.replaceAll("/", " . ")} */}
               </div>

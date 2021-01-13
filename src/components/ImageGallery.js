@@ -10,7 +10,7 @@ import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 const PhotoItem = ({ image, thumb, group }) => (
   <div style={{ padding: "5px" }}>
     <LightgalleryItem group={group} src={image} thumb={thumb}>
-      <Link>
+      <Link to="">
         <img src={image} style={{ width: "100%" }} alt="" />
       </Link>
     </LightgalleryItem>

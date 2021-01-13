@@ -12,7 +12,7 @@ export default function EntranceCondition() {
   var location = t.location;
   var appContext = React.useContext(AppContext);
   var conditionReports = appContext.settings.conditionReports || null;
-  const activeUnitId = appContext.settings.activeUnitId;
+  //const activeUnitId = appContext.settings.activeUnitId;
   const [inventoryOf, set_inventoryOf] = React.useState("CheckIn");
   const [items, set_items] = React.useState([]); // condition report items
 

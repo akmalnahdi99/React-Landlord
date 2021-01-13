@@ -28,7 +28,7 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url) => {
+export const apiCall = async (url, method, data) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
@@ -40,11 +40,18 @@ export const apiCall = async (url) => {
   if (jwtToken) {
     headers.Authorization = `Bearer ${jwtToken}`;
   }
+  if (!method) method = "Get";
+  if (!data) data = null;
 
   const requestOptions = {
-    method: "GET",
+    method: method,
     headers: headers,
   };
+
+  if (data) {
+    requestOptions["body"] = JSON.stringify(data);
+  }
+  console.log(requestOptions);
 
   var apiResult = null;
   var result = { status: null, data: null };
@@ -54,6 +61,7 @@ export const apiCall = async (url) => {
         apiResult = await resp.json();
         result.status = true;
       } else {
+          apiResult = await resp.json();
         result.status = false;
         throw new Error(resp.statusText);
       }
@@ -106,14 +114,44 @@ export function calculate_3_financials_per_month(financialData, financialMonth) 
   return { totalIncome, totalExpenses, netProfit };
 }
 
-// Get Unit Areas Main Rooms
-export function getUnitMainAreas(inventoryData) {
-  return inventoryData.map((x) => x.roomName).filter((v, i, a) => a.indexOf(v) === i);
+// Get Unit containers/rooms in a category (rooms:Kitchen, Bedroom, containers: Keys, remoteControls, stickers ...)
+export function getUnitRoomsPerCategory(category, inventoryData) {
+  if (!inventoryData || !category) return [];
+
+  var rooms = {};
+  for (const key in inventoryData) {
+    console.log(key);
+    var list = inventoryData[key];
+    list
+      .filter((x) => x.category === category)
+      .forEach((x) => {
+        console.log("category:", category, "roomId:", x.roomId);
+        rooms[x.roomId] = x.roomName;
+      });
+  }
+  return rooms;
 }
+
+// Get Unit Main Categories (Areas, Rooms, Miscellaneous)
+export function getUnitMainCategories(inventoryData) {
+  if (!inventoryData) inventoryData = {};
+  var categories = [];
+
+  // loop through all keys (checkin, checkout, additions, omitions)
+  for (const key in inventoryData) {
+    var list = inventoryData[key];
+    var a = list.map((x) => x.category);
+    categories.push(a);
+  }
+  // get unique set
+  return a.filter((v, i, a) => a.indexOf(v) === i);
+}
+
 // filter inventory by type and location (room)
 export function filterInventory(location, inventoryOf, inventoryData) {
   if (!location || !inventoryOf || !inventoryData) return null;
-  return inventoryData[inventoryOf].filter((x) => x.roomName === location);
+  console.log("searching for inventory", location, inventoryOf);
+  return inventoryData[inventoryOf].filter((x) => x.roomId === location);
 }
 
 // get main categories of unit kits
@@ -149,7 +187,7 @@ export function getMainAreasFromConditionReports(conditionReports) {
 
 export function getConditionReportsOflocation(conditionReports, inventoryOf, location) {
   if (!conditionReports || !inventoryOf || !location) return null;
- 
+
   var items = conditionReports[inventoryOf] || null;
   if (!items) return null;
 
@@ -167,7 +205,7 @@ export const allQuickLinks = {
   bill_QuitRent: { id: "bill_QuitRent", type: "bill", label: "Quit Rent", img: "/imgs/quitrent.svg", link: "/landlord/bills/QuitRent" },
   bill_ServiceCharge: { id: "bill_ServiceCharge", type: "bill", label: "Service Charge", img: "/imgs/money-bag.svg", link: "/landlord/bills/ServiceCharge" },
   bill_Sewage: { id: "bill_Sewage", type: "bill", label: "Sewage", img: "/imgs/sewage.svg", link: "/landlord/bills/Sewage" },
-  bill_SubscriptionFees: { id: "bill_SubscriptionFees", type: "bill", label: "Subscription Fees", img: "/imgs/subscription.svg", link: "/landlord/bills/SubscriptionFees" },
+  bill_SubscriptionFees: { id: "bill_SubscriptionFees", type: "bill", label: "Subscription Fees", img: "/imgs/subscription.svg", link: "/landlord/bills/Subscription" },
   bill_Water: { id: "bill_Water", type: "bill", label: "Water", img: "/imgs/water-drop.svg", link: "/landlord/bills/Water" },
 
   unit_AssessmentRate: { id: "unit_AssessmentRate", type: "unit", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/propertyinfo/AssessmentRate" },
@@ -177,7 +215,7 @@ export const allQuickLinks = {
   unit_RateAndTaxes: { id: "unit_RateAndTaxes", type: "unit", label: "Rate & Taxes", img: "/imgs/pie-chart.svg", link: "" },
   unit_Tenancy: { id: "unit_Tenancy", type: "unit", label: "Tenancy", img: "/imgs/family.svg", link: "/landlord/propertyinfo/Tenancy" },
   unit_Unit: { id: "unit_Unit", type: "unit", label: "Unit", img: "/imgs/tenant.svg", link: "/landlord/propertyinfo/Unit" },
-  unit_UserManual: { id: "unit_UserManual", type: "unit", label: "User Manual", img: "/imgs/guide.svg", link: "" },
+  unit_HomeAppliance: { id: "unit_HomeAppliance", type: "unit", label: "Home Appliances", img: "/imgs/guide.svg", link: "/landlord/propertyinfo/HomeAppliance" },
   unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/propertyinfo/Utilities" },
 };
 
@@ -201,8 +239,35 @@ export const CompanyServicesIcons = {
   RateAndTaxes: { img: "/imgs/pie-chart.svg" },
   Tenancy: { img: "/imgs/family.svg" },
   Unit: { img: "/imgs/tenant.svg" },
-  UserManual: { img: "/imgs/guide.svg" },
+  HomeAppliance: { img: "/imgs/guide.svg" },
   Utilities: { img: "/imgs/utilities.svg" },
+};
+
+// get icons based on unit related icons
+export function getIcon_UnitRelatedOrDefault(iconKey) {
+  for (const key in UnitRelatedIcons) {
+    if (iconKey.toLowerCase() === key.toLowerCase()) {
+      return UnitRelatedIcons[key].img;
+    }
+  }
+  return "";
+}
+export const UnitRelatedIcons = {
+  Entrance: { img: "/imgs/en1.svg" },
+  Kitchen: { img: "/imgs/k2.svg" },
+  Living: { img: "/imgs/l1.svg" },
+  Dining: { img: "/imgs/dining.svg" },
+  Yard: { img: "/imgs/yard.svg" },
+  Balcony: { img: "/imgs/balcony.svg" },
+  Bedroom: { img: "/imgs/bed1.svg" },
+  Utility: { img: "/imgs/u1.svg" },
+  Bath: { img: "/imgs/bath.svg" },
+  Keys: { img: "/imgs/key.svg" },
+  AccessCard: { img: "/imgs/access.svg" },
+  AccessCards: { img: "/imgs/access.svg" },
+  RemoteControl: { img: "/imgs/remote-control.svg" },
+  RemoteControls: { img: "/imgs/remote-control.svg" },
+  VehicleStickers: { img: "/imgs/car.svg" },
 };
 
 export const UnitKitsIcons = {

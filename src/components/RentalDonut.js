@@ -3,7 +3,7 @@ import React from "react";
 import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
 import { AppContext } from "../context/settings";
 
-const RentalDonut = () => {
+export default function RentalDonut  ()  {
   //TASK pls put colors in variables here example : var red = #329f9d
   const appContext = React.useContext(AppContext);
 
@@ -15,7 +15,8 @@ const RentalDonut = () => {
   } else {
     t = Array(12);
   }
-  console.log("payments ", t);
+ 
+var paid = t.filter(x=>x==="paid").length;
 
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
@@ -44,11 +45,12 @@ const RentalDonut = () => {
           right: 0,
           top: 0,
         }}
-        title="9/"
+      
+        title={paid + "/"}
         titleComponent={<ChartLabel y={115} x={100} style={[{ fontWeight: "600", fontSize: 40 }]} />}
         subTitle="12"
         subTitleComponent={<ChartLabel y={130} x={130} style={[{ fontWeight: "400", fontSize: 30 }]} />}
-        innerRadius={"80"}
+        innerRadius={80}
         style={{
           data: {
             fill: (d) => {
@@ -62,5 +64,3 @@ const RentalDonut = () => {
     </div>
   );
 };
-
-export default RentalDonut;

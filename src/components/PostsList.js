@@ -7,12 +7,10 @@ import Loading from "./static/Loading";
 //import postIcon from "img/money-bag.svg";
 
 const PostsList = (props, filterBy) => {
- 
-
   const appContext = React.useContext(AppContext);
   const activeFilter = appContext.settings.postsFilter;
   const activeUnitId = appContext.settings.activeUnitId;
-  
+
   const [isLoading, setIsLoading] = React.useState(true);
   const [posts, setPosts] = React.useState(null);
 
@@ -56,7 +54,7 @@ const PostsList = (props, filterBy) => {
   // ];
 
   var filteredPosts = posts;
-  if (filteredPosts && activeFilter !== "all") {
+  if (filteredPosts && activeFilter !== "All") {
     filteredPosts = posts.filter((item) => item.postType.toLowerCase() === activeFilter.toLowerCase());
   }
 

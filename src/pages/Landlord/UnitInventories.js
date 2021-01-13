@@ -2,15 +2,15 @@ import React from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AppContext } from "./../../context/settings";
-import { apiCall, getUnitMainAreas } from "../../utils/landlordHelper";
-import InventoryAreasCard from "./../../components/inventoryAreasCard";
+import { apiCall, getUnitMainCategories } from "../../utils/landlordHelper";
+import InventoryRoomsCard from "./../../components/InventoryRoomsCard";
 import Loading from "../../components/static/Loading";
 
 export default function UnitInventories() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [inventoryData, set_inventoryData] = React.useState(null);
   // const [metersData, set_metersData] = React.useState(null);
-  const [areaNames, set_areaNames] = React.useState(null);
+  const [unitRoomsCategories, set_unitRoomsCategories] = React.useState(null);
 
   var appContext = React.useContext(AppContext);
   const activeUnitId = appContext.settings.activeUnitId;
@@ -27,7 +27,7 @@ export default function UnitInventories() {
 
         if (response.status) {
           set_inventoryData(response.data);
-          set_areaNames(getUnitMainAreas(response.data["CheckIn"]));
+          set_unitRoomsCategories(getUnitMainCategories(response.data));
         }
 
         appContext.updateAppContext({ inventoryData: response.data, metersData: responseMeters.data });
@@ -38,7 +38,7 @@ export default function UnitInventories() {
     } else {
       console.log("Inventory items found");
       set_inventoryData(storedInventoryItems);
-      set_areaNames(getUnitMainAreas(storedInventoryItems["CheckIn"]));
+      set_unitRoomsCategories(getUnitMainCategories(storedInventoryItems));
       setIsLoading(false);
     }
 
@@ -81,14 +81,19 @@ export default function UnitInventories() {
         </div>
       </div>
       <div className="row pb-5">
-        <div className="col-lg-4 px-2">
-          <div className="ibox">
-            <div className="ibox-title">
-              <h3>Areas</h3>
+        {unitRoomsCategories.length>0 && unitRoomsCategories.map((item, index) => {
+          return (
+            <div key={index} className="col-lg-4 px-2">
+              <div className="ibox">
+                <div className="ibox-title">
+                  <h3>{item}</h3>
+                </div>
+                <InventoryRoomsCard category={item} inventoryData={inventoryData} />
+              </div>
             </div>
-            <InventoryAreasCard areas={areaNames} inventory={inventoryData} />
-          </div>
-        </div>
+          );
+        })}
+
         <div className="col-lg-4 px-2">
           <div className="ibox">
             <div className="ibox-title">

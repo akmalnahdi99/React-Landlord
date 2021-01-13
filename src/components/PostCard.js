@@ -1,8 +1,7 @@
 import React from "react";
 import Gallery from "./ImageGallery";
 
-const PostCard = ({ postIcon, postDate, title, body, images }) => {
- 
+export default function PostCard({ postIcon, postDate, title, body, images }) {
   return (
     <div className="vertical-timeline-block filterDiv rental" data-name="all, rental">
       <div className="vertical-timeline-icon white-bg">
@@ -10,7 +9,7 @@ const PostCard = ({ postIcon, postDate, title, body, images }) => {
       </div>
       <div className="vertical-timeline-content">
         <small className="datetime">
-          <i className="fas fa-bell"></i>
+          <i className="fas fa-bell" style={{ marginRight: "7px" }}></i>
           {postDate}
         </small>
         <hr className="my-2" />
@@ -25,6 +24,4 @@ const PostCard = ({ postIcon, postDate, title, body, images }) => {
       </div>
     </div>
   );
-};
-
-export default PostCard;
+}

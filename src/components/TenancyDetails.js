@@ -26,11 +26,12 @@ export default function TenancyDetails({ title }) {
     
   return (
     <div className="ibox">
+      <div className="ibox-content minhigh450px pt-0">
       <div className="ibox-title ">
         <h3>{title}</h3>
         <hr />
       </div>
-      <div className="ibox-content minhigh pt-0">
+      
         {isLoading === true ? (
           <Loading />
         ) : (
@@ -89,9 +90,9 @@ export default function TenancyDetails({ title }) {
                 </Link>
               </div>
               <div className="col-6 text-center">
-                <Link to="/landlord/TenancyDocs/" className="btn btn-primary btn-block btn-lg mt-4">
+                {/* <Link to="/landlord/TenancyDocs/" className="btn btn-primary btn-block btn-lg mt-4">
                   Tenant's Documents
-                </Link>
+                </Link> */}
               </div>
             </div>
           </React.Fragment>

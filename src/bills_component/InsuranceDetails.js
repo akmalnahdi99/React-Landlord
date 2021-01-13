@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
 
-const InsuranceDetails = ({ title,details }) => {
+export default function InsuranceDetails  ({ title,details })  {
   
 
   const [isOpen, setIsOpen] = useState(false);
@@ -77,5 +77,4 @@ const InsuranceDetails = ({ title,details }) => {
     </div>
   );
 };
-
-export default InsuranceDetails;
+ 
