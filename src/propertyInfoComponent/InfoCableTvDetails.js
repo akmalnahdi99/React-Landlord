@@ -26,5 +26,6 @@ export default function InfoCableTvDetails({ title, ...details }) {
         </div>
       </div>
     </div>
+    
   );
 }

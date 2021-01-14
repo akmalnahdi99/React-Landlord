@@ -29,7 +29,7 @@ export default function UnitAssessmentRateCard({ title }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}   </h3>
+        <h3> <img src="/imgs/assessment.svg" alt="..." className="utilityIconTitle" />{title}</h3>
       </div>
       <div className="ibox-content minhigh pt-0">
         {isLoading === true ? (

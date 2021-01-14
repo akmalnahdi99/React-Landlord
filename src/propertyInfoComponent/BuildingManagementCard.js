@@ -32,7 +32,7 @@ export default function InfoPropertyManagement ({title})  {
   return (
     <div className="ibox col-12">
       <div className="ibox-title ">
-        <h5>{title}</h5>
+        <h5><img src="/imgs/company.svg" alt="..." className="utilityIconTitle" />{title}</h5>
       </div>
       <div className="ibox-content">
         {isLoading === true ? (
@@ -40,30 +40,30 @@ export default function InfoPropertyManagement ({title})  {
         ) : (
           <div className="row text-left">
             <div className="col-6">
-              <h5 className="font-bold text-completedtask ">Company Name</h5>
+              <h5 className="font-bold text-doorcase3 ">Company Name</h5>
               <span className="mb-3 font-normal">{buildingManagement.companyName || "N/A"}</span>
               <hr />
-              <h5 className="font-bold text-completedtask ">Building address</h5>
+              <h5 className="font-bold text-doorcase3 ">Building address</h5>
               <span className="mb-3 font-normal">{buildingManagement.address}</span>
               <hr />
-              <h5 className="font-bold text-completedtask ">Contact number</h5>
+              <h5 className="font-bold text-doorcase3 ">Contact number</h5>
               <span className="mb-3 font-normal">{buildingManagement.contactNumber}</span>
               <hr />
-              <h5 className="font-bold text-completedtask ">Bank name</h5>
+              <h5 className="font-bold text-doorcase3 ">Bank name</h5>
               <span className="mb-3 font-normal">{buildingManagement.bankName}</span>
               <hr />
             </div>
             <div className="col-6">
-              <h5 className="font-bold text-completedtask ">Name payable</h5>
+              <h5 className="font-bold text-doorcase3 ">Name payable</h5>
               <span className="mb-3 font-normal">{buildingManagement.namePayable}</span>
               <hr />
-              <h5 className="font-bold text-completedtask ">Contact person</h5>
+              <h5 className="font-bold text-doorcase3 ">Contact person</h5>
               <span className="mb-3 font-normal">{buildingManagement.contactPerson}</span>
               <hr />
-              <h5 className="font-bold text-completedtask ">Email</h5>
+              <h5 className="font-bold text-doorcase3 ">Email</h5>
               <span className="mb-3 font-normal">{buildingManagement.email}</span>
               <hr />
-              <h5 className="font-bold text-completedtask ">Bank account number</h5>
+              <h5 className="font-bold text-doorcase3 ">Bank account number</h5>
               <span className="mb-3 font-normal">{buildingManagement.bankAccountNumber}</span>
               <hr />
             </div>

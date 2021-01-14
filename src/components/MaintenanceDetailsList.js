@@ -31,7 +31,7 @@ export default function MaintenanceDetailsList() {
           <div className="col-md-12">
             <span className="font-body">Applied date</span>
             <p className="font-body">
-              <strong>XX-XX-XXXX</strong>
+              21/10/2020
             </p>
           </div>
         </div>

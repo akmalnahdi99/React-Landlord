@@ -44,7 +44,7 @@ export default function UnitDetailsCard() {
   return (
     <div className="ibox ss" style={{ border: "0px solid red" }}>
       <div className="ibox-title">
-        <h3>Details</h3>
+        <h3><img src="/imgs/tenant.svg" alt="..." className="utilityIconTitle" />Details</h3>
       </div>
       <div className="ibox-content">
         {isLoading === true ? (

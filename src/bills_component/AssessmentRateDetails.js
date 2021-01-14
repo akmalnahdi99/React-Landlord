@@ -10,7 +10,8 @@ export default function AssessmentRateDetails  ({ title,details })  {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}</h3>
+      
+        <h3><img src="/imgs/assessment.svg" alt="..." className="utilityIconTitle" />{title}</h3>
         <div className="ibox-tools">
           <p onClick={toggle}>
             <FaIcons.FaInfoCircle className="fa-2x " />
