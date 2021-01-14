@@ -96,7 +96,7 @@ const TenantDetails = ({ title }) => {
               details.map((item, index) => {
                 return (
                   <React.Fragment key={index}>
-                    <h5 className="font-bold text-completedtask ">{item.key}</h5>
+                    <h5 className="font-bold text-doorcase3 ">{item.key}</h5>
                     <span className="mb-3 font-normal">{item.value || "N/A"}</span>
                     <hr />
                   </React.Fragment>

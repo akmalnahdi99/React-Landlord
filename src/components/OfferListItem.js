@@ -34,10 +34,10 @@ export default function OfferListItem({ id, offerDate, tenantName, urlThumb, sta
   }
   return (
     <div className="row">
-      <div className="col-2 date active pt-3 pl-0 ">
+      <div className="col-1 date active p-0 ">
         <i className="fas fa-circle"></i>
       </div>
-      <div className="col-10 content pb-5 ">
+      <div className="col-11 content pb-5 ">
         <Link to={"/landlord/offerdetails/" + id} style={{color: "black"}}>
         <div className="row">
           <div className="col-10 mb-2 px-0">

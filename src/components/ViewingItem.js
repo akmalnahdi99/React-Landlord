@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 export default function ViewingItem({ appointmentDate, appointmentTime, tenantName, appointmentId }) {
   return (
     <div className="row">
-      <div className="col-2 date active pt-3 pl-0">
+      <div className="col-1 date active p-0">
         <i className="fas fa-circle text-darkblue"></i>
       </div>
-      <div className="col-10 content">
+      <div className="col-11 content">
         <Link to={"/landlord/viewingdetails/" + appointmentId} style={{ color: "#000" }}>
-          <p className="mb-0" style={{ fontSize: "12px" }}>
-            {appointmentDate}
+          <p className="mb-2" style={{ fontSize: "12px" }}>
+            {appointmentDate} | <span className="text-navy">{appointmentTime}</span>
           </p>
-          <small className="text-navy">{appointmentTime}</small>
+          
           <div className="row">
             <div className="col-9 mb-2">
               <div className="media">

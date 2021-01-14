@@ -7,7 +7,7 @@ const MaintenanceList = () => {
   var data = [
     {
       id: 0,
-      date: "Oct 23",
+      date: "23/10/2020",
       category: "Plumbing",
       status: "resolved",
       applydate: "XX-XX-XXXX",
@@ -29,7 +29,7 @@ const MaintenanceList = () => {
     },
     {
       id: 1,
-      date: "Oct 23",
+      date: "23/10/2020",
       category: "Appliance",
       status: "new",
       applydate: "XX-XX-XXXX",
@@ -51,7 +51,7 @@ const MaintenanceList = () => {
     },
     {
       id: 2,
-      date: "Oct 23",
+      date: "23/10/2020",
       category: "Household",
       status: "new",
       applydate: "XX-XX-XXXX",
@@ -73,7 +73,7 @@ const MaintenanceList = () => {
     },
     {
       id: 3,
-      date: "Oct 19",
+      date: "19/10/2020",
       category: "Plumbing",
       status: "inprogress",
       applydate: "XX-XX-XXXX",
@@ -95,7 +95,7 @@ const MaintenanceList = () => {
     },
     {
       id: 4,
-      date: "Oct 23",
+      date: "23/10/2020",
       category: "Electrical",
       status: "in progress",
       applydate: "XX-XX-XXXX",
