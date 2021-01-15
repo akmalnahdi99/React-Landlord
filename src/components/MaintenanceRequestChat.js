@@ -6,21 +6,21 @@ const MaintenanceRequestChat = () => {
   var data = [
     {
       id: 0,
-      datetime: "Mon Jan 26 2015 - 18:39:23",
+      datetime: "Mon 23/06/2015 - 06:39 PM",
       name: "Smith Jordan",
       text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
       type: "tenant",
     },
     {
       id: 1,
-      datetime: "Tue Jan 27 2015 - 18:39:23",
+      datetime: "Tue 23/06/2015 - 06:39 PM",
       name: "Michael Smith",
       text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
       type: "landlord",
     },
     {
       id: 2,
-      datetime: "Tue Jan 26 2015 - 20:39:23",
+      datetime: "Tue 24/06/2015 - 08:39 PM",
       name: "Smith Jordan",
       text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
       type: "tenant",

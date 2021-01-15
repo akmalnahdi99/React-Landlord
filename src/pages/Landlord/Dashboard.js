@@ -22,56 +22,58 @@ import { Link } from "react-router-dom";
 export default function Dashboard() {
   return (
     <div>
-    <div className="wrapper wrapper-content py-4 animated fadeInRight">
-      <div className="container-fluid">
-        <div className="row">
-          <div key={"1"} className="col-lg-4 px-2">
+      <div className="wrapper wrapper-content py-4 animated fadeInRight">
+        <div className="container-fluid">
+          <div className="row">
+            {/* <div key={"1"} className="col-lg-4 px-2">
             <Quicklinks title="Quick Links" />
+          </div> */}
+            <div key={"2"} className="col-lg-4 px-2">
+              <Rental title="Rental" />
+            </div>
+            <div key={"3"} className="col-lg-4 px-2">
+              <TodoList title="To-Do List" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <Maintenance title="Maintenance" />
+            </div>
           </div>
-          <div key={"2"} className="col-lg-4 px-2">
-            <Rental title="Rental" />
+          <div className="row">
+            <div className="col-lg-4 px-2">
+              <TenantPayables title="Tenant Payables" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <Calendar title="Calendar" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <Bills title="Bills" />
+            </div>
           </div>
-          <div key={"3"} className="col-lg-4 px-2">
-            <TodoList title="To-Do List" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 px-2">
-            <Maintenance title="Maintenance" />
-          </div>
-          <div className="col-lg-4 px-2">
-            <TenantPayables title="Tenant Payables" />
-          </div>
-          <div className="col-lg-4 px-2">
-            <Calendar title="Calendar" />
-          </div>
-        </div>
-        <div className="row">
-          {/* <div className="col-lg-4 px-2">
+
+          <div className="row">
+            {/* <div className="col-lg-4 px-2">
             <Financials title="Financials" />
           </div> */}
-          <div className="col-lg-4 px-2">
-            <Bills title="Bills" />
+
+            <div className="col-lg-4 px-2">
+              <PropertyInfo title="Property Info" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <DashboardPropertyViewing title="Property Viewing" />
+            </div>
+            <div className="col-lg-4 px-2">
+              <DashboardRentalOffers title="Rental Offers" />
+            </div>
           </div>
-          <div className="col-lg-4 px-2">
-            <PropertyInfo title="Property Info" />
-          </div>
-          <div className="col-lg-4 px-2">
-            <DashboardPropertyViewing title="Property Viewing" />
+          <div className="row">
+            <div className="col-lg-4 px-2">
+              <RentalLeads />
+            </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-4 px-2">
-            <DashboardRentalOffers title="Rental Offers" />
-          </div>
-          <div className="col-lg-4 px-2">
-            <RentalLeads />
-          </div>
-        </div>
+        <br />
       </div>
-      <br />
-    </div>
-      <Link to="./activity" className="float">
+      <Link to="./activity" className="float btn-primary">
         <FaIcons.FaUserClock className="my-float" />
       </Link>
     </div>

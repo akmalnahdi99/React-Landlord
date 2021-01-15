@@ -58,14 +58,21 @@ console.log(items);
            
               items.map((item, index) => {
                 return (
-                  <div key={index} className="col-lg-6 col-xs-12 px-0 mb-3">
+                  <div key={index} className="col-lg-4 col-md-6 col-sm-12 px-0 mb-3">
                     <div className="container container-xs">
                       <div className="ibox-content minhigh mb-2">
-                        <div className="row mb-4 pt-3">
-                          <div className="col-md-12">
+                        <div className="row pt-3">
+                                <div className="col-12">
+                                  <h4 className="text-doorcase3">Item Name</h4>
+                                  <p className="m-0">{item.itemName}</p>
+                                </div>
+                                
+                        </div>
+                        <hr />
+                        <div className="row">
+                                <div className="col-12">
                             <div className="media">
                               <div className="media-body">
-                                <div className="col-6 float-right">
                                   <h4 className="text-doorcase3">Quantity</h4>
                                   <p className="m-0">
                                     {item.quantity}
@@ -73,24 +80,9 @@ console.log(items);
                                     {item.markOmission === true ? <span className="m-0">-</span> : ""}
                                   </p>
                                 </div>
-                                <div className="col-6">
-                                  <h4 className="text-doorcase3">Item Name</h4>
-                                  <p className="m-0">{item.itemName}</p>
-                                </div>
                                 <hr />
                               </div>
                             </div>
-                          </div>
-                        </div>
-
-                        <div className="row">
-                          <div className="col-md-12">
-                            <div className="demo-gallery">
-                              <ul id="lightgallery" className="list-unstyled row">
-                                <img src={item.urlPhoto} alt="123" />
-                              </ul>
-                            </div>
-                          </div>
                         </div>
                         <hr />
                         <div className="row mb-4">
@@ -103,6 +95,17 @@ console.log(items);
                             </div>
                           </div>
                         </div>
+                        <hr />
+                        <div className="row">
+                          <div className="col-md-12">
+                            <div className="demo-gallery">
+                              <ul id="lightgallery" className="list-unstyled row">
+                                <img src={item.urlPhoto} alt="123" />
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
                       </div>
                     </div>
                   </div>

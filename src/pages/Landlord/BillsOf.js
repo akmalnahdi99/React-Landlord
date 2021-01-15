@@ -12,6 +12,7 @@ import BillsQuitRent from "../../bills_component/BillsQuitRent";
 import BillsAssessmentRate from "../../bills_component/BillsAssessmentRate";
 import BillsSubscriptionFee from "../../bills_component/BillsSubscriptionFee";
 import BillsMaintenance from "../../bills_component/BillsMaintenance";
+import BillsUnpaid from "../../bills_component/BillsUnpaid";
 // import BillsWater from "../../bills_component/BillsWater";
 // import BillsElectricity from "../../bills_component/BillsElectricity";
 // import BillsSewage from "../../bills_component/BillsSewage";
@@ -112,15 +113,17 @@ export default function BillOf() {
       ) : (
         <React.Fragment>
           <div className="wrapper wrapper-content animated fadeInRight">
-            <div className="container container-xs">
-              <div className="row justify-content-center">
-                <div className="col-lg-9 mb-3">
+          <div className="container-fluid">
+            <div className="row justify-content-center">
+              <div className="col-lg-8 mb-3 px-0">
                   {billType === "ServiceCharges" ? <BillsServiceCharge  utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "Insurance" ? <BillsInsurance utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "QuitRent" ? <BillsQuitRent utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "AssessmentRate" ? <BillsAssessmentRate utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "Subscription" ? <BillsSubscriptionFee utilityDetails={utilityDetails} payments={payments} /> : ""}
                   {billType === "Maintenance" ? <BillsMaintenance utilityDetails={utilityDetails} payments={payments} /> : ""}
+
+                  
 
                   {/* Info Only Should we use these or reuse the unit ones */}
 
@@ -139,6 +142,13 @@ export default function BillOf() {
                   {billType === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
                   {billType === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
                   {billType === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
+
+                  {billType === "Water" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
+                  {billType === "Electricity" ? <BillsUnpaid title="February" {...BillsUnpaid} /> : ""}
+                  {billType === "Sewage" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
+                  {billType === "Internet" ? <BillsUnpaid title="December" {...BillsUnpaid} /> : ""}
+                  {billType === "Cabletv" ? <BillsUnpaid title="December" {...BillsUnpaid} /> : ""}
+                  {billType === "Gas" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
                 </div>
               </div>
             </div>

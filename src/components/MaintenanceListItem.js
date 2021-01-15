@@ -35,12 +35,12 @@ export default function MaintenanceListItem({id, date, category, applydate, imag
 
   return (
     <div className="row">
-      <div className="col-2 date active pt-3 pl-0">
+      <div className="col-1 date active p-0">
         <i className="fas fa-circle"></i>
         
         <br />
       </div>
-      <div className="col-10 content pb-5">
+      <div className="col-11 content pb-5">
         <Link to={"/landlord/maintenancedetails/"+ id} style={{color: "#000"}}>
       <p style={{fontSize: "12px"}}>{date}</p>
         <div className="row">
@@ -63,14 +63,6 @@ export default function MaintenanceListItem({id, date, category, applydate, imag
               <span className="font-light font-body">Status:</span>
               <span className={"ml-2 font-body " + statusClassName}>{statusText}</span>
             </h4>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12 mb-1">
-            <span className="font-body">Applied date</span>
-            <p className="font-body mb-0">
-              <strong>{applydate}</strong>
-            </p>
           </div>
         </div>
         <div className="row">

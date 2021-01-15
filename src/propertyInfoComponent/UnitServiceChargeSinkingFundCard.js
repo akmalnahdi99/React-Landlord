@@ -29,7 +29,7 @@ export default function UnitServiceSinkingCard({ title }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3 className="boldtext">{title}</h3>
+        <h3 className="boldtext"><img src="/imgs/money-bag.svg" alt="..." className="utilityIconTitle" />{title}</h3>
       </div>
       <div className="ibox-content minhigh pt-0">
         {isLoading === true ? (

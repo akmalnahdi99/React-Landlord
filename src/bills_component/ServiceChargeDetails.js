@@ -17,7 +17,7 @@ export default function BillsDetails({ title, details }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}</h3>
+        <h3><img src="/imgs/money-bag.svg" alt="..." className="utilityIconTitle"></img>{title}</h3>
         <div className="ibox-tools">
           <p onClick={toggle}>
             <FaIcons.FaInfoCircle className="fa-2x " />

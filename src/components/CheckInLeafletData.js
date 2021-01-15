@@ -6,7 +6,7 @@ export default  function CheckInLeafletData() {
       <div className="col-md-8 p-0">
         <div className="ibox">
           <div className="ibox-title mt-3">
-            <h3>Information Leaflet</h3>
+            <h3><img src="/imgs/write-letter.svg" width="30px" className="utilityIconTitle" alt="" />Information Leaflet</h3>
             <hr />
           </div>
           <div className="ibox-content forum-container">

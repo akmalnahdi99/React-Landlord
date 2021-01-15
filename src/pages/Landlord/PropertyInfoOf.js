@@ -72,6 +72,7 @@ export default function PropertyInfoOf() {
           {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
           {propertyinfoType === "HomeAppliance" ? <HomeAppliance /> : ""}
           </div>
+
         </div>
       </div>
     </div>
