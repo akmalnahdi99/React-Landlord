@@ -48,7 +48,7 @@ export default function PayablesList() {
         <h3>Landlord Payables</h3>
       </div>
       <div className="ibox-content forum-container">
-        <h4>Payment Overdue</h4>
+        <h4 className="text-doorcase3">Payment Overdue</h4>
 
         {Object.keys(result).length > 0 ? (
           Object.keys(result).map((item, index) => {
@@ -60,7 +60,7 @@ export default function PayablesList() {
       </div>
       {/* Need to understand the payment cycle login (End of month, or start month) */}
       <div className="ibox-content forum-container">
-        <h4>Payment Due</h4>
+        <h4 className="text-doorcase3">Payment Due</h4>
         {due.length > 0 ? (
           due.map((item) => {
             return <PayableItem key={item.id} {...item} color="blue" />;

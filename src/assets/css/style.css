@@ -9418,12 +9418,19 @@ table.issue-tracker tbody tr td {
 
 .btn-upload {
   position: absolute;
-    top: 214px;
+    top: 480px;
     right: 105px;
     color: #fff;
     border-radius: 50px;
     background-color: #17a3b6;
     width: 40px;
+}
+
+.btn-sort {
+    color: #fff;
+    border-radius: 10px;
+    background-color: #17a3b6;
+    padding: 10px;
 }
 
 /* TEAMS */

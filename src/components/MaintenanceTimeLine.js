@@ -16,17 +16,17 @@ export default function MaintenanceDetailsList() {
   };
 
   const paymentdata = {
-    datetime: "Yesterday - 19:32",
+    datetime: "Yesterday - 07:32 PM",
     name: "Michael smith",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   };
   const interactiondata = {
-    datetime: "Yesterday - 19:32",
+    datetime: "Yesterday - 07:32 PM",
     name: "Smith jordan",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   };
   const maintenancedata = {
-    datetime: "Yesterday - 19:32",
+    datetime: "Yesterday - 07:32 PM",
     name: "Michael smith",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   };
@@ -35,7 +35,12 @@ export default function MaintenanceDetailsList() {
     <div className="ibox">
       <div className="ibox-content minhigh p-0">
         <div className="inspinia-timeline p-4 px-0">
-          <div className="timeline-item">
+          <div className="row justify-content-end">
+        <button className="font-bold btn btn-primary btn-sort align-text-center float-right">
+              <span>Sort <i className="fas fa-redo"></i></span>
+            </button>
+            </div>
+          <div className="viewing-timeline">
             <div className="row">
               <div className="col-1 date active p-0">
                 <i className="fas fa-circle"></i>
@@ -43,8 +48,8 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                  <span style={{fontSize: "12px"}}>21/10/2020 | <span className="text-navy">04:23 PM</span></span>
-                <br />
+                    <span style={{ fontSize: "12px" }}>21/10/2020 | <span className="text-navy">04:23 PM</span></span>
+                    <br />
                     <p className="mt-2">Maintenance is resolved</p>
                   </div>
                 </div>
@@ -60,7 +65,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row" onClick={RedirectPayment} style={{ cursor: "pointer" }}>
                   <div className="col-12">
-                    <span style={{fontSize: "12px"}}>21/10/2020 | <span className="text-navy">03:41 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>21/10/2020 | <span className="text-navy">03:41 PM</span></span>
                     <br />
                     <p className="mt-2">Tenant made the payment</p>
                     <div className="chat-discussion minhigh">
@@ -109,8 +114,8 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                  <span style={{fontSize: "12px"}}>21/10/2020 | <span className="text-navy">02:11 PM</span></span>
-                <br />
+                    <span style={{ fontSize: "12px" }}>21/10/2020 | <span className="text-navy">02:11 PM</span></span>
+                    <br />
                     <p className="mt-2">PIC and tenant interacted</p>
                   </div>
                 </div>
@@ -125,7 +130,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>20/10/2020 | <span className="text-navy">04:22 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>20/10/2020 | <span className="text-navy">04:22 PM</span></span>
                     <br />
                     <p className="mt-2">Maintenance team analysed situation and started work</p>
                   </div>
@@ -157,8 +162,8 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                  <span style={{fontSize: "12px"}}>19/10/2020 | <span className="text-navy">07:21 PM</span></span>
-                <br />
+                    <span style={{ fontSize: "12px" }}>19/10/2020 | <span className="text-navy">07:21 PM</span></span>
+                    <br />
                     <p className="mt-2">Agent arranged a maintenance team</p>
                   </div>
                 </div>
@@ -189,7 +194,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>19/10/2020 | <span className="text-navy">01:59 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>19/10/2020 | <span className="text-navy">01:59 PM</span></span>
                     <br />
                     <p className="pt-2">PIC and agent interacted</p>
                   </div>
@@ -205,7 +210,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>18/10/2020 | <span className="text-navy">07:06 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>18/10/2020 | <span className="text-navy">07:06 PM</span></span>
                     <br />
                     <p className="mt-2">PIC and tenant interacted</p>
                   </div>
@@ -221,7 +226,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>18/10/2020 | <span className="text-navy">03:14 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>18/10/2020 | <span className="text-navy">03:14 PM</span></span>
                     <br />
                     <p className="mt-2">Landlord and tenant interaction</p>
                   </div>
@@ -237,7 +242,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3 ">
                 <div className="row" onClick={RedirectInteraction} style={{ cursor: "pointer" }}>
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>17/10/2020 | <span className="text-navy">04:05 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>17/10/2020 | <span className="text-navy">04:05 PM</span></span>
                     <br />
                     <p className="mt-2">PIC and tenant interacted</p>
                     <div className="chat-discussion minhigh">
@@ -286,7 +291,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row">
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>16/10/2020 | <span className="text-navy">05:46 PM</span></span>
+                    <span style={{ fontSize: "12px" }}>16/10/2020 | <span className="text-navy">05:46 PM</span></span>
                     <br />
                     <p className="mt-2">PIC viewed this request</p>
                   </div>
@@ -318,7 +323,7 @@ export default function MaintenanceDetailsList() {
               <div className="col-11 content pb-3">
                 <div className="row" onClick={RedirectRequest} style={{ cursor: "pointer" }}>
                   <div className="col-12">
-                      <span style={{fontSize: "12px"}}>16/10/2020 | <span className="text-navy">11:39 AM</span></span>
+                    <span style={{ fontSize: "12px" }}>16/10/2020 | <span className="text-navy">11:39 AM</span></span>
                     <br />
                     <p className="mt-2">Tenant request for a maintenance</p>
                     <div className="chat-discussion minhigh">

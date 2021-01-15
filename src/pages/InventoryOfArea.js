@@ -58,7 +58,7 @@ console.log(items);
            
               items.map((item, index) => {
                 return (
-                  <div key={index} className="col-lg-4 col-md-12 px-0 mb-3">
+                  <div key={index} className="col-lg-4 col-md-6 col-sm-12 px-0 mb-3">
                     <div className="container container-xs">
                       <div className="ibox-content minhigh mb-2">
                         <div className="row pt-3">

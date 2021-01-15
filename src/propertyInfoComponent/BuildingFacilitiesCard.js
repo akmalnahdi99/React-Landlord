@@ -40,7 +40,7 @@ export default function BuildingFacilitiesCard() {
   return (
     <div className="ibox col-12">
       <div className="ibox-title">
-        <h3>Faciities &amp; Amenities</h3>
+        <h3><img src="/imgs/company.svg" alt="..." className="utilityIconTitle" />Faciities &amp; Amenities</h3>
       </div>
 
       <div className="ibox-content">
@@ -78,7 +78,7 @@ export default function BuildingFacilitiesCard() {
               <div className="col-md-4 p-0 col-12">
                 <ul className="folder-list">
                   <li className={"py-3" + inBuildingFacilities("PerimeterFencing")}>
-                    <img src="/imgs/boundaries.svg" width="24px" alt="name" /> Function hall
+                    <img src="/imgs/boundaries.svg" width="24px" alt="name" /> Perimeter Fencing
                 </li>
 
                   <li className={"py-3" + inBuildingFacilities("GamesRoom")}>

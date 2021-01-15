@@ -71,7 +71,7 @@ export default function Dashboard() {
       </div>
       <br />
     </div>
-      <Link to="./activity" className="float">
+      <Link to="./activity" className="float btn-primary">
         <FaIcons.FaUserClock className="my-float" />
       </Link>
     </div>
