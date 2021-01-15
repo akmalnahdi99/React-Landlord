@@ -4,7 +4,6 @@ import React from "react";
 // import PostsList from "../../components/PostsList";
 // import PostsListFilter from "../../components/PostsListFilter";
 
-import Quicklinks from "../../components/DashQuicklinks";
 import Rental from "../../components/DashRentalGraph";
 import TodoList from "../../components/DashTodoList.js";
 import Maintenance from "../../components/DashMaintenance";
@@ -26,24 +25,24 @@ export default function Dashboard() {
       <div className="container-fluid">
         <div className="row">
           <div key={"1"} className="col-lg-4 px-2">
-            <Quicklinks title="Quick Links" />
-          </div>
-          <div key={"2"} className="col-lg-4 px-2">
             <Rental title="Rental" />
           </div>
-          <div key={"3"} className="col-lg-4 px-2">
+          <div key={"2"} className="col-lg-4 px-2">
             <TodoList title="To-Do List" />
           </div>
-        </div>
-        <div className="row">
           <div className="col-lg-4 px-2">
             <Maintenance title="Maintenance" />
           </div>
+        </div>
+        <div className="row">
           <div className="col-lg-4 px-2">
             <TenantPayables title="Tenant Payables" />
           </div>
           <div className="col-lg-4 px-2">
             <Calendar title="Calendar" />
+          </div>
+          <div className="col-lg-4 px-2">
+            <Bills title="Bills" />
           </div>
         </div>
         <div className="row">
@@ -51,19 +50,17 @@ export default function Dashboard() {
             <Financials title="Financials" />
           </div> */}
           <div className="col-lg-4 px-2">
-            <Bills title="Bills" />
-          </div>
-          <div className="col-lg-4 px-2">
             <PropertyInfo title="Property Info" />
           </div>
           <div className="col-lg-4 px-2">
             <DashboardPropertyViewing title="Property Viewing" />
           </div>
-        </div>
-        <div className="row">
           <div className="col-lg-4 px-2">
             <DashboardRentalOffers title="Rental Offers" />
           </div>
+        </div>
+        <div className="row">
+
           <div className="col-lg-4 px-2">
             <RentalLeads />
           </div>
