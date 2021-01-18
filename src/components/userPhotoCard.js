@@ -1,6 +1,6 @@
 import React from "react";
  
-export default function UserPhotoCard ({...userInfo})  {
+export default function UserPhotoCard ({canUpload, ...userInfo})  {
   
   return (
     <div className="ibox">

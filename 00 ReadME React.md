@@ -1,3 +1,7 @@
+[2021-01-15]
+- zero scrollbar :
+https://stackoverflow.com/questions/64361996/react-router-scroll-page-to-the-top-after-transition
+
 [2021-01-09]
 - when doing HTML pls dont put <Link> inside another <Link> because <Link> is converted to <a > element, and in HTML <a> inside <a> is prevented.
 

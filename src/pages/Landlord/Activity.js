@@ -144,7 +144,7 @@ export default function Activity(props) {
             </div>
           </div>
         </div>
-        <Link to="./dashboard" className="float btn-primary">
+        <Link to="./dashboard" classNameP="float btn-primary">
         <FaIcons.FaGripHorizontal className="my-float" />
         </Link>
       </React.Fragment>
