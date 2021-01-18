@@ -23,7 +23,6 @@ export default function SubscriptionFeeDetails  ({ title })  {
           </p>
         </div>
       </div>
-      <div className="ibox-content minhigh pt-0">
         <Collapse isOpen={isOpen} className="ibox-content minhigh pt-0">
           <div className="row pt-2">
             <div className="col-sm-6">
@@ -74,7 +73,6 @@ export default function SubscriptionFeeDetails  ({ title })  {
           </div>
         </Collapse>
       </div>
-    </div>
   );
 };
  
