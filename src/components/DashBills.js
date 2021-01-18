@@ -11,7 +11,7 @@ export default function DashBills({ title }) {
     {
       icon: "/imgs/money-bag.svg",
       text: "Service Charge",
-      url: "/landlord/bills/ServiceCharge",
+      url: "/landlord/bills/ServiceCharges",
     },
     {
       icon: "/imgs/assessment.svg",
