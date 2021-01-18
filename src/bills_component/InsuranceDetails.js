@@ -19,7 +19,6 @@ export default function InsuranceDetails  ({ title,details })  {
           </p>
         </div>
       </div>
-      <div className="ibox-content minhigh pt-0">
         <Collapse isOpen={isOpen} className="ibox-content minhigh pt-0">
           <div className="row pt-2">
             <div className="col-sm-12">
@@ -75,7 +74,6 @@ export default function InsuranceDetails  ({ title,details })  {
           </div>
         </Collapse>
       </div>
-    </div>
   );
 };
  
