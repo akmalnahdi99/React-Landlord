@@ -4,7 +4,7 @@ import React from "react";
 // import PostsList from "../../components/PostsList";
 // import PostsListFilter from "../../components/PostsListFilter";
 
-import Quicklinks from "../../components/DashQuicklinks";
+// import Quicklinks from "../../components/DashQuicklinks";
 import Rental from "../../components/DashRentalGraph";
 import TodoList from "../../components/DashTodoList.js";
 import Maintenance from "../../components/DashMaintenance";

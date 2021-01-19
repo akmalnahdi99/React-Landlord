@@ -88,14 +88,14 @@ export default function MaintenanceDetailsList() {
                 </div>
 
                 <div className="row">
-                  <div className="col-10 pr-0 minhigh">
+                  <div className="col-11 pr-0 minhigh">
                     <form id="contact-form" className="contact-form">
                       <div className="form-group m-0">
                         <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                       </div>
                     </form>
                   </div>
-                  <div className="col-2 pl-2 pr-0 p-0">
+                  <div className="col-1 pl-2 pr-0 p-0">
                     <div className="form-group">
                       <button type="submit" className="btn pl-0">
                         <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>
@@ -136,14 +136,14 @@ export default function MaintenanceDetailsList() {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-10 pr-0 minhigh">
+                  <div className="col-11 pr-0 minhigh">
                     <form id="contact-form" className="contact-form">
                       <div className="form-group m-0">
                         <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                       </div>
                     </form>
                   </div>
-                  <div className="col-2 pl-2 pr-0 p-0">
+                  <div className="col-1 pl-2 pr-0 p-0">
                     <div className="form-group">
                       <button type="submit" className="btn pl-0">
                         <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>
@@ -168,14 +168,14 @@ export default function MaintenanceDetailsList() {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-10 pr-0 minhigh">
+                  <div className="col-11 pr-0 minhigh">
                     <form id="contact-form" className="contact-form">
                       <div className="form-group m-0">
                         <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                       </div>
                     </form>
                   </div>
-                  <div className="col-2 pl-2 pr-0 p-0">
+                  <div className="col-1 pl-2 pr-0 p-0">
                     <div className="form-group">
                       <button type="submit" className="btn pl-0">
                         <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>
@@ -265,14 +265,14 @@ export default function MaintenanceDetailsList() {
                 </div>
 
                 <div className="row">
-                  <div className="col-10 pr-0 minhigh">
+                  <div className="col-11 pr-0 minhigh">
                     <form id="contact-form" className="contact-form">
                       <div className="form-group m-0">
                         <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                       </div>
                     </form>
                   </div>
-                  <div className="col-2 pl-2 pr-0 p-0">
+                  <div className="col-1 pl-2 pr-0 p-0">
                     <div className="form-group">
                       <button type="submit" className="btn pl-0">
                         <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>
@@ -297,14 +297,14 @@ export default function MaintenanceDetailsList() {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-10 pr-0 minhigh">
+                  <div className="col-11 pr-0 minhigh">
                     <form id="contact-form" className="contact-form">
                       <div className="form-group m-0">
                         <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                       </div>
                     </form>
                   </div>
-                  <div className="col-2 pl-2 pr-0 p-0">
+                  <div className="col-1 pl-2 pr-0 p-0">
                     <div className="form-group">
                       <button type="submit" className="btn pl-0">
                         <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>
@@ -346,14 +346,14 @@ export default function MaintenanceDetailsList() {
                 </div>
 
                 <div className="row">
-                  <div className="col-10 pr-0 minhigh">
+                  <div className="col-11 pr-0 minhigh">
                     <form id="contact-form" className="contact-form">
                       <div className="form-group m-0">
                         <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                       </div>
                     </form>
                   </div>
-                  <div className="col-2 pl-2 pr-0 p-0">
+                  <div className="col-1 pl-2 pr-0 p-0">
                     <div className="form-group">
                       <button type="submit" className="btn pl-0">
                         <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>
