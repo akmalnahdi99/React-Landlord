@@ -67,7 +67,13 @@ export default function Dashboard() {
           </div>
           <div className="row">
             <div className="col-lg-4 px-2">
-              <RentalLeads />
+              <RentalLeads title="Rental Leads"/>
+            </div>
+            <div className="col-lg-4 px-2">
+              <RentalLeads title="Analytical"/>
+            </div>
+            <div className="col-lg-4 px-2">
+              <RentalLeads title="Financials"/>
             </div>
           </div>
         </div>
