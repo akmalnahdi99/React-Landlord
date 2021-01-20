@@ -8470,6 +8470,7 @@ ul.clear-list:first-child {
 }
 
 .viewing-timeline .date {
+  border-right: 1px solid #e7eaec;
   text-align: right;
   width: 110px;
   position: relative;
@@ -8478,7 +8479,6 @@ ul.clear-list:first-child {
 }
 
 .viewing-timeline .content {
-  border-left: 1px solid #e7eaec;
   /* border-top: 1px solid #e7eaec; */
   /* padding-top: 10px; */
   min-height: 100px;
@@ -9431,6 +9431,18 @@ table.issue-tracker tbody tr td {
     border-radius: 10px;
     background-color: #17a3b6;
     padding: 10px;
+}
+
+.timeline-link {
+  
+  border-width: 1px;
+  border-radius: 20px;
+}
+
+.timeline-link:hover,
+.timeline-link:active
+{
+  background-color: rgb(240, 240, 240);
 }
 
 /* TEAMS */
