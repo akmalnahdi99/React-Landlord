@@ -1,3 +1,4 @@
+//PHONE OR COST
 import React from "react";
 import { AppContext } from "../context/settings";
 import { apiCall } from "../utils/landlordHelper";
@@ -97,7 +98,7 @@ const TenantDetails = ({ title }) => {
                 return (
                   <React.Fragment key={index}>
                     <h5 className="font-bold text-doorcase3 ">{item.key}</h5>
-                    <span className="mb-3 font-normal">{item.value || "N/A"}</span>
+                    <span className="mb-3 font-normal">{item.value || "N/A"}</span>{/* TODO task to ayham add +60 to phone number */}
                     <hr />
                   </React.Fragment>
                 );

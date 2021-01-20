@@ -1,3 +1,4 @@
+//PHONE OR COST
 import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
@@ -38,7 +39,7 @@ export default function SubscriptionFeeDetails  ({ title })  {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{details.contact}</p>
+                  <p className="m-0">{details.contact}</p>{/* TODO task to ayham add +60 */}
                 </div>
               </div>
               <hr />

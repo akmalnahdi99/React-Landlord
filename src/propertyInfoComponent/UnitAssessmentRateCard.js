@@ -1,3 +1,4 @@
+//PHONE OR COST
 import React from "react";
 import Loading from "../components/static/Loading";
 import { AppContext } from "../context/settings";
@@ -40,7 +41,7 @@ export default function UnitAssessmentRateCard({ title }) {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Half yearly rate</h4>
-                  <p className="m-0">{unitAssessmentRate.halfYearlyRate || "N/A"}</p>
+                  <p className="m-0">{unitAssessmentRate.halfYearlyRate || "N/A"}</p>{/* TODO task to ayham add .00 at the end of the value */}
                 </div>
               </div>
               <hr />
@@ -68,7 +69,7 @@ export default function UnitAssessmentRateCard({ title }) {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{unitAssessmentRate.contactNumber || "N/A"}</p>
+                  <p className="m-0">{unitAssessmentRate.contactNumber || "N/A"}</p>{/* TODO task to ayham add +60 */}
                 </div>
               </div>
               <hr />

@@ -1,3 +1,4 @@
+//PHONE OR COST
 import React from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/settings";
@@ -20,7 +21,7 @@ const LandLordDetailsCard = ({ title }) => {
             <span className="mb-3 font-normal">{userInfo.nationality || "N/A"}</span>
             <hr />
             <h5 className="font-bold text-completedtask ">Phone Number</h5>
-            <span className="mb-3 font-normal">{userInfo.phoneNumber || "N/A"}</span>
+            <span className="mb-3 font-normal">{userInfo.phoneNumber || "N/A"}</span>{/* TODO task to ayham add +60 */}
             <hr />
             <h5 className="font-bold text-completedtask ">Email</h5>
             <span className="mb-3 font-normal">{userInfo.email}</span>

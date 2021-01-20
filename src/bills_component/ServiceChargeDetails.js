@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import { Collapse } from "reactstrap";
+//PHONE OR COST
+import React, { useState } from 'react';
+import { Collapse } from 'reactstrap';
 import * as FaIcons from "react-icons/fa";
 
 export default function BillsDetails({ title, details }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   //   var details = {
   //     service_cherge: "RM 0.00",
   //     name: "Raine, Horne & Zaki Property Management Sdn Bhd",
@@ -11,13 +15,13 @@ export default function BillsDetails({ title, details }) {
   //     account: "123456789012",
   //     contact: "+603 123 456",
   //   };
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">
       <div className="ibox-title">
+        <div>
         <h3><img src="/imgs/money-bag.svg" alt="..." className="utilityIconTitle"></img>{title}</h3>
+        </div>
         <div className="ibox-tools">
           <p onClick={toggle}>
             <FaIcons.FaInfoCircle className="fa-2x " />
@@ -30,7 +34,7 @@ export default function BillsDetails({ title, details }) {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Service charge per month</h4>
-                  <p className="m-0">{details.serviceCharge || "N/A"}</p>
+                  <p className="m-0">{details.serviceCharge || "N/A"}</p>{/* TODO task to ayham add .00 at the end of the amount*/}
                 </div>
               </div>
               <hr />
@@ -62,7 +66,7 @@ export default function BillsDetails({ title, details }) {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{details.contactNumber || "N/A"}</p>
+                  <p className="m-0">{details.contactNumber || "N/A"}</p>{/* TODO task to ayham add +60 */}
                 </div>
               </div>
               <hr />

@@ -1,16 +1,27 @@
-import React from "react";
+//PHONE OR COST
+import { Collapse } from "reactstrap";
+import * as FaIcons from "react-icons/fa";
+import React, { useState } from "react";
 
 export default function InfoWaterDetails({ title, ...details }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">
       <div className="ibox-title">
         <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-          <img src="/imgs/water-drop.svg" alt="..." className="utilityIconTitle"></img>
-          <h3>{title}</h3>
+          <h3>
+            <img src="/imgs/water-drop.svg" alt="..." className="utilityIconTitle"></img>
+            {title}
+          </h3>
         </div>
-        <hr />
+        <div className="ibox-tools">
+          <p onClick={toggle}>
+            <FaIcons.FaInfoCircle className="fa-2x " />
+          </p>
+        </div>
       </div>
-      <div className="ibox-content minhigh pt-0">
+      <Collapse isOpen={isOpen} className="ibox-content minhigh pt-0">
         <div className="row pt-0">
           <div className="col-sm-6">
             <div className="media">
@@ -24,6 +35,7 @@ export default function InfoWaterDetails({ title, ...details }) {
               <div className="media-body">
                 <h4 className="text-doorcase3">Contact number</h4>
                 <p className="m-0">{details.contactNumber || "N/A"}</p>
+                {/* TODO task to ayham add +60 */}
               </div>
             </div>
             <hr />
@@ -52,7 +64,7 @@ export default function InfoWaterDetails({ title, ...details }) {
             <hr />
           </div>
         </div>
-      </div>
+      </Collapse>
     </div>
   );
 }

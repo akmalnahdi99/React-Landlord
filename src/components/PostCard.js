@@ -1,3 +1,4 @@
+//PHONE OR COST
 import React from "react";
 import Gallery from "./ImageGallery";
 
@@ -10,7 +11,7 @@ export default function PostCard({ postIcon, postDate, title, body, images }) {
       <div className="vertical-timeline-content">
         <small className="datetime">
           <i className="fas fa-bell" style={{ marginRight: "7px" }}></i>
-          {postDate}
+          {postDate}{/*TODO task to ayham change the date to dd/mm/yyyy*/}
         </small>
         <hr className="my-2" />
 
