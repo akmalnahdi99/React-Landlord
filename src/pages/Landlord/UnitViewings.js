@@ -17,7 +17,7 @@ export default function UnitViewings() {
     async function loadUserInfoAndTenancyDetails() {
       setIsLoading(true);
 
-      var response = await apiCall("/units/Appointments/" + activeUnitId);
+      var response = await apiCall("/units/landlordAppointments/" + activeUnitId);
 
       if (response.status) {
         set_appointments(response.data);

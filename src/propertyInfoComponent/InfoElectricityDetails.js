@@ -4,7 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import React, { useState } from "react";
 
 export default function InfoElectricityDetails({ title, ...details }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggle = () => setIsOpen(!isOpen);
   return (

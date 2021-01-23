@@ -17,7 +17,7 @@ export default function OfferDetailsCard({ offerId }) {
     async function loadOfferDetailsWrapper() {
       setIsLoading(true);
 
-      var response = await apiCall("/units/offerDetails/?offerId=" + offerId + "&UnitId=" + activeUnitId);
+      var response = await apiCall("/units/landlordOfferDetails/?offerId=" + offerId + "&UnitId=" + activeUnitId);
       if (response.status) {
         set_offerDetails(response.data);
       }

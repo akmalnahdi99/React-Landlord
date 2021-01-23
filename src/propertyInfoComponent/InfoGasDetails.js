@@ -4,9 +4,12 @@ import * as FaIcons from "react-icons/fa";
 import React, { useState } from "react";
 
 export default function InfoGasDetails({ title, ...details }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggle = () => setIsOpen(!isOpen);
+  React.useEffect(()=>{
+
+  },[])
   return (
     <div className="ibox">
       <div className="ibox-title">
