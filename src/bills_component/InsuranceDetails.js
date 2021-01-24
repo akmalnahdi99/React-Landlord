@@ -26,7 +26,7 @@ export default function InsuranceDetails  ({ title,details })  {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Service charge per month</h4>
-                  <p className="m-0">{(details.serviceCharge && "RM " + details.serviceCharge) || "N/A"}</p>{/* TODO task to ayham add .00 at the end of the amount*/}
+                  <p className="m-0">{(details.serviceCharge && "RM " + details.serviceCharge) || "N/A"}</p>
                 </div>
               </div>
               <hr />
@@ -49,7 +49,7 @@ export default function InsuranceDetails  ({ title,details })  {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{details.contactNumber || "N/A"}</p>{/* TODO task to ayham add +60 */}
+                  <p className="m-0">{details.contactNumber || "N/A"}</p> 
                 </div>
               </div>
               <hr />

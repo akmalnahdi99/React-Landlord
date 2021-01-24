@@ -42,7 +42,7 @@ export default function UnitServiceSinkingCard({ title }) {
                 <div className="media">
                   <div className="media-body">
                     <h4 className="textclr">Service charge monthly amount</h4>
-                    <p className="m-0">{unitServicesSinkingFund.serviceChargeMonthly || "N/A"}</p>{/* TODO task to ayham add +.00 at the end of value */}
+                    <p className="m-0">{unitServicesSinkingFund.serviceChargeMonthly || "N/A"}</p>
                   </div>
                 </div>
                 <hr />
@@ -74,7 +74,7 @@ export default function UnitServiceSinkingCard({ title }) {
                 <div className="media">
                   <div className="media-body">
                     <h4 className="textclr">Contact number</h4>
-                    <p className="m-0">{unitServicesSinkingFund.contactNumber || "N/A"}</p>{/* TODO task to ayham add +60 */}
+                    <p className="m-0">{unitServicesSinkingFund.contactNumber || "N/A"}</p> 
                   </div>
                 </div>
                 <hr />

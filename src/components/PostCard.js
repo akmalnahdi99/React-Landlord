@@ -11,7 +11,7 @@ export default function PostCard({ postIcon, postDate, title, body, images }) {
       <div className="vertical-timeline-content">
         <small className="datetime">
           <i className="fas fa-bell" style={{ marginRight: "7px" }}></i>
-          {postDate}{/*TODO task to ayham change the date to dd/mm/yyyy*/}
+          {postDate} 
         </small>
         <hr className="my-2" />
 

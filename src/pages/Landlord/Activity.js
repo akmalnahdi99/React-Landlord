@@ -119,7 +119,7 @@ export default function Activity(props) {
                           <i className="fas fa-arrow-right fa-xs float-right"></i>
                         </span>
                       </Media>
-                      <p className="m-0 font-body text-completedtask">{unit.buildingName} 11</p>
+                      <p className="m-0 font-body text-completedtask">{unit.buildingName}</p>
                     </Media>
                   </Media>
                 </ModalBody>

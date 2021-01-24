@@ -7,15 +7,7 @@ export default function BillsDetails({ title, details }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-  //   var details = {
-  //     service_cherge: "RM 0.00",
-  //     name: "Raine, Horne & Zaki Property Management Sdn Bhd",
-  //     bank: "Maybank",
-  //     sinking_fund: "RM 0.00",
-  //     account: "123456789012",
-  //     contact: "+603 123 456",
-  //   };
-
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -34,7 +26,7 @@ export default function BillsDetails({ title, details }) {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Service charge per month</h4>
-                  <p className="m-0">{details.serviceCharge || "N/A"}</p>{/* TODO task to ayham add .00 at the end of the amount*/}
+                  <p className="m-0">{details.serviceCharge || "N/A"}</p> 
                 </div>
               </div>
               <hr />
@@ -66,7 +58,7 @@ export default function BillsDetails({ title, details }) {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{details.contactNumber || "N/A"}</p>{/* TODO task to ayham add +60 */}
+                  <p className="m-0">{details.contactNumber || "N/A"}</p> 
                 </div>
               </div>
               <hr />

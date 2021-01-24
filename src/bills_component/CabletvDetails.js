@@ -1,14 +1,8 @@
 //PHONE OR COST
 import React from "react";
 
-const CabletvDetails = ({ title }) => {
-  var details = {
-    ref_no: "N/A",
-    name: "Astro",
-    bank: "N/A",
-    account: "N/A",
-    contact: "+603 2083 2828",
-  };
+export default function CabletvDetails({ title, details }) {
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -19,8 +13,8 @@ const CabletvDetails = ({ title }) => {
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Name Payable</h4>
-                <p className="m-0">{details.name}</p>
+                <h4 className="text-doorcase3">Name Payable 1111111111111111</h4>
+                <p className="m-0">{details.name || "N/A"}</p>
               </div>
             </div>
             <hr />
@@ -29,7 +23,7 @@ const CabletvDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Contact number</h4>
-                <p className="m-0">{details.contact}</p>{/* TODO task to ayham add +60 */}
+                <p className="m-0">{details.contact || "N/A"}</p>
               </div>
             </div>
             <hr />
@@ -38,7 +32,7 @@ const CabletvDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Reference number</h4>
-                <p className="m-0">{details.ref_no}</p>
+                <p className="m-0">{details.ref_no || "N/A"}</p>
               </div>
             </div>
             <hr />
@@ -48,7 +42,7 @@ const CabletvDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Bank name</h4>
-                <p className="m-0">{details.bank}</p>
+                <p className="m-0">{details.bank || "N/A"}</p>
               </div>
             </div>
             <hr />
@@ -57,7 +51,7 @@ const CabletvDetails = ({ title }) => {
             <div className="media">
               <div className="media-body">
                 <h4 className="text-doorcase3">Account number</h4>
-                <p className="m-0">{details.account}</p>
+                <p className="m-0">{details.account || "N/A"}</p>
               </div>
             </div>
           </div>
@@ -65,6 +59,4 @@ const CabletvDetails = ({ title }) => {
       </div>
     </div>
   );
-};
-
-export default CabletvDetails;
+}

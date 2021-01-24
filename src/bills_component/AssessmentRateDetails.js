@@ -1,4 +1,3 @@
-//PHONE OR COST
 import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
@@ -25,7 +24,7 @@ export default function AssessmentRateDetails  ({ title,details })  {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Service charge 6 months</h4>
-                  <p className="m-0">{(details.serviceCharge && "RM " + details.serviceCharge) || "N/A"}</p>{/* TODO task to ayham .00 at the end of the amount */}
+                  <p className="m-0">{(details.serviceCharge && "RM " + details.serviceCharge) || "N/A"}</p> 
                 </div>
               </div>
               <hr />
@@ -48,7 +47,7 @@ export default function AssessmentRateDetails  ({ title,details })  {
               <div className="media">
                 <div className="media-body">
                   <h4 className="text-doorcase3">Contact number</h4>
-                  <p className="m-0">{details.contactNumber || "N/A"}</p>{/* TODO task to ayham add +60 */}
+                  <p className="m-0">{details.contactNumber || "N/A"}</p> 
                 </div>
               </div>
               <hr />

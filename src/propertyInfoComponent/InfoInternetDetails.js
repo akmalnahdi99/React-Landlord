@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 export default function InfoInternetDetails({ title, ...details }) {
   const [isOpen, setIsOpen] = useState(true);
-
+debugger;
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">
@@ -36,7 +36,7 @@ export default function InfoInternetDetails({ title, ...details }) {
               <div className="media-body">
                 <h4 className="text-doorcase3">Contact number</h4>
                 <p className="m-0">{details.contactNumber || "N/A"}</p>
-                {/* TODO task to ayham add +60 */}
+ 
               </div>
             </div>
             <hr />

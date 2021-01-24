@@ -4,7 +4,7 @@ import { AppContext } from "../context/settings";
 import { apiCall } from "../utils/landlordHelper";
 import Loading from "./static/Loading";
 
-const TenantDetails = ({ title }) => {
+export default function TenantDetails({ title }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [userInfo, setUserInfo] = React.useState(null);
 
@@ -98,7 +98,7 @@ const TenantDetails = ({ title }) => {
                 return (
                   <React.Fragment key={index}>
                     <h5 className="font-bold text-doorcase3 ">{item.key}</h5>
-                    <span className="mb-3 font-normal">{item.value || "N/A"}</span>{/* TODO task to ayham add +60 to phone number */}
+                    <span className="mb-3 font-normal">{item.value || "N/A"}</span>
                     <hr />
                   </React.Fragment>
                 );
@@ -109,6 +109,4 @@ const TenantDetails = ({ title }) => {
       </div>
     </div>
   );
-};
-
-export default TenantDetails;
+}

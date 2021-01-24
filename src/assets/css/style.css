@@ -13445,7 +13445,7 @@ transition: 0.1s ease-in-out;
 }
 
 
-/* //TASK Ayham This is not complete solution this is just a work around */
+/* //TASK ayham This is not complete solution this is just a work around */
 .donut3__slice.donut3__slice__third.hh-red::after {
   border-top-color: red;
   border-right-color: red;

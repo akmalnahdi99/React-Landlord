@@ -13,12 +13,7 @@ import BillsAssessmentRate from "../../bills_component/BillsAssessmentRate";
 import BillsSubscriptionFee from "../../bills_component/BillsSubscriptionFee";
 import BillsMaintenance from "../../bills_component/BillsMaintenance";
 import BillsUnpaid from "../../bills_component/BillsUnpaid";
-// import BillsWater from "../../bills_component/BillsWater";
-// import BillsElectricity from "../../bills_component/BillsElectricity";
-// import BillsSewage from "../../bills_component/BillsSewage";
-// import BillsInternet from "../../bills_component/BillsInternet";
-// import BillsCabletv from "../../bills_component/BillsCabletv";
-// import BillsGas from "../../bills_component/BillsGas";
+ 
 import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
 import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
 import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
@@ -72,8 +67,8 @@ export default function BillOf() {
   if (!billType) {
     // if you don't have bill type we redirect back /land/bills/water
     return <Redirect to="/landlord/bills" />;
-  }
-
+  } 
+ 
   const data = [
     {
       key: "ServiceCharges",
