@@ -28,7 +28,6 @@ export default function OfferDetailsCard({ offerId }) {
   }, [activeUnitId, offerId]);
 
   return (
-    <div className="wrapper wrapper-content animated fadeInRight">
       <div className="container container-xs px-0">
         <div className="ibox">
           <div className="ibox-title minhigh">
@@ -56,7 +55,7 @@ export default function OfferDetailsCard({ offerId }) {
                     <div className="media">
                       <div className="media-body ">
                         <p>{offerDetails.buildingName}</p>
-                        <p className="m-0"> {offerDetails.unitName} </p>
+                        <p className="m-0"> {offerDetails.unitName}</p>
                       </div>
                     </div>
                   </div>
@@ -167,18 +166,18 @@ export default function OfferDetailsCard({ offerId }) {
                       <div className="col-sm-3">
                         <div className="media">
                           <div className="media-body">
-                            <h4 className="text-doorcase3">Status</h4>
+                            <h4 className="text-doorcase3 mt-2">Status</h4>
                           </div>
                         </div>
                       </div>
-                      <div className="col-9 text-center pr-0 pt-1 pl-1">
+                      <div className="col-lg-9 col-md-12 text-center pr-4 pt-1 pl-1">
                         {offerDetails.status.toLocaleLowerCase() === "New".toLocaleLowerCase() ? (
                           <React.Fragment>
                             <Link className="btn btn-primary btn-full text-center ml-1" to="">
                               Accept Offer
                             </Link>
                             <Link className="btn btn-warning btn-full text-center ml-1" to="">
-                              Renegociate Offer
+                              Negociate Offer
                             </Link>
                             <Link className="btn btn-success btn-full text-center ml-1" to="">
                               Reject Offer
@@ -196,6 +195,5 @@ export default function OfferDetailsCard({ offerId }) {
           )}
         </div>
       </div>
-    </div>
   );
 }
