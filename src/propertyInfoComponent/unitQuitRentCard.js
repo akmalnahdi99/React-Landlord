@@ -59,7 +59,7 @@ export default function  UnitQuitRentCard  ({ title })  {
             <div className="col-sm-6">
               <div className="media">
                 <div className="media-body">
-                  <h4 className="text-doorcase3">Contact Number</h4>
+                  <h4 className="text-doorcase3">Contact number</h4>
                   <p className="m-0">{unitQuitRent.contactNumber || "N/A"}</p> 
                 </div>
               </div>

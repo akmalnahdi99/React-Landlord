@@ -26,7 +26,7 @@ export default function SubscriptionFeeDetails({ title, details }) {
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Name Payable</h4>
+                <h4 className="text-doorcase3">Name payable</h4>
                 <p className="m-0">{details.companyName || "N/A"}</p>
               </div>
             </div>

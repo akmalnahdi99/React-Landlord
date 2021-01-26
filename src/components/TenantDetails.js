@@ -29,15 +29,15 @@ export default function TenantDetails({ title }) {
   if (isLoading === false && userInfo !== null) {
     details = [
       {
-        key: "Full Name",
+        key: "Full name",
         value: userInfo.userName,
       },
       {
-        key: "Phone Number",
+        key: "Phone number",
         value: userInfo.phoneNumber,
       },
       {
-        key: "NRIC No.",
+        key: "NRIC no.",
         value: userInfo.nricNumber,
       },
       {
@@ -53,11 +53,11 @@ export default function TenantDetails({ title }) {
         value: userInfo.gender,
       },
       {
-        key: "Nationaility",
+        key: "Nationality",
         value: userInfo.nationality,
       },
       {
-        key: "Passport Number",
+        key: "Passport number",
         value: userInfo.passportNumber,
       },
       {
@@ -65,7 +65,7 @@ export default function TenantDetails({ title }) {
         value: userInfo.occupation,
       },
       {
-        key: "Company Name",
+        key: "Company name",
         value: userInfo.companyName,
       },
       {
