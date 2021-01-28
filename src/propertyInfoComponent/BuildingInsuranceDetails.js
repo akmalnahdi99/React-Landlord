@@ -100,7 +100,7 @@ export default function BuildingInsuranceDetails({ title }) {
             <div className="col-sm-6">
               <div className="media">
                 <div className="media-body">
-                  <h4 className="text-doorcase3">Total Units</h4>
+                  <h4 className="text-doorcase3">Total units</h4>
                   <p className="m-0">{buildingInsuranceDetails.totalUnits}</p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function BuildingInsuranceDetails({ title }) {
             <div className="col-sm-6">
               <div className="media">
                 <div className="media-body">
-                  <h4 className="text-doorcase3">Total Blocks</h4>
+                  <h4 className="text-doorcase3">Total blocks</h4>
                   <p className="m-0">{buildingInsuranceDetails.totalBlocks}</p>
                 </div>
               </div>
