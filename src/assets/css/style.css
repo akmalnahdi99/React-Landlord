@@ -9250,13 +9250,13 @@ dd.project-people {
 }
 
 .chat-discussion .chat-message.left .message {
-  text-align: left;
-  margin-left: 55px;
+  text-align: right;
+  margin-left: 30px;
 }
 
 .chat-discussion .chat-message.right .message {
-  text-align: right;
-  margin-right: 55px;
+  text-align: left;
+  margin-right: 30px;
 }
 
 .message-date {

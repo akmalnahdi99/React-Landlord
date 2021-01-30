@@ -4,7 +4,7 @@ import React from "react";
 
 
 import MaintenanceDetailsList from "../../components/MaintenanceDetailsList";
-import MaintenanceRequestChat from "../../components/MaintenanceRequestChat";
+import MaintenanceRequestChat from "../../components/MaintenancePrivateChat";
 
 export default function Maintenance() {
   // const { alert, hideAlert } = React.useContext(UserContext);
