@@ -30,7 +30,7 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && netlify deploy -p --dir build",
     "test": "react-scripts test",

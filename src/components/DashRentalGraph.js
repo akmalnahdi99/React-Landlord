@@ -12,20 +12,19 @@ export default function DashRentalGraph() {
   const [rentalStats, set_rentalStats] = React.useState(null);
   const appContext = React.useContext(AppContext);
   var activeUnitId = appContext.settings.activeUnitId;
- 
+
   var infoCardData = {
-    title: "Due On: 10/28/2020",
+    title: "",
     body: "",
     color: "red",
     address: "/payables",
   };
 
   React.useEffect(() => {
-   
     async function loadRentalStats() {
       setIsLoading(true);
-      var response = await apiCall("/units/landlordRentalStatsPerYear?unitId=" + activeUnitId,null,null,appContext);
-      if (response.status) {
+      var response = await apiCall("/units/landlordRentalStatsPerYear?unitId=" + activeUnitId, null, null, appContext);
+      if (response.status) { 
         set_rentalStats(response.data);
       }
       setIsLoading(false);
@@ -36,14 +35,19 @@ export default function DashRentalGraph() {
   }, [activeUnitId]);
 
   if (rentalStats) {
-    var previousNotPaidCount = rentalStats.previousNotPaidCount;
+    var previousYearNotPaidCount = rentalStats.previousYearNotPaidCount;
+    var overDueCount = rentalStats.overDueCount;
+ 
+    if (overDueCount > 0) {
+      infoCardData.body = `${overDueCount} overdue payment${overDueCount > 0 ? "s" : ""}`;
+    }
 
-    if (previousNotPaidCount > 0) {
+    if (previousYearNotPaidCount > 0) {
       infoCardData.title = "Previous Payments";
-      infoCardData.body = `Tenant have ${previousNotPaidCount} unpaid payment${previousNotPaidCount > 0 ? "s" : ""} from previous year`;
+      infoCardData.body += `, ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
     }
   }
- 
+
   return (
     <div className="ibox">
       <div className="ibox-title">
