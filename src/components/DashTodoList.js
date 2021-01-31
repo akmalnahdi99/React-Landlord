@@ -17,10 +17,10 @@ export default function DashTodoList() {
       setIsLoading(true);
 
       var response = await apiLoadData("landlordTodoList", { activeUnitId });
- 
-      if (response && response.length > 1) {
+
+      if (response && response.length > 0) {
         set_todoList(response.slice(0, 3));
-      }  
+      }
       setIsLoading(false);
     }
     loadTodoList();

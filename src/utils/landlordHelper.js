@@ -82,10 +82,10 @@ export const apiCall = async (url, method, data, appContext) => {
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
 // Action Levels
- export const action_level_info = "info";
- export const action_level_warning = "warning";
- export const action_level_danger = "danger";
- export const action_level_waiting = "waiting";
+export const action_level_info = "info";
+export const action_level_warning = "warning";
+export const action_level_danger = "danger";
+export const action_level_waiting = "waiting";
 
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
@@ -288,6 +288,28 @@ export const UnitKitsIcons = {
 };
 
 // ############### APIS
+
+export function processTenantPayablesPerContract(data) {
+  if (data && data["Rental"] && data["Rental"].length > 0) {
+    data = data["Rental"];
+
+    for (let i = 0; i < data.length; i++) {
+      const element = data[i];
+      if (element.status === "overdue") {
+        element.level = action_level_danger;
+      } else if (element.status === "due") {
+        element.level = action_level_warning;
+      } else if (element.status === "done") {
+        element.level = action_level_info;
+      }
+
+      element.title = element.status + " on : " + element.paymentDue;
+      element.body = "Payment " + element.status;
+    }
+  }
+  return data;
+}
+
 export async function apiLoadData(endpointName, data) {
   console.log("Entering API load data : " + endpointName + " with ", data);
   endpointName = endpointName.toLowerCase();
@@ -300,7 +322,9 @@ export async function apiLoadData(endpointName, data) {
       response = await apiCall("/units/landlordTodoList/?unitId=" + data.activeUnitId);
       break;
 
-    case "c".toLowerCase():
+    // all tenant payments info
+    case "tenantRentalsPerContract".toLowerCase():
+      response = await apiCall("/units/tenantRentalsPerContract/?unitId=" + data.activeUnitId);
       break;
     case "xx".toLowerCase():
       break;

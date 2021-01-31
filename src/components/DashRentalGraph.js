@@ -5,7 +5,8 @@ import { AppContext } from "../context/settings";
 import Loading from "./static/Loading";
 import InfoCardItem from "./InfoCardItem";
 import { action_level_danger, apiCall } from "utils/landlordHelper";
-import NoOverdue from "./EmptyOverdue";
+import EmptyDashboard from "./EmptyDashboard";
+ 
 
 export default function DashRentalGraph() {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -61,7 +62,7 @@ export default function DashRentalGraph() {
         ) : (
           <React.Fragment>
             <RentalDonut {...rentalStats} />
-            {infoCardData.body !== "" ? <InfoCardItem {...infoCardData} /> : <NoOverdue title="No Overdue" />}
+            {infoCardData.body !== "" ? <InfoCardItem {...infoCardData} /> : <EmptyDashboard title="No Overdue" />}
           </React.Fragment>
         )}
       </div>

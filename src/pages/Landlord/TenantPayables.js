@@ -3,7 +3,7 @@ import React from "react";
 import TenantPayablesList from "../../components/TenantPayablesList";
 
  
-const TenantPayables = () => {
+export default  function TenantPayables  ()  {
   return (
     <div className="wrapper wrapper-content animated fadeInRight gray-bg">
       <div className="container-fluid">
@@ -16,5 +16,4 @@ const TenantPayables = () => {
     </div>
   );
 };
-
-export default TenantPayables;
+ 
