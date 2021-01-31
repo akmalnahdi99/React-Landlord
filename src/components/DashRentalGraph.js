@@ -4,7 +4,7 @@ import { AppContext } from "../context/settings";
 
 import Loading from "./static/Loading";
 import InfoCardItem from "./InfoCardItem";
-import { apiCall } from "utils/landlordHelper";
+import { action_level_danger, apiCall } from "utils/landlordHelper";
 import NoOverdue from "./EmptyOverdue";
 
 export default function DashRentalGraph() {
@@ -16,8 +16,8 @@ export default function DashRentalGraph() {
   var infoCardData = {
     title: "",
     body: "",
-    color: "red",
-    address: "/payables",
+    level: action_level_danger,
+    address: "/landlord/payables",
   };
 
   React.useEffect(() => {
@@ -44,7 +44,9 @@ export default function DashRentalGraph() {
 
     if (previousYearNotPaidCount > 0) {
       infoCardData.title = "Previous Payments";
-      infoCardData.body += `, ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
+      if (infoCardData.body!== "")
+          infoCardData.body += ', ';
+      infoCardData.body += `${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
     }
   }
 

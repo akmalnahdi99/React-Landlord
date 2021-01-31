@@ -51,7 +51,6 @@ export const apiCall = async (url, method, data, appContext) => {
   if (data) {
     requestOptions["body"] = JSON.stringify(data);
   }
-  
 
   var apiResult = null;
   var result = { status: null, data: null };
@@ -63,7 +62,7 @@ export const apiCall = async (url, method, data, appContext) => {
         result.status = true;
       } else if (resp.status === 401) {
         // logout if not authorized (need to login again)
-            appContext && appContext.updateAppContext({ isLogged: false });
+        appContext && appContext.updateAppContext({ isLogged: false });
         result.status = false;
       } else {
         apiResult = await resp.json();
@@ -82,6 +81,12 @@ export const apiCall = async (url, method, data, appContext) => {
 
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
+// Action Levels
+ export const action_level_info = "info";
+ export const action_level_warning = "warning";
+ export const action_level_danger = "danger";
+ export const action_level_waiting = "waiting";
+
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
   if (financialData) {
@@ -126,12 +131,10 @@ export function getUnitRoomsPerCategory(category, inventoryData) {
 
   var rooms = {};
   for (const key in inventoryData) {
- 
     var list = inventoryData[key];
     list
       .filter((x) => x.category === category)
       .forEach((x) => {
-     
         rooms[x.roomId] = x.roomName;
       });
   }
@@ -156,7 +159,7 @@ export function getUnitMainCategories(inventoryData) {
 // filter inventory by type and location (room)
 export function filterInventory(location, inventoryOf, inventoryData) {
   if (!location || !inventoryOf || !inventoryData) return null;
-  
+
   return inventoryData[inventoryOf].filter((x) => x.roomId === location);
 }
 
@@ -284,29 +287,27 @@ export const UnitKitsIcons = {
   "Vehicle Stickers": { img: "/imgs/car.svg" },
 };
 
-
-
 // ############### APIS
 export async function apiLoadData(endpointName, data) {
+  console.log("Entering API load data : " + endpointName + " with ", data);
   endpointName = endpointName.toLowerCase();
   var response = null;
   switch (endpointName) {
     case "a".toLowerCase():
       response = await apiCall(" " + data.activeUnitId);
       break;
-    case "b".toLowerCase():
-      
+    case "landlordTodoList".toLowerCase():
+      response = await apiCall("/units/landlordTodoList/?unitId=" + data.activeUnitId);
       break;
+
     case "c".toLowerCase():
-  
       break;
     case "xx".toLowerCase():
-    
       break;
     default:
       break;
   }
-
+  console.log("Exiting Api load data : with ", response.data);
   if (response.status) {
     return response.data;
   }
