@@ -1,7 +1,7 @@
 //TASK under Review
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button, Modal, ModalHeader, ModalBody, Media } from 'reactstrap';
+import {  Modal, ModalHeader, ModalBody, Media } from 'reactstrap';
 
 export default function MaintenanceDetailsList() {
   let history = useHistory();
@@ -415,7 +415,7 @@ export default function MaintenanceDetailsList() {
               <div className="row justify-content-center">
                 <div className="col-12 align-self-center timeline-link p-3" onClick={RedirectPChat} style={{ cursor: "pointer", color: "#000" }}>
                   <div className="media">
-                    <img alt="image" src="/imgs/avatar.svg"
+                    <img alt="..." src="/imgs/avatar.svg"
                       className="img-fluid rounded-circle align-self-center mr-3" width="50px" />
 
                     <div className="media-body align-self-center">

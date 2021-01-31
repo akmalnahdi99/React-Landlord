@@ -28,7 +28,7 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url, method, data) => {
+export const apiCall = async (url, method, data, appContext) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
@@ -51,18 +51,23 @@ export const apiCall = async (url, method, data) => {
   if (data) {
     requestOptions["body"] = JSON.stringify(data);
   }
-  console.log(requestOptions);
 
   var apiResult = null;
   var result = { status: null, data: null };
+
   await fetch(apiUrl + url, requestOptions)
     .then(async (resp) => {
       if (resp.status === 200) {
         apiResult = await resp.json();
         result.status = true;
-      } else {
-          apiResult = await resp.json();
+      } else if (resp.status === 401) {
+        // logout if not authorized (need to login again)
+        appContext && appContext.updateAppContext({ isLogged: false });
         result.status = false;
+      } else {
+        apiResult = await resp.json();
+        result.status = false;
+
         throw new Error(resp.statusText);
       }
     })
@@ -76,6 +81,12 @@ export const apiCall = async (url, method, data) => {
 
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
+// Action Levels
+export const action_level_info = "info";
+export const action_level_warning = "warning";
+export const action_level_danger = "danger";
+export const action_level_waiting = "waiting";
+
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
   if (financialData) {
@@ -120,12 +131,10 @@ export function getUnitRoomsPerCategory(category, inventoryData) {
 
   var rooms = {};
   for (const key in inventoryData) {
-    console.log(key);
     var list = inventoryData[key];
     list
       .filter((x) => x.category === category)
       .forEach((x) => {
-        console.log("category:", category, "roomId:", x.roomId);
         rooms[x.roomId] = x.roomName;
       });
   }
@@ -150,7 +159,7 @@ export function getUnitMainCategories(inventoryData) {
 // filter inventory by type and location (room)
 export function filterInventory(location, inventoryOf, inventoryData) {
   if (!location || !inventoryOf || !inventoryData) return null;
-  console.log("searching for inventory", location, inventoryOf);
+
   return inventoryData[inventoryOf].filter((x) => x.roomId === location);
 }
 
@@ -277,3 +286,54 @@ export const UnitKitsIcons = {
   "Remote Controls": { img: "/imgs/remote-control.svg" },
   "Vehicle Stickers": { img: "/imgs/car.svg" },
 };
+
+// ############### APIS
+
+export function processTenantPayablesPerContract(data) {
+  if (data && data["Rental"] && data["Rental"].length > 0) {
+    data = data["Rental"];
+
+    for (let i = 0; i < data.length; i++) {
+      const element = data[i];
+      if (element.status === "overdue") {
+        element.level = action_level_danger;
+      } else if (element.status === "due") {
+        element.level = action_level_warning;
+      } else if (element.status === "done") {
+        element.level = action_level_info;
+      }
+
+      element.title = element.status + " on : " + element.paymentDue;
+      element.body = "Payment " + element.status;
+    }
+  }
+  return data;
+}
+
+export async function apiLoadData(endpointName, data) {
+  console.log("Entering API load data : " + endpointName + " with ", data);
+  endpointName = endpointName.toLowerCase();
+  var response = null;
+  switch (endpointName) {
+    case "a".toLowerCase():
+      response = await apiCall(" " + data.activeUnitId);
+      break;
+    case "landlordTodoList".toLowerCase():
+      response = await apiCall("/units/landlordTodoList/?unitId=" + data.activeUnitId);
+      break;
+
+    // all tenant payments info
+    case "tenantRentalsPerContract".toLowerCase():
+      response = await apiCall("/units/tenantRentalsPerContract/?unitId=" + data.activeUnitId);
+      break;
+    case "xx".toLowerCase():
+      break;
+    default:
+      break;
+  }
+  console.log("Exiting Api load data : with ", response.data);
+  if (response.status) {
+    return response.data;
+  }
+  return null;
+}

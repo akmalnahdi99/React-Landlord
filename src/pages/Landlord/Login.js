@@ -6,7 +6,7 @@ import { config } from "./../../constants";
 import Cookies from "js-cookie";
 
 export default function Login() {
-  console.log("[Login component]");
+ 
   const { updateAppContext, settings } = React.useContext(AppContext);
 
   const [user, setUser] = React.useState({ userId: "", password: "" });
@@ -25,7 +25,7 @@ export default function Login() {
 
   // handle from submit button
   const handleSubmit = (e) => {
-    console.log("in handle sumbit");
+ 
     e.preventDefault();
     if (user.userId !== "" && user.password !== "") {
       authenticate();
@@ -33,18 +33,14 @@ export default function Login() {
       setErrorMsg("please enter a userId & password");
     }
   };
-
-  //   React.useEffect(() => {
-  //     console.log("in Profile: try to get info");
-  //   }, []);
-
+ 
   // if user already logged redirect him directly to main activites.
   if (isLogged === true && accessToken !== null) {
     return <Redirect to="/landlord/activity"></Redirect>;
   }
 
   const authenticate = () => {
-    console.log("[function authenticate]");
+  
     var userId = user.userId;
     var password = user.password;
 
@@ -60,8 +56,8 @@ export default function Login() {
       .then(async (resp) => {
         if (resp.status === 200) {
           var token = await resp.json();
-          Cookies.set("jwtToken", token);
-          console.log("update the token");
+          Cookies.set("jwtToken", token.token);
+          console.log(token.token);
           var response = await apiCall("/users/info");
 
           var activeUnitId = null;
@@ -72,13 +68,13 @@ export default function Login() {
             quickLinks = response.data.quickLinks;
             notificationsCount = response.data.notificationsCount;
           }
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
+          updateAppContext({ postsFilter: "All", accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);
         }
       })
       .catch((error) => {
-        console.log(error);
+     
         setErrorMsg("Id or password is not correct");
       })
       .finally((f) => {

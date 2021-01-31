@@ -1,28 +1,33 @@
+import { AppContext } from "context/settings";
 import React from "react";
-import Empty from "./Empty";
-import TenantPayablesItem from "./TenantPayablesItem";
+import { apiLoadData, processTenantPayablesPerContract } from "utils/landlordHelper";
 
-const TenantPayablesList = () => {
-  var notificatins = [
-    {
-      id: 0,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "Toilet Repairing Start Today",
-    },
-    {
-      id: 1,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "Payment For Rental Due Soon",
-    },
-    {
-      id: 2,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "Master Bedroom Pipe Burst",
-    },
-  ];
+import EmptyDashboard from "./EmptyDashboard";
+import InfoCardItem from "./InfoCardItem";
+import Loading from "./static/Loading";
+//import TenantPayablesItem from "./TenantPayablesItem";
+
+export default function TenantPayablesList() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [rentalFinancials, set_rentalFinancials] = React.useState([]);
+  var appContext = React.useContext(AppContext);
+  const activeUnitId = appContext.settings.activeUnitId;
+
+  React.useEffect(() => {
+    async function loadRentalsFinancials() {
+      setIsLoading(true);
+
+      var response = await apiLoadData("tenantRentalsPerContract", { activeUnitId });
+      var result = processTenantPayablesPerContract(response);
+
+      set_rentalFinancials(result);
+
+      setIsLoading(false);
+    }
+    loadRentalsFinancials();
+
+    // eslint-disable-next-line
+  }, [activeUnitId]);
 
   return (
     <div className="ibox">
@@ -32,18 +37,22 @@ const TenantPayablesList = () => {
       <div className="ibox-content minhigh">
         <div className="row">
           <div className="col-sm-12">
-            {notificatins.length > 0 ? (
-              notificatins.map((item) => {
-                return <TenantPayablesItem key={item.id} {...item} />;
-              })
+            {isLoading === true ? (
+              <Loading />
             ) : (
-              <Empty />
+              <React.Fragment>
+                {rentalFinancials && rentalFinancials.length > 0 ? (
+                  rentalFinancials.map((item) => {
+                    return <InfoCardItem key={item.id} {...item} />;
+                  })
+                ) : (
+                  <EmptyDashboard title="No items" />
+                )}
+              </React.Fragment>
             )}
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default TenantPayablesList;
+}

@@ -1,3 +1,7 @@
+[2021-01-31]
+- please notice that the port number for landlord (in development only fixed to 3000)
+- please notice that the port number for landlord_mixed (tenant) (in development only fixed to 3001)
+
 [2021-01-15]
 - zero scrollbar :
 https://stackoverflow.com/questions/64361996/react-router-scroll-page-to-the-top-after-transition

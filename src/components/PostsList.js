@@ -8,14 +8,14 @@ import Loading from "./static/Loading";
 
 const PostsList = (props, filterBy) => {
   const appContext = React.useContext(AppContext);
-  const activeFilter = appContext.settings.postsFilter;
+  const activeFilter = appContext.settings.postsFilter || "All";
   const activeUnitId = appContext.settings.activeUnitId;
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [posts, setPosts] = React.useState(null);
 
   React.useEffect(() => {
-    console.log("in posts list");
+  
     async function loadPostsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/units/listPosts");

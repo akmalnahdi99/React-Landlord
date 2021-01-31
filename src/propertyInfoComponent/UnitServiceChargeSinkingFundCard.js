@@ -5,7 +5,7 @@ import { AppContext } from "../context/settings";
 import { apiCall } from "../utils/landlordHelper";
 
 export default function UnitServiceSinkingCard({ title }) {
-  console.log("In Facilities");
+  
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [unitServicesSinkingFund, setUnitServicesSinkingFund] = React.useState(true);

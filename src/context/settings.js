@@ -28,28 +28,22 @@ function getsettingsFromLocalStorage() {
 
 function AppProvider({ children }) {
   const [settings, setSettings] = React.useState(getsettingsFromLocalStorage());
-
-  const setPostsFilter = (filter) => {
-    const newSettings = { ...settings, postsFilter: filter };
-    setSettings(newSettings);
-    localStorage.setItem("settings", JSON.stringify(newSettings));
-  };
-
+ 
   const updateAppContext = (newSetting, toDelete) => {
     //setSettings(getsettingsFromLocalStorage());
-    console.log("[Update App Context] -------Start------");
-    console.log("[Update App Context] size of old :", JSON.stringify(settings).length);
-    console.log("[Update App Context] size of new :", JSON.stringify(newSetting).length);
+    // console.log("[Update App Context] -------Start------");
+    // console.log("[Update App Context] size of old :", JSON.stringify(settings).length);
+    // console.log("[Update App Context] size of new :", JSON.stringify(newSetting).length);
     setSettings(settings);
     const newSettings = { ...settings, ...newSetting };
-    console.log("[Update App Context] size of both :", JSON.stringify(newSettings).length);
+    // console.log("[Update App Context] size of both :", JSON.stringify(newSettings).length);
  
     if (Array.isArray(toDelete)) {
       toDelete.forEach((x) => delete newSettings[x]);
     }
 
     setSettings(newSettings);
-    console.log("[Update App Context] size of fnl :", JSON.stringify(settings).length);
+    // console.log("[Update App Context] size of fnl :", JSON.stringify(settings).length);
     var a = JSON.stringify(newSettings);
     // console.log("----------Size:", a.length );
     localStorage.setItem("settings", a);
@@ -57,11 +51,11 @@ function AppProvider({ children }) {
 
    
   const clearSettings = () => {
-    // setSettings({});
-    // localStorage.removeItem("settings");
+     setSettings({});
+     localStorage.removeItem("settings");
   };
 
-  return <AppContext.Provider value={{ clearSettings,    settings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ clearSettings,    settings, updateAppContext }}>{children}</AppContext.Provider>;
 }
 
 export { AppProvider, AppContext };

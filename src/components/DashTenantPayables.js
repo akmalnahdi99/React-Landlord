@@ -1,38 +1,44 @@
+import { AppContext } from "context/settings";
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import NoOverdue from "./EmptyOverdue";
+import { apiLoadData, processTenantPayablesPerContract } from "utils/landlordHelper";
+import EmptyDashboard from "./EmptyDashboard";
+
 import InfoCardItem from "./InfoCardItem";
+import Loading from "./static/Loading";
 
 export default function DashTenantPayables() {
   let history = useHistory();
 
-  const RedirectTenantPay = () => {
-    history.push("/landlord/tenantpayables");
-  };
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [rentalFinancials, set_rentalFinancials] = React.useState([]);
+  var appContext = React.useContext(AppContext);
+  const activeUnitId = appContext.settings.activeUnitId;
 
-  const data = [
-    {
-      title: "Due On: 10/28/2020",
-      body: "Rent overdue",
-      color: "red",
-    },
-    {
-      title: "Due On: 10/28/2020",
-      body: "Rent overdue",
-      color: "red",
-    },
-    {
-      title: "Due On: 10/28/2020",
-      body: "Rent overdue",
-      color: "red",
-    },
-  ];
+  React.useEffect(() => {
+    async function loadRentalsFinancials() {
+      setIsLoading(true);
+
+      var response = await apiLoadData("tenantRentalsPerContract", { activeUnitId });
+      var result = processTenantPayablesPerContract(response);
+
+      if (result && result.length > 0)
+      {
+        set_rentalFinancials(result.slice(0, 3));
+      }
+      setIsLoading(false);
+    }
+    loadRentalsFinancials();
+
+    // eslint-disable-next-line
+  }, [activeUnitId]);
+
   return (
-    <div className="ibox illustrated3" onClick={RedirectTenantPay} style={{ cursor: "pointer" }}>
+    <div className="ibox illustrated3" onClick={() => history.push("/landlord/tenantpayables")} style={{ cursor: "pointer" }}>
       <div className="ibox-title bg-transparent">
         <h5>Tenant Payables</h5>
         <div className="ibox-tools">
-          <Link to=""  >
+          <Link to="">
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
@@ -40,12 +46,18 @@ export default function DashTenantPayables() {
 
       <div className="ibox-content bg-transparent">
         <ul className="sortable-list connectList agile-list">
-          {data.length > 0 ? (
-            data.map((item, index) => {
-              return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
-            })
+          {isLoading === true ? (
+            <Loading />
           ) : (
-            <NoOverdue />
+            <React.Fragment>
+              {rentalFinancials && rentalFinancials.length > 0 ? (
+                rentalFinancials.map((item, index) => {
+                  return <InfoCardItem key={index} {...item} />;
+                })
+              ) : (
+                <EmptyDashboard title="Nothing to show" />
+              )}
+            </React.Fragment>
           )}
         </ul>
       </div>

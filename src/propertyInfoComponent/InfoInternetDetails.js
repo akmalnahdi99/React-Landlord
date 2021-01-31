@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 export default function InfoInternetDetails({ title, ...details }) {
   const [isOpen, setIsOpen] = useState(true);
-debugger;
+
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">

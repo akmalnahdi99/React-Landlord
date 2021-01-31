@@ -1,23 +1,31 @@
 //under review
 import React from "react";
 import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
-import { AppContext } from "../context/settings";
-
-export default function RentalDonut  ()  {
-  //TASK pls put colors in variables here example : var red = #329f9d
-  const appContext = React.useContext(AppContext);
-
-  var financialData = appContext.settings.unitFinancials;
-  if (financialData) {
-    var r = Object.keys(financialData).map((x) => financialData[x].tenant && financialData[x].tenant.Rental && financialData[x].tenant.Rental.paid);
-    var currMonth = new Date().getMonth();
-    var t = r.map((x, indexMonth) => (x === true ? "paid" : currMonth > indexMonth ? "due" : "future"));
-  } else {
-    t = Array(12);
-  }
  
-var paid = t.filter(x=>x==="paid").length;
 
+export default function RentalDonut({ paidCount, notPaidCount, previousYearNotPaidCount }) {
+  //TASK pls put colors in variables here example : var red = #329f9d
+
+   var t = Array(12);
+     for (let i = 0; i < 12; i++) {
+       t[i] = "future";
+     }
+
+  for (let i = 0; i < paidCount; i++) {
+    t[i] = "paid";
+  }
+
+  for (let i = paidCount; i < notPaidCount + paidCount; i++) {
+    t[i] = "due";
+  }
+
+  for (let i = notPaidCount + paidCount; i < 12; i++) {
+    t[i] = "future";
+  }
+
+  var paid = paidCount || 0;
+
+ 
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
       <ChartDonut
@@ -45,7 +53,6 @@ var paid = t.filter(x=>x==="paid").length;
           right: 0,
           top: 0,
         }}
-      
         title={paid + "/"}
         titleComponent={<ChartLabel y={115} x={100} style={[{ fontWeight: "600", fontSize: 40 }]} />}
         subTitle="12"

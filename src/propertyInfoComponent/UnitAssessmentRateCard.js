@@ -5,7 +5,7 @@ import { AppContext } from "../context/settings";
 import { apiCall } from "../utils/landlordHelper";
 
 export default function UnitAssessmentRateCard({ title }) {
-  console.log("In Facilities");
+ 
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [unitAssessmentRate, setUnitAssessmentRate] = React.useState(true);
