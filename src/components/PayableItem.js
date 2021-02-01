@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PayableItem({ date, paymentOf, amount, icon, color }) {
+export default function PayableItem({ date, paymentOf, amount, icon, color,address }) {
   var  colorClassName = "text-darkblue";
   if (color === "red") {
     colorClassName = "text-danger";
@@ -13,7 +13,7 @@ export default function PayableItem({ date, paymentOf, amount, icon, color }) {
       <div className="row">
         <div className="col-8">
           <div className="forum-sub-title">
-            <Link className="text-doorcase3" to="">
+            <Link className="text-doorcase3" to={address}>
               <img src={icon} width="30px" alt={paymentOf} />
               <span className="ml-2 text-doorcase3">{paymentOf}</span>
               <br />
