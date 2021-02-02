@@ -7,40 +7,36 @@ import PayableItem from "./PayableItem";
 export default function PayablesList() {
   var appContext = React.useContext(AppContext);
   var financials = (appContext.settings && appContext.settings.unitFinancials) || [];
-  var curMonth = new Date().getMonth();
 
-  var result = {};
-  for (let month = 1; month <= curMonth; month++) {
-    const curMonthFinancials = financials[month].landlord || [];
+  var duePayments = [];
+  var overDuePayments = [];
+  var duePaymentsView = [];
+  var overduePaymentsView = [];
 
-    for (const paymentName in curMonthFinancials) {
-      if (curMonthFinancials[paymentName].paid !== true) {
-        if (!result[paymentName]) {
-          result[paymentName] = {date:curMonthFinancials[paymentName].paymentDue, paymentOf: paymentName, amount: 0, paid: false, icon: (CompanyServicesIcons[paymentName] && CompanyServicesIcons[paymentName].img) || "" };
-        }
-        result[paymentName].amount += curMonthFinancials[paymentName].amountRequired;
+  financials = (financials && financials["landlord"] && financials["landlord"]) || [];
+
+  Object.keys(financials).forEach((paymentOf) => {
+    var payables = financials[paymentOf];
+
+    payables.forEach((element) => {
+      var paymentData = element;
+      paymentData.icon = (CompanyServicesIcons[paymentOf] && CompanyServicesIcons[paymentOf].img) || "";
+
+      if (paymentData.status === "due") {
+        duePayments.push(paymentData);
+      } else if (paymentData.status === "overdue") {
+        overDuePayments.push(paymentData);
       }
-    }
-  }
- 
-
-  var due =[];
-  //var a= [
-  //   {
-  //     id: 1,
-  //     date: "13/09/2020",
-  //     title: "Sinking Fund",
-  //     amount: "RM XXXX",
-  //     icon: "/imgs/money-bag.svg",
-  //   },
-  //   {
-  //     id: 2,
-  //     date: "13/09/2020",
-  //     title: "Quit Rent",
-  //     amount: "RM XXXX",
-  //     icon: "/imgs/quitrent.svg",
-  //   },
-  // ];
+      duePaymentsView = duePayments.map((item, index) => {
+        var link = "/landlord/bills/" + paymentOf;
+        return <PayableItem key={index} {...item} date={item.paymentDue} amount={item.amountRequired} paymentOf={paymentOf} address={link} color="red" />;
+      });
+      overduePaymentsView = overDuePayments.map((item, index) => {
+        var link = "/landlord/bills/" + paymentOf;
+        return <PayableItem key={index} {...item} date={item.paymentDue} amount={item.amountRequired} paymentOf={paymentOf} address={link} color="red" />;
+      });
+    });
+  });
  
   return (
     <div className="ibox">
@@ -49,25 +45,13 @@ export default function PayablesList() {
       </div>
       <div className="ibox-content forum-container">
         <h4 className="text-doorcase3">Payment Overdue</h4>
-
-        {Object.keys(result).length > 0 ? (
-          Object.keys(result).map((item, index) => {
-            return <PayableItem key={index} {...result[item]} color="red" />;
-          })
-        ) : (
-          <Empty />
-        )}
+        {overduePaymentsView.length > 0 ? overduePaymentsView : <Empty title="No payments found" />}
       </div>
+
       {/* Need to understand the payment cycle login (End of month, or start month) */}
       <div className="ibox-content forum-container">
         <h4 className="text-doorcase3">Payment Due</h4>
-        {due.length > 0 ? (
-          due.map((item) => {
-            return <PayableItem key={item.id} {...item} color="blue" />;
-          })
-        ) : (
-          <Empty />
-        )}
+        {duePaymentsView.length > 0 ? duePaymentsView : <Empty title="No payments found" />}
       </div>
     </div>
   );

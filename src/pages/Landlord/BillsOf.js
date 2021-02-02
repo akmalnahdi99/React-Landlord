@@ -4,8 +4,6 @@ import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
 
-
-
 import BillsServiceCharge from "../../bills_component/BillsServiceCharge";
 import BillsInsurance from "../../bills_component/BillsInsurance";
 import BillsQuitRent from "../../bills_component/BillsQuitRent";
@@ -13,7 +11,7 @@ import BillsAssessmentRate from "../../bills_component/BillsAssessmentRate";
 import BillsSubscriptionFee from "../../bills_component/BillsSubscriptionFee";
 import BillsMaintenance from "../../bills_component/BillsMaintenance";
 import BillsUnpaid from "../../bills_component/BillsUnpaid";
- 
+
 import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
 import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
 import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
@@ -26,7 +24,7 @@ import { apiCall } from "../../utils/landlordHelper";
 
 export default function BillOf() {
   var t = useParams();
-  var billType = t.billType;
+  var billOf = t.billOf;
   const appContext = React.useContext(AppContext);
   const activeUnitId = appContext.settings.activeUnitId;
   const [isLoading, setIsLoading] = React.useState(true);
@@ -36,27 +34,25 @@ export default function BillOf() {
   React.useEffect(() => {
     async function loadUtilityDetailsWrapper() {
       setIsLoading(true);
-      var response = await apiCall("/units/utilityInfo/unitId=" + activeUnitId + "&companyFor=" + billType);
+      var response = await apiCall("/units/utilityInfo/unitId=" + activeUnitId + "&companyFor=" + billOf);
       if (response.status) {
         setUtilityDetails(response.data);
       }
       setIsLoading(false);
     }
-  
-   
-    var withInvoices = ["ServiceCharges","Insurance", "QuitRent", "AssessmentRate", "Subscription", "Maintenance"];
 
-    if (withInvoices.indexOf(billType) >= 0) {
+    var withInvoices = ["ServiceCharges", "Insurance", "QuitRent", "AssessmentRate", "Subscription", "Maintenance"];
+
+    if (withInvoices.indexOf(billOf) >= 0) {
       var financials = appContext.settings && appContext.settings.unitFinancials;
-      var currMonth = new Date().getMonth()+1;
       var result = [];
-
-      for (let month = currMonth; month >= 1; month--) {
-        const element = financials[month].landlord[billType];
-        if (element.paid !== null) {
-          result[month] = element;
+      const billsOf = (financials && financials["landlord"] && financials["landlord"][billOf]) || null;
+      billsOf&&billsOf.forEach((element) => {
+        if (element && element.paid !== true) {
+          result.push(element);
         }
-      }
+      });
+
       setPayments(result);
     }
 
@@ -64,11 +60,11 @@ export default function BillOf() {
     // eslint-disable-next-line
   }, [activeUnitId]);
 
-  if (!billType) {
+  if (!billOf) {
     // if you don't have bill type we redirect back /land/bills/water
     return <Redirect to="/landlord/bills" />;
-  } 
- 
+  }
+  console.log("Bills Found", payments);
   const data = [
     {
       key: "ServiceCharges",
@@ -91,7 +87,7 @@ export default function BillOf() {
 
   var allowed = false;
   for (var i = 0; i < data.length; i++) {
-    if (data[i].key.toUpperCase() === billType.toUpperCase()) {
+    if (data[i].key.toUpperCase() === billOf.toUpperCase()) {
       allowed = true;
       break;
     }
@@ -103,52 +99,43 @@ export default function BillOf() {
   }
 
   return (
-    isLoading === true ? (
-        <Loading />
-      ) : (
-        <React.Fragment>
-          <div className="wrapper wrapper-content animated fadeInRight">
-          <div className="container-fluid">
-            <div className="row justify-content-center">
-              <div className="col-lg-8 mb-3 px-0">
-                  {billType === "ServiceCharges" ? <BillsServiceCharge  utilityDetails={utilityDetails} payments={payments} /> : ""}
-                  {billType === "Insurance" ? <BillsInsurance utilityDetails={utilityDetails} payments={payments} /> : ""}
-                  {billType === "QuitRent" ? <BillsQuitRent utilityDetails={utilityDetails} payments={payments} /> : ""}
-                  {billType === "AssessmentRate" ? <BillsAssessmentRate utilityDetails={utilityDetails} payments={payments} /> : ""}
-                  {billType === "Subscription" ? <BillsSubscriptionFee utilityDetails={utilityDetails} payments={payments} /> : ""}
-                  {billType === "Maintenance" ? <BillsMaintenance utilityDetails={utilityDetails} payments={payments} /> : ""}
-
+    <React.Fragment>
+      <div className="wrapper wrapper-content animated fadeInRight">
+        <div className="container-fluid">
+          <div className="row justify-content-center">
+            <div className="col-lg-8 mb-3 px-0">
+              {isLoading === true ? (
+                <Loading />
+              ) : (
+                <React.Fragment>
+                  {billOf === "ServiceCharges" ? <BillsServiceCharge utilityDetails={utilityDetails} payments={payments} /> : ""}
+                  {billOf === "Insurance" ? <BillsInsurance utilityDetails={utilityDetails} payments={payments} /> : ""}
+                  {billOf === "QuitRent" ? <BillsQuitRent utilityDetails={utilityDetails} payments={payments} /> : ""}
+                  {billOf === "AssessmentRate" ? <BillsAssessmentRate utilityDetails={utilityDetails} payments={payments} /> : ""}
+                  {billOf === "Subscription" ? <BillsSubscriptionFee utilityDetails={utilityDetails} payments={payments} /> : ""}
+                  {billOf === "Maintenance" ? <BillsMaintenance utilityDetails={utilityDetails} payments={payments} /> : ""}
+                 
+                  {billOf === "Water" ? <InfoWaterDetails title="Water Rate" {...utilityDetails} /> : ""}
+                  {billOf === "Electricity" ? <InfoElectricityDetails title="Electricity Rate" {...utilityDetails} /> : ""}
+                  {billOf === "Sewage" ? <InfoSewageDetails title="Sewage" {...utilityDetails} /> : ""}
+                  {billOf === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
+                  {billOf === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
+                  {billOf === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
                   
-
-                  {/* Info Only Should we use these or reuse the unit ones */}
-
-                  {/* <div className="border-red">
-            {billType === "Water" ? <BillsWater /> : ""}
-            {billType === "Electricity" ? <BillsElectricity /> : ""}
-            {billType === "Sewage" ? <BillsSewage /> : ""}
-            {billType === "Internet" ? <BillsInternet /> : ""}
-            {billType === "Cabletv" ? <BillsCabletv /> : ""}
-            {billType === "Gas" ? <BillsGas /> : ""}
-          </div> */}
-
-                  {billType === "Water" ? <InfoWaterDetails title="Water Rate" {...utilityDetails} /> : ""}
-                  {billType === "Electricity" ? <InfoElectricityDetails title="Electricity Rate" {...utilityDetails} /> : ""}
-                  {billType === "Sewage" ? <InfoSewageDetails title="Sewage" {...utilityDetails} /> : ""}
-                  {billType === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
-                  {billType === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
-                  {billType === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
-
-                  {billType === "Water" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
-                  {billType === "Electricity" ? <BillsUnpaid title="February" {...BillsUnpaid} /> : ""}
-                  {billType === "Sewage" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
-                  {billType === "Internet" ? <BillsUnpaid title="December" {...BillsUnpaid} /> : ""}
-                  {billType === "Cabletv" ? <BillsUnpaid title="December" {...BillsUnpaid} /> : ""}
-                  {billType === "Gas" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
-                </div>
-              </div>
+                  
+                  
+                  {/* {billOf === "Water" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
+                  {billOf === "Electricity" ? <BillsUnpaid title="February" {...BillsUnpaid} /> : ""}
+                  {billOf === "Sewage" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""}
+                  {billOf === "Internet" ? <BillsUnpaid title="December" {...BillsUnpaid} /> : ""}
+                  {billOf === "Cabletv" ? <BillsUnpaid title="December" {...BillsUnpaid} /> : ""}
+                  {billOf === "Gas" ? <BillsUnpaid title="January" {...BillsUnpaid} /> : ""} */}
+                </React.Fragment>
+              )}
             </div>
           </div>
-        </React.Fragment>
-      ) 
+        </div>
+      </div>
+    </React.Fragment>
   );
 }
