@@ -36,24 +36,20 @@ export default function ViewingDetails() {
         <div className="ibox white-bg">
           <div className="ibox-title">
             <h3>Viewing Details</h3>
-            <div className="media pt-2">
-              {isLoading === true ? (
-                <Loading />
-              ) : (
-                <React.Fragment>
-                  <img className="align-self-center mr-3" src={vieweingDetails.thumbUrl} style={{ width: "100px", height: "100px", borderRadius: "50%" }} alt={vieweingDetails.tenantName} />
-                  <div className="media-body align-self-center">
-                    <h2 className="mt-0">{vieweingDetails.tenantName || "N/A"}</h2>
-                  </div>
-                </React.Fragment>
-              )}
-            </div>
           </div>
           {isLoading === true ? (
             <Loading />
           ) : (
             <React.Fragment>
               <div className="ibox-content">
+              <div className="media py-3">
+                <React.Fragment>
+                  <img className="align-self-center mr-3" src={vieweingDetails.thumbUrl} style={{ width: "100px", height: "100px", borderRadius: "50%" }} alt={vieweingDetails.tenantName} />
+                  <div className="media-body align-self-center">
+                    <h2 className="mt-0">{vieweingDetails.tenantName || "N/A"}</h2>
+                  </div>
+                </React.Fragment>
+            </div>
                 <div className="row">
                   <div className="col-sm-6 ">
                     <div className="media">
