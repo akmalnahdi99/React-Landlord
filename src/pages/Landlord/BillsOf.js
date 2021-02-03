@@ -10,8 +10,7 @@ import BillsQuitRent from "../../bills_component/BillsQuitRent";
 import BillsAssessmentRate from "../../bills_component/BillsAssessmentRate";
 import BillsSubscriptionFee from "../../bills_component/BillsSubscriptionFee";
 import BillsMaintenance from "../../bills_component/BillsMaintenance";
-import BillsUnpaid from "../../bills_component/BillsUnpaid";
-
+ 
 import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
 import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
 import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
