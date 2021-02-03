@@ -5,9 +5,8 @@ import { apiCall } from "../utils/landlordHelper";
 import Loading from "./static/Loading";
 
 export default function ViewingDetails() {
-
-    var t = useParams();
-    var appointmentId = t.appointmentId;
+  var t = useParams();
+  var appointmentId = t.appointmentId;
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [vieweingDetails, set_vieweingDetails] = React.useState(null);
@@ -18,7 +17,7 @@ export default function ViewingDetails() {
   React.useEffect(() => {
     async function loadViewingDetailsWrapper() {
       setIsLoading(true);
- 
+
       var response = await apiCall("/units/landlordAppointmentDetails/?unitId=" + activeUnitId + "&appointmentId=" + appointmentId);
 
       if (response.status) {
@@ -36,24 +35,20 @@ export default function ViewingDetails() {
         <div className="ibox white-bg">
           <div className="ibox-title">
             <h3>Viewing Details</h3>
-            <div className="media pt-2">
-              {isLoading === true ? (
-                <Loading />
-              ) : (
-                <React.Fragment>
-                  <img className="align-self-center mr-3" src={vieweingDetails.thumbUrl} style={{ width: "100px", height: "100px", borderRadius: "50%" }} alt={vieweingDetails.tenantName} />
-                  <div className="media-body align-self-center">
-                    <h2 className="mt-0">{vieweingDetails.tenantName || "N/A"}</h2>
-                  </div>
-                </React.Fragment>
-              )}
-            </div>
           </div>
           {isLoading === true ? (
             <Loading />
           ) : (
             <React.Fragment>
               <div className="ibox-content">
+                <div className="media py-3">
+                  <React.Fragment>
+                    <img className="align-self-center mr-3" src={vieweingDetails.thumbUrl} style={{ width: "100px", height: "100px", borderRadius: "50%" }} alt={vieweingDetails.tenantName} />
+                    <div className="media-body align-self-center">
+                      <h2 className="mt-0">{vieweingDetails.tenantName || "N/A"}</h2>
+                    </div>
+                  </React.Fragment>
+                </div>
                 <div className="row">
                   <div className="col-sm-6 ">
                     <div className="media">

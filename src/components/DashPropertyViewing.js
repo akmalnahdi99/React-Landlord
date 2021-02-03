@@ -20,17 +20,17 @@ export default function DashboardUnitViewing({ title }) {
     { text: "Future", value: viewingStats["future"], className: "fa fa-circle text-newtask" },
   ];
   return (
-    <div className="ibox">
-      <div className="ibox-title">
-        <h5>
-          <Link to="/landlord/unitviewings">{title}</Link>
+    <div className="ibox dash-box">
+      <Link className="dash-link" to="/landlord/unitviewings">
+      <div className="ibox-title dash-title">
+          <h5>
+          {title}
         </h5>
         <div className="ibox-tools">
-          <Link to="/landlord/unitviewings">
             <i className="fas fa-arrow-right"></i>
-          </Link>
         </div>
       </div>
+      </Link>
       <React.Fragment>
         <div className="ibox-content">
           <div className="statistic-box mt-0">
