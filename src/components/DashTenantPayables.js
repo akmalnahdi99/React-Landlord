@@ -35,15 +35,16 @@ export default function DashTenantPayables() {
 
   return (
     <div className="ibox illustrated3" onClick={() => history.push("/landlord/tenantpayables")} style={{ cursor: "pointer" }}>
-      <div className="ibox-title bg-transparent">
-        <h5>Tenant Payables</h5>
+      <Link className="dash-link" to="">
+      <div className="ibox-title dash-title">
+          <h5>
+          Tenant Payables
+        </h5>
         <div className="ibox-tools">
-          <Link to="">
             <i className="fas fa-arrow-right"></i>
-          </Link>
         </div>
       </div>
-
+      </Link>
       <div className="ibox-content bg-transparent">
         <ul className="sortable-list connectList agile-list">
           {isLoading === true ? (
