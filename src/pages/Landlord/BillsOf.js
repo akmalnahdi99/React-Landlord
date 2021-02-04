@@ -4,20 +4,20 @@ import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
 
-import BillsServiceCharge from "../../bills_component/BillsServiceCharge";
-import BillsInsurance from "../../bills_component/BillsInsurance";
-import BillsQuitRent from "../../bills_component/BillsQuitRent";
-import BillsAssessmentRate from "../../bills_component/BillsAssessmentRate";
-import BillsSubscriptionFee from "../../bills_component/BillsSubscriptionFee";
-import BillsMaintenance from "../../bills_component/BillsMaintenance";
-import BillsUnpaid from "../../bills_component/BillsUnpaid";
+import BillsServiceCharge from "../../components/bills_component/BillsServiceCharge";
+import BillsInsurance from "../../components/bills_component/BillsInsurance";
+import BillsQuitRent from "../../components/bills_component/BillsQuitRent";
+import BillsAssessmentRate from "../../components/bills_component/BillsAssessmentRate";
+import BillsSubscriptionFee from "../../components/bills_component/BillsSubscriptionFee";
+import BillsMaintenance from "../../components/bills_component/BillsMaintenance";
+import BillsUnpaid from "../../components/bills_component/BillsUnpaid";
 
-import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
-import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
-import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
-import InfoInternetDetails from "../../propertyInfoComponent/InfoInternetDetails";
-import InfoCableTvDetails from "../../propertyInfoComponent/InfoCableTvDetails";
-import InfoGasDetails from "../../propertyInfoComponent/InfoGasDetails";
+import InfoWaterDetails from "../../components/propertyInfoComponent/InfoWaterDetails";
+import InfoElectricityDetails from "../../components/propertyInfoComponent/InfoElectricityDetails";
+import InfoSewageDetails from "../../components/propertyInfoComponent/InfoSewageDetails";
+import InfoInternetDetails from "../../components/propertyInfoComponent/InfoInternetDetails";
+import InfoCableTvDetails from "../../components/propertyInfoComponent/InfoCableTvDetails";
+import InfoGasDetails from "../../components/propertyInfoComponent/InfoGasDetails";
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";
