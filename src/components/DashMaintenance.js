@@ -1,8 +1,8 @@
 import React from "react";
 import DashChart from "./DashChart";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const DashMaintenance = ({ title }) => {
+export default function DashMaintenance({ title }) {
   const data = [
     { text: "new", value: 1, className: "fa fa-circle text-newtask" },
     { text: "In Progress", value: 2, className: "fa fa-circle text-pendingtask" },
@@ -19,22 +19,17 @@ const DashMaintenance = ({ title }) => {
   //   paddAng = 0;
   // }
 
-
   return (
     <div className="ibox dash-box">
       <Link className="dash-link" to="/landlord/maintenance">
-      <div className="ibox-title dash-title">
-          <h5>
-          {title}
-        </h5>
-        <div className="ibox-tools">
+        <div className="ibox-title dash-title">
+          <h5>{title}</h5>
+          <div className="ibox-tools">
             <i className="fas fa-arrow-right"></i>
+          </div>
         </div>
-      </div>
       </Link>
       <DashChart data={data} />
     </div>
   );
-};
-
-export default DashMaintenance;
+}

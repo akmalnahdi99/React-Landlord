@@ -5,16 +5,12 @@ export default function DashIconsBox({ title, data, returnLink }) {
   return (
     <div className="ibox dash-box">
       <Link className="dash-link" to={returnLink}>
-      <div className="ibox-title dash-title">
-        
-          <h5>
-          {title}
-        </h5>
-        <div className="ibox-tools">
+        <div className="ibox-title dash-title">
+          <h5>{title}</h5>
+          <div className="ibox-tools">
             <i className="fas fa-arrow-right"></i>
+          </div>
         </div>
-        
-      </div>
       </Link>
       <div className="ibox-content pt-0">
         <div className="row text-center">

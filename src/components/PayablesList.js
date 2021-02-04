@@ -37,7 +37,7 @@ export default function PayablesList() {
       });
     });
   });
-
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">

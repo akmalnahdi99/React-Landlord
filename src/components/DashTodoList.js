@@ -30,14 +30,12 @@ export default function DashTodoList() {
   return (
     <div className="ibox illustrated2">
       <Link className="dash-link" to="/landlord/todolist">
-      <div className="ibox-title dash-title">
-          <h5>
-          To-do List
-        </h5>
-        <div className="ibox-tools">
+        <div className="ibox-title dash-title">
+          <h5>To-do List</h5>
+          <div className="ibox-tools">
             <i className="fas fa-arrow-right"></i>
+          </div>
         </div>
-      </div>
       </Link>
 
       <div className="ibox-content bg-transparent">
