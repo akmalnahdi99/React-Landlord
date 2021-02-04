@@ -1,8 +1,8 @@
 //TASK under Review
 import React from "react";
 
-import BuildingFacilitiesCard from "../propertyInfoComponent/BuildingFacilitiesCard";
-import BuildingManagementCard from "../propertyInfoComponent/BuildingManagementCard";
+import BuildingFacilitiesCard from "./BuildingFacilitiesCard";
+import BuildingManagementCard from "./BuildingManagementCard";
 
 export default function InfoBuilding() {
   return (
