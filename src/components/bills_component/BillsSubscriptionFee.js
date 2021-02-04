@@ -2,7 +2,7 @@ import React from "react";
 import SubscriptionFeeDetails from "./SubscriptionFeeDetails";
 import InvoiceCard from "./Invoice";
 import { apiCall, apiLoadData } from "utils/landlordHelper";
-import { config } from "./../constants";
+import { config } from "./../../constants";
 import { AppContext } from "context/settings";
 import Empty from "components/Empty";
 import Loading from "components/static/Loading";
