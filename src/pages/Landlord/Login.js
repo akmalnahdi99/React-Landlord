@@ -4,9 +4,9 @@ import { AppContext } from "../../context/settings";
 import { apiCall } from "./../../utils/landlordHelper";
 import { config } from "./../../constants";
 import Cookies from "js-cookie";
+import ReactGA from "react-ga";
 
 export default function Login() {
- 
   const { updateAppContext, settings } = React.useContext(AppContext);
 
   const [user, setUser] = React.useState({ userId: "", password: "" });
@@ -25,7 +25,6 @@ export default function Login() {
 
   // handle from submit button
   const handleSubmit = (e) => {
- 
     e.preventDefault();
     if (user.userId !== "" && user.password !== "") {
       authenticate();
@@ -33,14 +32,13 @@ export default function Login() {
       setErrorMsg("please enter a userId & password");
     }
   };
- 
+
   // if user already logged redirect him directly to main activites.
   if (isLogged === true && accessToken !== null) {
     return <Redirect to="/landlord/activity"></Redirect>;
   }
 
   const authenticate = () => {
-  
     var userId = user.userId;
     var password = user.password;
 
@@ -49,7 +47,7 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email: userId, password, userType:"landlord" }),
+      body: JSON.stringify({ email: userId, password, userType: "landlord" }),
     };
     setIsLoading(true);
     fetch(apiUrl + "/users/authenticate", requestOptions)
@@ -68,13 +66,22 @@ export default function Login() {
             quickLinks = response.data.quickLinks;
             notificationsCount = response.data.notificationsCount;
           }
+
+          ReactGA.set({
+            userId: response.data.userName,
+          });
+
+          ReactGA.event({
+            category: "Login",
+            action: "User logged in",
+          });
+
           updateAppContext({ postsFilter: "All", accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);
         }
       })
       .catch((error) => {
-     
         setErrorMsg("Id or password is not correct");
       })
       .finally((f) => {

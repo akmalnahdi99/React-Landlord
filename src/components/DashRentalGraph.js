@@ -18,7 +18,7 @@ export default function DashRentalGraph() {
     title: "",
     body: "",
     level: action_level_danger,
-    address: "/landlord/payables",
+    address: "/landlord/tenantpayables",
   };
 
   React.useEffect(() => {

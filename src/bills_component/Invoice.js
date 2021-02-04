@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+ 
 
-export default function InvoiceDetails({ title, details }) {
+export default function InvoiceCard({ payOnline, paymentFor, title, ...details }) {
   var className = "";
   var paidText = "";
-
 
   if (details) {
     if (details.paid === true) {
@@ -20,7 +19,6 @@ export default function InvoiceDetails({ title, details }) {
     className = "text-danger";
   }
 
-  
   return (
     <div className="ibox">
       <div className="ibox-title ">
@@ -42,13 +40,16 @@ export default function InvoiceDetails({ title, details }) {
         </div>
         <div className="col-12 md-5">
           <div className="btn-res">
-            <Link to="" className="btn btn-primary width140 mr-2 mb-2">
+            <div className="btn btn-primary width140 mr-2 mb-2" onClick={() => payOnline(paymentFor, details.payableId)}>
               View Bill
-            </Link>
-            {details.paid === false ? (
-              <Link to="" className="btn btn-success width140 mb-2">
-                Upload Receipt
-              </Link>
+            </div>
+            {details.paid !== true ? (
+              // <Link to="" className="btn btn-success width140 mb-2">
+              //   Upload Receipt
+              // </Link>
+              <div className="btn btn-success width140 mb-2" onClick={() => payOnline(paymentFor, details.payableId)}>
+                Pay Online
+              </div>
             ) : (
               ""
             )}
