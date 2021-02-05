@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 
 import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
 import { AppContext } from "../../context/settings";
-import { apiCall } from "../../utils/landlordHelper";
+import { apiCall, apiLoadData } from "../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export default function Activity(props) {
     },
     updateAppContext,
   } = React.useContext(AppContext);
- 
+
   const [modal, setModal] = useState(false);
   const [activeUnitId, set_activeUnitId] = useState(settings.activeUnitId);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,24 +49,18 @@ export default function Activity(props) {
     }
 
     console.log("Load unit financials");
-    var response = await apiCall("/units/landlordFinancialsPerYearMonths/?unitId=" + unitId);
-    if (response.status) {
-      financials = response.data;
-    }
+    financials = await apiLoadData("loadFinancials", { activeUnitId });
 
     console.log("set ", { financials, stats, unitId });
     updateAppContext({ unitFinancials: financials, viewingAndOfferStats: stats, activeUnitId: unitId }, ["conditionReports", "inventoryData", "metersData", "kitsData"]);
 
     setIsLoading(false);
   }
-  
+
   React.useEffect(() => {
-   
-     setActiveUnit(activeUnitId);
+    setActiveUnit(activeUnitId);
     // eslint-disable-next-line
   }, [activeUnitId]);
-
- 
 
   return isLoading === true ? (
     <Loading />

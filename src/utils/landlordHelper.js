@@ -314,9 +314,10 @@ export async function apiLoadData(endpointName, data) {
   console.log("Entering API load data : " + endpointName + " with ", data);
   endpointName = endpointName.toLowerCase();
   var response = null;
+ 
   switch (endpointName) {
-    case "a".toLowerCase():
-      response = await apiCall(" " + data.activeUnitId);
+    case "loadFinancials".toLowerCase():
+      response = await apiCall("/units/landlordFinancialsPerYearMonths/?unitId=" + data.activeUnitId);
       break;
     case "landlordTodoList".toLowerCase():
       response = await apiCall("/units/landlordTodoList/?unitId=" + data.activeUnitId);
@@ -331,9 +332,11 @@ export async function apiLoadData(endpointName, data) {
     default:
       break;
   }
-  console.log("Exiting Api load data : with ", response.data);
-  if (response.status) {
+
+  if (response && response.status) {
+    console.log("Exiting Api load data : with ", response.data);
     return response.data;
   }
+
   return null;
 }

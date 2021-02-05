@@ -63,6 +63,10 @@ import UnitMeters from "./pages/Landlord/UnitMeters";
 import KitDetailsCard from "./pages/KitDetailsCard";
 import ResetPassword from "./pages/Landlord/ResetPassword";
 import ForgotPassword from "./pages/Landlord/ForgotPassword";
+import ReactGA from "react-ga";
+
+const trackingId = "UA-188885322-1";
+ReactGA.initialize(trackingId); 
 
 export default function App() {
   return (
