@@ -13,8 +13,7 @@ export default function Profile({canUpload}) {
     settings: { userInfo },
   } = React.useContext(AppContext);
 
-  console.log(process);
-
+ 
   return (
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
       <div className="container container-xs pb-5">

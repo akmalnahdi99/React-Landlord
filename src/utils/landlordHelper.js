@@ -51,7 +51,7 @@ export const apiCall = async (url, method, data, appContext) => {
   if (data) {
     requestOptions["body"] = JSON.stringify(data);
   }
-  console.log(requestOptions);
+  
 
   var apiResult = null;
   var result = { status: null, data: null };
@@ -126,12 +126,12 @@ export function getUnitRoomsPerCategory(category, inventoryData) {
 
   var rooms = {};
   for (const key in inventoryData) {
-    console.log(key);
+ 
     var list = inventoryData[key];
     list
       .filter((x) => x.category === category)
       .forEach((x) => {
-        console.log("category:", category, "roomId:", x.roomId);
+     
         rooms[x.roomId] = x.roomName;
       });
   }
@@ -156,7 +156,7 @@ export function getUnitMainCategories(inventoryData) {
 // filter inventory by type and location (room)
 export function filterInventory(location, inventoryOf, inventoryData) {
   if (!location || !inventoryOf || !inventoryData) return null;
-  console.log("searching for inventory", location, inventoryOf);
+  
   return inventoryData[inventoryOf].filter((x) => x.roomId === location);
 }
 
@@ -283,3 +283,32 @@ export const UnitKitsIcons = {
   "Remote Controls": { img: "/imgs/remote-control.svg" },
   "Vehicle Stickers": { img: "/imgs/car.svg" },
 };
+
+
+
+// ############### APIS
+export async function apiLoadData(endpointName, data) {
+  endpointName = endpointName.toLowerCase();
+  var response = null;
+  switch (endpointName) {
+    case "a".toLowerCase():
+      response = await apiCall(" " + data.activeUnitId);
+      break;
+    case "b".toLowerCase():
+      
+      break;
+    case "c".toLowerCase():
+  
+      break;
+    case "xx".toLowerCase():
+    
+      break;
+    default:
+      break;
+  }
+
+  if (response.status) {
+    return response.data;
+  }
+  return null;
+}

@@ -16,13 +16,9 @@ export default function ForgotPassword(props) {
   } = React.useContext(AppContext);
 
   React.useEffect(() => {});
-
-  // if (isDone === true) {
-  //   console.log("done forgot password so, redirect to login");
-  //   return <Redirect to="/login"></Redirect>;
-  // }
+ 
   if (isLogged === true) {
-    console.log("user is logged so goto login");
+ 
     return <Redirect to="/login"></Redirect>;
   }
 
@@ -30,12 +26,12 @@ export default function ForgotPassword(props) {
     var name = e.target.name;
     var value = e.target.value;
     var formData = { ...form, [name]: value };
-    console.log("formData", formData);
+ 
     set_form(formData);
   };
 
   const handleSubmit = async (e) => {
-    console.log("in handle sumbit");
+  
     e.preventDefault();
     if (form.userId !== "") {
       setIsLoading(true);
