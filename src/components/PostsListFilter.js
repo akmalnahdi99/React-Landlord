@@ -45,7 +45,7 @@ export default function PostsListFilter() {
   }, []);
 
    const filterSelection = (filter) => { 
-     appContext.setPostsFilter(filter);
+     appContext.updateAppContext({postsFilter:filter});
   };
 
   return (

@@ -28,13 +28,7 @@ function getsettingsFromLocalStorage() {
 
 function AppProvider({ children }) {
   const [settings, setSettings] = React.useState(getsettingsFromLocalStorage());
-
-  const setPostsFilter = (filter) => {
-    const newSettings = { ...settings, postsFilter: filter };
-    setSettings(newSettings);
-    localStorage.setItem("settings", JSON.stringify(newSettings));
-  };
-
+ 
   const updateAppContext = (newSetting, toDelete) => {
     //setSettings(getsettingsFromLocalStorage());
     // console.log("[Update App Context] -------Start------");
@@ -61,7 +55,7 @@ function AppProvider({ children }) {
      localStorage.removeItem("settings");
   };
 
-  return <AppContext.Provider value={{ clearSettings,    settings, updateAppContext, setPostsFilter }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ clearSettings,    settings, updateAppContext }}>{children}</AppContext.Provider>;
 }
 
 export { AppProvider, AppContext };
