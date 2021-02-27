@@ -45,7 +45,7 @@ export default function ForgotPassword(props) {
         set_isDone(true);
         set_infoMsg(result.data);
       } else {
-        debugger;
+
         setErrorMsg(result.data);
       }
       setIsLoading(false);

@@ -38,5 +38,4 @@ export default function InfoCardItem({ title, body, color }) {
       </div>
     );
   }
-  
 }

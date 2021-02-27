@@ -72,7 +72,7 @@ export default function Login() {
             quickLinks = response.data.quickLinks;
             notificationsCount = response.data.notificationsCount;
           }
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
+          updateAppContext({ postsFilter: "All", accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);
         }
