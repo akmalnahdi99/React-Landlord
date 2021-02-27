@@ -62,7 +62,8 @@ export const apiCall = async (url, method, data, appContext) => {
         apiResult = await resp.json();
         result.status = true;
       } else if (resp.status === 401) {
-        appContext.updateAppContext({ isLogged: false });
+        // logout if not authorized (need to login again)
+            appContext && appContext.updateAppContext({ isLogged: false });
         result.status = false;
       } else {
         apiResult = await resp.json();
